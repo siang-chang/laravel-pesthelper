@@ -5,17 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            
-            @foreach($datas as $data)
+            @foreach($sort as $sort)
                 <div class="form-group"> 
                     <table>
                         <tr>
-                            <td>{{ $data->plantNum }}</td>
-                            <td>{{ $data->name }}</td>
-                            <td>{{ $data->scientificName }}</td>
-                            <td>{{ $data->familyNum }}</td>
-                            <td>{{ $data->genusNum }}</td>
-                            <td>{{ $data->img }}</td>
+                            <td>
+                                {{ $familyNum=$sort->familyNum }}
+                                {{ DB::table('plantdata')->where('familyNum',$familyNum)->get() }}
+                            </td>
                         </tr>
                     </table>
                 </div>

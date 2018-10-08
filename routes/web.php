@@ -44,7 +44,4 @@ Auth::routes();
 Route::get('/pestcatalog', 'catalogController@pestDataList');
 #顯示植株清單
 Route::get('/plantcatalog', 'catalogController@plantDataList');
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
