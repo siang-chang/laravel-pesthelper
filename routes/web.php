@@ -45,3 +45,10 @@ Route::get('/pestcatalog', 'catalogController@pestDataList');
 #顯示植株清單
 Route::get('/plantcatalog', 'catalogController@plantDataList');
 Auth::routes();
+
+#害蟲個別頁面
+Route::get('/pestDetailed/{id}', 'pestController@pestDetailed');
+
+//Route::get('successCase/{Case_ID}','FormController@successCase');
+
+Route::get('tank','tankController@go');

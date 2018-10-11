@@ -12,16 +12,16 @@ class catalogController extends Controller
     {
         //抓資料
         $datas = DB::table('pestdata')->get();
-        $sort = DB::table('pestorder')->orderBy('count','desc')->get();
-        return view('pestcatalog',compact('datas','sort'));
+        $sorts = DB::table('pestorder')->orderBy('count','desc')->get();
+        return view('pestcatalog',compact('datas','sorts'));
     }
 
     public function plantDataList()
     {
         
         $datas = DB::table('plantdata')->get();
-        $sort = DB::table('plantfamily')->orderBy('count','desc')->get();
-        return view('plantcatalog',compact('datas','sort'));
+        $sorts = DB::table('plantfamily')->orderBy('count','desc')->get();
+        return view('plantcatalog',compact('datas','sorts'));
 
     }
 }
