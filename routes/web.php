@@ -30,16 +30,18 @@ Route::get('/plantcatalog', function () {
 });
 
 #抓取關鍵字
-//Route::post('/search','searchController@keyWord');
+//Route::post('/search','SearchController@KeywordCount');
 //Auth::routes();
 #搜尋
-Route::post('/search','searchController@search');
+Route::post('/search','SearchController@Search');
 Auth::routes();
 #顯示搜尋結果
 Route::get('/searchResults', function () {
     return view('searchResults');
 });
 Auth::routes();
+#顯示熱門關鍵字
+Route::get('/index', 'SearchController@GetKeywordList');
 #顯示害蟲清單
 Route::get('/pestcatalog', 'catalogController@pestDataList');
 #顯示植株清單
