@@ -1,0 +1,18 @@
+$btn-color-1: #2699fb;
+
+
+%btn-style {
+    width: 140px;
+    height: 58px;
+    border-radius: 4px;
+}
+
+.btn-1 {
+    @extend %btn-style;
+    background-color: $btn-color-1;
+}
+
+.btn-2 {
+    @extend %btn-style;
+    border: solid 2px #bce0fd;
+}

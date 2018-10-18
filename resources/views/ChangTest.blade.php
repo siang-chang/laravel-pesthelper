@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <button type="button" id="btnTest" class="btn btn-default">PestHelper</button>
+        <button type="button" id="btnTest" class="btn-2">PestHelper</button>
         <script>
             // $("#btnTest").click(function(){
                 // alert('PestHelper');

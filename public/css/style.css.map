@@ -1,9 +1,10 @@
 {
     "version": 3,
-    "mappings": ";AACA,OAAO,CAAC,sDAAI;ACCZ,mBAAmB;AACnB,UAAU;AACV,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,0BAA0B;CAC1C;;AAED,AACI,eADW,CACX,gBAAgB,CAAC;EACb,gBAAgB,EAVX,OAAO;CAWf;;AAHL,AAMQ,eANO,CAKX,cAAc,CACV,SAAS,CAAC;EACN,gBAAgB,EAAE,KAAK;CAC1B",
+    "mappings": ";AACA,OAAO,CAAC,sDAAI;ACCZ,mBAAmB;AACnB,UAAU;AACV,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,0BAA0B;CAC1C;;AAED,AACI,eADW,CACX,gBAAgB,CAAC;EACb,gBAAgB,EAVX,OAAO;CAWf;;AAHL,AAMQ,eANO,CAKX,cAAc,CACV,SAAS,CAAC;EACN,gBAAgB,EAAE,OAAO;CAC5B;;ACPT,AANA,MAMM,EAKN,MAAM,CAXK;EACP,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,GAAG;CACrB;;AAED,AAAA,MAAM,CAAC;EAEH,gBAAgB,EAXN,OAAO;CAYpB;;AAED,AAAA,MAAM,CAAC;EAEH,MAAM,EAAE,iBAAiB;CAC5B",
     "sources": [
         "../../resources/sass/style.scss",
-        "../../resources/sass/style/_color.scss"
+        "../../resources/sass/style/_color.scss",
+        "../../resources/sass/style/_buttom.scss"
     ],
     "names": [],
     "file": "style.css"

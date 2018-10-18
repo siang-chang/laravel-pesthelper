@@ -11,6 +11,20 @@ body {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
+  background-color: #ffffff;
+}
+
+.btn-1, .btn-2 {
+  width: 140px;
+  height: 58px;
+  border-radius: 4px;
+}
+
+.btn-1 {
+  background-color: #2699fb;
+}
+
+.btn-2 {
+  border: solid 2px #bce0fd;
 }
 /*# sourceMappingURL=style.css.map */
