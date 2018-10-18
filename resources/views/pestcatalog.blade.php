@@ -5,9 +5,9 @@
         <div class="col-md-8">
             <div class="card">
                 <form method="POST" action="pestDetailed">
-                @csrf
+                    @csrf
                     @foreach($sorts as $sort)
-                    <div class="form-group"> 
+                    <div class="form-group">
                         <table>
                             <tr>
                                 <td>
@@ -19,7 +19,7 @@
                     @endforeach
                     @foreach($datas as $data)
                     {{ $data->pestNum }}
-                        <div class="col-md-2"><a href="pestDetailed/{{ $data->pestNum }}" class="btn btn-primary">123</a></div>
+                    <div class="col-md-2"><a href="pestDetailed/{{ $data->pestNum }}" class="btn btn-primary">123</a></div>
                     @endforeach
                 </form>
             </div>

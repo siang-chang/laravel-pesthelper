@@ -1,18 +1,19 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Pest Helper</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <title>Pest Helper</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <style>
+        html, body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
@@ -63,32 +64,35 @@
                 margin-bottom: 30px;
             }
         </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+</head>
+
+<body>
+    <div class="flex-center position-ref full-height">
 
         <!--新增的地方-->
         <div class="card-body">
-                    <form method="POST" action="search">
-                        @csrf                    
-                        <div class="form-group row">
-                        <input type="text" name="keyword">
-
-                        <label for="searchType">類別:</label>
-                            <select class="form-control" name="searchType">
-                            <option value="all">全部</option>
-                            <option value="pest">害蟲</option>
-                            <option value="plant">植株</option>
-                            </select>
-
-                        <button type="submit">搜尋</button>                        
-                        </div>
-                    </form>
+            <form method="POST" action="search">
+                @csrf
+                <div class="form-group row">
+                    <input type="text" name="keyword">
+                    <label for="searchType">類別:</label>
+                    <select class="form-control" name="searchType">
+                        <option value="area">全部</option>
+                        <option value="pest">害蟲</option>
+                        <option value="plant">植株</option>
+                    </select>
+                    <button type="submit">搜尋</button>
+                    <br>
+                    @foreach($keywordList as $keyword)
+                    <tr>
+                        <td>{{ $keyword->keyWord }}</td>
+                    </tr>
+                    @endforeach
                 </div>
-
-
-
-            </div>
+            </form>
         </div>
-    </body>
+
+    </div>
+</body>
+
 </html>
