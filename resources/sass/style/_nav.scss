@@ -1,15 +1,37 @@
 /* color */
 $bg-color-1: #2699fb;
+$font-color-0: #ffffff;
 
 /* 導覽列 navbar */
 .navbar-default {
     .container-fluid {
+        // height: 80px;
         background-color: $bg-color-1;
+        // opacity: 0.9;
+        // vertical-align:middle;
     }
 
-    .navbar-toggle {
-        .icon-bar {
-            background-color: #ffffff;
+    .navbar-header {
+        background-color: $bg-color-1;
+        /* 漢堡 */
+        .navbar-toggle {
+            .icon-bar {
+                background-color: #ffffff;
+            }
+        }
+        a {
+            font-size: 24px;
+            color: $font-color-0;
         }
     }
+
+    .navbar-collapse {
+        li {
+            a {
+                font-size: 24px;
+                color: $font-color-0;
+            }
+        }
+    }
+
 }

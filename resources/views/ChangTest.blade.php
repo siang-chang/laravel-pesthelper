@@ -14,7 +14,7 @@
     <title>PestHelper</title>
 </head>
 
-<body class="body" style="padding-top: 70px;">
+<body class="body" style="padding-top: 80px;background-image: url('img/bg.jpg');">
     <header>
         <!-- 導覽列 navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -31,15 +31,15 @@
                     </button>
                     <!-- logo & WebName -->
                     <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true" style="color: white;"></span></a>
-                    <a class="navbar-brand" href="/" style="color: #ffffff;">蟲害小幫手</a>
+                    <a class="navbar-brand" href="/">蟲害小幫手</a>
                     <a href="#"><img src="img/icon/icon_search_24x24.png" alt="Search"></a>
                 </div>
                 <!-- 桌面版樣式 Collect the nav links, forms, and other content for toggling -->
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" style="color: #ffffff;">害蟲辨識</a></li>
-                        <li><a href="#" style="color: #ffffff;">害蟲目錄</a></li>
-                        <li><a href="#" style="color: #ffffff;">植株目錄</a></li>
+                        <li><a href="#">害蟲辨識</a></li>
+                        <li><a href="#">害蟲目錄</a></li>
+                        <li><a href="#">植株目錄</a></li>
                     </ul>
                     <!-- search -->
                     {{-- <form class="navbar-form navbar-right">
@@ -55,59 +55,50 @@
     <!-- 內容區塊 -->
     <div class="container-fluid">
         <!-- 網站標語 Web Slogan -->
-        <div class="container-fluid">
-            <h1 id="Web-page-slogan" class="col-xs-12">蟲害小幫手<br />病蟲害解決方案查詢服務</h1>
+        <div class="container-fluid" style="padding-top: 100px;">
+            <h1 id="Web-page-slogan" class="col-xs-12 text-Oversized">蟲害小幫手<br />病蟲害解決方案查詢服務</h1>
         </div>
         <!-- 功能標語 Function Slogan -->
         <div class="container-fluid">
-            <h2 id="text-medium">開始你的搜尋，病蟲害問題迎刃而解</h2>
+            <h2 id="" class="text-medium-color-1">開始你的搜尋，病蟲害問題迎刃而解</h2>
         </div>
         <!-- 搜尋列 Search Bar -->
-        <div class="container-fluid">
+        <div class="container-fluid" style="padding-top: 20px;">
             <div class="row">
-                <span class="col-xs-1 col-md-2"></span>
-                <input type="text" id="searchBar" class="col-xs-12 col-md-8">
-                <span class="col-xs-1 com-md-2"></span>
+                <span class="hidden-phone col-xs-0 col-sm-2"></span>
+                <input type="text" id="searchBar" class="col-xs-12 col-sm-8">
+                <span class="hidden-phone col-xs-0 com-sm-2"></span>
             </div>
         </div>
         <!-- Popular Keyword -->
-        <div class="container-fluid">
+        <div class="container-fluid" style="padding-top: 20px;">
             <div class="row">
-                {{-- <div id="popularKeyword" class="col-xs-2 col-md-1">一葉蟲</div>
-                <div id="text-small" class="col-xs-2 col-md-1">二葉蟲</div>
-                <div id="text-small" class="col-xs-2 col-md-1">三葉蟲</div>
-                <div id="text-small" class="col-xs-2 col-md-1">四葉蟲</div>
-                <div id="text-small" class="col-xs-2 col-md-1">五葉蟲</div> --}}
+                <span class="col-xs-1 col-md-2"></span>
                 @foreach($keyWordList as $keyWord)
-                <div id="text-small" class="col-xs-2 col-md-1">{{ $keyWord->keyWord }}</div>
+                <div id="popularKeyword" class="col-xs-2 col-md-1 text-small-color-2">{{ $keyWord->keyWord }}</div>
+                
                 @endforeach
             </div>
         </div>
         <!-- 其他呼籲 Other Function -->
-        <div class="container-fluid">
-            <p>或者你可以試試</p>
-            <button type="button" id="btnTest" class="btn-1">害蟲辨識</button>
-            <button type="button" id="btnTest" class="btn-2">瀏覽教學</button>
+        <div style="padding-top: 50px;text-align: center;">
+            <p id="" class="text-medium-color-2">或者你可以試試</p>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="row">
-                        <h1 class="col-xs-12 col-sm-4" style="background-color:blue;color:white">News</h1>
-                        <h1 class="col-xs-12 col-sm-4" style="background-color:red;color:white">Blog</h1>
-                        <h1 class="col-xs-12 col-sm-4" style="background-color:green;color:white">About</h1>
-                    </div>
-                </div>
-            </div>
+        <div style="padding-top: 30px;text-align: center;">
+            <button type="button" id="btnTest" class="btn-1 text-medium-color-0">害蟲辨識</button>
+            <span style="width: 30px;"></span>
+            <button type="button" id="btnTest" class="btn-2 text-medium-color-1">瀏覽教學</button>
+        </div>
+        {{-- <div class="container-fluid">
             <button type="button" id="btnTest" class="btn-2">PestHelper</button>
             <script>
                 // $("#btnTest").click(function(){
                 // alert('PestHelper');
-            // })
-            $("#btnTest").on('click', function(){
-                alert('PestHelperTest');
-            })
-        </script>
+                // })
+                $("#btnTest").on('click', function(){
+                    alert('PestHelperTest');
+                })
+            </script>
             <div id="alertTest" class="alert alert-warning alert-dismissible fade in" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <strong>Warning!</strong> Better check yourself, you're not looking too good.
@@ -124,7 +115,7 @@
                 })
 
             </script>
-        </div>
+        </div> --}}
     </div>
 </body>
 
