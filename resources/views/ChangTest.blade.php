@@ -64,17 +64,30 @@
         </div>
         <!-- 搜尋列 Search Bar -->
         <div class="container-fluid">
-            <span class="col-xs-1 col-md-2"></span>
-            <input type="text" id="searchBar" class="col-xs-10 col-md-8">
-            <span class="col-xs-1 com-md-2"></span>
+            <div class="row">
+                <span class="col-xs-1 col-md-2"></span>
+                <input type="text" id="searchBar" class="col-xs-12 col-md-8">
+                <span class="col-xs-1 com-md-2"></span>
+            </div>
         </div>
         <!-- Popular Keyword -->
         <div class="container-fluid">
-            <div id="popularKeyword" class="col-xs-2 col-md-1">一葉蟲</div>
-            <div id="text-small" class="col-xs-2 col-md-1">二葉蟲</div>
-            <div id="text-small" class="col-xs-2 col-md-1">三葉蟲</div>
-            <div id="text-small" class="col-xs-2 col-md-1">四葉蟲</div>
-            <div id="text-small" class="col-xs-2 col-md-1">五葉蟲</div>
+            <div class="row">
+                {{-- <div id="popularKeyword" class="col-xs-2 col-md-1">一葉蟲</div>
+                <div id="text-small" class="col-xs-2 col-md-1">二葉蟲</div>
+                <div id="text-small" class="col-xs-2 col-md-1">三葉蟲</div>
+                <div id="text-small" class="col-xs-2 col-md-1">四葉蟲</div>
+                <div id="text-small" class="col-xs-2 col-md-1">五葉蟲</div> --}}
+                @foreach($keyWordList as $keyWord)
+                <div id="text-small" class="col-xs-2 col-md-1">{{ $keyWord->keyWord }}</div>
+                @endforeach
+            </div>
+        </div>
+        <!-- 其他呼籲 Other Function -->
+        <div class="container-fluid">
+            <p>或者你可以試試</p>
+            <button type="button" id="btnTest" class="btn-1">害蟲辨識</button>
+            <button type="button" id="btnTest" class="btn-2">瀏覽教學</button>
         </div>
         <div class="container-fluid">
             <div class="row">
