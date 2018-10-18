@@ -10,11 +10,11 @@
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.js') }}"></script>
     <!-- 導入客製化 css, js -->
-    <link rel="stylesheet" href="{{ asset('css/color.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>PestHelper</title>
 </head>
 
-<body style="padding-top: 70px;">
+<body class="body" style="padding-top: 70px;">
     <header>
         <!-- 導覽列 navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -32,33 +32,33 @@
                     <!-- logo & WebName -->
                     <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true" style="color: white;"></span></a>
                     <a class="navbar-brand" href="/" style="color: #ffffff;">蟲害小幫手</a>
+                    <a href="#"><img src="img/icon/icon_search_24x24.png" alt="Search"></a>
                 </div>
                 <!-- 桌面版樣式 Collect the nav links, forms, and other content for toggling -->
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><img src="img/icon/icon_search_24x24.png" alt="Search"></a></li>
                         <li><a href="#" style="color: #ffffff;">害蟲辨識</a></li>
                         <li><a href="#" style="color: #ffffff;">害蟲目錄</a></li>
                         <li><a href="#" style="color: #ffffff;">植株目錄</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
+                    {{-- <form class="navbar-form navbar-right">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
+                    </form> --}}
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
     </header>
     <!-- 內容區塊 -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
                 <div class="row">
-                    <h1 class="col-xs-12 col-sm-4" style="background-color:red">News</h1>
-                    <h1 class="col-xs-12 col-sm-4" style="background-color:red">Blog</h1>
-                    <h1 class="col-xs-12 col-sm-4" style="background-color:red">About</h1>
+                    <h1 class="col-xs-12 col-sm-4" style="background-color:blue;color:white">News</h1>
+                    <h1 class="col-xs-12 col-sm-4" style="background-color:red;color:white">Blog</h1>
+                    <h1 class="col-xs-12 col-sm-4" style="background-color:green;color:white">About</h1>
                 </div>
             </div>
         </div>

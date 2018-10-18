@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+/* 導覽列 navbar */
+/* 基底 */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.navbar-default .container-fluid {
+  background-color: #2699fb;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+/*# sourceMappingURL=style.css.map */

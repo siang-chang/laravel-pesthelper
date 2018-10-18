@@ -1,0 +1,19 @@
+$bg-color-1: #2699fb;
+
+/* 導覽列 navbar */
+/* 基底 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.navbar-default {
+    .container-fluid {
+        background-color: $bg-color-1;
+    }
+
+    .navbar-toggle {
+        .icon-bar {
+            background-color: #ffffff;
+        }
+    }
+}
