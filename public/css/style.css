@@ -1,0 +1,184 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+/* 基底 */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* index */
+#Web-page-slogan {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
+  font-size: 56px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.36;
+  letter-spacing: normal;
+  color: #2699fb;
+  text-align: center;
+}
+
+#popularKeyword {
+  height: 26px;
+  border-radius: 10px;
+  border: solid 1px #2699fb;
+}
+
+/* text */
+@media (min-width: 1200px) {
+  #text-Oversized {
+    font-size: 56px;
+  }
+}
+
+#text-Large {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+}
+
+@media (min-width: 980px) {
+  #text-Large {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #text-Large {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  #text-Large {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  #text-Large {
+    font-size: 30px;
+  }
+}
+
+#text-medium {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+}
+
+@media (min-width: 980px) {
+  #text-medium {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #text-medium {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  #text-medium {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #text-medium {
+    font-size: 18px;
+  }
+}
+
+#text-small {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+}
+
+@media (min-width: 980px) {
+  #text-small {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #text-small {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  #text-small {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  #text-small {
+    font-size: 13px;
+  }
+}
+
+#text-article {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+}
+
+@media (min-width: 980px) {
+  #text-article {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #text-article {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  #text-article {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #text-article {
+    font-size: 10px;
+  }
+}
+
+/* color */
+/* 導覽列 navbar */
+.navbar-default .container-fluid {
+  background-color: #2699fb;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.btn-1, .btn-2 {
+  width: 140px;
+  height: 58px;
+  border-radius: 4px;
+}
+
+.btn-1 {
+  background-color: #2699fb;
+}
+
+.btn-2 {
+  border: solid 2px #bce0fd;
+}
+
+#searchBar {
+  height: 60px;
+  border-radius: 10px;
+  border: solid 1px #bce0fd;
+  background-color: #ffffff;
+}
+/*# sourceMappingURL=style.css.map */

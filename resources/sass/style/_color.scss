@@ -1,0 +1,73 @@
+$bg-color-1: #2699fb;
+$font-color-1: #2699fb;
+$font-color-2: #bce0fd;
+
+/* 基底 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* index */
+#Web-page-slogan {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
+    font-size: 56px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+
+    color: $font-color-1;
+    text-align: center;
+}
+
+#popularKeyword {
+    height: 26px;
+    border-radius: 10px;
+    border: solid 1px #2699fb;
+}
+
+/* text */
+@mixin text($font-size) {
+    text-align: center;
+
+    @media (min-width: 980px) {
+        font-size: $font-size + px;
+    }
+
+    /* 平板電腦 */
+    @media (min-width: 768px) and (max-width: 979px) {
+        font-size: $font-size + px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: $font-size + px;
+    }
+
+    /* 手機 */
+    @media (max-width: 480px) {
+        font-size: $font-size - 6 + px;
+    }
+}
+
+#text-Oversized {
+    @media (min-width: 1200px) {
+        font-size: 56px;
+    }
+}
+
+#text-Large {
+    @include text(36);
+}
+
+#text-medium {
+    @include text(24);
+}
+
+#text-small {
+    @include text(19);
+}
+
+#text-article {
+    @include text(16);
+}

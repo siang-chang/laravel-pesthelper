@@ -1,0 +1,15 @@
+/* color */
+$bg-color-1: #2699fb;
+
+/* 導覽列 navbar */
+.navbar-default {
+    .container-fluid {
+        background-color: $bg-color-1;
+    }
+
+    .navbar-toggle {
+        .icon-bar {
+            background-color: #ffffff;
+        }
+    }
+}
