@@ -14,7 +14,8 @@
     <title>PestHelper</title>
 </head>
 
-<body class="body" style="padding-top: 80px;background-image: url('img/bg.jpg');">
+{{-- <body class="body" style="padding-top: 80px;background-image: url('img/bg.jpg');"> --}}
+<body class="body" style="padding-top: 80px;">
     <header>
         <!-- 導覽列 navbar -->
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -75,8 +76,8 @@
             <div class="row">
                 <span class="col-xs-1 col-md-2"></span>
                 @foreach($keyWordList as $keyWord)
-                <div id="popularKeyword" class="col-xs-2 col-md-1 text-small-color-2">{{ $keyWord->keyWord }}</div>
-                
+                <div id="popularKeyword" style="display:inline;">{{ $keyWord->keyWord }}</div>
+
                 @endforeach
             </div>
         </div>
