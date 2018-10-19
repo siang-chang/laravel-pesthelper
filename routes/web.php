@@ -15,8 +15,11 @@
 | 前端區域
 |---------------------------------------------------------------------------
 */
-Route::get('/chang', function () {
-    return view('ChangTest');
+// Route::get('/chang', function () {
+//     return view('ChangTest');
+// });
+Route::get('/chang', function(){
+    echo "chang is login";
 });
 /*
 |---------------------------------------------------------------------------
