@@ -1,28 +1,5 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-/* 基底 */
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-}
-
-@media (max-width: 767px) {
-  .hidden-phone {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-
-/* index */
-#popularKeyword {
-  height: 26px;
-  border-radius: 10px;
-  border: solid 1px #2699fb;
-}
-
 /* text */
 .text-Oversized {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
@@ -62,100 +39,39 @@ body {
   }
 }
 
-.text-Large-color-1 {
-  text-align: center;
-  /* 平板電腦 */
-  /* 手機 */
-  color: #2699fb;
-}
-
-@media (min-width: 980px) {
-  .text-Large-color-1 {
-    font-size: 36px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .text-Large-color-1 {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 767px) {
-  .text-Large-color-1 {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-Large-color-1 {
-    font-size: 30px;
-  }
-}
-
-.text-Large-color-2 {
-  text-align: center;
-  /* 平板電腦 */
-  /* 手機 */
-  color: #bce0fd;
-}
-
-@media (min-width: 980px) {
-  .text-Large-color-2 {
-    font-size: 36px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .text-Large-color-2 {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 767px) {
-  .text-Large-color-2 {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-Large-color-2 {
-    font-size: 30px;
-  }
-}
-
-.text-medium-color-0 {
+.text-Large-0 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
   color: #ffffff;
+  opacity: 0.99;
 }
 
 @media (min-width: 980px) {
-  .text-medium-color-0 {
-    font-size: 24px;
+  .text-Large-0 {
+    font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-0 {
-    font-size: 24px;
+  .text-Large-0 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-medium-color-0 {
-    font-size: 24px;
+  .text-Large-0 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-medium-color-0 {
-    font-size: 18px;
+  .text-Large-0 {
+    font-size: 30px;
   }
 }
 
-.text-medium-color-1 {
+.text-Large-1 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -163,30 +79,30 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-medium-color-1 {
-    font-size: 24px;
+  .text-Large-1 {
+    font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-1 {
-    font-size: 24px;
+  .text-Large-1 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-medium-color-1 {
-    font-size: 24px;
+  .text-Large-1 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-medium-color-1 {
-    font-size: 18px;
+  .text-Large-1 {
+    font-size: 30px;
   }
 }
 
-.text-medium-color-2 {
+.text-Large-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -194,61 +110,62 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-medium-color-2 {
-    font-size: 18px;
+  .text-Large-2 {
+    font-size: 30px;
   }
 }
 
-.text-small-color-0 {
+.text-medium-0 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
   color: #ffffff;
+  opacity: 0.99;
 }
 
 @media (min-width: 980px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-0 {
-    font-size: 13px;
+  .text-medium-0 {
+    font-size: 18px;
   }
 }
 
-.text-small-color-1 {
+.text-medium-1 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -256,30 +173,30 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-1 {
-    font-size: 13px;
+  .text-medium-1 {
+    font-size: 18px;
   }
 }
 
-.text-small-color-2 {
+.text-medium-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -287,30 +204,156 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-small-color-2 {
+  .text-medium-2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-medium-2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-medium-2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-medium-2 {
+    font-size: 18px;
+  }
+}
+
+.text-small-0 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #ffffff;
+  opacity: 0.99;
+}
+
+@media (min-width: 980px) {
+  .text-small-0 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-small-0 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-small-0 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-small-0 {
+    font-size: 10px;
+  }
+}
+
+.text-small-1 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #2699fb;
+}
+
+@media (min-width: 980px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-small-1 {
+    font-size: 10px;
+  }
+}
+
+.text-small-2 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #bce0fd;
+}
+
+@media (min-width: 980px) {
+  .text-small-2 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-small-2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-small-2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-small-2 {
+    font-size: 10px;
+  }
+}
+
+.text-article-0 {
+  color: #ffffff;
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  opacity: 0.99;
+}
+
+@media (min-width: 980px) {
+  .text-article-0 {
     font-size: 19px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-2 {
+  .text-article-0 {
     font-size: 19px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-2 {
+  .text-article-0 {
     font-size: 19px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-2 {
+  .text-article-0 {
     font-size: 13px;
   }
 }
 
-.text-article-color-1 {
+.text-article-1 {
   color: #2699fb;
   text-align: center;
   /* 平板電腦 */
@@ -318,30 +361,30 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-article-color-1 {
-    font-size: 16px;
+  .text-article-1 {
+    font-size: 19px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-article-color-1 {
-    font-size: 16px;
+  .text-article-1 {
+    font-size: 19px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-article-color-1 {
-    font-size: 16px;
+  .text-article-1 {
+    font-size: 19px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-article-color-1 {
-    font-size: 10px;
+  .text-article-1 {
+    font-size: 13px;
   }
 }
 
-.text-article-color-2 {
+.text-article-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -349,26 +392,26 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-article-color-2 {
-    font-size: 16px;
+  .text-article-2 {
+    font-size: 19px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-article-color-2 {
-    font-size: 16px;
+  .text-article-2 {
+    font-size: 19px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-article-color-2 {
-    font-size: 16px;
+  .text-article-2 {
+    font-size: 19px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-article-color-2 {
-    font-size: 10px;
+  .text-article-2 {
+    font-size: 13px;
   }
 }
 
@@ -397,24 +440,185 @@ body {
   color: #ffffff;
 }
 
-.btn-1, .btn-2 {
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-toggle .icon-bar {
+  width: 22px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navbar-toggle .top-bar {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 10% 10%;
+          transform-origin: 10% 10%;
+}
+
+.navbar-toggle .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggle .bottom-bar {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 10% 90%;
+          transform-origin: 10% 90%;
+}
+
+.navbar-toggle.collapsed .top-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-toggle.collapsed .bottom-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.navbar-toggle {
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 23px;
+  padding: 9px 10px !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+}
+
+.btn-0, .btn-1 {
   width: 140px;
   height: 58px;
-  border-radius: 4px;
+  border-radius: 5px;
+}
+
+.btn-0 {
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+  border: solid 2px;
+  border-color: #ffffff;
 }
 
 .btn-1 {
   background-color: #2699fb;
+  border: solid 2px;
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
-.btn-2 {
-  border: solid 2px #bce0fd;
-}
-
-#searchBar {
-  height: 60px;
-  border-radius: 10px;
+.SearchBar-Border {
+  border-radius: 15px;
   border: solid 1px #bce0fd;
   background-color: #ffffff;
+}
+
+.SearchBar-Border input {
+  height: 60px;
+  border-radius: 15px;
+  border: 0 none;
+}
+
+.someline {
+  height: 44px;
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+}
+
+.searchTypeBtn {
+  height: 44px;
+  border: none;
+  padding: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+}
+
+.searchBtn {
+  height: 44px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #2699fb;
+  border: none;
+  margin: 8px;
+}
+
+/* 全域宣告 */
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* 全域效果 */
+@media (max-width: 767px) {
+  .hidden-phone {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* index */
+.popularKeyword {
+  display: inline;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #ffffff;
+  opacity: 0.9;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /*# sourceMappingURL=style.css.map */

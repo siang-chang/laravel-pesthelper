@@ -1,29 +1,6 @@
-$bg-color-1: #2699fb;
 $font-color-0: #ffffff;
 $font-color-1: #2699fb;
 $font-color-2: #bce0fd;
-
-/* 基底 */
-body {
-    font-family: 'Noto Sans TC', sans-serif;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
-.hidden-phone {
-    @media (max-width: 767px) {
-        display: none !important; visibility: hidden !important;
-    }
-}
-
-/* index */
-
-#popularKeyword {
-    height: 26px;
-    border-radius: 10px;
-    border: solid 1px #2699fb;
-}
 
 /* text */
 @mixin text($font-size) {
@@ -58,66 +35,87 @@ body {
     letter-spacing: normal;
     text-align: center;
     padding: 0px;
+
     @media (min-width: 980px) {
         font-size: 56px;
     }
+
     /* 平板電腦 */
     @media (min-width: 768px) and (max-width: 979px) {
         font-size: 48px;
     }
+
     @media (max-width: 767px) {
         font-size: 36px;
     }
+
     /* 手機 */
     @media (max-width: 480px) {
         font-size: 28px;
     }
 }
 
-.text-Large-color-1 {
+.text-Large-0 {
+    @include text(36);
+    color: $font-color-0;
+    opacity: 0.99;
+}
+
+.text-Large-1 {
     @include text(36);
     color: $font-color-1;
 }
 
-.text-Large-color-2 {
+.text-Large-2 {
     @include text(36);
     color: $font-color-2;
 }
 
-.text-medium-color-0 {
+.text-medium-0 {
     @include text(24);
     color: $font-color-0;
+    opacity: 0.99;
 }
 
-.text-medium-color-1 {
+.text-medium-1 {
     @include text(24);
     color: $font-color-1;
 }
 
-.text-medium-color-2 {
+.text-medium-2 {
     @include text(24);
     color: $font-color-2;
 }
-.text-small-color-0 {
-    @include text(19);
-    color: $font-color-0;
-}
-.text-small-color-1 {
-    @include text(19);
-    color: $font-color-1;
-}
 
-.text-small-color-2 {
-    @include text(19);
-    color: $font-color-2;
-}
-
-.text-article-color-1 {
-    color: $font-color-1;
+.text-small-0 {
     @include text(16);
+    color: $font-color-0;
+    opacity: 0.99;
 }
 
-.text-article-color-2 {
+.text-small-1 {
+    @include text(16);
+    color: $font-color-1;
+}
+
+.text-small-2 {
     @include text(16);
     color: $font-color-2;
 }
+
+.text-article-0 {
+    color: $font-color-0;
+    @include text(19);
+    opacity: 0.99;
+}
+
+.text-article-1 {
+    color: $font-color-1;
+    @include text(19);
+}
+
+.text-article-2 {
+    @include text(19);
+    color: $font-color-2;
+}
+
