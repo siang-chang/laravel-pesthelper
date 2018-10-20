@@ -9,23 +9,53 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
+//--------------------------------------------------------------------------
+// support function
+//--------------------------------------------------------------------------
+// [change type] this function can change array to an object.
+function convertArray2Object($defs) {
+    $innerfunc = function ($a) use ( &$innerfunc ) {
+       return (is_array($a)) ? (object) array_map($innerfunc, $a) : $a;
+    };
+    return (object) array_map($innerfunc, $defs);
+}
 /*
 |---------------------------------------------------------------------------
 | 前端區域
 |---------------------------------------------------------------------------
-*/
+ */
 // Route::get('/chang', function () {
 //     return view('ChangTest');
 // });
-Route::get('/chang', function(){
-    echo "chang is login";
+Route::get('/chang', function () {
+    $fakedata = [
+        [
+            'keyWord' => '蚜蟲',
+            'keyWordCount' => 1000
+        ], [
+            'keyWord' => '玉米',
+            'keyWordCount' => 200
+        ], [
+            'keyWord' => '三葉蟲',
+            'keyWordCount' => 100
+        ], [
+            'keyWord' => '橡皮蟲',
+            'keyWordCount' => 2
+        ], [
+            'keyWord' => '鳳梨',
+            'keyWordCount' => 1
+        ]
+    ];
+    $keyWordList = convertArray2Object($fakedata);
+    return view('ChangTest', ['keyWordList' => $keyWordList]);
+    // return view('ChangTest', ['keyWordList' => $fakedata]);
 });
 /*
 |---------------------------------------------------------------------------
 | 後端區域
 |---------------------------------------------------------------------------
-*/
+ */
 Route::get('/', function () {
     return view('welcome');
 });
@@ -48,7 +78,7 @@ Route::get('/plantcatalog', function () {
 //Route::post('/search','SearchController@KeywordCount');
 //Auth::routes();
 #搜尋
-Route::post('/search','SearchController@Search');
+Route::post('/search', 'SearchController@Search');
 Auth::routes();
 #顯示搜尋結果
 Route::get('/searchResults', function () {
@@ -68,4 +98,4 @@ Route::get('/pestDetailed/{id}', 'pestController@pestDetailed');
 
 //Route::get('successCase/{Case_ID}','FormController@successCase');
 
-Route::get('tank','tankController@go');
+Route::get('tank', 'tankController@go');
