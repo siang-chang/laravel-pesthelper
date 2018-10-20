@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class plantController extends Controller
+class PlantController extends Controller
 {
     
     public function sortcatalog()
