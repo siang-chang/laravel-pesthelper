@@ -27,9 +27,9 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a id="searchArea" href="javascript:changSearchType('area')">全部類別</a></li>
-                    <li><a id="searchPest" href="javascript:changSearchType('pest')">僅查害蟲</a></li>
-                    <li><a id="searchPlant" href="javascript:changSearchType('plant')">僅查植株</a></li>
+                    <li><a id="searchArea" onclick="changSearchType('area')">全部類別</a></li>
+                    <li><a id="searchPest" onclick="changSearchType('pest')">僅查害蟲</a></li>
+                    <li><a id="searchPlant" onclick="changSearchType('plant')">僅查植株</a></li>
                 </ul>
             </div>
         </div>

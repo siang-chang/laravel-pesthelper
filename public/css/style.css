@@ -659,49 +659,39 @@ footer {
   text-align: left !important;
 }
 
-.btn-group .dropdown-menu a {
+.SearchBar-Border .btn-group .dropdown-menu a {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
   color: #bce0fd;
+  cursor: pointer;
 }
 
 @media (min-width: 980px) {
-  .btn-group .dropdown-menu a {
+  .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .btn-group .dropdown-menu a {
+  .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .btn-group .dropdown-menu a {
+  .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .btn-group .dropdown-menu a {
+  .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 18px;
   }
 }
 
-.btn-group .line {
-  height: 44px;
-  border: none;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  filter: alpha(opacity=0) \9;
-  /* IE8 */
-  background-color: rgba(255, 255, 255, 0.1);
-  /* IE9及其它瀏覽器會執行此行 */
-}
-
-.searchTypeBtn {
+.SearchBar-Border .btn-group .searchTypeBtn {
   height: 44px;
   border: none;
   padding: 0px;
@@ -713,7 +703,17 @@ footer {
   /* IE9及其它瀏覽器會執行此行 */
 }
 
-.searchBtn {
+.SearchBar-Border .btn-group .searchTypeBtn .line {
+  height: 44px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+}
+
+.SearchBar-Border .searchBtn {
   height: 44px;
   width: 100%;
   border-radius: 10px;
