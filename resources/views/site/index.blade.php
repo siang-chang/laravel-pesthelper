@@ -27,9 +27,9 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a id="area" href="javascript:changSearchType('area')">全部類別</a></li>
-                    <li><a id="pest" href="javascript:changSearchType('pest')">僅查害蟲</a></li>
-                    <li><a id="plant" href="javascript:changSearchType('pest')">僅查植株</a></li>
+                    <li><a id="searchArea" href="javascript:changSearchType('area')">全部類別</a></li>
+                    <li><a id="searchPest" href="javascript:changSearchType('pest')">僅查害蟲</a></li>
+                    <li><a id="searchPlant" href="javascript:changSearchType('plant')">僅查植株</a></li>
                 </ul>
             </div>
         </div>
@@ -44,9 +44,18 @@
     </div>
     <script>
         function changSearchType(searchType) {
-                    alert("searchType=" + searchType);
-                }
-            </script>
+            if(searchType == "pest") {
+                searchTypeText = document.getElementById("searchPest").innerHTML;
+            }
+            else if(searchType == "plant") {
+                searchTypeText = document.getElementById("searchPlant").innerHTML;
+            }
+            else {
+                searchTypeText = document.getElementById("searchArea").innerHTML;
+            }
+            document.getElementById("searchType").innerHTML = searchTypeText;
+        }
+    </script>
     <!-- Popular Keyword -->
     <div class="row">
         <div class="col-xs-12">
