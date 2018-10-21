@@ -21,14 +21,14 @@ function convertArray2Object($defs) {
     return (object) array_map($innerfunc, $defs);
 }
 /*
-|---------------------------------------------------------------------------
-| 前端區域
-|---------------------------------------------------------------------------
- */
+//---------------------------------------------------------------------------
+// 前端區域
+//---------------------------------------------------------------------------
+*/
 // Route::get('/chang', function () {
 //     return view('ChangTest');
 // });
-Route::get('/chang', function () {
+Route::get('/_index', function () {
     $fakedata = [
         [
             'keyWord' => '蚜蟲',
@@ -48,14 +48,17 @@ Route::get('/chang', function () {
         ]
     ];
     $keyWordList = convertArray2Object($fakedata);
-    return view('ChangTest', ['keyWordList' => $keyWordList]);
+    return view('site/index', ['keyWordList' => $keyWordList]);
     // return view('ChangTest', ['keyWordList' => $fakedata]);
 });
+Route::get('/_search', function () {
+    return view('site/search');
+});
 /*
-|---------------------------------------------------------------------------
-| 後端區域
-|---------------------------------------------------------------------------
- */
+//---------------------------------------------------------------------------
+// 後端區域
+//---------------------------------------------------------------------------
+*/
 Route::get('/', function () {
     return view('welcome');
 });

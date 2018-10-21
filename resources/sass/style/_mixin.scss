@@ -1,0 +1,46 @@
+/*
+//---------------------------------------------------------------------------
+// 變數 - color
+//---------------------------------------------------------------------------
+*/
+// background
+$bg-color-0: #ffffff;
+$bg-color-1: #2699fb;
+$bg-color-2: #bce0fd;
+// font
+$font-color-0: #ffffff;
+$font-color-1: #2699fb;
+$font-color-2: #bce0fd;
+// buttom
+$btn-color-0: #ffffff;
+$btn-color-1: #2699fb;
+// border
+$border-color-0: #ffffff;
+$border-color-1: #2699fb;
+$border-color-2: #bce0fd;
+/*
+//---------------------------------------------------------------------------
+// mixin
+//---------------------------------------------------------------------------
+*/
+@mixin RWD($type) {
+
+    //判斷變數是pc、pad還是mobile，再依照判斷出來的載入對應的media query
+    @if $type==pc {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $type==pad {
+        @media only screen and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $type==mobile {
+        @media only screen and (max-width: 480px) {
+            @content;
+        }
+    }
+}

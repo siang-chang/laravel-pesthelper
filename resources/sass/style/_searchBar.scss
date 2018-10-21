@@ -1,29 +1,38 @@
 .SearchBar-Border {
+    // style
     border-radius: 15px;
     border: solid 1px #bce0fd;
     background-color: #ffffff;
+    // position
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     input {
-        // border-color: #ffffff;
         height: 60px;
         -webkit-border-radius: 15px;
         border-radius: 15px;
         border: 0 none;
-        // cursor: pointer;
-
+        text-align: left !important;
     }
 }
-
-.someline {
-    height: 44px;
-    // width: 5%;
-    border: none;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    filter: alpha(opacity=0) \9;
-    /* IE8 */
-    background-color: rgba(255, 255, 255, .1);
-    /* IE9及其它瀏覽器會執行此行 */
+.btn-group {
+    .dropdown-menu {
+        a {
+            @include text(24);
+            color: $font-color-2;
+        }
+    }
+    .line {
+        height: 44px;
+        // width: 5%;
+        border: none;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        filter: alpha(opacity=0) \9;
+        /* IE8 */
+        background-color: rgba(255, 255, 255, .1);
+        /* IE9及其它瀏覽器會執行此行 */
+    }
 }
 
 .searchTypeBtn {

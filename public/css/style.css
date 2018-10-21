@@ -1,6 +1,197 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-/* text */
+/*
+//---------------------------------------------------------------------------
+// 變數 - color
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// mixin
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// extend.scss
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// layout.scss
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+a:hover {
+  color: #bce0fd !important;
+  text-decoration: none;
+}
+
+footer {
+  /* 設定footer的高度 */
+  height: 60px;
+  /* 設定footer絕對位置在底部 */
+  position: absolute;
+  bottom: 0;
+  padding-left: 20px;
+  /* 展開footer寬度 */
+  width: 100%;
+  /* 展開footer 垂直文字置中 */
+  line-height: 60px;
+  /* style */
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2699fb;
+}
+
+/*
+//---------------------------------------------------------------------------
+// 全域效果
+//---------------------------------------------------------------------------
+*/
+@media (max-width: 767px) {
+  .hidden-phone {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// 導覽列 navbar
+//---------------------------------------------------------------------------
+*/
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-default .container-fluid {
+  background-color: #2699fb;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.navbar-default .navbar-header {
+  background-color: #2699fb;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.navbar-default .navbar-header .navbar-toggle {
+  margin-top: 23px;
+  padding: 9px 10px !important;
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-default .navbar-header .navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-default .navbar-header .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+  width: 22px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navbar-default .navbar-header .navbar-toggle .top-bar {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 10% 10%;
+          transform-origin: 10% 10%;
+}
+
+.navbar-default .navbar-header .navbar-toggle .middle-bar {
+  opacity: 0;
+}
+
+.navbar-default .navbar-header .navbar-toggle .bottom-bar {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 10% 90%;
+          transform-origin: 10% 90%;
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .top-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .bottom-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-default .navbar-header .navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.navbar-default .navbar-header a {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-collapse li a {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    float: none !important;
+    margin: 0 auto !important;
+    display: block !important;
+    width: 50%;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// index.scss
+//---------------------------------------------------------------------------
+*/
+.popularKeyword {
+  display: inline;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #ffffff;
+  opacity: 0.9;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* font */
 .text-Oversized {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
   color: #2699fb;
@@ -415,126 +606,41 @@
   }
 }
 
-/* color */
-/* 導覽列 navbar */
-.navbar-default .container-fluid {
-  background-color: #2699fb;
+/* buttom */
+.btn-0, .btn-1 {
+  border-radius: 5px;
+  border: solid 2px;
 }
 
-.navbar-default .navbar-header {
-  background-color: #2699fb;
-  /* 漢堡 */
-}
-
-.navbar-default .navbar-header .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-
-.navbar-default .navbar-header a {
-  font-size: 24px;
-  color: #ffffff;
-}
-
-.navbar-default .navbar-collapse li a {
-  font-size: 24px;
-  color: #ffffff;
-}
-
-.navbar-toggle {
-  border: none;
-  background: transparent !important;
-}
-
-.navbar-toggle:hover {
-  background: transparent !important;
-}
-
-.navbar-toggle .icon-bar {
-  width: 22px;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.navbar-toggle .top-bar {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transform-origin: 10% 10%;
-          transform-origin: 10% 10%;
-}
-
-.navbar-toggle .middle-bar {
-  opacity: 0;
-}
-
-.navbar-toggle .bottom-bar {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: 10% 90%;
-          transform-origin: 10% 90%;
-}
-
-.navbar-toggle.collapsed .top-bar {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
-.navbar-toggle.collapsed .middle-bar {
-  opacity: 1;
-}
-
-.navbar-toggle.collapsed .bottom-bar {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-}
-
-.navbar-toggle.navbar-left {
-  float: left;
-  margin-left: 10px;
-}
-
-.navbar {
-  min-height: 80px;
-}
-
-.navbar-brand {
-  padding: 0 15px;
-  height: 80px;
-  line-height: 80px;
-}
-
-.navbar-toggle {
-  /* (80px - button height 34px) / 2 = 23px */
-  margin-top: 23px;
-  padding: 9px 10px !important;
-}
-
-@media (min-width: 768px) {
-  .navbar-nav > li > a {
-    /* (80px - line-height of 27px) / 2 = 26.5px */
-    padding-top: 26.5px;
-    padding-bottom: 26.5px;
-    line-height: 27px;
+@media only screen and (min-width: 768px) {
+  .btn-0, .btn-1 {
+    width: 140px;
+    height: 58px;
   }
 }
 
-.btn-0, .btn-1 {
-  width: 140px;
-  height: 58px;
-  border-radius: 5px;
+@media only screen and (max-width: 767px) {
+  .btn-0, .btn-1 {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .btn-0, .btn-1 {
+    width: 108px;
+    height: 44px;
+  }
 }
 
 .btn-0 {
-  filter: alpha(opacity=0) \9;
-  /* IE8 */
   background-color: rgba(255, 255, 255, 0.1);
-  /* IE9及其它瀏覽器會執行此行 */
-  border: solid 2px;
+  filter: alpha(opacity=0) \9;
   border-color: #ffffff;
 }
 
 .btn-1 {
   background-color: #2699fb;
-  border: solid 2px;
   border-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -542,15 +648,49 @@
   border-radius: 15px;
   border: solid 1px #bce0fd;
   background-color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .SearchBar-Border input {
   height: 60px;
   border-radius: 15px;
   border: 0 none;
+  text-align: left !important;
 }
 
-.someline {
+.btn-group .dropdown-menu a {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #bce0fd;
+}
+
+@media (min-width: 980px) {
+  .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-group .dropdown-menu a {
+    font-size: 18px;
+  }
+}
+
+.btn-group .line {
   height: 44px;
   border: none;
   margin-top: 8px;
@@ -580,45 +720,5 @@
   background-color: #2699fb;
   border: none;
   margin: 8px;
-}
-
-/* 全域宣告 */
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a :hover {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-/* 全域效果 */
-@media (max-width: 767px) {
-  .hidden-phone {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-
-/* index */
-.popularKeyword {
-  display: inline;
-  border: solid 1px;
-  border-radius: 10px;
-  border-color: #ffffff;
-  opacity: 0.9;
-  margin-right: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 /*# sourceMappingURL=style.css.map */

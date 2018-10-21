@@ -1,0 +1,176 @@
+/*
+//---------------------------------------------------------------------------
+// layout.scss
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
+body {
+    // 樣式
+    font-family: 'Noto Sans TC', sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    // 框架
+    // padding-left: 10px;
+    // padding-right: 10px;
+}
+
+a:hover {
+    color: $font-color-2 !important;
+    text-decoration: none;
+}
+footer {
+    /* 設定footer的高度 */
+    height: 60px;
+    /* 設定footer絕對位置在底部 */
+    position: absolute;
+    bottom: 0;
+    padding-left: 20px;
+    /* 展開footer寬度 */
+    width: 100%;
+    /* 展開footer 垂直文字置中 */
+    line-height: 60px;
+    /* style */
+    font-size: 16px;
+    color: $font-color-0;
+    background-color: $bg-color-1;
+}
+
+/*
+//---------------------------------------------------------------------------
+// 全域效果
+//---------------------------------------------------------------------------
+*/
+.hidden-phone {
+    @media (max-width: 767px) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+
+/*
+//---------------------------------------------------------------------------
+// 導覽列 navbar
+//---------------------------------------------------------------------------
+*/
+// 更改 navbar 高度
+.navbar {
+    min-height: 80px;
+}
+
+// 更改 navbar-brand 高度
+.navbar-default {
+    .container-fluid {
+        background-color: $bg-color-1;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .navbar-header {
+        background-color: $bg-color-1;
+
+        .navbar-brand {
+            padding: 0 15px;
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .navbar-toggle {
+            // (80px - button height 34px) / 2 = 23px
+            margin-top: 23px;
+            padding: 9px 10px !important;
+
+            // 清除漢堡圖標的外框
+            border: none;
+            background: transparent !important;
+
+            // 清除漢堡圖標的 hover 動畫效果
+            &:hover {
+                background: transparent !important;
+            }
+
+            // 動畫效果： 漢堡 → X
+            .icon-bar {
+                background-color: #ffffff;
+                width: 22px;
+                transition: all 0.2s;
+            }
+
+            .top-bar {
+                transform: rotate(45deg);
+                transform-origin: 10% 10%;
+            }
+
+            .middle-bar {
+                opacity: 0;
+            }
+
+            .bottom-bar {
+                transform: rotate(-45deg);
+                transform-origin: 10% 90%;
+            }
+        }
+
+        // 動畫效果： X → 漢堡
+        .navbar-toggle.collapsed {
+            .top-bar {
+                transform: rotate(0);
+            }
+
+            .middle-bar {
+                opacity: 1;
+            }
+
+            .bottom-bar {
+                transform: rotate(0);
+            }
+        }
+
+        // 將 "漢堡圖標" 移往左邊
+        .navbar-toggle.navbar-left {
+            float: left;
+            margin-left: 10px;
+        }
+
+        a {
+            font-size: 24px;
+            color: $font-color-0;
+        }
+    }
+
+    .navbar-collapse {
+        li {
+            a {
+                font-size: 24px;
+                color: $font-color-0;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+    }
+}
+
+// navbar-brand 只有在螢幕寬度低於 768px 的時候才會置中
+@media only screen and (max-width: 768px) {
+    .navbar-brand {
+        float: none !important;
+        margin: 0 auto !important;
+        display: block !important;
+        width: 50%;
+
+    }
+}

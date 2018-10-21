@@ -1,26 +1,35 @@
-$btn-color-0: #ffffff;
-$btn-color-1: #2699fb;
-
+/* buttom */
 
 %btn-style {
-    width: 140px;
-    height: 58px;
     border-radius: 5px;
+    border: solid 2px;
+    @include RWD(pc) {
+        width: 140px;
+        height: 58px;
+    }
+
+    @include RWD(pad) {
+        width: 120px;
+        height: 50px;
+    }
+
+    @include RWD(mobile) {
+        width: 108px;
+        height: 44px;
+    }
 }
+
 // 透明背景 & 白框
 .btn-0 {
     @extend %btn-style;
-    filter: alpha(opacity=0) \9;    /* IE8 */
-    background-color: rgba(255, 255, 255, .1);    /* IE9及其它瀏覽器會執行此行 */
-    border: solid 2px ;
+    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
+    filter: alpha(opacity=0) \9; // IE8
     border-color: #ffffff;
 }
+
 // 藍色背景 & 白框
 .btn-1 {
     @extend %btn-style;
     background-color: $btn-color-1;
-    border: solid 2px ;
     border-color: rgba(255, 255, 255, .9);
 }
-
-
