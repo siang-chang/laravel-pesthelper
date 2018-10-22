@@ -8,6 +8,10 @@
 // 全域樣式
 //---------------------------------------------------------------------------
 */
+html {
+    height: 100%;
+}
+
 body {
     // 樣式
     font-family: 'Noto Sans TC', sans-serif;
@@ -23,22 +27,32 @@ body {
 a:hover {
     color: $font-color-2 !important;
     text-decoration: none;
+    cursor: pointer;
 }
-footer {
-    /* 設定footer的高度 */
-    height: 60px;
-    /* 設定footer絕對位置在底部 */
-    position: absolute;
-    bottom: 0;
-    padding-left: 20px;
+
+.footer {
+    // position: absolute;
+    // bottom: 0;
+    // height: 110px;
     /* 展開footer寬度 */
     width: 100%;
-    /* 展開footer 垂直文字置中 */
-    line-height: 60px;
-    /* style */
-    font-size: 16px;
-    color: $font-color-0;
-    background-color: $bg-color-1;
+    background-color: $bg-color-2;
+
+    .space {
+        height: 50px;
+    }
+
+    .space-color {
+        height: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+        /* 展開footer 垂直文字置中 */
+        line-height: 60px;
+        /* style */
+        font-size: 16px;
+        color: $font-color-0;
+        background-color: $bg-color-1;
+    }
 }
 
 /*
@@ -53,6 +67,13 @@ footer {
     }
 }
 
+#goTop {
+    position: fixed;
+    bottom: 100px;
+    right: 8%;
+    cursor: pointer;
+    z-index: 999;
+}
 
 /*
 //---------------------------------------------------------------------------

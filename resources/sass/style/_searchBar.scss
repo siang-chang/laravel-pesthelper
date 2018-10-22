@@ -13,7 +13,24 @@
         border-radius: 15px;
         border: 0 none;
         text-align: left !important;
+
+
     }
+    // placeholder style : font-color
+    input::placeholder {
+        color: $font-color-2;
+        /* Firefox */
+    }
+    input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $font-color-2;
+    }
+
+    input::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $font-color-2;
+    }
+
     // SearchType 選單 , 行動版不顯示
     .btn-group {
         .dropdown-menu {
@@ -46,6 +63,7 @@
             }
         }
     }
+
     // Search Buttom
     .searchBtn {
         height: 44px;

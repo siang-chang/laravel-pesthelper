@@ -1,8 +1,16 @@
 /* buttom */
+.Btn-default {
+    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
+    filter: alpha(opacity=0) \9; // IE8
+    border: 0px;
+    outline:none !important;
+}
+
 
 %btn-style {
     border-radius: 5px;
     border: solid 2px;
+
     @include RWD(pc) {
         width: 140px;
         height: 58px;
@@ -19,6 +27,7 @@
     }
 }
 
+
 // 透明背景 & 白框
 .btn-0 {
     @extend %btn-style;
@@ -32,4 +41,44 @@
     @extend %btn-style;
     background-color: $btn-color-1;
     border-color: rgba(255, 255, 255, .9);
+}
+
+/* RoundButtom */
+%roundBtn-style {
+    // style
+    border: solid 1px;
+    border-radius: 15px;
+    // position
+    display: inline;
+    margin-right: 10px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @include RWD(pc) {
+        width: 110px;
+        height: 40px;
+    }
+
+    @include RWD(pad) {
+        width: 110px;
+        height: 40px;
+    }
+
+    @include RWD(mobile) {
+        width: 80px;
+        height: 30px;
+    }
+}
+
+.roundBtn-0 {
+    @extend %roundBtn-style;
+    border-color: $border-color-0;
+    opacity: 0.9;
+
+}
+
+.roundBtn-1 {
+    @extend %roundBtn-style;
+    border-color: $border-color-1;
 }

@@ -14,17 +14,18 @@
 // support function
 //--------------------------------------------------------------------------
 // [change type] this function can change array to an object.
-function convertArray2Object($defs) {
-    $innerfunc = function ($a) use ( &$innerfunc ) {
-       return (is_array($a)) ? (object) array_map($innerfunc, $a) : $a;
+function convertArray2Object($defs)
+{
+    $innerfunc = function ($a) use (&$innerfunc) {
+        return (is_array($a)) ? (object)array_map($innerfunc, $a) : $a;
     };
-    return (object) array_map($innerfunc, $defs);
+    return (object)array_map($innerfunc, $defs);
 }
 /*
 //---------------------------------------------------------------------------
 // 前端區域
 //---------------------------------------------------------------------------
-*/
+ */
 // Route::get('/chang', function () {
 //     return view('ChangTest');
 // });
@@ -49,16 +50,50 @@ Route::get('/_index', function () {
     ];
     $keyWordList = convertArray2Object($fakedata);
     return view('site/index', ['keyWordList' => $keyWordList]);
-    // return view('ChangTest', ['keyWordList' => $fakedata]);
 });
 Route::get('/_search', function () {
-    return view('site/search');
+    $fakedata = [
+        [
+            'type' => 'pest',
+            'num' => 'A001',
+            'name' => '蚜蟲',
+            'scientificName' => 'Aphidoidea',
+            'img' => 'Link:somewhere'
+
+        ], [
+            'type' => 'plant',
+            'num' => 'B002',
+            'name' => '菜菜2',
+            'scientificName' => 'Aphidoidea',
+            'img' => 'Link:somewhere'
+        ], [
+            'type' => 'pest',
+            'num' => 'A003',
+            'name' => '蚜蟲3',
+            'scientificName' => 'Aphidoidea',
+            'img' => 'Link:somewhere'
+        ], [
+            'type' => 'plant',
+            'num' => 'B004',
+            'name' => '菜',
+            'scientificName' => 'Aphidoidea',
+            'img' => 'Link:somewhere'
+        ], [
+            'type' => 'pest',
+            'num' => 'A005',
+            'name' => '蚜蟲5',
+            'scientificName' => 'Aphidoidea',
+            'img' => 'Link:somewhere'
+        ]
+    ];
+    $searchResults = convertArray2Object($fakedata);
+    return view('site/search', ['searchResults' => $searchResults]);
 });
 /*
 //---------------------------------------------------------------------------
 // 後端區域
 //---------------------------------------------------------------------------
-*/
+ */
 Route::get('/', function () {
     return view('welcome');
 });
