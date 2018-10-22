@@ -51,7 +51,7 @@ Route::get('/_index', function () {
     $keyWordList = convertArray2Object($fakedata);
     return view('site/index', ['keyWordList' => $keyWordList]);
 });
-Route::get('/_search', function () {
+Route::get('/search', function () {
     $fakedata = [
         [
             'type' => 'pest',
@@ -88,6 +88,26 @@ Route::get('/_search', function () {
     ];
     $searchResults = convertArray2Object($fakedata);
     return view('site/search', ['searchResults' => $searchResults]);
+});
+Route::get('/_pestcatalog', function () {
+    $fakedata = [
+        [
+            // 資料說明：害蟲的目別清單
+            'categoryNum' => 'A002',
+            'categoryName' => '半目',
+        ], [
+            'categoryNum' => 'A003',
+            'categoryName' => '半翅目',
+        ], [
+            'categoryNum' => 'A004',
+            'categoryName' => '翅目',
+        ], [
+            'categoryNum' => 'A005',
+            'categoryName' => '半翅',
+        ]
+    ];
+    $categoryList = convertArray2Object($fakedata);
+    return view('site/pestcatalog', ['categoryList' => $categoryList]);
 });
 /*
 //---------------------------------------------------------------------------

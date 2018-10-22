@@ -20,6 +20,8 @@ body {
     background-position: center;
     background-size: cover;
     // 框架
+    height: 100%;
+    position: relative;
     // padding-left: 10px;
     // padding-right: 10px;
 }
@@ -31,28 +33,20 @@ a:hover {
 }
 
 .footer {
-    // position: absolute;
-    // bottom: 0;
-    // height: 110px;
     /* 展開footer寬度 */
     width: 100%;
-    background-color: $bg-color-2;
-
-    .space {
-        height: 50px;
-    }
-
-    .space-color {
-        height: 60px;
-        padding-left: 20px;
-        padding-right: 20px;
-        /* 展開footer 垂直文字置中 */
-        line-height: 60px;
-        /* style */
-        font-size: 16px;
-        color: $font-color-0;
-        background-color: $bg-color-1;
-    }
+    /* position */
+    height: 60px;
+    margin-top: -60px;
+    /* inner position */
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 60px;
+    text-align: left;
+    /* style */
+    font-size: 16px;
+    color: $font-color-0;
+    background-color: $bg-color-1;
 }
 
 /*

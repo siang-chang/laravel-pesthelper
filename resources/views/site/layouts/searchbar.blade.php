@@ -21,7 +21,7 @@
     </div>
     <!-- Search Buttom -->
     <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
-        <a href="/pesthelper/public/_search">
+        <a href="/pesthelper/public/search">
             <button type="button" id="Search" class="searchBtn">
                 <img src="img/icon/icon_search_24x24.png" alt="Search">
             </button>

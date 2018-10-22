@@ -1,12 +1,21 @@
-/* buttom */
+/*
+//---------------------------------------------------------------------------
+// Buttom
+//---------------------------------------------------------------------------
+*/
 .Btn-default {
     background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
     filter: alpha(opacity=0) \9; // IE8
     border: 0px;
-    outline:none !important;
+    outline: none !important;
 }
 
-
+/*
+//---------------------------------------------------------------------------
+// Buttom:@extend
+//---------------------------------------------------------------------------
+*/
+/* nomoral Buttom */
 %btn-style {
     border-radius: 5px;
     border: solid 2px;
@@ -27,24 +36,8 @@
     }
 }
 
-
-// 透明背景 & 白框
-.btn-0 {
-    @extend %btn-style;
-    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
-    filter: alpha(opacity=0) \9; // IE8
-    border-color: #ffffff;
-}
-
-// 藍色背景 & 白框
-.btn-1 {
-    @extend %btn-style;
-    background-color: $btn-color-1;
-    border-color: rgba(255, 255, 255, .9);
-}
-
-/* RoundButtom */
-%roundBtn-style {
+/* Round Buttom */
+%RoundBtn-style {
     // style
     border: solid 1px;
     border-radius: 15px;
@@ -71,14 +64,34 @@
     }
 }
 
-.roundBtn-0 {
-    @extend %roundBtn-style;
+/*
+//---------------------------------------------------------------------------
+// Buttom:with @extend style
+//---------------------------------------------------------------------------
+*/
+/* nororal Buttom */
+.btn-0 {
+    @extend %btn-style;
+    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
+    filter: alpha(opacity=0) \9; // IE8
+    border-color: #ffffff;
+}
+
+.btn-1 {
+    @extend %btn-style;
+    background-color: $btn-color-1;
+    border-color: rgba(255, 255, 255, .9);
+}
+
+/* Round Buttom */
+.RoundBtn-0 {
+    @extend %RoundBtn-style;
     border-color: $border-color-0;
     opacity: 0.9;
 
 }
 
-.roundBtn-1 {
-    @extend %roundBtn-style;
+.RoundBtn-1 {
+    @extend %RoundBtn-style;
     border-color: $border-color-1;
 }

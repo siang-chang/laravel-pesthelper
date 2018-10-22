@@ -1,4 +1,4 @@
-@extends('site.layouts.homepage')
+@extends('site.layouts.2-homepage')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-xs-12">
             @foreach($keyWordList as $keyWord)
-            <a href="#" id="{{ $keyWord->keyWord }}" class="roundBtn-0 text-article-0">{{
+            <a href="#" id="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">{{
                 $keyWord->keyWord }}</a>
             @endforeach
         </div>
