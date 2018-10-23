@@ -1,14 +1,72 @@
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-/* 基底 */
+/*
+//---------------------------------------------------------------------------
+// 變數 - color
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// mixin
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// extend.scss
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// layout.scss
+//---------------------------------------------------------------------------
+*/
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Noto Sans TC', sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  height: 100%;
+  position: relative;
 }
 
+a:hover {
+  color: #bce0fd !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  /* 展開footer寬度 */
+  width: 100%;
+  /* position */
+  height: 60px;
+  margin-top: -60px;
+  /* inner position */
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 60px;
+  text-align: left;
+  /* style */
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #2699fb;
+}
+
+/*
+//---------------------------------------------------------------------------
+// 全域效果
+//---------------------------------------------------------------------------
+*/
 @media (max-width: 767px) {
   .hidden-phone {
     display: none !important;
@@ -16,14 +74,128 @@ body {
   }
 }
 
-/* index */
-#popularKeyword {
-  height: 26px;
-  border-radius: 10px;
-  border: solid 1px #2699fb;
+#goTop {
+  position: fixed;
+  bottom: 100px;
+  right: 8%;
+  cursor: pointer;
+  z-index: 999;
 }
 
-/* text */
+/*
+//---------------------------------------------------------------------------
+// 導覽列 navbar
+//---------------------------------------------------------------------------
+*/
+.navbar {
+  min-height: 80px;
+}
+
+.navbar-default .container-fluid {
+  background-color: #2699fb;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.navbar-default .navbar-header {
+  background-color: #2699fb;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+  padding: 0 15px;
+  height: 80px;
+  line-height: 80px;
+}
+
+.navbar-default .navbar-header .navbar-toggle {
+  margin-top: 23px;
+  padding: 9px 10px !important;
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-default .navbar-header .navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-default .navbar-header .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+  width: 22px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navbar-default .navbar-header .navbar-toggle .top-bar {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 10% 10%;
+          transform-origin: 10% 10%;
+}
+
+.navbar-default .navbar-header .navbar-toggle .middle-bar {
+  opacity: 0;
+}
+
+.navbar-default .navbar-header .navbar-toggle .bottom-bar {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 10% 90%;
+          transform-origin: 10% 90%;
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .top-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-default .navbar-header .navbar-toggle.collapsed .bottom-bar {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.navbar-default .navbar-header .navbar-toggle.navbar-left {
+  float: left;
+  margin-left: 10px;
+}
+
+.navbar-default .navbar-header a {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-collapse li a {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: 26.5px;
+    line-height: 27px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    float: none !important;
+    margin: 0 auto !important;
+    display: block !important;
+    width: 50%;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// index.scss
+//---------------------------------------------------------------------------
+*/
+/* font */
 .text-Oversized {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
   color: #2699fb;
@@ -62,131 +234,70 @@ body {
   }
 }
 
-.text-Large-color-1 {
+.text-Large-0 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
-  color: #2699fb;
+  color: #ffffff;
+  opacity: 0.99;
 }
 
 @media (min-width: 980px) {
-  .text-Large-color-1 {
+  .text-Large-0 {
     font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-Large-color-1 {
+  .text-Large-0 {
     font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-Large-color-1 {
+  .text-Large-0 {
     font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-Large-color-1 {
+  .text-Large-0 {
     font-size: 30px;
   }
 }
 
-.text-Large-color-2 {
+.text-Large-1 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
-  color: #bce0fd;
+  color: #2699fb;
 }
 
 @media (min-width: 980px) {
-  .text-Large-color-2 {
+  .text-Large-1 {
     font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-Large-color-2 {
+  .text-Large-1 {
     font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-Large-color-2 {
+  .text-Large-1 {
     font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-Large-color-2 {
+  .text-Large-1 {
     font-size: 30px;
   }
 }
 
-.text-medium-color-0 {
-  text-align: center;
-  /* 平板電腦 */
-  /* 手機 */
-  color: #ffffff;
-}
-
-@media (min-width: 980px) {
-  .text-medium-color-0 {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-0 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 767px) {
-  .text-medium-color-0 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-medium-color-0 {
-    font-size: 18px;
-  }
-}
-
-.text-medium-color-1 {
-  text-align: center;
-  /* 平板電腦 */
-  /* 手機 */
-  color: #2699fb;
-}
-
-@media (min-width: 980px) {
-  .text-medium-color-1 {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-1 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 767px) {
-  .text-medium-color-1 {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .text-medium-color-1 {
-    font-size: 18px;
-  }
-}
-
-.text-medium-color-2 {
+.text-Large-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -194,61 +305,62 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-medium-color-2 {
-    font-size: 24px;
+  .text-Large-2 {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-medium-color-2 {
-    font-size: 18px;
+  .text-Large-2 {
+    font-size: 30px;
   }
 }
 
-.text-small-color-0 {
+.text-medium-0 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
   color: #ffffff;
+  opacity: 0.99;
 }
 
 @media (min-width: 980px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-0 {
-    font-size: 19px;
+  .text-medium-0 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-0 {
-    font-size: 13px;
+  .text-medium-0 {
+    font-size: 18px;
   }
 }
 
-.text-small-color-1 {
+.text-medium-1 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -256,30 +368,30 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-1 {
-    font-size: 19px;
+  .text-medium-1 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-1 {
-    font-size: 13px;
+  .text-medium-1 {
+    font-size: 18px;
   }
 }
 
-.text-small-color-2 {
+.text-medium-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -287,61 +399,93 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-small-color-2 {
-    font-size: 19px;
+  .text-medium-2 {
+    font-size: 24px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-small-color-2 {
-    font-size: 19px;
+  .text-medium-2 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-small-color-2 {
-    font-size: 19px;
+  .text-medium-2 {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-small-color-2 {
-    font-size: 13px;
+  .text-medium-2 {
+    font-size: 18px;
   }
 }
 
-.text-article-color-1 {
-  color: #2699fb;
+.text-small-0 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  color: #ffffff;
+  opacity: 0.99;
 }
 
 @media (min-width: 980px) {
-  .text-article-color-1 {
+  .text-small-0 {
     font-size: 16px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-article-color-1 {
+  .text-small-0 {
     font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-article-color-1 {
+  .text-small-0 {
     font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-article-color-1 {
+  .text-small-0 {
     font-size: 10px;
   }
 }
 
-.text-article-color-2 {
+.text-small-1 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #2699fb;
+}
+
+@media (min-width: 980px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-small-1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-small-1 {
+    font-size: 10px;
+  }
+}
+
+.text-small-2 {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
@@ -349,72 +493,397 @@ body {
 }
 
 @media (min-width: 980px) {
-  .text-article-color-2 {
+  .text-small-2 {
     font-size: 16px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-  .text-article-color-2 {
+  .text-small-2 {
     font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
-  .text-article-color-2 {
+  .text-small-2 {
     font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .text-article-color-2 {
+  .text-small-2 {
     font-size: 10px;
   }
 }
 
-/* color */
-/* 導覽列 navbar */
-.navbar-default .container-fluid {
-  background-color: #2699fb;
-}
-
-.navbar-default .navbar-header {
-  background-color: #2699fb;
-  /* 漢堡 */
-}
-
-.navbar-default .navbar-header .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-
-.navbar-default .navbar-header a {
-  font-size: 24px;
+.text-article-0 {
   color: #ffffff;
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  opacity: 0.99;
 }
 
-.navbar-default .navbar-collapse li a {
-  font-size: 24px;
-  color: #ffffff;
+@media (min-width: 980px) {
+  .text-article-0 {
+    font-size: 19px;
+  }
 }
 
-.btn-1, .btn-2 {
-  width: 140px;
-  height: 58px;
-  border-radius: 4px;
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-article-0 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-article-0 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-article-0 {
+    font-size: 13px;
+  }
+}
+
+.text-article-1 {
+  color: #2699fb;
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+}
+
+@media (min-width: 980px) {
+  .text-article-1 {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-article-1 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-article-1 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-article-1 {
+    font-size: 13px;
+  }
+}
+
+.text-article-2 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #bce0fd;
+}
+
+@media (min-width: 980px) {
+  .text-article-2 {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .text-article-2 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-article-2 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-article-2 {
+    font-size: 13px;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// Buttom
+//---------------------------------------------------------------------------
+*/
+.Btn-default {
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: alpha(opacity=0) \9;
+  border: 0px;
+  outline: none !important;
+}
+
+/*
+//---------------------------------------------------------------------------
+// Buttom:@extend
+//---------------------------------------------------------------------------
+*/
+/* nomoral Buttom */
+.btn-0, .btn-1 {
+  border-radius: 5px;
+  border: solid 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-0, .btn-1 {
+    width: 140px;
+    height: 58px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .btn-0, .btn-1 {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .btn-0, .btn-1 {
+    width: 108px;
+    height: 44px;
+  }
+}
+
+/* Round Buttom */
+.RoundBtn-0, .RoundBtn-1 {
+  border: solid 1px;
+  border-radius: 15px;
+  display: inline;
+  margin-right: 10px;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .RoundBtn-0, .RoundBtn-1 {
+    width: 110px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .RoundBtn-0, .RoundBtn-1 {
+    width: 110px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .RoundBtn-0, .RoundBtn-1 {
+    width: 80px;
+    height: 30px;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// Buttom:with @extend style
+//---------------------------------------------------------------------------
+*/
+/* nororal Buttom */
+.btn-0 {
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: alpha(opacity=0) \9;
+  border-color: #ffffff;
 }
 
 .btn-1 {
   background-color: #2699fb;
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
-.btn-2 {
-  border: solid 2px #bce0fd;
+/* Round Buttom */
+.RoundBtn-0 {
+  border-color: #ffffff;
+  opacity: 0.9;
 }
 
-#searchBar {
-  height: 60px;
-  border-radius: 10px;
+.RoundBtn-1 {
+  border-color: #2699fb;
+}
+
+/*
+//---------------------------------------------------------------------------
+// imgbox
+//---------------------------------------------------------------------------
+*/
+.img-box {
+  padding: 0px;
+  margin-bottom: 50px;
+}
+
+.img-box .img-innerbox {
+  width: 90%;
+  margin: 0 auto;
+  cursor: pointer;
+  border: solid 1px;
+  border-color: #2699fb;
+  text-align: center;
+}
+
+.img-box .img-innerbox .img {
+  position: relative;
+}
+
+.img-box .img-innerbox .img .main {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+}
+
+.img-box .img-innerbox .img .icon {
+  position: absolute;
+  z-index: 3;
+  top: 3px;
+  left: 3px;
+}
+
+.img-box .img-innerbox .img .corner {
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 80px;
+  top: -1px;
+  left: -1px;
+}
+
+.img-box .img-innerbox hr {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border-color: #2699fb;
+}
+
+.img-box .img-innerbox .base {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 12px;
+  padding-bottom: 8px;
+  background-color: #ffffff;
+}
+
+.img-box .img-innerbox:hover {
+  border: solid 2px;
+  border-color: #2699fb;
+}
+
+.SearchBar-Border {
+  border-radius: 15px;
   border: solid 1px #bce0fd;
   background-color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.SearchBar-Border input {
+  height: 60px;
+  border-radius: 15px;
+  border: 0 none;
+  text-align: left !important;
+}
+
+.SearchBar-Border input::-webkit-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+.SearchBar-Border input:-ms-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+.SearchBar-Border input::-ms-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+.SearchBar-Border input::placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+.SearchBar-Border input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bce0fd;
+}
+
+.SearchBar-Border input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bce0fd;
+}
+
+.SearchBar-Border .btn-group .dropdown-menu a {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  color: #bce0fd;
+  cursor: pointer;
+}
+
+@media (min-width: 980px) {
+  .SearchBar-Border .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .SearchBar-Border .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .SearchBar-Border .btn-group .dropdown-menu a {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .SearchBar-Border .btn-group .dropdown-menu a {
+    font-size: 18px;
+  }
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn {
+  height: 44px;
+  border: none;
+  padding: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn .line {
+  height: 44px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* IE9及其它瀏覽器會執行此行 */
+}
+
+.SearchBar-Border .searchBtn {
+  height: 44px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #2699fb;
+  border: none;
+  margin: 8px;
 }
 /*# sourceMappingURL=style.css.map */
