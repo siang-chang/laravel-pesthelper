@@ -10,16 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-//--------------------------------------------------------------------------
-// support function
-//--------------------------------------------------------------------------
-// [change type] this function can change array to an object.
-function convertArray2Object($defs) {
-    $innerfunc = function ($a) use ( &$innerfunc ) {
-       return (is_array($a)) ? (object) array_map($innerfunc, $a) : $a;
-    };
-    return (object) array_map($innerfunc, $defs);
-}
 /*
 |---------------------------------------------------------------------------
 | 前端區域
@@ -29,27 +19,7 @@ function convertArray2Object($defs) {
 //     return view('ChangTest');
 // });
 Route::get('/chang', function () {
-    $fakedata = [
-        [
-            'keyWord' => '蚜蟲',
-            'keyWordCount' => 1000
-        ], [
-            'keyWord' => '玉米',
-            'keyWordCount' => 200
-        ], [
-            'keyWord' => '三葉蟲',
-            'keyWordCount' => 100
-        ], [
-            'keyWord' => '橡皮蟲',
-            'keyWordCount' => 2
-        ], [
-            'keyWord' => '鳳梨',
-            'keyWordCount' => 1
-        ]
-    ];
-    $keyWordList = convertArray2Object($fakedata);
-    return view('ChangTest', ['keyWordList' => $keyWordList]);
-    // return view('ChangTest', ['keyWordList' => $fakedata]);
+    echo "chang is login123";
 });
 /*
 |---------------------------------------------------------------------------
@@ -88,14 +58,13 @@ Auth::routes();
 #顯示熱門關鍵字
 Route::get('/index', 'SearchController@GetKeywordList');
 #顯示害蟲清單
-Route::get('/pestcatalog', 'catalogController@pestDataList');
+Route::get('/pestcatalog', 'PestController@GetCategoryList');
+
+
 #顯示植株清單
-Route::get('/plantcatalog', 'catalogController@plantDataList');
-Auth::routes();
+Route::get('/plantcatalog', 'PlantController@GetCategoryList');
 
 #害蟲個別頁面
-Route::get('/pestDetailed/{id}', 'pestController@pestDetailed');
-
-//Route::get('successCase/{Case_ID}','FormController@successCase');
-
-Route::get('tank', 'tankController@go');
+Route::get('/pestDetailed/{num}', 'PestController@Detailed');
+#植株個別頁面
+Route::get('/plantDetailed/{num}', 'PlantController@Detailed');

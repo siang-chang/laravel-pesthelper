@@ -4,24 +4,36 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <form method="POST" action="pestDetailed">
-                    @csrf
-                    @foreach($sorts as $sort)
-                    <div class="form-group">
-                        <table>
-                            <tr>
-                                <td>
-                                    {{ $orderNum=$sort->orderNum }}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    @endforeach
-                    @foreach($datas as $data)
-                    {{ $data->pestNum }}
-                    <div class="col-md-2"><a href="pestDetailed/{{ $data->pestNum }}" class="btn btn-primary">123</a></div>
-                    @endforeach
+                @foreach($Data[0] as $sort)
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                {{ $sort->orderNum }}
+                                {{ $sort->pestOrder }}
+                            </td>
+                            <td>
+                                <input type="text" name="searchType" value={{ $sort->orderNum }} hidden>
+                                <button type="submit">更多</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @endforeach
+                @csrf
+                @foreach($Data[1] as $data)
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="col-md-2"><a href="pestDetailed/{{ $data->num }}" class="btn btn-primary">{{ $data->num }}</a></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @endforeach
                 </form>
+
             </div>
         </div>
     </div>
