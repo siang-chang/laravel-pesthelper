@@ -21,7 +21,7 @@
             <!-- 桌面版樣式 Collect the nav links, forms, and other content for toggling -->
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-phone"><a href="#"><img src="img/icon/icon_search_24x24.png" alt="Search"></a></li>
+                    <li class="hidden-phone"><a href="#"><img src="{{ asset('img/icon/icon_search_24x24.png') }}" alt="Search"></a></li>
                     <li><a href="#" class="text-medium-0">害蟲辨識</a></li>
                     <li><a href="/pesthelper/public/_pestcatalog" class="text-medium-0">害蟲目錄</a></li>
                     <li><a href="#" class="text-medium-0">植株目錄</a></li>

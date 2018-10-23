@@ -109,6 +109,7 @@ Route::get('/_pestcatalog', function () {
     $categoryList = convertArray2Object($fakedata);
     return view('site/pestcatalog', ['categoryList' => $categoryList]);
 });
+Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 /*
 //---------------------------------------------------------------------------
 // 後端區域
