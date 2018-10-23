@@ -76,8 +76,10 @@ a:hover {
 
 #goTop {
   position: fixed;
-  bottom: 100px;
-  right: 8%;
+  width: 50px;
+  height: 50px;
+  bottom: 101px;
+  right: 8.6%;
   cursor: pointer;
   z-index: 999;
 }
@@ -616,8 +618,8 @@ a:hover {
 //---------------------------------------------------------------------------
 */
 .Btn-default {
-  background-color: rgba(255, 255, 255, 0.1);
-  filter: alpha(opacity=0) \9;
+  background-color: rgba(255, 255, 255, 0);
+  filter: alpha(opacity=0) \10;
   border: 0px;
   outline: none !important;
 }
@@ -659,10 +661,11 @@ a:hover {
   border: solid 1px;
   border-radius: 15px;
   display: inline;
-  margin-right: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
   padding: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 @media only screen and (min-width: 768px) {

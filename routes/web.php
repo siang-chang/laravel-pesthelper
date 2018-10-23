@@ -26,32 +26,29 @@ function convertArray2Object($defs)
 // 前端區域
 //---------------------------------------------------------------------------
  */
-// Route::get('/chang', function () {
-//     return view('ChangTest');
+Route::get('/_index', 'SearchController@GetKeywordList');
+// Route::get('/_index', function () {
+//     $fakedata = [
+//         [
+//             'keyWord' => '蚜蟲',
+//             'keyWordCount' => 1000
+//         ], [
+//             'keyWord' => '玉米',
+//             'keyWordCount' => 200
+//         ], [
+//             'keyWord' => '三葉蟲',
+//             'keyWordCount' => 100
+//         ], [
+//             'keyWord' => '橡皮蟲',
+//             'keyWordCount' => 2
+//         ], [
+//             'keyWord' => '鳳梨',
+//             'keyWordCount' => 1
+//         ]
+//     ];
+//     $keyWordList = convertArray2Object($fakedata);
+//     return view('site/index', ['keyWordList' => $keyWordList]);
 // });
-
-Route::get('/_index', function () {
-    $fakedata = [
-        [
-            'keyWord' => '蚜蟲',
-            'keyWordCount' => 1000
-        ], [
-            'keyWord' => '玉米',
-            'keyWordCount' => 200
-        ], [
-            'keyWord' => '三葉蟲',
-            'keyWordCount' => 100
-        ], [
-            'keyWord' => '橡皮蟲',
-            'keyWordCount' => 2
-        ], [
-            'keyWord' => '鳳梨',
-            'keyWordCount' => 1
-        ]
-    ];
-    $keyWordList = convertArray2Object($fakedata);
-    return view('site/index', ['keyWordList' => $keyWordList]);
-});
 Route::get('/search', function () {
     $fakedata = [
         [
@@ -121,10 +118,7 @@ Route::get('/', function () {
 });
 Route::get('/home', 'HomeController@index')->name('home');
 
-#導向搜尋頁面
-Route::get('/index', function () {
-    return view('index');
-});
+
 #導向害蟲目錄
 Route::get('/pestcatalog', function () {
     return view('pestcatalog');
@@ -146,7 +140,6 @@ Route::get('/searchResults', function () {
 });
 Auth::routes();
 #顯示熱門關鍵字
-Route::get('/index', 'SearchController@GetKeywordList');
 #顯示害蟲清單
 Route::get('/pestcatalog', 'PestController@GetCategoryList');
 

@@ -4,8 +4,8 @@
 //---------------------------------------------------------------------------
 */
 .Btn-default {
-    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
-    filter: alpha(opacity=0) \9; // IE8
+    background-color: rgba(255, 255, 255, 0); // IE9及其它瀏覽器會執行此行
+    filter: alpha(opacity=0) \10; // IE8
     border: 0px;
     outline: none !important;
 }
@@ -43,10 +43,11 @@
     border-radius: 15px;
     // position
     display: inline;
-    margin-right: 10px;
+    margin-left: 3px;
+    margin-right: 3px;
     padding: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
 
     @include RWD(pc) {
         width: 110px;

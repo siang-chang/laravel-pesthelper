@@ -17,7 +17,8 @@
         </form>
         @endforeach
         <div>
-            {{-- {{  }} --}}
+            {{-- {{ $pestCategoryData or 'Default' }} --}}
+            {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }}
         </div>
     </div>
 </div>
