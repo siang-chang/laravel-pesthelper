@@ -29,6 +29,7 @@ function convertArray2Object($defs)
 // Route::get('/chang', function () {
 //     return view('ChangTest');
 // });
+
 Route::get('/_index', function () {
     $fakedata = [
         [
@@ -147,14 +148,13 @@ Auth::routes();
 #顯示熱門關鍵字
 Route::get('/index', 'SearchController@GetKeywordList');
 #顯示害蟲清單
-Route::get('/pestcatalog', 'catalogController@pestDataList');
+Route::get('/pestcatalog', 'PestController@GetCategoryList');
+
+
 #顯示植株清單
-Route::get('/plantcatalog', 'catalogController@plantDataList');
-Auth::routes();
+Route::get('/plantcatalog', 'PlantController@GetCategoryList');
 
 #害蟲個別頁面
-Route::get('/pestDetailed/{id}', 'pestController@pestDetailed');
-
-//Route::get('successCase/{Case_ID}','FormController@successCase');
-
-Route::get('tank', 'tankController@go');
+Route::get('/pestDetailed/{num}', 'PestController@Detailed');
+#植株個別頁面
+Route::get('/plantDetailed/{num}', 'PlantController@Detailed');

@@ -1,22 +1,38 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            @foreach($sort as $sort)
-                <div class="form-group"> 
+                @foreach($Data[0] as $sort)
+                <div class="form-group">
                     <table>
                         <tr>
                             <td>
-                                {{ $familyNum=$sort->familyNum }}
-                                {{ DB::table('plantdata')->where('familyNum',$familyNum)->get() }}
+                                {{ $sort->familyNum }}
+                                {{ $sort->plantFamily }}
+                            </td>
+                            <td>
+                                <input type="text" name="searchType" value={{ $sort->familyNum }} hidden>
+                                <button type="submit">更多</button>
                             </td>
                         </tr>
                     </table>
                 </div>
-            @endforeach
+                @endforeach
+                @csrf
+                @foreach($Data[1] as $data)
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="col-md-2"><a href="plantDetailed/{{ $data->num }}" class="btn btn-primary">{{ $data->num }}</a></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @endforeach
+                </form>
 
             </div>
         </div>
