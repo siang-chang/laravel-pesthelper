@@ -1,6 +1,77 @@
-#searchBar {
-    height: 60px;
-    border-radius: 10px;
+.SearchBar-Border {
+    // style
+    border-radius: 15px;
     border: solid 1px #bce0fd;
     background-color: #ffffff;
-  }
+    // position
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    input {
+        height: 60px;
+        -webkit-border-radius: 15px;
+        border-radius: 15px;
+        border: 0 none;
+        text-align: left !important;
+
+
+    }
+    // placeholder style : font-color
+    input::placeholder {
+        color: $font-color-2;
+        /* Firefox */
+    }
+    input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $font-color-2;
+    }
+
+    input::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $font-color-2;
+    }
+
+    // SearchType 選單 , 行動版不顯示
+    .btn-group {
+        .dropdown-menu {
+            a {
+                @include text(24);
+                color: $font-color-2;
+                cursor: pointer;
+            }
+        }
+
+        .searchTypeBtn {
+            height: 44px;
+            border: none;
+            padding: 0px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            filter: alpha(opacity=0) \9;
+            /* IE8 */
+            background-color: rgba(255, 255, 255, .1);
+
+            /* IE9及其它瀏覽器會執行此行 */
+            .line {
+                height: 44px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                filter: alpha(opacity=0) \9;
+                /* IE8 */
+                background-color: rgba(255, 255, 255, .1);
+                /* IE9及其它瀏覽器會執行此行 */
+            }
+        }
+    }
+
+    // Search Buttom
+    .searchBtn {
+        height: 44px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: $btn-color-1;
+        border: none;
+        margin: 8px;
+        // border-color: rgba(255, 255, 255, .9);
+    }
+}

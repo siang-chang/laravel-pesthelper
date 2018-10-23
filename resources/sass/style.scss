@@ -1,8 +1,15 @@
 // 導入 Noto-sans-CJK-TC 字型
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import "style/mixin";  // 全域變數 & @Mixin
+@import "style/extend";  // 合併樣式 @extend
+@import "style/layout"; // 網頁共同框架 ex：navbar, header, footer
+@import "style/index";  // 首頁設計
 
-@import "style/color";
-@import "style/nav";
+// 通用元件
+@import "style/font";
 @import "style/buttom";
+@import "style/imgbox";
 
+// 特殊元件
 @import "style/searchBar";
+
