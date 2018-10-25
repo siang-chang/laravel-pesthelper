@@ -80,13 +80,24 @@ a:hover {
 .navbar {
     min-height: 80px;
 }
-
+#nav-search {
+    /* position */
+    position: absolute;
+    top:0px;
+    right: 50%;
+    z-index: 999;
+    /* style */
+    width: 80%;
+    height: 80px;
+    background-color: #ffffff;
+}
 // 更改 navbar-brand 高度
 .navbar-default {
     .container-fluid {
         background-color: $bg-color-1;
         padding-left: 25px;
         padding-right: 25px;
+
     }
 
     .navbar-header {
@@ -191,3 +202,5 @@ a:hover {
 
     }
 }
+
+

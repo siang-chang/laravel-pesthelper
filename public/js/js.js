@@ -1,7 +1,8 @@
-/* goToTop 回置頁面頂端 */
+/* Document Ready */
 $(function () {
+    /* goToTop 回置頁面頂端 */
     $("#goTop").click(function () {
-        jQuery("html,body").animate({
+        $("html,body").animate({
             scrollTop: 0
         }, 1000);
     });
@@ -12,4 +13,7 @@ $(function () {
             $('#gotop').stop().fadeOut("fast");
         }
     });
+
+
+
 });

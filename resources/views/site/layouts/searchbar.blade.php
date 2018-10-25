@@ -31,13 +31,13 @@
 <script>
     function changSearchType(searchType) {
         if (searchType == "pest") {
-            searchTypeText = document.getElementById("searchPest").innerHTML;
+            searchTypeText = $("#searchPest").html();
         } else if (searchType == "plant") {
-            searchTypeText = document.getElementById("searchPlant").innerHTML;
+            searchTypeText = $("#searchPlant").html();
         } else {
-            searchTypeText = document.getElementById("searchArea").innerHTML;
+            searchTypeText = $("#searchArea").html();
         }
-        document.getElementById("searchType").innerHTML = searchTypeText;
+        $("#searchType").html(searchTypeText);
     }
 
 </script>
