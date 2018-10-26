@@ -26,29 +26,29 @@ function convertArray2Object($defs)
 // 前端區域
 //---------------------------------------------------------------------------
  */
-// Route::get('/_index', 'SearchController@GetKeywordList');
-Route::get('/_index', function () {
-    $fakedata = [
-        [
-            'keyWord' => '蚜蟲',
-            'keyWordCount' => 1000
-        ], [
-            'keyWord' => '玉米',
-            'keyWordCount' => 200
-        ], [
-            'keyWord' => '三葉蟲',
-            'keyWordCount' => 100
-        ], [
-            'keyWord' => '橡皮蟲',
-            'keyWordCount' => 2
-        ], [
-            'keyWord' => '鳳梨',
-            'keyWordCount' => 1
-        ]
-    ];
-    $keyWordList = convertArray2Object($fakedata);
-    return view('site/index', ['keyWordList' => $keyWordList]);
-});
+Route::get('/_index', 'SearchController@GetKeywordList');
+// Route::get('/_index', function () {
+//     $fakedata = [
+//         [
+//             'keyWord' => '蚜蟲蟲',
+//             'keyWordCount' => 1000
+//         ], [
+//             'keyWord' => '玉米子',
+//             'keyWordCount' => 200
+//         ], [
+//             'keyWord' => '三葉蟲',
+//             'keyWordCount' => 100
+//         ], [
+//             'keyWord' => '橡皮蟲',
+//             'keyWordCount' => 2
+//         ], [
+//             'keyWord' => '鳳梨王',
+//             'keyWordCount' => 1
+//         ]
+//     ];
+//     $keyWordList = convertArray2Object($fakedata);
+//     return view('site/index', ['keyWordList' => $keyWordList]);
+// });
 Route::get('/search', function () {
     $fakedata = [
         [
@@ -132,7 +132,7 @@ Route::get('/plantcatalog', function () {
 //Route::post('/search','SearchController@KeywordCount');
 //Auth::routes();
 #搜尋
-Route::post('/search', 'SearchController@Search');
+Route::get('/search', 'SearchController@Search');
 Auth::routes();
 #顯示搜尋結果
 Route::get('/searchResults', function () {

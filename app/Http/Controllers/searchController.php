@@ -10,6 +10,8 @@ class SearchController extends Controller
     public function Search(Request $request)
     {
         $searchType = $request->searchType;
+        // $searchType = "it is good!";
+
         $keyWord = $request->keyword;
         if ($searchType == "area") {
             $searchResults = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
@@ -51,8 +53,6 @@ class SearchController extends Controller
         $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
         //dd($keywordList);
         return view('site/index', ['keyWordList' => $keyWordList]);
-
-
 
     }
 }

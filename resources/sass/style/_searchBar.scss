@@ -7,20 +7,26 @@
     margin-top: 20px;
     margin-bottom: 20px;
 
-    input {
+    #searchBar {
         height: 60px;
         -webkit-border-radius: 15px;
         border-radius: 15px;
         border: 0 none;
         text-align: left !important;
 
-
     }
+
+    // 關閉 Chrome focus 時藍色、金色外框
+    input:focus {
+        outline: 0;
+    }
+
     // placeholder style : font-color
     input::placeholder {
         color: $font-color-2;
         /* Firefox */
     }
+
     input:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
         color: $font-color-2;
@@ -42,16 +48,37 @@
         }
 
         .searchTypeBtn {
-            height: 44px;
+            height: 60px;
             border: none;
             padding: 0px;
-            margin-top: 8px;
-            margin-bottom: 8px;
+            margin-top: 0px;
+            margin-bottom: 0px;
             filter: alpha(opacity=0) \9;
             /* IE8 */
             background-color: rgba(255, 255, 255, .1);
 
             /* IE9及其它瀏覽器會執行此行 */
+            input {
+                width: 105px;
+                border: 0 none;
+                // style
+                cursor: pointer;
+                filter: alpha(opacity=0) \9;
+                /* IE8 */
+                background-color: rgba(255, 255, 255, .1);
+
+
+
+            }
+            // 修改 inputbox 的選取顏色，造成沒有被選取的假象
+            input::selection {
+                background: $bg-color-0;
+            }
+
+            input::-moz-selection {
+                background: $bg-color-0;
+            }
+
             .line {
                 height: 44px;
                 margin-top: 8px;

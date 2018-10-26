@@ -22,6 +22,9 @@
                             </select>
                             <button type="submit">搜尋</button>
                         </div>
+                        <div style="width:100px;height:50px;background-color:red;color:black">
+                            {{ $searchType }}
+                        </div>
                     </form>
 
 

@@ -2,20 +2,21 @@
 @mixin text($font-size) {
     text-align: center;
 
-    @media (min-width: 980px) {
+    @media (min-width: 992px) {
         font-size: $font-size + px;
     }
 
     /* 平板電腦 */
-    @media (min-width: 768px) and (max-width: 979px) {
-        font-size: $font-size + px;
-    }
-
-    @media (max-width: 767px) {
+    @media (min-width: 768px) and (max-width: 991px) {
         font-size: $font-size + px;
     }
 
     /* 手機 */
+    @media (max-width: 767px) {
+        font-size: $font-size + px;
+    }
+
+    /* 小手機 */
     @media (max-width: 480px) {
         font-size: $font-size - 6 + px;
     }
@@ -32,12 +33,12 @@
     text-align: center;
     padding: 0px;
 
-    @media (min-width: 980px) {
+    @media (min-width: 992px) {
         font-size: 56px;
     }
 
     /* 平板電腦 */
-    @media (min-width: 768px) and (max-width: 979px) {
+    @media (min-width: 768px) and (max-width: 991px) {
         font-size: 48px;
     }
 
@@ -114,4 +115,3 @@
     @include text(19);
     color: $font-color-2;
 }
-

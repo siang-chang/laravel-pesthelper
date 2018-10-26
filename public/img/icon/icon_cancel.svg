@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #2699fb;
+      }
+    </style>
+  </defs>
+  <g id="取消搜尋" transform="translate(-283 -86)">
+    <rect id="Rectangle_1445" data-name="Rectangle 1445" class="cls-1" width="19.2" height="19.2" transform="translate(283 86)"/>
+    <path id="Path_206" data-name="Path 206" class="cls-2" d="M0,0H30.855V3.086H0Z" transform="translate(285.182 86) rotate(45)"/>
+    <path id="Path_207" data-name="Path 207" class="cls-2" d="M0,0H30.855V3.086H0Z" transform="translate(283 107.818) rotate(-45)"/>
+  </g>
+</svg>

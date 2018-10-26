@@ -60,6 +60,10 @@ a:hover {
   font-size: 16px;
   color: #ffffff;
   background-color: #2699fb;
+  -moz-user-select: none;
+  /* for Firefox */
+  -webkit-user-select: none;
+  /* for chrome */
 }
 
 /*
@@ -69,6 +73,20 @@ a:hover {
 */
 @media (max-width: 767px) {
   .hidden-phone {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .hidden-tab {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hidden-pc {
     display: none !important;
     visibility: hidden !important;
   }
@@ -96,34 +114,82 @@ a:hover {
 #nav-search {
   /* position */
   position: absolute;
-  top: 0px;
-  right: 50%;
   z-index: 999;
+  line-height: 73px;
   /* style */
-  width: 100px;
+  width: 100%;
   height: 80px;
+}
+
+#nav-search #navSearchBar {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
   background-color: #ffffff;
+  border: solid 2px;
+  border-color: #2699fb;
+}
+
+#nav-search input::-webkit-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+#nav-search input:-ms-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+#nav-search input::-ms-input-placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+#nav-search input::placeholder {
+  color: #bce0fd;
+  /* Firefox */
+}
+
+#nav-search input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bce0fd;
+}
+
+#nav-search input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bce0fd;
+}
+
+#nav-search a {
+  position: absolute;
+  z-index: 1000;
+  top: 2px;
+  right: 28px;
 }
 
 .navbar-default .container-fluid {
   background-color: #2699fb;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .navbar-default .navbar-header {
   background-color: #2699fb;
+  margin-right: -20px;
+  margin-left: 0px;
 }
 
 .navbar-default .navbar-header .navbar-brand {
-  padding: 0 15px;
+  padding: 0 0px;
   height: 80px;
   line-height: 80px;
+  margin-left: 5px;
 }
 
 .navbar-default .navbar-header .navbar-toggle {
-  margin-top: 23px;
-  padding: 9px 10px !important;
+  padding: 0px 0px !important;
+  margin-top: 32px;
+  line-height: 0px;
   border: none;
   background: transparent !important;
 }
@@ -173,7 +239,10 @@ a:hover {
 
 .navbar-default .navbar-header .navbar-toggle.navbar-left {
   float: left;
-  margin-left: 10px;
+}
+
+.navbar-default .navbar-header .navbar-toggle.navbar-right .Btn-default {
+  margin-top: -3.5px;
 }
 
 .navbar-default .navbar-header a {
@@ -186,16 +255,19 @@ a:hover {
   color: #ffffff;
 }
 
-@media (min-width: 768px) {
-  .navbar-nav > li > a {
+@media (min-width: 992px) {
+  .navbar-nav li a {
     /* (80px - line-height of 27px) / 2 = 26.5px */
     padding-top: 26.5px;
     padding-bottom: 26.5px;
     line-height: 27px;
   }
+  .navbar-nav .hidden-tab a {
+    line-height: 20px;
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .navbar-brand {
     float: none !important;
     margin: 0 auto !important;
@@ -224,13 +296,13 @@ a:hover {
   /* 手機 */
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-Oversized {
     font-size: 56px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-Oversized {
     font-size: 48px;
   }
@@ -252,17 +324,18 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #ffffff;
   opacity: 0.99;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-Large-0 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-Large-0 {
     font-size: 36px;
   }
@@ -284,16 +357,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #2699fb;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-Large-1 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-Large-1 {
     font-size: 36px;
   }
@@ -315,16 +389,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #bce0fd;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-Large-2 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-Large-2 {
     font-size: 36px;
   }
@@ -346,17 +421,18 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #ffffff;
   opacity: 0.99;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-medium-0 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-medium-0 {
     font-size: 24px;
   }
@@ -378,16 +454,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #2699fb;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-medium-1 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-medium-1 {
     font-size: 24px;
   }
@@ -409,16 +486,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #bce0fd;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-medium-2 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-medium-2 {
     font-size: 24px;
   }
@@ -440,17 +518,18 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #ffffff;
   opacity: 0.99;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-small-0 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-small-0 {
     font-size: 16px;
   }
@@ -472,16 +551,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #2699fb;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-small-1 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-small-1 {
     font-size: 16px;
   }
@@ -503,16 +583,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #bce0fd;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-small-2 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-small-2 {
     font-size: 16px;
   }
@@ -535,16 +616,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   opacity: 0.99;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-article-0 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-article-0 {
     font-size: 19px;
   }
@@ -567,15 +649,16 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-article-1 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-article-1 {
     font-size: 19px;
   }
@@ -597,16 +680,17 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #bce0fd;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .text-article-2 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .text-article-2 {
     font-size: 19px;
   }
@@ -647,21 +731,21 @@ a:hover {
   border: solid 2px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .btn-0, .btn-1 {
     width: 140px;
     height: 58px;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .btn-0, .btn-1 {
     width: 120px;
     height: 50px;
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .btn-0, .btn-1 {
     width: 108px;
     height: 44px;
@@ -680,7 +764,14 @@ a:hover {
   padding-right: 4px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
+  .RoundBtn-0, .RoundBtn-1 {
+    width: 110px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
   .RoundBtn-0, .RoundBtn-1 {
     width: 110px;
     height: 40px;
@@ -688,13 +779,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-  .RoundBtn-0, .RoundBtn-1 {
-    width: 110px;
-    height: 40px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
   .RoundBtn-0, .RoundBtn-1 {
     width: 80px;
     height: 30px;
@@ -802,11 +886,15 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.SearchBar-Border input {
+.SearchBar-Border #searchBar {
   height: 60px;
   border-radius: 15px;
   border: 0 none;
   text-align: left !important;
+}
+
+.SearchBar-Border input:focus {
+  outline: 0;
 }
 
 .SearchBar-Border input::-webkit-input-placeholder {
@@ -843,17 +931,18 @@ a:hover {
   text-align: center;
   /* 平板電腦 */
   /* 手機 */
+  /* 小手機 */
   color: #bce0fd;
   cursor: pointer;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
@@ -872,15 +961,36 @@ a:hover {
 }
 
 .SearchBar-Border .btn-group .searchTypeBtn {
-  height: 44px;
+  height: 60px;
   border: none;
   padding: 0px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   filter: alpha(opacity=0) \9;
   /* IE8 */
   background-color: rgba(255, 255, 255, 0.1);
   /* IE9及其它瀏覽器會執行此行 */
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn input {
+  width: 105px;
+  border: 0 none;
+  cursor: pointer;
+  filter: alpha(opacity=0) \9;
+  /* IE8 */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn input::-moz-selection {
+  background: #ffffff;
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn input::selection {
+  background: #ffffff;
+}
+
+.SearchBar-Border .btn-group .searchTypeBtn input::-moz-selection {
+  background: #ffffff;
 }
 
 .SearchBar-Border .btn-group .searchTypeBtn .line {
