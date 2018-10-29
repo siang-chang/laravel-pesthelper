@@ -29,5 +29,19 @@ class PestController extends Controller
 
         return view($page, compact('Data'));
 
-    }   
+    } 
+    public function imageUpload()
+    {
+        return view('imageUpload');
+    }
+    public function imageUploadPost()
+    {
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('pestimg'), $imageName);
+        return back()
+            ->with('image', $imageName);
+    }
 }
