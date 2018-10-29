@@ -17,7 +17,24 @@
         </form>
         @endforeach
         <div>
-            {{-- {{  }} --}}
+            {{-- {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }} --}}
+            @if(!empty($pestCategoryData))
+            @foreach($pestCategoryData as $pestCategory)
+            <div>
+                num = {{ $pestCategory->num }};
+            </div>
+            <div>
+                name = {{ $pestCategory->name }};
+            </div>
+            <div>
+                scientificName = {{ $pestCategory->scientificName }};
+            </div>
+            <hr>
+            @endforeach
+
+            @endif
+
+
         </div>
     </div>
 </div>

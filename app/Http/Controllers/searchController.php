@@ -11,6 +11,8 @@ class SearchController extends Controller
     public function Search(Request $request)
     {
         $searchType = $request->searchType;
+        // $searchType = "it is good!";
+
         $keyWord = $request->keyword;
         if ($searchType == "全部類別") {
             $searchResults = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
@@ -48,11 +50,9 @@ class SearchController extends Controller
 
     public function GetKeywordList()
     {
-        $keywordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
-        return view('index', compact('keywordList'));
-        
-            //資料說明：熱門關鍵字清單，取出前5項'keyword'=>'蚜蟲','searchCount'=>1000],['keyword'=>'三頁蟲','searchCount'=>549
-
-
+        //資料說明：熱門關鍵字清單，取出前5項'keyword'=>'蚜蟲','searchCount'=>1000],['keyword'=>'三頁蟲','searchCount'=>549
+        $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
+        //dd($keywordList);
+        return view('site/index', ['keyWordList' => $keyWordList]);
     }
 }

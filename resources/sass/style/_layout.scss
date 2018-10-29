@@ -47,6 +47,10 @@ a:hover {
     font-size: 16px;
     color: $font-color-0;
     background-color: $bg-color-1;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for chrome */
 }
 
 /*
@@ -61,10 +65,26 @@ a:hover {
     }
 }
 
+.hidden-tab {
+    @media (max-width: 991px) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+.hidden-pc {
+    @media (min-width: 992px) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
 #goTop {
     position: fixed;
-    bottom: 100px;
-    right: 8%;
+    width: 50px;
+    height: 50px;
+    bottom: 101px;
+    right: 8.6%;
     cursor: pointer;
     z-index: 999;
 }
@@ -79,28 +99,77 @@ a:hover {
     min-height: 80px;
 }
 
+#nav-search {
+    /* position */
+    position: absolute;
+    z-index: 999;
+    line-height: 73px;
+    /* style */
+    width: 100%;
+    height: 80px;
+
+    #navSearchBar {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: $bg-color-0;
+        border: solid 2px;
+        border-color: $border-color-1;
+        // background-color: rgba(255, 255, 255, .5); // IE9及其它瀏覽器會執行此行
+        // filter: alpha(opacity=0) \5; // IE8
+    }
+
+    // placeholder style : font-color
+    input::placeholder {
+        color: $font-color-2;
+        /* Firefox */
+    }
+
+    input:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $font-color-2;
+    }
+
+    input::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $font-color-2;
+    }
+
+    a {
+        position: absolute;
+        z-index: 1000;
+        top: 2px;
+        right: 28px;
+    }
+
+}
+
 // 更改 navbar-brand 高度
 .navbar-default {
     .container-fluid {
         background-color: $bg-color-1;
-        padding-left: 25px;
-        padding-right: 25px;
+        padding-left: 28px;
+        padding-right: 28px;
     }
 
     .navbar-header {
         background-color: $bg-color-1;
+        margin-right: -20px;
+        margin-left: 0px;
 
         .navbar-brand {
-            padding: 0 15px;
+            // Web title position
+            padding: 0 0px;
             height: 80px;
             line-height: 80px;
+            margin-left: 5px;
         }
 
         .navbar-toggle {
             // (80px - button height 34px) / 2 = 23px
-            margin-top: 23px;
-            padding: 9px 10px !important;
-
+            padding: 0px 0px !important;
+            margin-top: 32px;
+            line-height: 0px;
             // 清除漢堡圖標的外框
             border: none;
             background: transparent !important;
@@ -150,7 +219,12 @@ a:hover {
         // 將 "漢堡圖標" 移往左邊
         .navbar-toggle.navbar-left {
             float: left;
-            margin-left: 10px;
+        }
+
+        .navbar-toggle.navbar-right {
+            .Btn-default {
+                margin-top: -3.5px;
+            }
         }
 
         a {
@@ -170,17 +244,29 @@ a:hover {
 
 }
 
-@media (min-width: 768px) {
-    .navbar-nav>li>a {
-        /* (80px - line-height of 27px) / 2 = 26.5px */
-        padding-top: 26.5px;
-        padding-bottom: 26.5px;
-        line-height: 27px;
+// 調整 Navbar 網站連結的行距，使其置中
+@media (min-width: 992px) {
+    .navbar-nav {
+        li {
+            a {
+                /* (80px - line-height of 27px) / 2 = 26.5px */
+                padding-top: 26.5px;
+                padding-bottom: 26.5px;
+                line-height: 27px;
+            }
+        }
+
+        .hidden-tab {
+            a {
+                line-height: 20px;
+            }
+        }
+
     }
 }
 
 // navbar-brand 只有在螢幕寬度低於 768px 的時候才會置中
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
     .navbar-brand {
         float: none !important;
         margin: 0 auto !important;
