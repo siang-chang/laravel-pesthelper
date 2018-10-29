@@ -133,6 +133,10 @@ Route::get('/pestcatalog', function () {
 Route::get('/plantcatalog', function () {
     return view('plantcatalog');
 });
+#導向圖片上傳
+Route::get('/imageUpload', function () {
+    return view('imageUpload');
+});
 
 #抓取關鍵字
 //Route::post('/search','SearchController@KeywordCount');
@@ -158,3 +162,7 @@ Route::get('/plantcatalog', 'PlantController@GetCategoryList');
 Route::get('/pestDetailed/{num}', 'PestController@Detailed');
 #植株個別頁面
 Route::get('/plantDetailed/{num}', 'PlantController@Detailed');
+
+// 圖片上傳
+Route::get('imageupload', 'PestController@imageUpload')->name('image.upload');
+Route::post('imageupload', 'PestController@imageUploadPost')->name('image.upload.post');
