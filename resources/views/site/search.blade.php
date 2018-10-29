@@ -15,11 +15,11 @@
             <div id="{{ $results->num }}" class="img-innerbox" onclick="alert('123');">
                 <div class="img">
                     @if($results->type == 'pest')
-                    <img class="icon" src="img/icon/icon_pest.png">
+                    <img class="icon" src="img/icon/icon_pest.svg" width="56">
                     @else
-                    <img class="icon" src="img/icon/icon_plant.png">
+                    <img class="icon" src="img/icon/icon_plant.svg" width="56">
                     @endif
-                    <img class="corner" src="img/corner.png">
+                    <img class="corner" src="img/corner.svg" width="80">
                     <img class="main" src="img/image.jpg" alt="">
                 </div>
                 <hr />
@@ -31,7 +31,10 @@
         </div>
         @endforeach
     </div>
-    <button id="goTop" class="Btn-default"><img src="img/icon/up.png" alt="GoToTop"></button>
+    <button id="goTop" class="Btn-default">
+        <img src="img/icon/up.svg" width="40" height="40" alt="GoToTop">
+    </button>
+
 </div>
 
 @stop

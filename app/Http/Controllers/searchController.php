@@ -11,6 +11,8 @@ class SearchController extends Controller
     public function Search(Request $request)
     {
         $searchType = $request->searchType;
+        // $searchType = "it is good!";
+
         $keyWord = $request->keyword;
         if ($searchType == "植株") {
             $searchResults = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
