@@ -16,9 +16,9 @@
                             <input type="text" name="keyword" value="{{ $keyWord }}">
                             <label>類別:</label>
                             <select class="form-group" name="searchType">
-                                <option value="area">全部</option>
                                 <option value="pest">害蟲</option>
                                 <option value="plant">植株</option>
+                                <option value="area">全部</option>
                             </select>
                             <button type="submit">搜尋</button>
                         </div>
