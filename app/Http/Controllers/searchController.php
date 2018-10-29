@@ -48,7 +48,7 @@ class SearchController extends Controller
 
     public function GetKeywordList()
     {
-        $keywordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
-        return view('index', compact('keywordList'));
+        $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
+        return view('site/index', ['keyWordList' => $keyWordList]);
     }
 }
