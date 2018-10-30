@@ -17,10 +17,14 @@
     <!-- Popular Keyword -->
     <div class="row">
         <div class="col-xs-12">
-            @foreach($keyWordList as $keyWord)
-            <a href="#" id="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">{{
-                $keyWord->keyWord }}</a>
-            @endforeach
+            <form action="search" method="GET">
+                @csrf
+                @foreach($keyWordList as $keyWord)
+                <button type="submit" name="keyword" value="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">
+                    {{ $keyWord->keyWord }}
+                </button>
+                @endforeach
+            </form>
         </div>
     </div>
     <!-- 其他呼籲 Other Function -->

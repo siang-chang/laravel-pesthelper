@@ -49,44 +49,12 @@ Route::get('/_index', 'SearchController@GetKeywordList');
 //     $keyWordList = convertArray2Object($fakedata);
 //     return view('site/index', ['keyWordList' => $keyWordList]);
 // });
-Route::get('/search', function () {
-    $fakedata = [
-        [
-            'type' => 'pest',
-            'num' => 'A001',
-            'name' => '蚜蟲',
-            'scientificName' => 'Aphidoidea',
-            'img' => 'Link:somewhere'
+#搜尋
+Route::get('/search', 'SearchController@Search');
+#抓取關鍵字
+// Route::get('/search','SearchController@KeywordCount');
+// Auth::routes();
 
-        ], [
-            'type' => 'plant',
-            'num' => 'B002',
-            'name' => '菜菜2',
-            'scientificName' => 'Aphidoidea',
-            'img' => 'Link:somewhere'
-        ], [
-            'type' => 'pest',
-            'num' => 'A003',
-            'name' => '蚜蟲3',
-            'scientificName' => 'Aphidoidea',
-            'img' => 'Link:somewhere'
-        ], [
-            'type' => 'plant',
-            'num' => 'B004',
-            'name' => '菜',
-            'scientificName' => 'Aphidoidea',
-            'img' => 'Link:somewhere'
-        ], [
-            'type' => 'pest',
-            'num' => 'A005',
-            'name' => '蚜蟲5',
-            'scientificName' => 'Aphidoidea',
-            'img' => 'Link:somewhere'
-        ]
-    ];
-    $searchResults = convertArray2Object($fakedata);
-    return view('site/search', ['searchResults' => $searchResults]);
-});
 Route::get('/_pestcatalog', function () {
     $fakedata = [
         [
@@ -132,11 +100,8 @@ Route::get('/imageUpload', function () {
     return view('imageUpload');
 });
 
-#抓取關鍵字
-//Route::post('/search','SearchController@KeywordCount');
-//Auth::routes();
-#搜尋
-Route::get('/search', 'SearchController@Search');
+
+
 Auth::routes();
 #顯示搜尋結果
 Route::get('/searchResults', function () {

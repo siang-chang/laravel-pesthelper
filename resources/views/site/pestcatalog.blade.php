@@ -11,7 +11,7 @@
         @foreach($categoryList as $category)
         <div id="{{ $category->categoryNum }}">{{ $category->categoryName }}</div>
         <form action='{{ url("/_pestcatalog/$category->categoryNum") }}' method="POST">
-            {{ csrf_field() }}
+            @csrf
             <!-- csrf一定要放在form的下一行 -->
             <input type="submit" value="show">
         </form>

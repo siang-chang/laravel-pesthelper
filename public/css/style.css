@@ -756,33 +756,14 @@ a:hover {
 .RoundBtn-0, .RoundBtn-1 {
   border: solid 1px;
   border-radius: 15px;
+  filter: alpha(opacity=0) \10;
+  background-color: rgba(255, 255, 255, 0);
   display: inline;
   margin-left: 3px;
   margin-right: 3px;
-  padding: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-@media only screen and (min-width: 992px) {
-  .RoundBtn-0, .RoundBtn-1 {
-    width: 110px;
-    height: 40px;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .RoundBtn-0, .RoundBtn-1 {
-    width: 110px;
-    height: 40px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .RoundBtn-0, .RoundBtn-1 {
-    width: 80px;
-    height: 30px;
-  }
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 /*
@@ -804,8 +785,12 @@ a:hover {
 
 /* Round Buttom */
 .RoundBtn-0 {
-  border-color: #ffffff;
   opacity: 0.9;
+  border-color: #ffffff;
+}
+
+.RoundBtn-0:hover {
+  color: #bce0fd;
 }
 
 .RoundBtn-1 {

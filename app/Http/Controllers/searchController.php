@@ -11,9 +11,20 @@ class SearchController extends Controller
     public function Search(Request $request)
     {
         $searchType = $request->searchType;
-        // $searchType = "it is good!";
+        $keyWord = $request->keyWord;
 
-        $keyWord = $request->keyword;
+        if (DB::table('searchrecord')->where('keyWord', $keyWord)->count() == 0) {
+            $keyWordCount = 1;
+            DB::table('searchrecord')->insert([
+                'keyWord' => $keyWord,
+                'keyWordCount' => $keyWordCount,
+            ]);
+        } else {
+            $keyWordCount = DB::table('searchrecord')->where('keyWord', $keyWord)->value('keyWordCount');
+            $keyWordCount++;
+            DB::table('searchrecord')->where('keyWord', $keyWord)->update(['keyWordCount' => $keyWordCount]);
+        }
+
         if ($searchType == "植株") {
             $searchResults = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $datas = DB::table('plantlist')->whereIn('num', $searchResults)->get();
@@ -28,11 +39,43 @@ class SearchController extends Controller
             $datas = DB::table('arealist')->whereIn('num', $searchResults)->get();
             return view('searchResults', compact('datas', 'searchType', 'keyWord'));
         }
+
+        /* 前端假資料 */
+        // $fakedata = [
+        //     [
+        //         'type' => 'pest',
+        //         'num' => 'A001',
+        //         'name' => '蚜蟲',
+        //         'scientificName' => 'Aphidoidea',
+        //         'img' => 'Link:somewhere'
+
+        //     ], [
+        //         'type' => 'plant',
+        //         'num' => 'B002',
+        //         'name' => '菜菜2',
+        //         'scientificName' => 'Aphidoidea',
+        //         'img' => 'Link:somewhere'
+        //     ], [
+        //         'type' => 'pest',
+        //         'num' => 'A003',
+        //         'name' => '蚜蟲3',
+        //         'scientificName' => 'Aphidoidea',
+        //         'img' => 'Link:somewhere'
+        //     ], [
+        //         'type' => 'pest',
+        //         'num' => 'A005',
+        //         'name' => '蚜蟲5',
+        //         'scientificName' => 'Aphidoidea',
+        //         'img' => 'Link:somewhere'
+        //     ]
+        // ];
+        // $searchResults = convertArray2Object($fakedata);
+        // return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
     }
 
-    public function KeywordCount(Request $request)
+    public function KeywordCount($keyWords)
     {
-        $keyWord = $request->keyword;
+        $keyWord = $this->$keyWords;
         if (DB::table('searchrecord')->where('keyWord', $keyWord)->count() == 0) {
             $keyWordCount = 1;
             DB::table('searchrecord')->insert([
@@ -48,6 +91,7 @@ class SearchController extends Controller
 
     public function GetKeywordList()
     {
+        /* 前端已合併 */
         $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
         return view('site/index', ['keyWordList' => $keyWordList]);
     }
