@@ -1,4 +1,4 @@
-@extends('site.layouts.2-homepage')
+@extends('site.master.homepage')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">

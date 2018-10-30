@@ -816,6 +816,11 @@ a:hover {
   text-align: center;
 }
 
+.img-box .img-innerbox:hover {
+  border: solid 2px;
+  border-color: #2699fb;
+}
+
 .img-box .img-innerbox .img {
   position: relative;
 }
@@ -856,11 +861,6 @@ a:hover {
   padding-top: 12px;
   padding-bottom: 8px;
   background-color: #ffffff;
-}
-
-.img-box .img-innerbox:hover {
-  border: solid 2px;
-  border-color: #2699fb;
 }
 
 .SearchBar-Border {

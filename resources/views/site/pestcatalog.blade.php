@@ -1,4 +1,4 @@
-@extends('site.layouts.3-page')
+@extends('site.master.subpage')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
