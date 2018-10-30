@@ -20,7 +20,7 @@
             <form action="search" method="GET">
                 @csrf
                 @foreach($keyWordList as $keyWord)
-                <button type="submit" name="keyword" value="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">
+                <button type="submit" name="keyWord" value="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">
                     {{ $keyWord->keyWord }}
                 </button>
                 @endforeach

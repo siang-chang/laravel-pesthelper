@@ -28,16 +28,16 @@ class SearchController extends Controller
         if ($searchType == "植株") {
             $searchResults = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $datas = DB::table('plantlist')->whereIn('num', $searchResults)->get();
-            return view('searchResults', compact('datas', 'searchType', 'keyWord'));
+            return view('site/search', compact('datas', 'searchType', 'keyWord'));
         }
         if ($searchType == "害蟲") {
             $searchResults = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $datas = DB::table('pestlist')->whereIn('num', $searchResults)->get();
-            return view('searchResults', compact('datas', 'searchType', 'keyWord'));
+            return view('site/search', compact('datas', 'searchType', 'keyWord'));
         } else {
             $searchResults = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $datas = DB::table('arealist')->whereIn('num', $searchResults)->get();
-            return view('searchResults', compact('datas', 'searchType', 'keyWord'));
+            return view('site/search', compact('datas', 'searchType', 'keyWord'));
         }
 
         /* 前端假資料 */

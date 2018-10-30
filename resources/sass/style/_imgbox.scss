@@ -20,6 +20,11 @@
         // innerbox 內的圖片和文字置中
         text-align: center;
 
+        &:hover {
+            border: solid 2px;
+            border-color: $border-color-1;
+        }
+
         .img {
             // position
             position: relative;
@@ -74,10 +79,4 @@
         }
 
     }
-
-    .img-innerbox:hover {
-        border: solid 2px;
-        border-color: $border-color-1;
-    }
-
 }
