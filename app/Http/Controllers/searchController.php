@@ -59,6 +59,8 @@ class SearchController extends Controller
         //     ]
         // ];
         // $searchResults = convertArray2Object($fakedata);
+        // $searchType = "全部搜尋";
+        // $keyWord = "玉米";
         // return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
     }
 

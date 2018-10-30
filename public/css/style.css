@@ -791,10 +791,16 @@ a:hover {
 
 .RoundBtn-0:hover {
   color: #bce0fd;
+  border-color: #bce0fd;
 }
 
 .RoundBtn-1 {
   border-color: #2699fb;
+}
+
+.RoundBtn-1:hover {
+  color: #bce0fd;
+  border-color: #bce0fd;
 }
 
 /*
