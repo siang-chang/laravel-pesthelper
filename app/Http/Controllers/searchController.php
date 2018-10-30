@@ -13,18 +13,7 @@ class SearchController extends Controller
         $searchType = $request->searchType;
         $keyWord = $request->keyWord;
 
-        if (DB::table('searchrecord')->where('keyWord', $keyWord)->count() == 0) {
-            $keyWordCount = 1;
-            DB::table('searchrecord')->insert([
-                'keyWord' => $keyWord,
-                'keyWordCount' => $keyWordCount,
-            ]);
-        } else {
-            $keyWordCount = DB::table('searchrecord')->where('keyWord', $keyWord)->value('keyWordCount');
-            $keyWordCount++;
-            DB::table('searchrecord')->where('keyWord', $keyWord)->update(['keyWordCount' => $keyWordCount]);
-        }
-
+        SearchController::KeywordCount($keyWord);
         if ($searchType == "植株") {
             $searchResults = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $datas = DB::table('plantlist')->whereIn('num', $searchResults)->get();
@@ -73,9 +62,8 @@ class SearchController extends Controller
         // return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
     }
 
-    public function KeywordCount($keyWords)
+    protected static function KeywordCount($keyWord)
     {
-        $keyWord = $this->$keyWords;
         if (DB::table('searchrecord')->where('keyWord', $keyWord)->count() == 0) {
             $keyWordCount = 1;
             DB::table('searchrecord')->insert([

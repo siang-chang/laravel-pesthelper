@@ -52,8 +52,8 @@ Route::get('/_index', 'SearchController@GetKeywordList');
 #搜尋
 Route::get('/search', 'SearchController@Search');
 #抓取關鍵字
-// Route::get('/search','SearchController@KeywordCount');
-// Auth::routes();
+Route::post('/search','SearchController@KeywordCount');
+Auth::routes();
 
 Route::get('/_pestcatalog', function () {
     $fakedata = [
