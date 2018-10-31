@@ -26,10 +26,12 @@ body {
     // padding-right: 10px;
 }
 
-a:hover {
-    color: $font-color-2 !important;
-    text-decoration: none;
-    cursor: pointer;
+a {
+    &:hover {
+        color: $font-color-2 !important;
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 .footer {

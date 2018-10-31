@@ -41,28 +41,15 @@
     // style
     border: solid 1px;
     border-radius: 15px;
+    filter: alpha(opacity=0) \10; // IE8
+    background-color: rgba(255, 255, 255, .0); // IE9及其它瀏覽器會執行此行
     // position
     display: inline;
     margin-left: 3px;
     margin-right: 3px;
-    padding: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-
-    @include RWD(pc) {
-        width: 110px;
-        height: 40px;
-    }
-
-    @include RWD(pad) {
-        width: 110px;
-        height: 40px;
-    }
-
-    @include RWD(mobile) {
-        width: 80px;
-        height: 30px;
-    }
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 /*
@@ -87,12 +74,19 @@
 /* Round Buttom */
 .RoundBtn-0 {
     @extend %RoundBtn-style;
-    border-color: $border-color-0;
     opacity: 0.9;
-
+    border-color: $border-color-0;
+    &:hover {
+        color: $font-color-2;
+        border-color: $border-color-2;
+    }
 }
 
 .RoundBtn-1 {
     @extend %RoundBtn-style;
     border-color: $border-color-1;
+    &:hover {
+        color: $font-color-2;
+        border-color: $border-color-2;
+    }
 }

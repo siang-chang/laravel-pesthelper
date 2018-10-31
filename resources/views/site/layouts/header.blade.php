@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <form action="search" method="GET" id="nav-search" style="display:none;">
             {{ csrf_field() }}
-            <input type="text" name="keyword" id="navSearchBar" class="text-medium-1" placeholder="請輸入害蟲或植株的名稱">
+            <input type="text" name="keyWord" id="navSearchBar" class="text-medium-1" placeholder="請輸入害蟲或植株的名稱">
             <a class="Btn-default" onclick="closeNavSearch()">
                 <img src="{{ asset('img/icon/icon_cancel.svg') }}" width="20" alt="cancel">
             </a>
