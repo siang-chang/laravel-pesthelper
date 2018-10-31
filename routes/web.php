@@ -26,6 +26,7 @@ function convertArray2Object($defs)
 // 前端區域
 //---------------------------------------------------------------------------
  */
+# 系統首頁 & 熱門關鍵字
 Route::get('/_index', 'SearchController@GetKeywordList');
 // Route::get('/_index', function () {
 //     $fakedata = [
@@ -49,12 +50,11 @@ Route::get('/_index', 'SearchController@GetKeywordList');
 //     $keyWordList = convertArray2Object($fakedata);
 //     return view('site/index', ['keyWordList' => $keyWordList]);
 // });
-#搜尋
-Route::get('/search', 'SearchController@Search');
-#抓取關鍵字
-Route::post('/search','SearchController@KeywordCount');
-Auth::routes();
 
+# 關鍵字搜尋
+Route::get('/search', 'SearchController@Search');
+
+# 害蟲目錄
 Route::get('/_pestcatalog', function () {
     $fakedata = [
         [
@@ -75,6 +75,8 @@ Route::get('/_pestcatalog', function () {
     $categoryList = convertArray2Object($fakedata);
     return view('site/pestcatalog', ['categoryList' => $categoryList]);
 });
+
+# 害蟲目錄 -> 子目錄展開
 Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 /*
 //---------------------------------------------------------------------------

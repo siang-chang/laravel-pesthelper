@@ -7,26 +7,27 @@ use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
 {
-    //關鍵字搜尋
+    # 關鍵字搜尋
     public function Search(Request $request)
     {
         $searchType = $request->searchType;
         $keyWord = $request->keyWord;
-
+        // 呼叫關鍵字計數功能(KeywordCount function)
         SearchController::KeywordCount($keyWord);
+        // 判斷 SearchType
         if ($searchType == "植株") {
-            $searchResults = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
-            $datas = DB::table('plantlist')->whereIn('num', $searchResults)->get();
-            return view('site/search', compact('datas', 'searchType', 'keyWord'));
+            $datas = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
+            $searchResults = DB::table('plantlist')->whereIn('num', $datas)->get();
+            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
         }
         if ($searchType == "害蟲") {
-            $searchResults = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
-            $datas = DB::table('pestlist')->whereIn('num', $searchResults)->get();
-            return view('site/search', compact('datas', 'searchType', 'keyWord'));
+            $datas = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
+            $searchResults = DB::table('pestlist')->whereIn('num', $datas)->get();
+            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
         } else {
-            $searchResults = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
-            $datas = DB::table('arealist')->whereIn('num', $searchResults)->get();
-            return view('site/search', compact('datas', 'searchType', 'keyWord'));
+            $datas = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
+            $searchResults = DB::table('arealist')->whereIn('num', $datas)->get();
+            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
         }
 
         /* 前端假資料 */
@@ -63,7 +64,7 @@ class SearchController extends Controller
         // $keyWord = "玉米";
         // return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
     }
-
+    # 關鍵字計數
     protected static function KeywordCount($keyWord)
     {
         if (DB::table('searchrecord')->where('keyWord', $keyWord)->count() == 0) {
@@ -78,7 +79,7 @@ class SearchController extends Controller
             DB::table('searchrecord')->where('keyWord', $keyWord)->update(['keyWordCount' => $keyWordCount]);
         }
     }
-
+    # 取得熱門關鍵字
     public function GetKeywordList()
     {
         /* 前端已合併 */
