@@ -50,10 +50,10 @@ class PestController extends Controller
             [
             // 資料說明：指定害蟲的解決方案，可能有多個
                 'solutionType' => '農業防治',
-                'solution' => '消滅越冬蟲源.....'
+                'solution' => '消滅越冬蟲源，清除附近雜草，進行徹底清田。'
             ], [
                 'solutionType' => '農業防治',
-                'solution' => '消滅越冬蟲源.....'
+                'solution' => '消滅越冬蟲源，清除附近雜草，進行徹底清田。'
             ]
         ];
         $solutionDatas = convertArray2Object($fakedata2);

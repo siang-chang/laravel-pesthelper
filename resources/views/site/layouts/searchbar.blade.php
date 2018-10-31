@@ -9,9 +9,9 @@
         <div class="hidden-phone col-xs-0 col-sm-3 col-md-3 col-lg-2">
             <!-- btn-group 將整個選單設為按鈕 -->
             <div class="btn-group">
-                <button class="text-medium-2 searchTypeBtn dropdown-toggle" type="button" data-toggle="dropdown"
+                <button type="button" class="dropdown-toggle text-medium-2" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <span class="text-medium-2 line">｜</span>
+                    <span class="line">｜</span>
                     <input type="text" name="searchType" id="searchType" readonly="readonly" unselectable="on" value="{{ $searchType ?? '全部類別' }}">
                     <span class="caret"></span>
                     <span>&nbsp;</span>

@@ -1,11 +1,11 @@
 @extends('site.master.subpage')
 @section('content')
 <!-- 內容區塊 -->
-<div class="container">
+<div class="container search-container">
     <!-- 搜尋列 Search Bar -->
     @include('site.layouts.searchbar')
     <!-- 搜尋結果篩選按鈕 -->
-    <div class="row" style="text-align: center;margin-top:30px;">
+    <div class="row searchType-list">
         <form action="search" method="GET">
             @csrf
             <button type="submit" name="searchType" value="全部類別" class="RoundBtn-1 text-article-1">全部類別</button>
@@ -15,7 +15,7 @@
         </form>
     </div>
     <!-- 搜尋結果顯示區域 -->
-    <div class="row" style="margin-top:30px;">
+    <div class="row">
         @foreach($searchResults as $results)
         <div class="img-box col-xs-12 col-sm-6 col-md-4">
             <a href='{{ url("/TestDetailed/$results->num") }}'>
@@ -28,7 +28,7 @@
                         @endif
                         <img class="corner" src="img/corner.svg" width="80">
                         {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
-                        <img class="main" src="img/image.jpg" alt="">
+                        <img class="main" src="img/image.jpg" alt="{{ $results->name }}">
                     </div>
                     <hr />
                     <div class="base">

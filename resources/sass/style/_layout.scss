@@ -22,8 +22,46 @@ body {
     // 框架
     height: 100%;
     position: relative;
-    // padding-left: 10px;
-    // padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    @include RWD(pc) {
+        padding-top: 80px;
+    }
+
+    @include RWD(pad) {
+        padding-top: 80px;
+    }
+
+    @include RWD(mobile) {
+        padding-top: 60px;
+    }
+}
+
+.main-container {
+    min-height: 100%;
+    /* 此處 padding 必須和 footer 的高度相同 */
+    padding-bottom: 60px;
+}
+
+footer {
+    /* 展開footer寬度 */
+    width: 100%;
+    /* position */
+    height: 60px;
+    margin-top: -60px;
+    /* inner position */
+    padding-left: 20px;
+    line-height: 60px;
+    /* style */
+    background-color: $bg-color-1;
+
+    div {
+        text-align: left !important;
+        /* style */
+        font-size: 16px;
+        color: $font-color-0;
+    }
 }
 
 a {
@@ -34,25 +72,22 @@ a {
     }
 }
 
-.footer {
-    /* 展開footer寬度 */
-    width: 100%;
-    /* position */
-    height: 60px;
-    margin-top: -60px;
-    /* inner position */
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 60px;
-    text-align: left;
-    /* style */
-    font-size: 16px;
-    color: $font-color-0;
-    background-color: $bg-color-1;
-    -moz-user-select: none;
-    /* for Firefox */
-    -webkit-user-select: none;
-    /* for chrome */
+.page-title {
+    h1 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        margin: 0px;
+        padding: 0px;
+        border: solid 1.5px;
+        border-color: $bg-color-1;
+    }
 }
 
 /*
@@ -69,13 +104,6 @@ a {
 
 .hidden-tab {
     @media (max-width: 991px) {
-        display: none !important;
-        visibility: hidden !important;
-    }
-}
-
-.hidden-pc {
-    @media (min-width: 992px) {
         display: none !important;
         visibility: hidden !important;
     }
@@ -98,17 +126,39 @@ a {
 */
 // 更改 navbar 高度
 .navbar {
-    min-height: 80px;
+    @include RWD(pc) {
+        min-height: 80px;
+    }
+
+    @include RWD(pad) {
+        min-height: 80px;
+    }
+
+    @include RWD(mobile) {
+        min-height: 60px;
+    }
 }
 
 #nav-search {
     /* position */
     position: absolute;
     z-index: 999;
-    line-height: 73px;
-    /* style */
     width: 100%;
-    height: 80px;
+
+    @include RWD(pc) {
+        height: 80px;
+        line-height: 73px;
+    }
+
+    @include RWD(pad) {
+        height: 80px;
+        line-height: 73px;
+    }
+
+    @include RWD(mobile) {
+        height: 60px;
+        line-height: 55px;
+    }
 
     #navSearchBar {
         width: 100%;
@@ -119,6 +169,11 @@ a {
         border-color: $border-color-1;
         // background-color: rgba(255, 255, 255, .5); // IE9及其它瀏覽器會執行此行
         // filter: alpha(opacity=0) \5; // IE8
+    }
+
+    // 關閉 Chrome focus 時藍色、金色外框
+    input:focus {
+        outline: 0;
     }
 
     // placeholder style : font-color
@@ -152,29 +207,60 @@ a {
         background-color: $bg-color-1;
         padding-left: 28px;
         padding-right: 28px;
+
+        @include RWD(mobile) {
+            padding-left: 23px;
+            padding-right: 22.5px;
+        }
     }
 
     .navbar-header {
         background-color: $bg-color-1;
-        margin-right: -20px;
+        margin-right: 0px;
         margin-left: 0px;
 
         .navbar-brand {
             // Web title position
-            padding: 0 0px;
-            height: 80px;
-            line-height: 80px;
+            padding: 0px;
             margin-left: 5px;
+
+            @include RWD(pc) {
+                height: 80px;
+                line-height: 80px;
+            }
+
+            @include RWD(pad) {
+                height: 80px;
+                line-height: 80px;
+            }
+
+            @include RWD(mobile) {
+                height: 60px;
+                line-height: 60px;
+            }
         }
 
         .navbar-toggle {
             // (80px - button height 34px) / 2 = 23px
             padding: 0px 0px !important;
-            margin-top: 32px;
+            margin-right: 0px;
             line-height: 0px;
             // 清除漢堡圖標的外框
             border: none;
             background: transparent !important;
+
+            @include RWD(pc) {
+                margin-top: 32px;
+            }
+
+            @include RWD(pad) {
+                margin-top: 32px;
+            }
+
+            @include RWD(mobile) {
+                margin-top: 23px;
+            }
+
 
             // 清除漢堡圖標的 hover 動畫效果
             &:hover {

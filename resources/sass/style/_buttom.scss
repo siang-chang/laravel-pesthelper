@@ -19,7 +19,6 @@
 %btn-style {
     border-radius: 5px;
     border: solid 2px;
-
     @include RWD(pc) {
         width: 140px;
         height: 58px;
@@ -89,4 +88,12 @@
         color: $font-color-2;
         border-color: $border-color-2;
     }
+}
+
+.RoundBtn-1-5 {
+    @extend %RoundBtn-style;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 20px;
+    border-color: $border-color-1;
 }
