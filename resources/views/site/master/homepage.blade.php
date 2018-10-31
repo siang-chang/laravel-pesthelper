@@ -9,7 +9,7 @@
     {{-- @section('sidebar')
     這是側選單
     @show --}}
-    <div class="container main-containe">
+    <div class="container main-container">
         @yield('content')
     </div>
 </body>

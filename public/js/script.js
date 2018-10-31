@@ -27,15 +27,24 @@ $(function () {
         e.preventDefault();
     });
 
-    // 點擊 nav-search 以外的地方則關閉 nav-search
-    $(document).click(function () {
+    // 點擊 nav-search 以外的地方則關閉 nav-search 和 navbar-collapse
+    $(".main-container").click(function () {
+        // 關閉 nav-search
         $('#nav-search').fadeOut(300);
+        // 關閉 navbar-collapse
+        var _opened = $(".navbar-collapse").hasClass("navbar-collapse") && $(".navbar-collapse").hasClass("in");
+        if (_opened === true && !($(event.target).hasClass("navbar-toggle"))) {
+            $("button.navbar-toggle").click();
+        }
     });
-
     // 點擊的若是 nav-search 則中斷「關閉動作」
-    $(".navbar").click(function (event) {
-        event.stopPropagation();
-    });
+    // $(".navbar-right").click(function (event) {
+    //     event.stopPropagation();
+    // });
+    // $("#nav-search").click(function (event) {
+    //     event.stopPropagation();
+    // });
+
 });
 
 
