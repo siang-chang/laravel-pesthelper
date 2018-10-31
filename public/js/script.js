@@ -3,6 +3,8 @@
 // Document Ready Function
 //---------------------------------------------------------------------------
 */
+// $('#nav-search').hide();
+
 $(function () {
     // goToTop 回置頁面頂端
     $("#goTop").click(function () {
@@ -24,7 +26,18 @@ $(function () {
     $('input, select, textarea').on("invalid", function (e) {
         e.preventDefault();
     });
+
+    // 點擊 nav-search 以外的地方則關閉 nav-search
+    $(document).click(function () {
+        $('#nav-search').fadeOut(300);
+    });
+
+    // 點擊的若是 nav-search 則中斷「關閉動作」
+    $(".navbar").click(function (event) {
+        event.stopPropagation();
+    });
 });
+
 
 /*
 //---------------------------------------------------------------------------
