@@ -78,6 +78,10 @@ Route::get('/_pestcatalog', function () {
 
 # 害蟲目錄 -> 子目錄展開
 Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
+
+# 害蟲個別頁面
+Route::get('/TestDetailed/{num}', 'PestController@TestDetailed');
+
 /*
 //---------------------------------------------------------------------------
 // 後端區域
@@ -87,7 +91,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 #導向害蟲目錄
 Route::get('/pestcatalog', function () {
@@ -103,8 +106,6 @@ Route::get('/imageUpload', function () {
 });
 
 
-
-Auth::routes();
 #顯示搜尋結果
 Route::get('/searchResults', function () {
     return view('searchResults');
@@ -117,7 +118,6 @@ Route::get('/pestcatalog', 'PestController@GetCategoryList');
 
 #顯示植株清單
 Route::get('/plantcatalog', 'PlantController@GetCategoryList');
-
 #害蟲個別頁面
 Route::get('/pestDetailed/{num}', 'PestController@Detailed');
 #植株個別頁面
