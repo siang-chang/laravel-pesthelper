@@ -8,6 +8,7 @@
 // 全域樣式
 //---------------------------------------------------------------------------
 */
+
 html {
     height: 100%;
 }
@@ -84,15 +85,16 @@ a {
     }
 
     div {
-        margin-top: 30px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
 
     hr {
         margin: 0px;
         padding: 0px;
-        border: solid 1.5px;
-        border-color: $bg-color-1;
+        border: 0px;
+        background-color: $bg-color-1;
+        height: 3px;
     }
 }
 

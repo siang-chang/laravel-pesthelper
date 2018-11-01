@@ -86,11 +86,16 @@
         margin-top: 10px;
     }
 
-    hr {
+    .p {
         margin-bottom: 30px;
+    }
+
+    hr {
+        margin-top: 0px !important;
+        margin-bottom: 10px !important;
         padding: 0px;
-        border: solid 1.5px;
-        border-color: $bg-color-1;
+        background-color: $bg-color-1;
+        height: 3px;
     }
 
     img {

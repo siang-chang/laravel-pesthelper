@@ -18,7 +18,7 @@
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
-                <div class="col-xs-6"　style="background-color:red;">
+                <div class="col-xs-6" 　style="background-color:red;">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
                     <p class="text-medium-3">{{ $pestData->scientificName ?? '' }}</p>
                 </div>
@@ -48,7 +48,7 @@
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
                     <p class="text-medium-3">{{ $pestData->secondCategory }}</p>
                 </div>
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
                     <p class="text-medium-3" style="text-align:left;">{{ $pestData->habit }}</p>
                 </div>
@@ -76,7 +76,9 @@
                     <div class="RoundBtn-1-5 text-medium-1">方案內容</div>
                     <p class="text-medium-3">{{ $solutionData->solution }}</p>
                 </div>
-                <hr />
+                <div class="col-xs-12">
+                    <hr />
+                </div>
                 @endforeach
             </div>
             <div class="text-medium-1">．．．</div>

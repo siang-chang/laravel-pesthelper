@@ -48,8 +48,8 @@
                     <div class="RoundBtn-1-5 text-medium-1">屬別</div>
                     <p class="text-medium-3">{{ $plantData->secondCategory }}</p>
                 </div>
+                <div class="text-medium-1 p">．．．</div>
             </div>
-            <div class="text-medium-1">．．．</div>
         </div>
     </div>
     <!-- 感染關係 Title -->

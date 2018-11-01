@@ -6,7 +6,7 @@
             {{ csrf_field() }}
             <input type="text" name="keyWord" id="navSearchBar" class="text-medium-1" placeholder="請輸入害蟲或植株的名稱" required>
             <a class="Btn-default" onclick="closeNavSearch()">
-                <img src="{{ asset('img/icon/icon_cancel.svg') }}" width="20" alt="cancel">
+                <img src="{{ asset('img/icon/icon_cancel.svg') }}" width="20" height="20" alt="cancel">
             </a>
         </form><!-- /.nav-search -->
         <div class="container-fluid">
@@ -22,7 +22,7 @@
                 </button>
                 <div class="navbar-right navbar-toggle collapsed">
                     <button class="Btn-default" onclick="showNavSearch()">
-                        <img src="{{ asset('img/icon/icon_search.svg') }}" width="20" alt="Search">
+                        <img src="{{ asset('img/icon/icon_search.svg') }}" width="20" height="20" alt="Search">
                     </button>
                 </div>
                 <!-- logo & WebName -->
@@ -36,7 +36,7 @@
                     <li><a href="/pesthelper/public/_pestcatalog" class="text-medium-0">害蟲目錄</a></li>
                     <li><a href="#" class="text-medium-0">植株目錄</a></li>
                     <li class="hidden-tab" onclick="showNavSearch()">
-                        <a><img src="{{ asset('img/icon/icon_search.svg') }}" width="20" alt="Search"></a>
+                        <a><img src="{{ asset('img/icon/icon_search.svg') }}" width="20" height="20" alt="Search"></a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

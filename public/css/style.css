@@ -102,15 +102,16 @@ a:hover {
 }
 
 .page-title div {
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .page-title hr {
   margin: 0px;
   padding: 0px;
-  border: solid 1.5px;
-  border-color: #2699fb;
+  border: 0px;
+  background-color: #2699fb;
+  height: 3px;
 }
 
 /*
@@ -1310,11 +1311,16 @@ a:hover {
   margin-top: 10px;
 }
 
-.textdata hr {
+.textdata .p {
   margin-bottom: 30px;
+}
+
+.textdata hr {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
   padding: 0px;
-  border: solid 1.5px;
-  border-color: #2699fb;
+  background-color: #2699fb;
+  height: 3px;
 }
 
 .textdata img {

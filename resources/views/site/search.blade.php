@@ -5,12 +5,12 @@
     <!-- 搜尋列 Search Bar -->
     @include('site.layouts.searchbar')
     <!-- 搜尋結果篩選按鈕 -->
-    <div class="row searchType-list">
+    <div class="row searchType-list"  style="text-align:center;">
         <form action="search" method="GET">
             @csrf
             <button type="submit" name="searchType" value="全部類別" class="RoundBtn-1 text-article-1">全部類別</button>
-            <button type="submit" name="searchType" value="僅查害蟲" class="RoundBtn-1 text-article-1">　害蟲　</button>
-            <button type="submit" name="searchType" value="僅查植株" class="RoundBtn-1 text-article-1">　植株　</button>
+            <button type="submit" name="searchType" value="僅查害蟲" class="RoundBtn-1 text-article-1"><span>&emsp;</span>害蟲<span>&emsp;</span></button>
+            <button type="submit" name="searchType" value="僅查植株" class="RoundBtn-1 text-article-1"><span>&emsp;</span>植株<span>&emsp;</span></button>
             <input type="hidden" name="keyWord" value="{{ $keyWord ?? '' }}">
         </form>
     </div>

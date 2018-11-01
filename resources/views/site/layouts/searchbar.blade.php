@@ -26,7 +26,7 @@
         <!-- Search Buttom -->
         <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2">
             <button type="submit" id="Search" class="searchBtn">
-                <img src="img/icon/icon_search.svg" alt="Search" width="24">
+                <img src="img/icon/icon_search.svg" alt="Search" width="24" height="24">
             </button>
         </div><!-- /.Search Buttom -->
     </form>
