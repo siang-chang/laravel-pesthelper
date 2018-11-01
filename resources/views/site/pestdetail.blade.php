@@ -4,7 +4,7 @@
 <div class="container">
     <!-- 頁面 Title = 害蟲名稱 -->
     <div class="row page-title">
-        <h1 class="col-xs-12 text-Large-1">{{ $pestData->name }}</h1>
+        <h1 class="col-xs-12 text-Large-1">{{ $pestData->name ?? 'Error' }}</h1>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
             <hr />
         </div>
@@ -14,13 +14,13 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
-                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '' }}">
+                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '暫無名稱' }}">
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
-                <div class="col-xs-6" 　style="background-color:red;">
+                <div class="col-xs-6" style="background-color:red;">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
-                    <p class="text-medium-3">{{ $pestData->scientificName ?? '' }}</p>
+                    <p class="text-medium-3">{{ $pestData->scientificName ?? '暫無學名' }}</p>
                 </div>
                 <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
@@ -30,7 +30,7 @@
                         @foreach ($alias as $key => $value)
                         @if($key +1 == $key_last)
                         <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
-                        {{ $value }}
+                        {{ $value ?? '暫無別名' }}
                         @else
                         <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
                         {{ $value . '、' }}
@@ -42,15 +42,15 @@
                 <div class="clearfix"></div>
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">目別</div>
-                    <p class="text-medium-3">{{ $pestData->category }}</p>
+                    <p class="text-medium-3">{{ $pestData->category ?? '暫無目別' }}</p>
                 </div>
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
-                    <p class="text-medium-3">{{ $pestData->secondCategory }}</p>
+                    <p class="text-medium-3">{{ $pestData->secondCategory ?? '暫無科別' }}</p>
                 </div>
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
-                    <p class="text-medium-3" style="text-align:left;">{{ $pestData->habit }}</p>
+                    <p class="text-medium-3" style="text-align:left;">{{ $pestData->habit ?? '暫無習性' }}</p>
                 </div>
             </div>
             <div class="text-medium-1">．．．</div>
@@ -67,7 +67,10 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <div class="row textdata">
+                @if(isset($solutionDatas[0]))
+                <!-- 如果 $solutionDatas 有資料，則使用 foreach列印 -->
                 @foreach($solutionDatas as $solutionData)
+                <!-- 使用 foreach 列印 $solutionData -->
                 <div class="col-xs-12">
                     <div class="RoundBtn-1-5 text-medium-1">方案類別</div>
                     <p class="text-medium-3">{{ $solutionData->solutionType }}</p>
@@ -79,7 +82,14 @@
                 <div class="col-xs-12">
                     <hr />
                 </div>
+                <!-- 列印結束 -->
                 @endforeach
+                @else
+                <!-- 如果 $solutionDatas 沒有資料，則顯示錯誤資訊 -->
+                <div class="col-xs-12">
+                    <p class="text-medium-3">此害蟲目前尚無解決方案資料</p>
+                </div>
+                @endif
             </div>
             <div class="text-medium-1">．．．</div>
         </div>

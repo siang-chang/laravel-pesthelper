@@ -62,14 +62,28 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <div class="row textdata">
+                @if(isset($infectRelation['0']))
+                <!-- 如果 $infectRelation 有資料，則使用 foreach列印 -->
                 @foreach($infectRelation as $relation)
+                <!-- 使用 foreach 列印 $infectRelation -->
+                @if(count($infectRelation) <= 1)
+                <div class="col-xs-6 col-xs-offset-3">
+                @else
                 <div class="col-xs-6">
+                @endif
                     <a href='{{ url("/pestDetailed/$relation->num") }}'>
                         <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">
                         <p class="text-medium-3">{{ $relation->name }}</p>
                     </a>
                 </div>
+                <!-- 列印結束 -->
                 @endforeach
+                @else
+                <!-- 如果 $infectRelation 沒有資料，則顯示錯誤資訊 -->
+                <div class="col-xs-12">
+                    <p class="text-medium-3">此植株目前尚未建立感染資料</p>
+                </div>
+                @endif
             </div>
             <div class="text-medium-1">．．．</div>
         </div>

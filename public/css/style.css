@@ -203,6 +203,10 @@ a:hover {
   border-color: #2699fb;
 }
 
+#nav-search input::-ms-clear {
+  display: none;
+}
+
 #nav-search input:focus {
   outline: 0;
 }
@@ -1086,6 +1090,10 @@ a:hover {
   border-radius: 15px;
   border: 0 none;
   text-align: left !important;
+}
+
+.SearchBar-Border input::-ms-clear {
+  display: none;
 }
 
 .SearchBar-Border input:focus {

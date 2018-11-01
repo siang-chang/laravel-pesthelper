@@ -179,6 +179,11 @@ a {
         // filter: alpha(opacity=0) \5; // IE8
     }
 
+    // 關閉 IE 中內建的「X」按鈕
+    input::-ms-clear {
+        display: none;
+    }
+
     // 關閉 Chrome focus 時藍色、金色外框
     input:focus {
         outline: 0;
