@@ -37,6 +37,52 @@ body {
   background-size: cover;
   height: 100%;
   position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+.main-container {
+  min-height: 100%;
+  /* 此處 padding 必須和 footer 的高度相同 */
+  padding-bottom: 60px;
+}
+
+footer {
+  /* 展開footer寬度 */
+  width: 100%;
+  /* position */
+  height: 60px;
+  margin-top: -60px;
+  /* inner position */
+  padding-left: 20px;
+  line-height: 60px;
+  /* style */
+  background-color: #2699fb;
+}
+
+footer div {
+  text-align: left !important;
+  /* style */
+  font-size: 16px;
+  color: #ffffff;
 }
 
 a:hover {
@@ -45,25 +91,26 @@ a:hover {
   cursor: pointer;
 }
 
-.footer {
-  /* 展開footer寬度 */
-  width: 100%;
-  /* position */
-  height: 60px;
-  margin-top: -60px;
-  /* inner position */
-  padding-left: 20px;
-  padding-right: 20px;
-  line-height: 60px;
-  text-align: left;
-  /* style */
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #2699fb;
-  -moz-user-select: none;
-  /* for Firefox */
-  -webkit-user-select: none;
-  /* for chrome */
+.page-title h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.page-title h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.page-title div {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.page-title hr {
+  margin: 0px;
+  padding: 0px;
+  border: solid 1.5px;
+  border-color: #2699fb;
 }
 
 /*
@@ -85,13 +132,6 @@ a:hover {
   }
 }
 
-@media (min-width: 992px) {
-  .hidden-pc {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-
 #goTop {
   position: fixed;
   width: 50px;
@@ -107,18 +147,50 @@ a:hover {
 // 導覽列 navbar
 //---------------------------------------------------------------------------
 */
-.navbar {
-  min-height: 80px;
+@media only screen and (min-width: 992px) {
+  .navbar {
+    min-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar {
+    min-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    min-height: 60px;
+  }
 }
 
 #nav-search {
   /* position */
   position: absolute;
   z-index: 999;
-  line-height: 73px;
-  /* style */
   width: 100%;
-  height: 80px;
+}
+
+@media only screen and (min-width: 992px) {
+  #nav-search {
+    height: 80px;
+    line-height: 73px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #nav-search {
+    height: 80px;
+    line-height: 73px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #nav-search {
+    height: 60px;
+    line-height: 55px;
+  }
 }
 
 #nav-search #navSearchBar {
@@ -128,6 +200,10 @@ a:hover {
   background-color: #ffffff;
   border: solid 2px;
   border-color: #2699fb;
+}
+
+#nav-search input:focus {
+  outline: 0;
 }
 
 #nav-search input::-webkit-input-placeholder {
@@ -173,25 +249,69 @@ a:hover {
   padding-right: 28px;
 }
 
+@media only screen and (max-width: 767px) {
+  .navbar-default .container-fluid {
+    padding-left: 23px;
+    padding-right: 22.5px;
+  }
+}
+
 .navbar-default .navbar-header {
   background-color: #2699fb;
-  margin-right: -20px;
+  margin-right: 0px;
   margin-left: 0px;
 }
 
 .navbar-default .navbar-header .navbar-brand {
-  padding: 0 0px;
-  height: 80px;
-  line-height: 80px;
+  padding: 0px;
   margin-left: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-default .navbar-header .navbar-brand {
+    height: 80px;
+    line-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-default .navbar-header .navbar-brand {
+    height: 80px;
+    line-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-header .navbar-brand {
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
 .navbar-default .navbar-header .navbar-toggle {
   padding: 0px 0px !important;
-  margin-top: 32px;
+  margin-right: 0px;
   line-height: 0px;
   border: none;
   background: transparent !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-default .navbar-header .navbar-toggle {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-default .navbar-header .navbar-toggle {
+    margin-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-header .navbar-toggle {
+    margin-top: 23px;
+  }
 }
 
 .navbar-default .navbar-header .navbar-toggle:hover {
@@ -278,10 +398,9 @@ a:hover {
 
 /*
 //---------------------------------------------------------------------------
-// index.scss
+// font.scss
 //---------------------------------------------------------------------------
 */
-/* font */
 .text-Oversized {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0);
   color: #2699fb;
@@ -329,25 +448,25 @@ a:hover {
   opacity: 0.99;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-Large-0 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-Large-0 {
     font-size: 36px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-Large-0 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-Large-0 {
     font-size: 30px;
   }
@@ -361,25 +480,25 @@ a:hover {
   color: #2699fb;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-Large-1 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-Large-1 {
     font-size: 36px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-Large-1 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-Large-1 {
     font-size: 30px;
   }
@@ -393,25 +512,25 @@ a:hover {
   color: #bce0fd;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-Large-2 {
     font-size: 36px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-Large-2 {
     font-size: 36px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-Large-2 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-Large-2 {
     font-size: 30px;
   }
@@ -426,25 +545,25 @@ a:hover {
   opacity: 0.99;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-medium-0 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-medium-0 {
     font-size: 24px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-medium-0 {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-medium-0 {
     font-size: 18px;
   }
@@ -458,25 +577,25 @@ a:hover {
   color: #2699fb;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-medium-1 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-medium-1 {
     font-size: 24px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-medium-1 {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-medium-1 {
     font-size: 18px;
   }
@@ -490,26 +609,58 @@ a:hover {
   color: #bce0fd;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-medium-2 {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-medium-2 {
     font-size: 24px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-medium-2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .text-medium-2 {
+    font-size: 18px;
+  }
+}
+
+.text-medium-3 {
+  text-align: center;
+  /* 平板電腦 */
+  /* 手機 */
+  /* 小手機 */
+  color: #707070;
+}
+
+@media only screen and (min-width: 992px) {
+  .text-medium-3 {
     font-size: 24px;
   }
 }
 
-@media (max-width: 480px) {
-  .text-medium-2 {
+@media only screen and (max-width: 991px) {
+  .text-medium-3 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .text-medium-3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .text-medium-3 {
     font-size: 18px;
   }
 }
@@ -523,25 +674,25 @@ a:hover {
   opacity: 0.99;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-small-0 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-small-0 {
     font-size: 16px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-small-0 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-small-0 {
     font-size: 10px;
   }
@@ -555,25 +706,25 @@ a:hover {
   color: #2699fb;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-small-1 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-small-1 {
     font-size: 16px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-small-1 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-small-1 {
     font-size: 10px;
   }
@@ -587,25 +738,25 @@ a:hover {
   color: #bce0fd;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-small-2 {
     font-size: 16px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-small-2 {
     font-size: 16px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-small-2 {
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-small-2 {
     font-size: 10px;
   }
@@ -620,25 +771,25 @@ a:hover {
   opacity: 0.99;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-article-0 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-article-0 {
     font-size: 19px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-article-0 {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-article-0 {
     font-size: 13px;
   }
@@ -652,25 +803,25 @@ a:hover {
   /* 小手機 */
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-article-1 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-article-1 {
     font-size: 19px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-article-1 {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-article-1 {
     font-size: 13px;
   }
@@ -684,25 +835,25 @@ a:hover {
   color: #bce0fd;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .text-article-2 {
     font-size: 19px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .text-article-2 {
     font-size: 19px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .text-article-2 {
-    font-size: 19px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .text-article-2 {
     font-size: 13px;
   }
@@ -753,7 +904,7 @@ a:hover {
 }
 
 /* Round Buttom */
-.RoundBtn-0, .RoundBtn-1 {
+.RoundBtn-0, .RoundBtn-1, .RoundBtn-1-5 {
   border: solid 1px;
   border-radius: 15px;
   filter: alpha(opacity=0) \10;
@@ -801,6 +952,13 @@ a:hover {
 .RoundBtn-1:hover {
   color: #bce0fd;
   border-color: #bce0fd;
+}
+
+.RoundBtn-1-5 {
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 20px;
+  border-color: #2699fb;
 }
 
 /*
@@ -869,12 +1027,57 @@ a:hover {
   background-color: #ffffff;
 }
 
+.img-detail {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 1px;
+  border-color: #2699fb;
+}
+
+.img-detail img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: #bce0fd;
+}
+
+/*
+//---------------------------------------------------------------------------
+// searchbar.scss
+//---------------------------------------------------------------------------
+*/
 .SearchBar-Border {
   border-radius: 15px;
   border: solid 1px #bce0fd;
   background-color: #ffffff;
-  margin-top: 20px;
-  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .SearchBar-Border {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .SearchBar-Border {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .SearchBar-Border {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
 }
 
 .SearchBar-Border #searchBar {
@@ -918,6 +1121,15 @@ a:hover {
   color: #bce0fd;
 }
 
+.SearchBar-Border .btn-group {
+  width: 100%;
+}
+
+.SearchBar-Border .btn-group .dropdown-menu {
+  width: 100%;
+  min-width: 150px !important;
+}
+
 .SearchBar-Border .btn-group .dropdown-menu a {
   text-align: center;
   /* 平板電腦 */
@@ -927,71 +1139,62 @@ a:hover {
   cursor: pointer;
 }
 
-@media (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 24px;
   }
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .SearchBar-Border .btn-group .dropdown-menu a {
     font-size: 18px;
   }
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn {
+.SearchBar-Border .btn-group .dropdown-toggle {
   height: 60px;
   border: none;
   padding: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
   filter: alpha(opacity=0) \9;
   /* IE8 */
   background-color: rgba(255, 255, 255, 0.1);
-  /* IE9及其它瀏覽器會執行此行 */
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn input {
-  width: 105px;
+.SearchBar-Border .btn-group .dropdown-toggle input {
+  width: 63%;
   border: 0 none;
   cursor: pointer;
-  filter: alpha(opacity=0) \9;
   /* IE8 */
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn input::-moz-selection {
+.SearchBar-Border .btn-group .dropdown-toggle input::-moz-selection {
   background: #ffffff;
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn input::selection {
+.SearchBar-Border .btn-group .dropdown-toggle input::selection {
   background: #ffffff;
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn input::-moz-selection {
+.SearchBar-Border .btn-group .dropdown-toggle input::-moz-selection {
   background: #ffffff;
 }
 
-.SearchBar-Border .btn-group .searchTypeBtn .line {
+.SearchBar-Border .btn-group .dropdown-toggle .line {
   height: 44px;
   margin-top: 8px;
   margin-bottom: 8px;
-  filter: alpha(opacity=0) \9;
-  /* IE8 */
-  background-color: rgba(255, 255, 255, 0.1);
-  /* IE9及其它瀏覽器會執行此行 */
 }
 
 .SearchBar-Border .searchBtn {
@@ -1001,5 +1204,126 @@ a:hover {
   background-color: #2699fb;
   border: none;
   margin: 8px;
+  margin-left: 0px;
+}
+
+/*
+//---------------------------------------------------------------------------
+// index.scss
+//---------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 992px) {
+  #Web-page-slogan {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #Web-page-slogan {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #Web-page-slogan {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.cta-btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cta-btn p {
+  margin-top: 30px;
+}
+
+/*
+//---------------------------------------------------------------------------
+// search.scss
+//---------------------------------------------------------------------------
+*/
+@media only screen and (min-width: 992px) {
+  .search-container {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .search-container {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .search-container {
+    padding-top: 20px;
+  }
+}
+
+.searchType-list {
+  text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .searchType-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .searchType-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .searchType-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/*
+//---------------------------------------------------------------------------
+// detail.scss
+//---------------------------------------------------------------------------
+*/
+.textdata {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.textdata div {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.textdata p {
+  margin-top: 10px;
+}
+
+.textdata hr {
+  margin-bottom: 30px;
+  padding: 0px;
+  border: solid 1.5px;
+  border-color: #2699fb;
+}
+
+.textdata img {
+  width: 80%;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: #bce0fd;
 }
 /*# sourceMappingURL=style.css.map */

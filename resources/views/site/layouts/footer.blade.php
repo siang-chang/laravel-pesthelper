@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer">
-    © PestHelper 2018
+<footer>
+    <div>© PestHelper 2018</div>
 </footer>
 <!-- Footer -->

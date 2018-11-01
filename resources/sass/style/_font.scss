@@ -1,23 +1,27 @@
-/* font */
+/*
+//---------------------------------------------------------------------------
+// font.scss
+//---------------------------------------------------------------------------
+*/
 @mixin text($font-size) {
     text-align: center;
 
-    @media (min-width: 992px) {
+    @media only screen and (min-width: 992px) {
         font-size: $font-size + px;
     }
 
     /* 平板電腦 */
-    @media (min-width: 768px) and (max-width: 991px) {
+    @media only screen and (max-width: 991px) {
         font-size: $font-size + px;
     }
 
     /* 手機 */
-    @media (max-width: 767px) {
-        font-size: $font-size + px;
+    @media only screen and (max-width: 767px) {
+        font-size: $font-size - 4 + px;
     }
 
     /* 小手機 */
-    @media (max-width: 480px) {
+    @media only screen and (max-width: 480px) {
         font-size: $font-size - 6 + px;
     }
 }
@@ -82,6 +86,11 @@
 .text-medium-2 {
     @include text(24);
     color: $font-color-2;
+}
+
+.text-medium-3 {
+    @include text(24);
+    color: $font-color-3;
 }
 
 .text-small-0 {

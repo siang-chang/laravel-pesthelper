@@ -1,11 +1,28 @@
+/*
+//---------------------------------------------------------------------------
+// searchbar.scss
+//---------------------------------------------------------------------------
+*/
 .SearchBar-Border {
     // style
     border-radius: 15px;
     border: solid 1px #bce0fd;
     background-color: #ffffff;
-    // position
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+    @include RWD(pc) {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    @include RWD(pad) {
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    @include RWD(mobile) {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
 
     #searchBar {
         height: 60px;
@@ -39,7 +56,12 @@
 
     // SearchType 選單 , 行動版不顯示
     .btn-group {
+        width: 100%;
+
         .dropdown-menu {
+            width: 100%;
+            min-width: 150px !important;
+
             a {
                 @include text(24);
                 color: $font-color-2;
@@ -47,29 +69,26 @@
             }
         }
 
-        .searchTypeBtn {
+        .dropdown-toggle {
             height: 60px;
             border: none;
             padding: 0px;
-            margin-top: 0px;
-            margin-bottom: 0px;
+            // background-color: red;
             filter: alpha(opacity=0) \9;
             /* IE8 */
             background-color: rgba(255, 255, 255, .1);
 
-            /* IE9及其它瀏覽器會執行此行 */
             input {
-                width: 105px;
+                // position
+                width: 63%;
                 border: 0 none;
                 // style
                 cursor: pointer;
-                filter: alpha(opacity=0) \9;
+                // filter: alpha(opacity=0) \9;
                 /* IE8 */
-                background-color: rgba(255, 255, 255, .1);
-
-
-
+                // background-color: rgba(255, 255, 255, .1);
             }
+
             // 修改 inputbox 的選取顏色，造成沒有被選取的假象
             input::selection {
                 background: $bg-color-0;
@@ -83,10 +102,6 @@
                 height: 44px;
                 margin-top: 8px;
                 margin-bottom: 8px;
-                filter: alpha(opacity=0) \9;
-                /* IE8 */
-                background-color: rgba(255, 255, 255, .1);
-                /* IE9及其它瀏覽器會執行此行 */
             }
         }
     }
@@ -99,6 +114,7 @@
         background-color: $btn-color-1;
         border: none;
         margin: 8px;
+        margin-left: 0px;
         // border-color: rgba(255, 255, 255, .9);
     }
 }
