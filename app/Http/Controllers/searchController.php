@@ -12,8 +12,11 @@ class SearchController extends Controller
     {
         $searchType = $request->searchType;
         $keyWord = $request->keyWord;
-        // 呼叫關鍵字計數功能(KeywordCount function)
-        SearchController::KeywordCount($keyWord);
+
+        // 判斷是否為空值，否就呼叫關鍵字計數功能(KeywordCount function)
+        if ((empty($keyWord)) == false) {
+            SearchController::KeywordCount($keyWord);
+        }
         // 判斷 SearchType
         if ($searchType == "植株") {
             $datas = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');

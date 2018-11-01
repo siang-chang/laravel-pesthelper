@@ -85,7 +85,6 @@
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="{{ url('/index') }}">搜尋</a>
                     <a href="{{ url('/pestcatalog') }}">害蟲目錄</a>
                     <a href="{{ url('/plantcatalog') }}">植株目錄</a>
                     <a href="{{ url('/imageUpload') }}">圖片上傳</a>

@@ -18,18 +18,21 @@ class PestController extends Controller
         return view($catalog, compact('Data'));
     }
 
-    public $detailed,$orderdata,$page;
+    public $detailed,$orderdata1,$orderdata2,$page;
     public function Detailed($num)
     {
         $page = $this->page = 'pestDetailed';
         $detailed = $this->detailed = DB::table('pestlist');
-        $orderdata = $this->oderdata = DB::table('solutionlist')->where('pestNum', $num);
-
-        $Data = getHelper::Detailed($num,$detailed,$orderdata);
-
-        return view($page, compact('Data'));
+        $orderdata1 = $this->oderdata1 = DB::table('pestalias');
+        $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
+        $pestData = getHelper::Detailed($num,$detailed);
+        $alias = getHelper::pestorder($num,$orderdata1)->pluck('pestAlias');
+        $solutionData = getHelper::pestorder($num,$orderdata2);
+        //dd($pestData,$alias,$solutionData);
+        return view($page, compact('pestData','alias','solutionData'));
 
     } 
+    ////////////////////////////////////////////////////////
     public function imageUpload()
     {
         return view('imageUpload');
