@@ -101,6 +101,11 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.page-title div {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 .page-title hr {
   margin: 0px;
   padding: 0px;
@@ -1038,6 +1043,7 @@ a:hover {
   height: auto;
   max-width: 100%;
   max-height: 100%;
+  border-radius: 5px;
   border: solid 1px;
   border-color: #bce0fd;
 }
@@ -1309,5 +1315,15 @@ a:hover {
   padding: 0px;
   border: solid 1.5px;
   border-color: #2699fb;
+}
+
+.textdata img {
+  width: 80%;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: #bce0fd;
 }
 /*# sourceMappingURL=style.css.map */

@@ -80,8 +80,10 @@ Route::get('/_pestcatalog', function () {
 Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 
 # 害蟲個別頁面
-Route::get('/TestDetailed/{num}', 'PestController@TestDetailed');
+Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
 
+# 植株個別頁面
+Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
 /*
 //---------------------------------------------------------------------------
 // 後端區域
