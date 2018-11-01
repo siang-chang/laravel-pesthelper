@@ -18,16 +18,21 @@ class PestController extends Controller
         return view($catalog, compact('Data'));
     }
 
-    public $detailed, $orderdata, $page;
     /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
+    public $detailed,$orderdata1,$orderdata2,$page;
     public function Detailed($num)
     {
         $page = $this->page = 'pestDetailed';
         $detailed = $this->detailed = DB::table('pestlist');
-        $orderdata = $this->oderdata = DB::table('solutionlist')->where('pestNum', $num);
-        $Data = getHelper::Detailed($num, $detailed, $orderdata);
-        return view($page, compact('Data'));
+        $orderdata1 = $this->oderdata1 = DB::table('pestalias');
+        $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
+        $pestData = getHelper::Detailed($num,$detailed);
+        $alias = getHelper::pestorder($num,$orderdata1)->pluck('pestAlias');
+        $solutionData = getHelper::pestorder($num,$orderdata2);
+        //dd($pestData,$alias,$solutionData);
+        return view($page, compact('pestData','alias','solutionData'));
     }
+  
     // 前端測試用
     public function TestDetailed($num)
     {
@@ -60,6 +65,8 @@ class PestController extends Controller
 
         return view('site/pestdetail', compact('pestData', 'alias', 'solutionDatas'));
     }
+        
+    ////////////////////////////////////////////////////////
 
     public function imageUpload()
     {

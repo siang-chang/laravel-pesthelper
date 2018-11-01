@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                @foreach ($Data[0] as $data)
+                {{dd($plantData,$alias,$infectRelation)}}
+                @foreach ($plantData as $data)
                 <table>
                     <tr>
                         <td>
@@ -18,13 +19,10 @@
                             {{ $data->scientificName }}
                         </td>
                         <td>
-                            {{ $data->alias }}
+                            {{ $data->category }}
                         </td>
                         <td>
-                            {{ $data->plantFamily }}
-                        </td>
-                        <td>
-                            {{ $data->plantGenus }}
+                            {{ $data->secondCategory }}
                         </td>
                         <td>
                             {{ $data->img }}
@@ -32,8 +30,12 @@
                     </tr>
                 </table>
                 @endforeach
-                @foreach ($Data[1] as $relationship)
-                {{ $relationship->pestNum }}
+                @foreach ($alias as $_alias)
+                {{ $_alias }}
+                <br>
+                @endforeach
+                @foreach ($infectRelation as $relationship)
+                {{ $relationship->num }}
                 {{ $relationship->name }}
                 {{ $relationship->img }}
                 <br>

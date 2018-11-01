@@ -19,16 +19,18 @@ class PlantController extends Controller
         return view($catalog, compact('Data'));
     }
 
-    public $detailed, $orderdata, $page;
+    public $detailed, $orderdata1,$orderdata2, $page;
     public function Detailed($num)
     {
         $page = $this->page = 'plantDetailed';
         $detailed = $this->detailed = DB::table('plantlist');
-        $orderdata = $this->oderdata = DB::table('relationship')->where('plantNum', $num);
+        $orderdata1 = $this->oderdata1 = DB::table('plantalias');
+        $orderdata2= $this->oderdata2 = DB::table('relationship');
 
-        $Data = getHelper::Detailed($num, $detailed, $orderdata);
-
-        return view($page, compact('Data'));
+        $plantData = getHelper::Detailed($num, $detailed);
+        $alias = getHelper::plantorder($num, $orderdata1)->pluck('plantAlias');
+        $infectRelation = getHelper::plantorder($num, $orderdata2)->select('num','name','img')->get();
+        return view($page, compact('plantData','alias','infectRelation'));
 
     }
     // 前端測試用
