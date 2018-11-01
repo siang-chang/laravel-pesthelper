@@ -2,14 +2,14 @@
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
-    <!-- 頁面 Title = 害蟲名稱 -->
+    <!-- 頁面 Title = 植株名稱 -->
     <div class="row page-title">
         <h1 class="col-xs-12 text-Large-1">{{ $plantData->name }}</h1>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
             <hr />
         </div>
     </div>
-    <!-- 害蟲資料 -->
+    <!-- 植株資料 -->
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
@@ -38,12 +38,14 @@
                         @endforeach
                     </p>
                 </div>
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix visible-xs-block"></div>
                 <div class="col-xs-6">
-                    <div class="RoundBtn-1-5 text-medium-1">目別</div>
+                    <div class="RoundBtn-1-5 text-medium-1">科別</div>
                     <p class="text-medium-3">{{ $plantData->category }}</p>
                 </div>
                 <div class="col-xs-6">
-                    <div class="RoundBtn-1-5 text-medium-1">科別</div>
+                    <div class="RoundBtn-1-5 text-medium-1">屬別</div>
                     <p class="text-medium-3">{{ $plantData->secondCategory }}</p>
                 </div>
             </div>
@@ -62,8 +64,10 @@
             <div class="row textdata">
                 @foreach($infectRelation as $relation)
                 <div class="col-xs-6">
-                    <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">
-                    <p class="text-medium-3">{{ $relation->name }}</p>
+                    <a href='{{ url("/pestDetailed/$relation->num") }}'>
+                        <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">
+                        <p class="text-medium-3">{{ $relation->name }}</p>
+                    </a>
                 </div>
                 @endforeach
             </div>

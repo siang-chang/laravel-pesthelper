@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                {{dd($pestData,$alias,$solutionData)}}
+                {{-- {{dd($pestData,$alias,$solutionData)}} --}}
                 @foreach ($pestData as $data)
                 <table>
                     <tr>

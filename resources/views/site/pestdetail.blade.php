@@ -14,13 +14,13 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
-                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name }}">
+                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '' }}">
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
-                <div class="col-xs-6">
+                <div class="col-xs-6"　style="background-color:red;">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
-                    <p class="text-medium-3">{{ $pestData->scientificName }}</p>
+                    <p class="text-medium-3">{{ $pestData->scientificName ?? '' }}</p>
                 </div>
                 <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
@@ -38,6 +38,8 @@
                         @endforeach
                     </p>
                 </div>
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix"></div>
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">目別</div>
                     <p class="text-medium-3">{{ $pestData->category }}</p>
@@ -48,7 +50,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
-                    <p class="text-medium-3">{{ $pestData->habit }}</p>
+                    <p class="text-medium-3" style="text-align:left;">{{ $pestData->habit }}</p>
                 </div>
             </div>
             <div class="text-medium-1">．．．</div>

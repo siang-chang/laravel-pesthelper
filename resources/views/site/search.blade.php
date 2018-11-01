@@ -19,9 +19,9 @@
         @foreach($searchResults as $results)
         <div class="img-box col-xs-12 col-sm-6 col-md-4">
             @if(substr( $results->num , 0 , 1 ) == 'A')
-            <a href='{{ url("/pestTestDetailed/$results->num") }}'>
+            <a href='{{ url("/pestDetailed/$results->num") }}'>
                 @else
-                <a href='{{ url("/plantTestDetailed/$results->num") }}'>
+                <a href='{{ url("/plantDetailed/$results->num") }}'>
                     @endif
 
                     <div id="{{ $results->num }}" class="img-innerbox">

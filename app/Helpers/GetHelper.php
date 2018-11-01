@@ -24,7 +24,7 @@ class GetHelper
     }
     public static function Detailed($num, $detailed)
     {
-        $datas = $detailed->where('num', $num)->get();
+        $datas = $detailed->where('num', $num)->first();
         return $datas;
     }
     public static function pestorder($num, $orderdata)
