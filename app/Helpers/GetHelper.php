@@ -22,12 +22,19 @@ class GetHelper
         return $Data;
 
     }
-
-    public static function Detailed($num, $detailed, $orderdata)
+    public static function Detailed($num, $detailed)
     {
         $datas = $detailed->where('num', $num)->get();
-        $oder = $orderdata->get();
-        $Data = array($datas, $oder);
-        return $Data;
+        return $datas;
+    }
+    public static function pestorder($num, $orderdata)
+    {
+        $oder = $orderdata->where('pestNum', $num)->get();
+        return $oder;
+    }
+    public static function plantorder($num, $orderdata)
+    {
+        $oder = $orderdata->where('plantNum', $num);
+        return $oder;
     }
 }
