@@ -80,10 +80,10 @@ Route::get('/_pestcatalog', function () {
 Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 
 # 害蟲個別頁面
-Route::get('/pestdetailed/{num}', 'PestController@Detailed');
+Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
 
 # 植株個別頁面
-Route::get('/plantdetailed/{num}', 'PlantController@Detailed');
+Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
 /*
 //---------------------------------------------------------------------------
 // 後端區域
@@ -107,19 +107,23 @@ Route::get('/imageUpload', function () {
     return view('imageUpload');
 });
 
+
 #顯示搜尋結果
-/*
 Route::get('/searchResults', function () {
     return view('searchResults');
 });
 Auth::routes();
-*/
+#顯示熱門關鍵字
 #顯示害蟲清單
 Route::get('/pestcatalog', 'PestController@GetCategoryList');
 
 
 #顯示植株清單
 Route::get('/plantcatalog', 'PlantController@GetCategoryList');
+#害蟲個別頁面
+Route::get('/pestDetailed/{num}', 'PestController@Detailed');
+#植株個別頁面
+Route::get('/plantDetailed/{num}', 'PlantController@Detailed');
 
 // 圖片上傳
 Route::get('imageupload', 'PestController@imageUpload')->name('image.upload');

@@ -4,7 +4,7 @@
 <div class="container">
     <!-- 頁面 Title = 害蟲名稱 -->
     <div class="row page-title">
-        <h1 class="col-xs-12 text-Large-1">{{ $pestData->name ?? '' }}</h1>
+        <h1 class="col-xs-12 text-Large-1">{{ $pestData->name }}</h1>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
             <hr />
         </div>
@@ -14,15 +14,14 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
-                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '' }}">
+                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name }}">
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
-                    <p class="text-medium-3">{{ $pestData->scientificName ?? '' }}</p>
+                    <p class="text-medium-3">{{ $pestData->scientificName }}</p>
                 </div>
-                @if(!empty($alias))
                 <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
@@ -39,18 +38,17 @@
                         @endforeach
                     </p>
                 </div>
-                @endif
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">目別</div>
-                    <p class="text-medium-3">{{ $pestData->category ?? '' }}</p>
+                    <p class="text-medium-3">{{ $pestData->category }}</p>
                 </div>
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
-                    <p class="text-medium-3">{{ $pestData->secondCategory ?? '' }}</p>
+                    <p class="text-medium-3">{{ $pestData->secondCategory }}</p>
                 </div>
                 <div class="col-xs-12">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
-                    <p class="text-medium-3">{{ $pestData->habit ?? '' }}</p>
+                    <p class="text-medium-3">{{ $pestData->habit }}</p>
                 </div>
             </div>
             <div class="text-medium-1">．．．</div>
@@ -67,19 +65,17 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <div class="row textdata">
-                @if(!empty($solutionDatas))
                 @foreach($solutionDatas as $solutionData)
                 <div class="col-xs-12">
                     <div class="RoundBtn-1-5 text-medium-1">方案類別</div>
-                    <p class="text-medium-3">{{ $solutionData->solutionType ?? '' }}</p>
+                    <p class="text-medium-3">{{ $solutionData->solutionType }}</p>
                 </div>
                 <div class="col-xs-12">
                     <div class="RoundBtn-1-5 text-medium-1">方案內容</div>
-                    <p class="text-medium-3">{{ $solutionData->solution ?? '' }}</p>
+                    <p class="text-medium-3">{{ $solutionData->solution }}</p>
                 </div>
                 <hr />
                 @endforeach
-                @endif
             </div>
             <div class="text-medium-1">．．．</div>
         </div>
