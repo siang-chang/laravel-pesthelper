@@ -26,16 +26,20 @@
                     <!-- ↑ 先將「植株別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
                     <p class="text-medium-3">
-                        <!-- 使用 foreach 列印「植株別名」 -->
-                        @foreach ($alias as $key => $value)
-                        @if($key +1 == $key_last)
-                        <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
-                        {{ $value }}
+                        @if($key_last <= 1)
+                            {{ '暫無別名' }}
                         @else
-                        <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
-                        {{ $value . '、' }}
+                            <!-- 使用 foreach 列印「植株別名」 -->
+                            @foreach ($alias as $key => $value)
+                            @if($key +1 == $key_last)
+                            <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
+                            {{ $value }}
+                            @else
+                            <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
+                            {{ $value . '、' }}
+                            @endif
+                            @endforeach
                         @endif
-                        @endforeach
                     </p>
                 </div>
                 <!-- Add the extra clearfix for only the required viewport -->

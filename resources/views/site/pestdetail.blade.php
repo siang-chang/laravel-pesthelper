@@ -22,32 +22,38 @@
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
                     <p class="text-medium-3">{{ $pestData->scientificName ?? '暫無學名' }}</p>
                 </div>
-                <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
+                <div id="{{ $key_last = count($alias) }}" class="col-xs-6" style="background-color:green;">
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
                     <p class="text-medium-3">
-                        <!-- 使用 foreach 列印「害蟲別名」 -->
-                        @foreach ($alias as $key => $value)
-                        @if($key +1 == $key_last)
-                        <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
-                        {{ $value ?? '暫無別名' }}
+                        @if($key_last <= 1)
+                            {{ '暫無別名' }}
                         @else
-                        <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
-                        {{ $value . '、' }}
+                            <!-- 使用 foreach 列印「害蟲別名」 -->
+                            @foreach ($alias as $key => $value)
+                                @if($key +1 == $key_last)
+                                <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
+                                {{ $value }}
+                                @else
+                                <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
+                                {{ $value . '、' }}
+                                @endif
+                            @endforeach
                         @endif
-                        @endforeach
                     </p>
                 </div>
                 <!-- Add the extra clearfix for only the required viewport -->
-                <div class="clearfix"></div>
+                {{-- <div class="clearfix visible-xs" style="background-color:blue;"></div> --}}
                 <div class="col-xs-6">
                     <div class="RoundBtn-1-5 text-medium-1">目別</div>
                     <p class="text-medium-3">{{ $pestData->category ?? '暫無目別' }}</p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6" style="background-color:red;">
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
                     <p class="text-medium-3">{{ $pestData->secondCategory ?? '暫無科別' }}</p>
                 </div>
+                <!-- Add the extra clearfix for only the required viewport -->
+                {{-- <div class="clearfix visible-xs-block" style="background-color:blue;"></div> --}}
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
                     <p class="text-medium-3" style="text-align:left;">{{ $pestData->habit ?? '暫無習性' }}</p>
@@ -67,7 +73,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <div class="row textdata">
-                @if(isset($solutionDatas[0]))
+                {{-- @if(isset($solutionDatas[0])) --}}
                 <!-- 如果 $solutionDatas 有資料，則使用 foreach列印 -->
                 @foreach($solutionDatas as $solutionData)
                 <!-- 使用 foreach 列印 $solutionData -->
@@ -84,12 +90,12 @@
                 </div>
                 <!-- 列印結束 -->
                 @endforeach
-                @else
+                {{-- @else
                 <!-- 如果 $solutionDatas 沒有資料，則顯示錯誤資訊 -->
                 <div class="col-xs-12">
                     <p class="text-medium-3">此害蟲目前尚無解決方案資料</p>
                 </div>
-                @endif
+                @endif --}}
             </div>
             <div class="text-medium-1">．．．</div>
         </div>

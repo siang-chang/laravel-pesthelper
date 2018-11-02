@@ -106,3 +106,21 @@
         border-color: $border-color-2;
     }
 }
+
+// 提示圖案、警示圖案
+.error-msg {
+    // margin: 0 auto;
+    // margin: 30px;
+    // margin-bottom: 30px;
+    // background-color: red;
+    img {
+        width: 50%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+
+}

@@ -137,7 +137,7 @@ a:hover {
   position: fixed;
   width: 50px;
   height: 50px;
-  bottom: 101px;
+  bottom: 60px;
   right: 8.6%;
   cursor: pointer;
   z-index: 999;
@@ -1051,6 +1051,17 @@ a:hover {
   border-radius: 5px;
   border: solid 1px;
   border-color: #bce0fd;
+}
+
+.error-msg img {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.error-msg p {
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 /*
