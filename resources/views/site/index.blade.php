@@ -31,7 +31,7 @@
     <div class="row" style="padding-top: 50px;text-align: center;">
         <p class="text-medium-0">或者你可以試試</p>
     </div>
-    <div class="row cta-btn">
+    <div class="row cta">
         <button type="button" id="btnTest" class="btn-1 text-medium-0">害蟲辨識</button>
         <span style="margin: 15px;"></span>
         <button type="button" id="btnTest" class="btn-0 text-medium-0">瀏覽教學</button>

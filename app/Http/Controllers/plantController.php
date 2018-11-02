@@ -29,6 +29,8 @@ class PlantController extends Controller
         $plantData = getHelper::Detailed($num, $detailed);
         $alias = getHelper::plantorder($num, $orderdata1)->pluck('plantAlias');
         $infectRelation = getHelper::plantorder($num, $orderdata2)->select('num', 'name', 'img')->get();
+        // 資料重編碼
+        $infectRelation = json_decode($infectRelation);
 
         /* 前端測試用 */
         // $fakedata = [
@@ -68,7 +70,7 @@ class PlantController extends Controller
         // $infectRelation = convertArray2Object($fakedata2);
 
         /* 資料 & 頁面 -> 輸出 */
-        // dd($plantData,$alias,$infectRelation);
+        // dd($plantData, $alias, $infectRelation);
         return view('site/plantdetail', compact('plantData', 'alias', 'infectRelation'));
 
     }

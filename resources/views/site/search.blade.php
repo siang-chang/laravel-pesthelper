@@ -22,27 +22,27 @@
         <div class="img-box col-xs-12 col-sm-6 col-md-4">
             @if(substr( $results->num , 0 , 1 ) == 'A')
             <a href='{{ url("/pestDetailed/$results->num") }}'>
-                @else
-                <a href='{{ url("/plantDetailed/$results->num") }}'>
-                    @endif
-                    <div id="{{ $results->num }}" class="img-innerbox">
-                        <div class="img">
-                            @if(substr( $results->num , 0 , 1 ) == 'A')
-                            <img class="icon" src="img/icon/icon_pest.svg" width="56">
-                            @else
-                            <img class="icon" src="img/icon/icon_plant.svg" width="56">
-                            @endif
-                            <img class="corner" src="img/corner.svg" width="80">
-                            {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
-                            <img class="main" src="img/image.jpg" alt="{{ $results->name }}">
-                        </div>
-                        <hr />
-                        <div class="base">
-                            <p class="text-article-1">{{ $results->name }}</p>
-                            <p class="text-small-1">{{ $results->scientificName }}</p>
-                        </div>
+            @else
+            <a href='{{ url("/plantDetailed/$results->num") }}'>
+            @endif
+                <div id="{{ $results->num }}" class="img-innerbox">
+                    <div class="img">
+                        @if(substr( $results->num , 0 , 1 ) == 'A')
+                        <img class="icon" src="img/icon/icon_pest.svg" width="56">
+                        @else
+                        <img class="icon" src="img/icon/icon_plant.svg" width="56">
+                        @endif
+                        <img class="corner" src="img/corner.svg" width="80">
+                        {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
+                        <img class="main" src="img/image.jpg" alt="{{ $results->name }}">
                     </div>
-                </a>
+                    <hr />
+                    <div class="base">
+                        <p class="text-article-1">{{ $results->name }}</p>
+                        <p class="text-small-1">{{ $results->scientificName }}</p>
+                    </div>
+                </div>
+            </a>
         </div>
         @endforeach
         @else

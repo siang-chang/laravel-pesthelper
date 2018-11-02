@@ -21,18 +21,6 @@ function convertArray2Object($defs)
     };
     return (object)array_map($innerfunc, $defs);
 }
-function array_to_json($sel_array)
-{
-    foreach ($sel_array as $key => $value) {
-        if (is_string($key) || is_string($value)) {
-            $new_array[urlencode($key)] = urlencode($value);
-        }
-        else {
-            $new_array='error';
-        }
-    }
-    return urldecode(json_encode($new_array));
-}
 /*
 //---------------------------------------------------------------------------
 // 前端區域

@@ -20,11 +20,6 @@
 // layout.scss
 //---------------------------------------------------------------------------
 */
-/*
-//---------------------------------------------------------------------------
-// 全域樣式
-//---------------------------------------------------------------------------
-*/
 html {
   height: 100%;
 }
@@ -59,13 +54,13 @@ body {
   }
 }
 
-.main-container {
+body .main-container {
   min-height: 100%;
   /* 此處 padding 必須和 footer 的高度相同 */
   padding-bottom: 60px;
 }
 
-footer {
+body footer {
   /* 展開footer寬度 */
   width: 100%;
   /* position */
@@ -78,13 +73,18 @@ footer {
   background-color: #2699fb;
 }
 
-footer div {
+body footer div {
   text-align: left !important;
   /* style */
   font-size: 16px;
   color: #ffffff;
 }
 
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
 a:hover {
   color: #bce0fd !important;
   text-decoration: none;
@@ -112,6 +112,29 @@ a:hover {
   border: 0px;
   background-color: #2699fb;
   height: 3px;
+}
+
+.cta {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cta p {
+  margin-top: 30px;
+}
+
+.cta .bottom {
+  margin-bottom: 30px;
+}
+
+.flex-align-title {
+  text-align: center;
+}
+
+.flex-align-title span {
+  text-align: left;
+  display: inline-block;
 }
 
 /*
@@ -1253,16 +1276,6 @@ a:hover {
   }
 }
 
-.cta-btn {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.cta-btn p {
-  margin-top: 30px;
-}
-
 /*
 //---------------------------------------------------------------------------
 // search.scss
@@ -1327,7 +1340,7 @@ a:hover {
 }
 
 .textdata p {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .textdata .p {

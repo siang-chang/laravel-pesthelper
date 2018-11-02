@@ -3,12 +3,6 @@
 // layout.scss
 //---------------------------------------------------------------------------
 */
-/*
-//---------------------------------------------------------------------------
-// 全域樣式
-//---------------------------------------------------------------------------
-*/
-
 html {
     height: 100%;
 }
@@ -37,34 +31,39 @@ body {
     @include RWD(mobile) {
         padding-top: 60px;
     }
-}
 
-.main-container {
-    min-height: 100%;
-    /* 此處 padding 必須和 footer 的高度相同 */
-    padding-bottom: 60px;
-}
+    .main-container {
+        min-height: 100%;
+        /* 此處 padding 必須和 footer 的高度相同 */
+        padding-bottom: 60px;
+    }
 
-footer {
-    /* 展開footer寬度 */
-    width: 100%;
-    /* position */
-    height: 60px;
-    margin-top: -60px;
-    /* inner position */
-    padding-left: 20px;
-    line-height: 60px;
-    /* style */
-    background-color: $bg-color-1;
-
-    div {
-        text-align: left !important;
+    footer {
+        /* 展開footer寬度 */
+        width: 100%;
+        /* position */
+        height: 60px;
+        margin-top: -60px;
+        /* inner position */
+        padding-left: 20px;
+        line-height: 60px;
         /* style */
-        font-size: 16px;
-        color: $font-color-0;
+        background-color: $bg-color-1;
+
+        div {
+            text-align: left !important;
+            /* style */
+            font-size: 16px;
+            color: $font-color-0;
+        }
     }
 }
 
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
 a {
     &:hover {
         color: $font-color-2 !important;
@@ -73,6 +72,7 @@ a {
     }
 }
 
+// 頁面標題區塊
 .page-title {
     h1 {
         margin-top: 30px;
@@ -95,6 +95,29 @@ a {
         border: 0px;
         background-color: $bg-color-1;
         height: 3px;
+    }
+}
+
+// 行動呼籲區塊
+.cta {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    p {
+        margin-top: 30px;
+    }
+
+    .bottom {
+        margin-bottom: 30px;
+    }
+}
+
+.flex-align-title {
+    text-align: center;
+    span {
+        text-align: left;
+        display: inline-block;
     }
 }
 
