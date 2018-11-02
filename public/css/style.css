@@ -85,6 +85,15 @@ body footer div {
 // 全域樣式
 //---------------------------------------------------------------------------
 */
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
 a:hover {
   color: #bce0fd !important;
   text-decoration: none;

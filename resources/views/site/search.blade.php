@@ -20,11 +20,15 @@
         <!-- 有資料的話，使用 foreach 列印 -->
         @foreach($searchResults as $results)
         <div class="img-box col-xs-12 col-sm-6 col-md-4">
+            <!-- 判斷這筆資料是 "害蟲" 或 "植株" -->
             @if(substr( $results->num , 0 , 1 ) == 'A')
-            <a href='{{ url("/pestDetailed/$results->num") }}'>
+            <!-- 如果是 "害蟲"，則將網址暫存為 '/pestDetailed/' -->
+            <span class="hidden">{{ $url='/pestDetailed/' }}</span>
             @else
-            <a href='{{ url("/plantDetailed/$results->num") }}'>
+            <!-- 如果是 "植株"，則將網址暫存為 '/plantDetailed/' -->
+            <span class="hidden">{{ $url='/plantDetailed/' }}</span>
             @endif
+            <a href='{{ url($url.$results->num) }}'>
                 <div id="{{ $results->num }}" class="img-innerbox">
                     <div class="img">
                         @if(substr( $results->num , 0 , 1 ) == 'A')

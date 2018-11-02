@@ -65,6 +65,19 @@ body {
 //---------------------------------------------------------------------------
 */
 a {
+
+    // 連結的顏色
+    &:link {
+        text-decoration: none;
+    }
+
+    // 點擊後的顏色
+    &:visited {
+        color: $font-color-0 !important;
+        text-decoration: none;
+    }
+
+    // 覆蓋的顏色 (※)必須放置在 visited 後面
     &:hover {
         color: $font-color-2 !important;
         text-decoration: none;
@@ -115,6 +128,7 @@ a {
 
 .flex-align-title {
     text-align: center;
+
     span {
         text-align: left;
         display: inline-block;
