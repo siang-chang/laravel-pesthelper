@@ -55,6 +55,7 @@ body {
 }
 
 body .main-container {
+  width: 100%;
   min-height: 100%;
   /* 此處 padding 必須和 footer 的高度相同 */
   padding-bottom: 60px;
