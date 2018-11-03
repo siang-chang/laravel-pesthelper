@@ -79,4 +79,16 @@ class PestController extends Controller
         return back()
             ->with('image', $imageName);
     }
+
+    // 前端測試
+    /* 害蟲辨識 */
+    public function recognition()
+    {
+        request()->validate([
+            'userImg' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $userImgs = time() . '.' . request()->userImg->getClientOriginalExtension();
+        request()->userImg->move(public_path('pestimg'), $userImgs);
+        return view('site/recognitionfail', compact('userImgs'));
+    }
 }

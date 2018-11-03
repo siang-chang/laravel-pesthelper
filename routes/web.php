@@ -84,6 +84,13 @@ Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 
 # 植株個別頁面
 // Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
+
+# 害蟲影像辨識
+Route::get('/recognition', function () {
+    return view('site/recognition');
+});
+# 害蟲影像辨識 -> 傳送辨識圖片
+Route::post('/recognition', 'PestController@recognition');
 /*
 //---------------------------------------------------------------------------
 // 後端區域
