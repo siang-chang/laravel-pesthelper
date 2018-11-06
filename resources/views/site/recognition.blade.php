@@ -9,10 +9,15 @@
             <hr />
         </div>
     </div>
-    <form action="recognition" method="POST" enctype="multipart/form-data">
+    <form action="recognition" method="POST" enctype="multipart/form-data" class="hidden-md hidden-lg text-medium-0">
         @csrf
-        <input type="file" name="userImg" accept="image/*" capture="camera">
-        <button type="submit">post</button>
+        <input type="file" name="userImg" accept="image/*" capture="camera" class="btn-1">
+        <button type="submit" class="btn-1 text-medium-0">post</button>
+    </form>
+    <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
+        @csrf
+        <input type="file" name="userImg" accept="image/*" class="btn-1 text-medium-0">
+        <button type="submit" class="btn-1 text-medium-0">post</button>
     </form>
 </div>
 @stop
