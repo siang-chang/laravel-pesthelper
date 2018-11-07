@@ -41,21 +41,29 @@ body {
 
     footer {
         /* 展開footer寬度 */
-        width: 100%;
         /* position */
+        position: relative;
+        width: 100%;
         height: 60px;
         margin-top: -60px;
         /* inner position */
         padding-left: 20px;
+        padding-right: 20px;
         line-height: 60px;
         /* style */
         background-color: $bg-color-1;
 
-        div {
-            text-align: left !important;
+        .left {
+            position: absolute;
+            left: 20px;
             /* style */
             font-size: 16px;
             color: $font-color-0;
+        }
+
+        .right {
+            position: absolute;
+            right: 20px;
         }
     }
 }
