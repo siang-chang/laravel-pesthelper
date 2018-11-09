@@ -61,7 +61,7 @@
     </div>
     <!-- go to top 功能按鈕 -->
     <button id="goTop" class="Btn-default">
-        <img src="{{ asset('img/icon/up.svg')" width="40" height="40" alt="GoToTop">
+        <img src="{{ asset('img/icon/up.svg') }}" width="40" height="40" alt="GoToTop">
     </button>
 </div>
 @stop
