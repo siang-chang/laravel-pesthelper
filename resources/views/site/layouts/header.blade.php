@@ -26,15 +26,15 @@
                     </button>
                 </div>
                 <!-- logo & WebName -->
-                <div class="navbar-brand text-medium-0"><a href="/pesthelper/public/_index">蟲害小幫手</a></div>
+                <div class="navbar-brand text-medium-0"><a href="{{ url('/') }}">蟲害小幫手</a></div>
             </div><!-- /navbar-header -->
 
             <!-- 桌面版樣式 Collect the nav links, forms, and other content for toggling -->
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="text-medium-0">害蟲辨識</a></li>
-                    <li><a href="/pesthelper/public/_pestcatalog" class="text-medium-0">害蟲目錄</a></li>
-                    <li><a href="#" class="text-medium-0">植株目錄</a></li>
+                    <li><a href="{{ url('/recognition') }}" class="text-medium-0">害蟲辨識</a></li>
+                    <li><a href="{{ url('/pestcatalog') }}" class="text-medium-0">害蟲目錄</a></li>
+                    <li><a href="{{ url('/plantcatalog') }}" class="text-medium-0">植株目錄</a></li>
                     <li class="hidden-tab" onclick="showNavSearch()">
                         <a><img src="{{ asset('img/icon/icon_search.svg') }}" width="20" height="20" alt="Search"></a>
                     </li>
