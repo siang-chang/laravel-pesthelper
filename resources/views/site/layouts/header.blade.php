@@ -26,7 +26,7 @@
                     </button>
                 </div>
                 <!-- logo & WebName -->
-                <div class="navbar-brand text-medium-0"><a href="{{ url('/_index') }}">蟲害小幫手</a></div>
+                <div class="navbar-brand text-medium-0"><a href="{{ url('/') }}">蟲害小幫手</a></div>
             </div><!-- /navbar-header -->
 
             <!-- 桌面版樣式 Collect the nav links, forms, and other content for toggling -->

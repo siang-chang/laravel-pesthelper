@@ -27,7 +27,7 @@ function convertArray2Object($defs)
 //---------------------------------------------------------------------------
  */
 # 系統首頁 & 熱門關鍵字
-Route::get('/_index', 'SearchController@GetKeywordList');
+Route::get('/', 'SearchController@GetKeywordList');
 // Route::get('/_index', function () {
 //     $fakedata = [
 //         [
@@ -89,9 +89,9 @@ Route::post('/_pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 // 後端區域
 //---------------------------------------------------------------------------
  */
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/home', 'HomeController@index')->name('home');
 
 #導向害蟲目錄
