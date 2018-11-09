@@ -10,4 +10,4 @@
 <!-- 導入客製化 css, js -->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <script src="{{ asset('js/script.js') }}"></script>
-<title>PestHelper</title>
+<title>蟲害小幫手</title>

@@ -31,6 +31,8 @@ $(function () {
     $(".main-container").click(function () {
         // 關閉 nav-search
         $('#nav-search').fadeOut(300);
+        // 順便清除 searchbar 的內容
+        $('#navSearchBar').val('');
         // 關閉 navbar-collapse
         var _opened = $(".navbar-collapse").hasClass("navbar-collapse") && $(".navbar-collapse").hasClass("in");
         if (_opened === true && !($(event.target).hasClass("navbar-toggle"))) {
@@ -62,6 +64,8 @@ function showNavSearch() {
 // 關閉導覽搜尋列 nav-search
 function closeNavSearch() {
     $('#nav-search').fadeOut(300);
+    // 順便清除 searchbar 的內容
+    $('#navSearchBar').val('');
 };
 
 /*

@@ -20,11 +20,6 @@
 // layout.scss
 //---------------------------------------------------------------------------
 */
-/*
-//---------------------------------------------------------------------------
-// 全域樣式
-//---------------------------------------------------------------------------
-*/
 html {
   height: 100%;
 }
@@ -59,30 +54,53 @@ body {
   }
 }
 
-.main-container {
+body .main-container {
+  width: 100%;
   min-height: 100%;
   /* 此處 padding 必須和 footer 的高度相同 */
   padding-bottom: 60px;
 }
 
-footer {
+body footer {
   /* 展開footer寬度 */
-  width: 100%;
   /* position */
+  position: relative;
+  width: 100%;
   height: 60px;
   margin-top: -60px;
   /* inner position */
   padding-left: 20px;
+  padding-right: 20px;
   line-height: 60px;
   /* style */
   background-color: #2699fb;
 }
 
-footer div {
-  text-align: left !important;
+body footer .left {
+  position: absolute;
+  left: 20px;
   /* style */
   font-size: 16px;
   color: #ffffff;
+}
+
+body footer .right {
+  position: absolute;
+  right: 20px;
+}
+
+/*
+//---------------------------------------------------------------------------
+// 全域樣式
+//---------------------------------------------------------------------------
+*/
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 a:hover {
@@ -114,6 +132,29 @@ a:hover {
   height: 3px;
 }
 
+.cta {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cta p {
+  margin-top: 30px;
+}
+
+.cta .bottom {
+  margin-bottom: 30px;
+}
+
+.flex-align-title {
+  text-align: center;
+}
+
+.flex-align-title span {
+  text-align: left;
+  display: inline-block;
+}
+
 /*
 //---------------------------------------------------------------------------
 // 全域效果
@@ -137,7 +178,7 @@ a:hover {
   position: fixed;
   width: 50px;
   height: 50px;
-  bottom: 101px;
+  bottom: 60px;
   right: 8.6%;
   cursor: pointer;
   z-index: 999;
@@ -201,6 +242,10 @@ a:hover {
   background-color: #ffffff;
   border: solid 2px;
   border-color: #2699fb;
+}
+
+#nav-search input::-ms-clear {
+  display: none;
 }
 
 #nav-search input:focus {
@@ -1049,6 +1094,17 @@ a:hover {
   border-color: #bce0fd;
 }
 
+.error-msg img {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.error-msg p {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
 /*
 //---------------------------------------------------------------------------
 // searchbar.scss
@@ -1086,6 +1142,10 @@ a:hover {
   border-radius: 15px;
   border: 0 none;
   text-align: left !important;
+}
+
+.SearchBar-Border input::-ms-clear {
+  display: none;
 }
 
 .SearchBar-Border input:focus {
@@ -1234,16 +1294,6 @@ a:hover {
   }
 }
 
-.cta-btn {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.cta-btn p {
-  margin-top: 30px;
-}
-
 /*
 //---------------------------------------------------------------------------
 // search.scss
@@ -1308,7 +1358,7 @@ a:hover {
 }
 
 .textdata p {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .textdata .p {
