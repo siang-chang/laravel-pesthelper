@@ -1,10 +1,10 @@
-# ¥ş³¡­­¨î¦s¨úªºrobots.txt 
+ï»¿# å…¨éƒ¨é™åˆ¶å­˜å–çš„robots.txt 
 User-agent: *
-# ­­¨î¦s¨ú¿ëÃÑ¥¢±Ñ­¶­±
+# é™åˆ¶å­˜å–è¾¨è­˜å¤±æ•—é é¢
 Disallow:/recognitionfail 
-# ­­¨î¦s¨ú¸ê®Æ®wºŞ²z­¶­± 
+# é™åˆ¶å­˜å–è³‡æ–™åº«ç®¡ç†é é¢ 
 Disallow:/phpmyadmin
-# ­­¨î¦s¨ú¶}µo¤¤­¶­±
+# é™åˆ¶å­˜å–é–‹ç™¼ä¸­é é¢
 Disallow:/welcome
 Disallow:/home
 Disallow:/_pestcatalog
@@ -12,6 +12,6 @@ Disallow:/_plantcatalog
 Disallow:/imageUpload
 Disallow:/searchResults
 
-# ¶È­­¨îgoogle¦s¨úªºrobots.txt 
+# åƒ…é™åˆ¶googleå­˜å–çš„robots.txt 
 User-agent: Googlebot-image
 Disallow:/img/
