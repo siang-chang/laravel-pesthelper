@@ -1,4 +1,5 @@
 @extends('site.master.subpage')
+@section('pageTitle', '害蟲目錄')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">

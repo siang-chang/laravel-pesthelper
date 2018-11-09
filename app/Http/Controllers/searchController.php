@@ -86,28 +86,28 @@ class SearchController extends Controller
     public function GetKeywordList()
     {
         /* 前端已合併 */
-        $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
+        // $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
 
         /* 前端假資料 */
-        // $fakedata = [
-        //     [
-        //         'keyWord' => '蚜蟲蟲',
-        //         'keyWordCount' => 1000
-        //     ], [
-        //         'keyWord' => '玉米子',
-        //         'keyWordCount' => 200
-        //     ], [
-        //         'keyWord' => '三葉蟲',
-        //         'keyWordCount' => 100
-        //     ], [
-        //         'keyWord' => '橡皮蟲',
-        //         'keyWordCount' => 2
-        //     ], [
-        //         'keyWord' => '鳳梨王',
-        //         'keyWordCount' => 1
-        //     ]
-        // ];
-        // $keyWordList = convertArray2Object($fakedata);
+        $fakedata = [
+            [
+                'keyWord' => '蚜蟲蟲',
+                'keyWordCount' => 1000
+            ], [
+                'keyWord' => '玉米子',
+                'keyWordCount' => 200
+            ], [
+                'keyWord' => '三葉蟲',
+                'keyWordCount' => 100
+            ], [
+                'keyWord' => '橡皮蟲',
+                'keyWordCount' => 2
+            ], [
+                'keyWord' => '鳳梨王',
+                'keyWordCount' => 1
+            ]
+        ];
+        $keyWordList = convertArray2Object($fakedata);
         return view('site/index', ['keyWordList' => $keyWordList]);
     }
 }

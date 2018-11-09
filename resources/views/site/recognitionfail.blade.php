@@ -1,4 +1,5 @@
 @extends('site.master.subpage')
+@section('pageTitle', '辨識失敗')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
