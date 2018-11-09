@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html  lang="zh-Hant-TW">
 <head>
     @include('site.master.head')
 </head>
