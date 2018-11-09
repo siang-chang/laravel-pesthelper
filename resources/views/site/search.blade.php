@@ -32,13 +32,13 @@
                 <div id="{{ $results->num }}" class="img-innerbox">
                     <div class="img">
                         @if(substr( $results->num , 0 , 1 ) == 'A')
-                        <img class="icon" src="img/icon/icon_pest.svg" width="56">
+                        <img class="icon" src="{{ asset('img/icon/icon_pest.svg') }}" width="56">
                         @else
-                        <img class="icon" src="img/icon/icon_plant.svg" width="56">
+                        <img class="icon" src="{{ asset('img/icon/icon_plant.svg') }}" width="56">
                         @endif
-                        <img class="corner" src="img/corner.svg" width="80">
+                        <img class="corner" src="{{ asset('img/corner.svg') }}" width="80">
                         {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
-                        <img class="main" src="img/image.jpg" alt="{{ $results->name }}">
+                        <img class="main" src="{{ asset('img/image.jpg') }}" alt="{{ $results->name }}">
                     </div>
                     <hr />
                     <div class="base">
@@ -61,7 +61,7 @@
     </div>
     <!-- go to top 功能按鈕 -->
     <button id="goTop" class="Btn-default">
-        <img src="img/icon/up.svg" width="40" height="40" alt="GoToTop">
+        <img src="{{ asset('img/icon/up.svg')" width="40" height="40" alt="GoToTop">
     </button>
 </div>
 @stop

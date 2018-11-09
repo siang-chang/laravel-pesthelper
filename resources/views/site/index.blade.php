@@ -32,7 +32,9 @@
         <p class="text-medium-0">或者你可以試試</p>
     </div>
     <div class="row cta">
-        <button type="button" id="btnTest" class="btn-1 text-medium-0">害蟲辨識</button>
+        <a href="{{ url('/recognition') }}">
+            <button type="button" id="btnTest" class="btn-1 text-medium-0">害蟲辨識</button>
+        </a>
         <span style="margin: 15px;"></span>
         <button type="button" id="btnTest" class="btn-0 text-medium-0">瀏覽教學</button>
     </div>
