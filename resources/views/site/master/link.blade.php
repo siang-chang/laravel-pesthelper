@@ -8,7 +8,7 @@
         <script src="{{ asset('js/script.js') }}"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54516992-1"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128961181-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
 
@@ -17,6 +17,6 @@
             }
             gtag('js', new Date());
 
-            gtag('config', 'UA-54516992-1');
+            gtag('config', 'UA-128961181-1');
 
         </script>
