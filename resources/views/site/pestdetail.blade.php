@@ -1,4 +1,6 @@
 @extends('site.master.subpage')
+@section('pageTitle', $pestData->name)
+@section('description',$pestData->name)
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">

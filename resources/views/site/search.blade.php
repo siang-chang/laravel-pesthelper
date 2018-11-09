@@ -1,4 +1,6 @@
 @extends('site.master.subpage')
+@section('pageTitle', '搜尋結果')
+@section('description','搜尋結果')
 @section('content')
 <!-- 內容區塊 -->
 <div class="container search-container">

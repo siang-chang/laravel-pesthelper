@@ -1,2 +1,17 @@
+# 全部限制存取的robots.txt 
 User-agent: *
-Disallow:
+# 限制存取辨識失敗頁面
+Disallow:/recognitionfail 
+# 限制存取資料庫管理頁面 
+Disallow:/phpmyadmin
+# 限制存取開發中頁面
+Disallow:/welcome
+Disallow:/home
+Disallow:/_pestcatalog
+Disallow:/_plantcatalog
+Disallow:/imageUpload
+Disallow:/searchResults
+
+# 僅限制google存取的robots.txt 
+User-agent: Googlebot-image
+Disallow:/img/
