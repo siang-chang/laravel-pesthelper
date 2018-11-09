@@ -33,7 +33,7 @@
                             @endif
                             <img class="corner" src="img/corner.svg" width="80">
                             {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
-                            <img class="main" src="img/image.jpg" alt="{{ $results->name }}">
+                            <img class="main" src="{{ asset('img/image.jpg') }}" alt="{{ $results->name }}">
                         </div>
                         <hr />
                         <div class="base">
