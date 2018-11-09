@@ -99,9 +99,11 @@ Route::post('/recognition', 'PestController@recognition');
 // 後端區域
 //---------------------------------------------------------------------------
  */
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 #導向害蟲目錄
