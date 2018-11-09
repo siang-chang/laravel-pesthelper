@@ -1,4 +1,6 @@
 @extends('site.master.subpage')
+@section('pageTitle', $plantData->name)
+@section('description',$plantData->name)
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
