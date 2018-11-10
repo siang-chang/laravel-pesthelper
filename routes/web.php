@@ -62,17 +62,17 @@ Route::get('/plantcatalog', function () {
     $fakedata = [
         [
             // 資料說明：植株的目別清單
-            'categoryNum' => 'A002',
-            'categoryName' => '半目',
+            'categoryNum' => 'B002',
+            'categoryName' => '西瓜科'
         ], [
-            'categoryNum' => 'A003',
-            'categoryName' => '半翅目',
+            'categoryNum' => 'B003',
+            'categoryName' => '柳科'
         ], [
-            'categoryNum' => 'A004',
-            'categoryName' => '翅目',
+            'categoryNum' => 'B004',
+            'categoryName' => '蘋科'
         ], [
-            'categoryNum' => 'A005',
-            'categoryName' => '半翅',
+            'categoryNum' => 'B005',
+            'categoryName' => '菊科'
         ]
     ];
     $categoryList = convertArray2Object($fakedata);
