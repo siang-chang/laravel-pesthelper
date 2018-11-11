@@ -67,17 +67,4 @@ class testController extends Controller
         // return redirect()->back()->with('pestcategoryData' ,$pestCategoryData);
         return view('site/pestcatalog', compact('categoryList', 'pestCategoryData'));
     }
-
-    /*
-    // -------------------------------------------------------------------------
-    // 輔助程式
-    // -------------------------------------------------------------------------
-     */
-    public function convertArray2Object($defs)
-    {
-        $innerfunc = function ($a) use (&$innerfunc) {
-            return (is_array($a)) ? (object)array_map($innerfunc, $a) : $a;
-        };
-        return (object)array_map($innerfunc, $defs);
-    }
 }
