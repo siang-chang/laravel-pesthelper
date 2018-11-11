@@ -18,7 +18,7 @@
             <input type="file" id="fileinp" name="userImg" accept="image/*" capture="camera" style="position: absolute;left: 0;top: 0;opacity: 0;width:99%;height:100%;">
         </button>
         <p></p>
-        <button type="submit" class="btn-1 text-medium-0">送出</button>
+        <button type="submit" class="btn-2 text-medium-1">送出</button>
         <hr>
     </form>
     <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
@@ -28,7 +28,7 @@
             <input type="file" id="fileinp" name="userImg" accept="image/*" style="position: absolute;left: 0;top: 0;opacity: 0;width:99%;height:100%;">
         </button>
         <p></p>
-        <button type="submit" class="btn-1">送出</button>
+        <button type="submit" class="btn-2 text-medium-1">送出</button>
     </form>
 </div>
 @stop
