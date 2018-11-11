@@ -38,16 +38,16 @@ Route::get('/pestcatalog', function () {
         [
             // 資料說明：害蟲的目別清單
             'categoryNum' => 'A002',
-            'categoryName' => '半目',
-        ], [
-            'categoryNum' => 'A003',
             'categoryName' => '半翅目',
         ], [
+            'categoryNum' => 'A003',
+            'categoryName' => '胸喙亞目',
+        ], [
             'categoryNum' => 'A004',
-            'categoryName' => '翅目',
+            'categoryName' => '雙翅目',
         ], [
             'categoryNum' => 'A005',
-            'categoryName' => '半翅',
+            'categoryName' => '直翅目',
         ]
     ];
     $categoryList = convertArray2Object($fakedata);
@@ -61,12 +61,12 @@ Route::post('/pestcatalog/{categoryNum}', 'testController@ShowCatalog');
 Route::get('/plantcatalog', function () {
     $fakedata = [
         [
-            // 資料說明：植株的目別清單
+            // 資料說明：植株的科別清單
             'categoryNum' => 'B002',
-            'categoryName' => '西瓜科'
+            'categoryName' => '景天科'
         ], [
             'categoryNum' => 'B003',
-            'categoryName' => '柳科'
+            'categoryName' => '茄科'
         ], [
             'categoryNum' => 'B004',
             'categoryName' => '蘋科'

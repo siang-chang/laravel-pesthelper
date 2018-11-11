@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
         @foreach($categoryList as $category)
         <form action='{{ url("/pestcatalog/$category->categoryNum") }}' method="POST">
             @csrf
@@ -56,6 +56,6 @@
             <input type="submit" value="{{ $category->categoryName }}">
         </form>
         @endforeach
-    </div>
+    </div> --}}
 </div>
 @stop

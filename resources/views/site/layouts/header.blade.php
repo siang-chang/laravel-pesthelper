@@ -2,7 +2,7 @@
         <!-- 導覽列 navbar -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- 導覽搜尋列 nav-search -->
-            <form action="search" method="GET" id="nav-search" style="display:none;">
+            <form action="{{ url('/search') }}" method="GET" id="nav-search" style="display:none;">
                 {{ csrf_field() }}
                 <input type="text" name="keyWord" id="navSearchBar" class="text-medium-1" placeholder="請輸入害蟲或植株的名稱" required>
                 <a class="Btn-default" onclick="closeNavSearch()">
