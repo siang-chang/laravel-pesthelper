@@ -10,35 +10,43 @@
             <hr />
         </div>
     </div>
-    <!-- 害蟲目錄 -->
+    <!-- 植株目錄 -->
     <div class="row">
-        @foreach($categoryList as $category)
-        <div id="{{ $category->categoryNum }}">{{ $category->categoryName }}</div>
-        <form action='{{ url("/pestcatalog/$category->categoryNum") }}' method="POST">
-            @csrf
-            <!-- csrf一定要放在form的下一行 -->
-            <input type="submit" value="show">
-        </form>
-        @endforeach
-        <div>
-            {{-- {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }} --}}
-            @if(!empty($pestCategoryData))
-            @foreach($pestCategoryData as $pestCategory)
-            <div>
-                num = {{ $pestCategory->num }};
+        <div class="panel-group col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="accordion">
+            @foreach($categoryList as $category)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->categoryNum }}">
+                            {{ $category->categoryName }}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{ $category->categoryNum }}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div>
+                            {{-- {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }} --}}
+                            @if(!empty($plantCategoryData))
+                            @foreach($plantCategoryData as $plantCategory)
+                            <div>
+                                num = {{ $plantCategory->num }};
+                            </div>
+                            <div>
+                                name = {{ $plantCategory->name }};
+                            </div>
+                            <div>
+                                scientificName = {{ $plantCategory->scientificName }};
+                            </div>
+                            <hr>
+                            @endforeach
+                            @endif
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                name = {{ $pestCategory->name }};
-            </div>
-            <div>
-                scientificName = {{ $pestCategory->scientificName }};
-            </div>
-            <hr>
             @endforeach
-
-            @endif
-
         </div>
     </div>
+
 </div>
 @stop
