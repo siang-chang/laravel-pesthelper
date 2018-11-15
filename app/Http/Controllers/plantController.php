@@ -74,4 +74,31 @@ class PlantController extends Controller
         return view('site/plantdetail', compact('plantData', 'alias', 'infectRelation'));
 
     }
+
+    //修改建議
+    public function suggestion(Request $request)
+    {
+        $num = $request->num;
+        return view('suggestion', compact('num'));
+    }
+
+    public function newsuggestion(Request $request)
+    {
+        date_default_timezone_set("Asia/Shanghai");
+        $date = date("Y/m/d h:i:sa");
+        $num = $request->num;
+        $suggest = $request->suggest;
+        $email = $request->email;
+        
+        // dd($date,$num,$suggest);
+
+        DB::table('plantsuggestion')->insert([
+            'msgDate' => $date,
+            'plantNum' => $num,
+            'suggestion' => $suggest,
+            'email' => $email,
+        ]);
+
+        return redirect('plantDetailed/'.$num);
+    }
 }

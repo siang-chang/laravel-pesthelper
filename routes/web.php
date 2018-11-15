@@ -130,6 +130,16 @@ Route::get('/_pestcatalog', 'PestController@GetCategoryList');
 #顯示植株清單
 Route::get('/_plantcatalog', 'PlantController@GetCategoryList');
 
+#顯示建議表單
+Route::post('/pestDetailed/suggestion', 'PestController@suggestion');
+Route::post('/plantDetailed/suggestion', 'plantController@suggestion');
+Auth::routes();
+Route::post('/pestDetailed/newsuggestion', 'PestController@newsuggestion');
+Route::post('/plantDetailed/newsuggestion', 'PlantController@newsuggestion');
+Auth::routes();
+
+
+
 // 圖片上傳
 Route::get('imageupload', 'PestController@imageUpload')->name('image.upload');
 Route::post('imageupload', 'PestController@imageUploadPost')->name('image.upload.post');
