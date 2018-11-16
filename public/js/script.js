@@ -92,6 +92,29 @@ function changSearchType(searchType) {
 */
 function openCatalog(categoryNum) {
     // 先關閉所有已展開的目錄，再向後端拿資料
-    $('#collapse' + categoryNum).append(categoryNum);
-    alert(categoryNum);
+    $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8080/pesthelper/public/test.json',
+        success: function (data) {
+            // console.log(data);
+            // console.log(typeof (data));
+            var dataset='';
+            for (i = 0; data.length > i; i++) {
+                str = '<div class="img-box col-xs-12 col-sm-6 col-md-4">' +
+                    '<a href="#">' +
+                    '<div id="" class="img-innerbox">' +
+                    "<div class='img'>" +
+                    "<img class='main' src='http://localhost:8080/pesthelper/public/img/image.jpg' alt=''>" +
+                    "</div>" +
+                    "<hr />" +
+                    "<div class='base'>" +
+                    "<p class='text-article-1'>" + data[i].name + "</p>" +
+                    "<p class='text-small-1'>" + data[i].scientificName + "</p>" +
+                    "</div></div></a></div>";
+                dataset += str;
+            }
+            $('#collapse' + categoryNum).children('.panel-body').html(dataset);
+        }
+    })
 }
+
