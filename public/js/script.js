@@ -84,3 +84,14 @@ function changSearchType(searchType) {
     }
     $("#searchType").val(searchTypeText);
 }
+
+/*
+//---------------------------------------------------------------------------
+// Catalog
+//---------------------------------------------------------------------------
+*/
+function openCatalog(categoryNum) {
+    // 先關閉所有已展開的目錄，再向後端拿資料
+    $('#collapse' + categoryNum).append(categoryNum);
+    alert(categoryNum);
+}

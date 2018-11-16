@@ -17,37 +17,21 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->categoryNum }}">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->categoryNum }}"
+                            onclick="openCatalog('{{ $category->categoryNum }}')">
                             {{ $category->categoryName }}
                         </a>
                     </h4>
                 </div>
                 <div id="collapse{{ $category->categoryNum }}" class="panel-collapse collapse">
                     <div class="panel-body">
-                        <div>
-                            {{-- {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }} --}}
-                            @if(!empty($pestCategoryData))
-                            @foreach($pestCategoryData as $pestCategory)
-                            <div>
-                                num = {{ $pestCategory->num }};
-                            </div>
-                            <div>
-                                name = {{ $pestCategory->name }};
-                            </div>
-                            <div>
-                                scientificName = {{ $pestCategory->scientificName }};
-                            </div>
-                            <hr>
-                            @endforeach
-                            @endif
-                        </div>
+
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
-
     {{-- <div class="row">
         @foreach($categoryList as $category)
         <form action='{{ url("/pestcatalog/$category->categoryNum") }}' method="POST">
@@ -57,5 +41,23 @@
         </form>
         @endforeach
     </div> --}}
+
+    {{-- <div>
+        @if(!empty($pestCategoryData))
+        @foreach($pestCategoryData as $pestCategory)
+        <div>
+            num = {{ $pestCategory->num }};
+        </div>
+        <div>
+            name = {{ $pestCategory->name }};
+        </div>
+        <div>
+            scientificName = {{ $pestCategory->scientificName }};
+        </div>
+        <hr>
+        @endforeach
+        @endif
+    </div> --}}
+
 </div>
 @stop
