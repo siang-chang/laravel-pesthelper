@@ -19,11 +19,13 @@
         <div class="col-xs-12">
             <form action="search" method="GET">
                 @csrf
+                @if(count((array)$keyWordList))
                 @foreach($keyWordList as $keyWord)
                 <button type="submit" name="keyWord" value="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">
                     {{ $keyWord->keyWord }}
                 </button>
                 @endforeach
+                @endif
             </form>
         </div>
     </div>
