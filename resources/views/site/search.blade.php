@@ -18,7 +18,7 @@
     </div>
     <!-- 搜尋結果顯示區域 -->
     <div class="row">
-        @if(count($searchResults))
+        @if(count((array)$searchResults))
         <!-- 有資料的話，使用 foreach 列印 -->
         @foreach($searchResults as $results)
         <div class="img-box col-xs-12 col-sm-6 col-md-4">

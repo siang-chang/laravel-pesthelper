@@ -13,25 +13,28 @@ class SearchController extends Controller
         $searchType = $request->searchType;
         $keyWord = $request->keyWord;
 
-        // 判斷是否為空值，否就呼叫關鍵字計數功能(KeywordCount function)
+        /* 判斷是否為空值，否就呼叫關鍵字計數功能(KeywordCount function) */
         if ((empty($keyWord)) == false) {
             SearchController::KeywordCount($keyWord);
         }
-        // 判斷 SearchType
+
+        /* 判斷 SearchType */
         if ($searchType == "植株") {
             $datas = DB::table('plantlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $searchResults = DB::table('plantlist')->whereIn('num', $datas)->get();
-            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
-        }
-        if ($searchType == "害蟲") {
+        } else if ($searchType == "害蟲") {
             $datas = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $searchResults = DB::table('pestlist')->whereIn('num', $datas)->get();
-            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
         } else {
             $datas = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%', 'or', 'alias', 'like', '%' . $keyWord . '%')->distinct()->pluck('num');
             $searchResults = DB::table('arealist')->whereIn('num', $datas)->get();
-            return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
         }
+        
+        /* 資料重編碼 */
+        $searchResults = json_decode($searchResults);
+
+        /* 回傳 & 顯示資料 */
+        return view('site/search', compact('searchResults', 'searchType', 'keyWord'));
 
         /* 前端假資料 */
         // $fakedata = [
@@ -86,28 +89,30 @@ class SearchController extends Controller
     public function GetKeywordList()
     {
         /* 前端已合併 */
-        // $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
+        $keyWordList = DB::table('searchrecord')->orderBy('keyWordCount', 'desc')->take(5)->get();
 
         /* 前端假資料 */
-        $fakedata = [
-            [
-                'keyWord' => '蚜蟲蟲',
-                'keyWordCount' => 1000
-            ], [
-                'keyWord' => '玉米子',
-                'keyWordCount' => 200
-            ], [
-                'keyWord' => '三葉蟲',
-                'keyWordCount' => 100
-            ], [
-                'keyWord' => '橡皮蟲',
-                'keyWordCount' => 2
-            ], [
-                'keyWord' => '鳳梨王',
-                'keyWordCount' => 1
-            ]
-        ];
-        $keyWordList = convertArray2Object($fakedata);
+        // $fakedata = [
+        //     [
+        //         'keyWord' => '蚜蟲蟲',
+        //         'keyWordCount' => 1000
+        //     ], [
+        //         'keyWord' => '玉米子',
+        //         'keyWordCount' => 200
+        //     ], [
+        //         'keyWord' => '三葉蟲',
+        //         'keyWordCount' => 100
+        //     ], [
+        //         'keyWord' => '橡皮蟲',
+        //         'keyWordCount' => 2
+        //     ], [
+        //         'keyWord' => '鳳梨王',
+        //         'keyWordCount' => 1
+        //     ]
+        // ];
+        // $keyWordList = convertArray2Object($fakedata);
+
+        /* 回傳 & 顯示資料 */
         return view('site/index', ['keyWordList' => $keyWordList]);
     }
 }
