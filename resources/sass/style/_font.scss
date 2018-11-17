@@ -80,7 +80,7 @@
 
 .text-medium-1 {
     @include text(24);
-    color: $font-color-1;
+    color: $font-color-1 !important;
 }
 
 .text-medium-2 {
@@ -123,4 +123,9 @@
 .text-article-2 {
     @include text(19);
     color: $font-color-2;
+}
+
+.text-xs-1 {
+    @include text(10);
+    color: $font-color-1;
 }

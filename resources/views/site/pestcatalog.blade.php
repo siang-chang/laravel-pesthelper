@@ -12,21 +12,38 @@
     </div>
     <!-- 害蟲目錄 -->
     <div class="row">
-        <div class="panel-group col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="accordion">
+        <div class="panel-group col-xs-12" id="accordion">
             @foreach($categoryList as $category)
-            <div class="panel panel-default" onclick="openCatalog('{{ $category->categoryNum }}')">
+            <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->orderNum }}" onclick="openCatalog('{{ $category->orderNum }}')">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->categoryNum }}">
-                            {{ $category->categoryName }}
-                        </a>
+                        <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
+                        <span class="text-medium-1">{{ $category->pestOrder }}</span>
                     </h4>
                 </div>
-                <div id="collapse{{ $category->categoryNum }}" class="panel-collapse collapse">
+                <div id="collapse{{ $category->orderNum }}" class="panel-collapse collapse">
                     <div class="panel-body row">
                     </div>
                 </div>
             </div>
+            {{-- <div onclick="openCatalog('{{ $category->orderNum }}')">
+                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapse{{ $category->orderNum }}" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->orderNum }}">
+                        <span class="glyphicon glyphicon-chevron-down text-small-1" style="background-color:red;"></span>
+                        <span class="text-medium-1">{{ $category->pestOrder }}</span>
+                    </h4>
+                </a>
+                <div class="collapse" id="collapse{{ $category->orderNum }}">
+                    <div class="well">
+                        ...
+                        <br>123
+                        <br>123
+                        <br>123
+                    </div>
+                </div>
+            </div> --}}
+
             @endforeach
         </div>
     </div>

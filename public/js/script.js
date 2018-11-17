@@ -94,7 +94,7 @@ function openCatalog(categoryNum) {
     // 先關閉所有已展開的目錄，再向後端拿資料
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:8080/pesthelper/public/test.json',
+        url: '/pesthelper/public/test.json',
         success: function (data) {
             // console.log(data);
             // console.log(typeof (data));
@@ -104,7 +104,7 @@ function openCatalog(categoryNum) {
                     '<a href="#">' +
                     '<div id="" class="img-innerbox">' +
                     "<div class='img'>" +
-                    "<img class='main' src='http://localhost:8080/pesthelper/public/img/image.jpg' alt=''>" +
+                    "<img class='main' src='/pesthelper/public/img/image.jpg' alt=''>" +
                     "</div>" +
                     "<hr />" +
                     "<div class='base'>" +

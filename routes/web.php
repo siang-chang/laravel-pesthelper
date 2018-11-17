@@ -33,26 +33,27 @@ Route::get('/', 'SearchController@GetKeywordList');
 Route::get('/search', 'SearchController@Search');
 
 # 害蟲目錄
-Route::get('/pestcatalog', function () {
-    $fakedata = [
-        [
-            // 資料說明：害蟲的目別清單
-            'categoryNum' => 'A002',
-            'categoryName' => '半翅目',
-        ], [
-            'categoryNum' => 'A003',
-            'categoryName' => '胸喙亞目',
-        ], [
-            'categoryNum' => 'A004',
-            'categoryName' => '雙翅目',
-        ], [
-            'categoryNum' => 'A005',
-            'categoryName' => '直翅目',
-        ]
-    ];
-    $categoryList = convertArray2Object($fakedata);
-    return view('site/pestcatalog', ['categoryList' => $categoryList]);
-});
+Route::get('/pestcatalog', 'pestController@GetCategoryList');
+// Route::get('/pestcatalog', function () {
+//     $fakedata = [
+//         [
+//             // 資料說明：害蟲的目別清單
+//             'categoryNum' => 'A002',
+//             'categoryName' => '半翅目',
+//         ], [
+//             'categoryNum' => 'A003',
+//             'categoryName' => '胸喙亞目',
+//         ], [
+//             'categoryNum' => 'A004',
+//             'categoryName' => '雙翅目',
+//         ], [
+//             'categoryNum' => 'A005',
+//             'categoryName' => '直翅目',
+//         ]
+//     ];
+//     $categoryList = convertArray2Object($fakedata);
+//     return view('site/pestcatalog', ['categoryList' => $categoryList]);
+// });
 
 # 害蟲目錄 -> 子目錄展開
 Route::post('/pestcatalog/{categoryNum}', 'testController@ShowCatalog');

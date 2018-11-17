@@ -13,9 +13,22 @@ class PestController extends Controller
     {
         $areaData = $this->areaData = DB::table('pestlist');
         $categoryList = $this->categoryList = DB::table('pestorder');
-        $catalog = $this->catalog = 'pestcatalog';
-        $Data = getHelper::GetCategoryList($areaData, $categoryList);
-        return view($catalog, compact('Data'));
+
+        /* 子瑩版本 */
+        // $catalog = $this->catalog = 'pestcatalog';
+        // $Data = getHelper::GetCategoryList($areaData, $categoryList);
+        // return view($catalog, compact('Data'));
+
+        /* 文祥版本 */
+        $categoryList = $categoryList->orderBy('count', 'DESC')->get();
+        $areaData = $areaData->get();
+        // 資料重編碼
+        $categoryList = json_decode($categoryList);
+        $areaData = json_decode($areaData);
+
+        // dd($categoryList);
+        // dd($areaData);
+        return view('site/pestcatalog', compact('categoryList', 'areaData'));
     }
 
     /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
