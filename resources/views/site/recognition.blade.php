@@ -3,7 +3,7 @@
 @section('description', '害蟲辨識')
 @section('content')
 <!-- 內容區塊 -->
-<div class="container">
+<div class="container recognition">
     <!-- 頁面 Title -->
     <div class="row page-title">
         <h1 class="col-xs-12 text-Large-1">害蟲辨識</h1>
@@ -13,20 +13,20 @@
     </div>
     <form action="recognition" method="POST" enctype="multipart/form-data" class="hidden-md hidden-lg text-medium-0">
         @csrf
-        <button for="fileinp" class="btn-1" style="margin-top:30px;position:relative;cursor: pointer">
+        <div class="btn-1">
             <span>拍攝影像</span>
-            <input type="file" id="fileinp" name="userImg" accept="image/*" capture="camera" style="position: absolute;left: 0;top: 0;opacity: 0;width:99%;height:100%;">
-        </button>
+            <input type="file" id="fileinp" name="userImg" accept="image/*" capture="camera">
+        </div>
         <p></p>
         <button type="submit" class="btn-2 text-medium-1">送出</button>
         <hr>
     </form>
     <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
         @csrf
-        <button for="fileinp" class="btn-1" style="margin-top:30px;position:relative;cursor: pointer">
+        <div class="btn-1">
             <span>上傳影像</span>
-            <input type="file" id="fileinp" name="userImg" accept="image/*" style="position: absolute;left: 0;top: 0;opacity: 0;width:99%;height:100%;">
-        </button>
+            <input type="file" id="fileinp" name="userImg" accept="image/*">
+        </div>
         <p></p>
         <button type="submit" class="btn-2 text-medium-1">送出</button>
     </form>
