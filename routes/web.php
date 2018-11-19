@@ -26,6 +26,9 @@ function convertArray2Object($defs)
 // 前端區域
 //---------------------------------------------------------------------------
  */
+# test
+Route::get('/postAjax', 'testController@testAjax');
+
 # 系統首頁 & 熱門關鍵字
 Route::get('/', 'SearchController@GetKeywordList');
 

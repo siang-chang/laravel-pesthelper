@@ -46,7 +46,6 @@ $(function () {
     // $("#nav-search").click(function (event) {
     //     event.stopPropagation();
     // });
-
 });
 
 
@@ -83,7 +82,7 @@ function changSearchType(searchType) {
         searchTypeText = $("#searchArea").html();
     }
     $("#searchType").val(searchTypeText);
-}
+};
 
 /*
 //---------------------------------------------------------------------------
@@ -98,7 +97,7 @@ function openCatalog(categoryNum) {
         success: function (data) {
             // console.log(data);
             // console.log(typeof (data));
-            var dataset='';
+            var dataset = '';
             for (i = 0; data.length > i; i++) {
                 str = '<div class="img-box col-xs-12 col-sm-6 col-md-4">' +
                     '<a href="#">' +
@@ -115,6 +114,5 @@ function openCatalog(categoryNum) {
             }
             $('#collapse-' + categoryNum).children('.panel-body').children('.row').html(dataset);
         }
-    })
-}
-
+    });
+};

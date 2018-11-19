@@ -23,7 +23,8 @@
                         <span class="text-medium-1">{{ $category->pestOrder }}</span>
                     </h4>
                 </div>
-                <div id="collapse-{{ $category->orderNum }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ $category->orderNum }}">
+                <div id="collapse-{{ $category->orderNum }}" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="heading-{{ $category->orderNum }}">
                     <div class="panel-body">
                         <div class="row"></div>
                     </div>
@@ -32,5 +33,31 @@
             @endforeach
         </div>
     </div>
+    <div class="row">
+        <h1>Click</h1>
+        <input type="text" id="psd">
+        <input type="button" id="send" value="送出">
+    </div>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('#send').on('click', function (event) {
+                event.preventDefault();
+                var str = $('#psd').val();
+                console.log(str);
+                $.post('/postAjax', {
+                    'psd': str
+                }).success(
+                    function (data) {
+                        console.log(data);
+                        if (data == 'success') {
+                            alert('成功');
+                        } else {
+                            alert('失敗');
+                        }
+                    });
+            });
+        })
+
+    </script>
 </div>
 @stop
