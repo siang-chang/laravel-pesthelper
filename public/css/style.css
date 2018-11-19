@@ -1461,4 +1461,51 @@ a:hover {
   border: solid 1px;
   border-color: #bce0fd;
 }
+
+/*
+//---------------------------------------------------------------------------
+// recognition.scss
+//---------------------------------------------------------------------------
+*/
+.recognition form .btn-1 {
+  display: inline-block;
+  /* position */
+  overflow: hidden;
+  position: relative;
+  /* position style */
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.recognition form .btn-1 input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  opacity: 0.0;
+  /* Standard: FF gt 1.5, Opera, Safari */
+  filter: alpha(opacity=0);
+  /* style */
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+  .recognition form .btn-1 span {
+    line-height: 54px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .recognition form .btn-1 span {
+    line-height: 44px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .recognition form .btn-1 span {
+    line-height: 38px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

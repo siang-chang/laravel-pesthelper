@@ -91,9 +91,6 @@
     }
 }
 
-
-
-
 /*
 //---------------------------------------------------------------------------
 // detail.scss
@@ -136,4 +133,51 @@
         border-color: $border-color-2;
     }
 
+}
+
+/*
+//---------------------------------------------------------------------------
+// recognition.scss
+//---------------------------------------------------------------------------
+*/
+.recognition {
+    form {
+        .btn-1 {
+            display: inline-block;
+            /* position */
+            overflow: hidden;
+            position: relative;
+            /* position style */
+            margin-top: 30px;
+            cursor: pointer;
+
+            input {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0px;
+                left: 0px;
+                z-index: 2;
+                opacity: 0.0;
+                /* Standard: FF gt 1.5, Opera, Safari */
+                filter: alpha(opacity=0);
+                /* style */
+                cursor: pointer;
+            }
+
+            span {
+                @include RWD(pc) {
+                    line-height: 54px;
+                }
+
+                @include RWD(pad) {
+                    line-height: 44px;
+                }
+
+                @include RWD(mobile) {
+                    line-height: 38px;
+                }
+            }
+        }
+    }
 }
