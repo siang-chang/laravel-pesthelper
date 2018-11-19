@@ -33,7 +33,7 @@ class PestController extends Controller
 
     /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function Detailed($num)
+    public function GetPestData($num)
     {
         $detailed = $this->detailed = DB::table('pestlist');
         $orderdata1 = $this->oderdata1 = DB::table('pestalias');
