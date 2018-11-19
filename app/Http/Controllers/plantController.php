@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\GetHelper;
+use Carbon;
 
 class PlantController extends Controller
 {
@@ -15,7 +16,8 @@ class PlantController extends Controller
         $areaData = $this->areaData = DB::table('plantlist');
         $categoryList = $this->categoryList = DB::table('plantfamily');
         $catalog = $this->catalog = 'plantcatalog';
-        $Data = getHelper::GetCategoryList($areaData, $categoryList);
+        $type = 'plant';
+        $Data = getHelper::GetCategoryList($areaData, $categoryList,$type);
         return view($catalog, compact('Data'));
     }
 
@@ -84,8 +86,7 @@ class PlantController extends Controller
 
     public function newsuggestion(Request $request)
     {
-        date_default_timezone_set("Asia/Shanghai");
-        $date = date("Y/m/d h:i:sa");
+        $date = Carbon\Carbon::now();        
         $num = $request->num;
         $suggest = $request->suggest;
         $email = $request->email;
