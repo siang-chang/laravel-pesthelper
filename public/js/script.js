@@ -113,7 +113,7 @@ function openCatalog(categoryNum) {
                     "</div></div></a></div>";
                 dataset += str;
             }
-            $('#collapse' + categoryNum).children('.panel-body').html(dataset);
+            $('#collapse-' + categoryNum).children('.panel-body').children('.row').html(dataset);
         }
     })
 }

@@ -12,57 +12,25 @@
     </div>
     <!-- 害蟲目錄 -->
     <div class="row">
-        <div class="panel-group col-xs-12" id="accordion">
+        <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($categoryList as $category)
-            <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->orderNum }}" onclick="openCatalog('{{ $category->orderNum }}')">
-                <div class="panel-heading">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-{{ $category->orderNum }}" data-toggle="collapse"
+                    data-parent="#accordion" href="#collapse-{{ $category->orderNum }}" aria-expanded="true"
+                    aria-controls="collapse-{{ $category->orderNum }}" onclick="openCatalog('{{ $category->orderNum }}')">
                     <h4 class="panel-title">
                         <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
                         <span class="text-medium-1">{{ $category->pestOrder }}</span>
                     </h4>
                 </div>
-                <div id="collapse{{ $category->orderNum }}" class="panel-collapse collapse">
-                    <div class="panel-body row">
+                <div id="collapse-{{ $category->orderNum }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{{ $category->orderNum }}">
+                    <div class="panel-body">
+                        <div class="row"></div>
                     </div>
                 </div>
             </div>
-            {{-- <div onclick="openCatalog('{{ $category->orderNum }}')">
-                <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapse{{ $category->orderNum }}" aria-expanded="false"
-                    aria-controls="collapseExample">
-                    <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->orderNum }}">
-                        <span class="glyphicon glyphicon-chevron-down text-small-1" style="background-color:red;"></span>
-                        <span class="text-medium-1">{{ $category->pestOrder }}</span>
-                    </h4>
-                </a>
-                <div class="collapse" id="collapse{{ $category->orderNum }}">
-                    <div class="well">
-                        ...
-                        <br>123
-                        <br>123
-                        <br>123
-                    </div>
-                </div>
-            </div> --}}
-
             @endforeach
         </div>
     </div>
-
-    {{-- <div>
-        @if(!empty($pestCategoryData))
-        @foreach($pestCategoryData as $pestCategory)
-        <div>
-            num = {{ $pestCategory->num }};
-        </div>
-        <div>
-            name = {{ $pestCategory->name }};
-        </div>
-        <div>
-            scientificName = {{ $pestCategory->scientificName }};
-        </div>
-        <hr>
-        @endforeach
-        @endif
-    </div> --}}
 </div>
 @stop

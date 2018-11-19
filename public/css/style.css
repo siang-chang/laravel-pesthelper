@@ -1398,7 +1398,6 @@ a:hover {
 */
 .panel-group .panel-default {
   /* style */
-  cursor: pointer;
   border-color: #bce0fd;
 }
 
@@ -1408,6 +1407,7 @@ a:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   /* style */
+  cursor: pointer;
   background-color: #ffffff;
 }
 
