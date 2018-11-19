@@ -39,14 +39,19 @@
         <input type="button" id="send" value="送出">
     </div>
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         jQuery(document).ready(function ($) {
             $('#send').on('click', function (event) {
                 event.preventDefault();
                 var str = $('#psd').val();
                 console.log(str);
-                $.post('/postAjax', {
-                    'psd': str
-                }).success(
+                $.post('/pesthelper/public/postajax', {
+                    psd: str
+                }).done(
                     function (data) {
                         console.log(data);
                         if (data == 'success') {

@@ -3,7 +3,6 @@
 // Document Ready Function
 //---------------------------------------------------------------------------
 */
-// $('#nav-search').hide();
 
 $(function () {
     // goToTop 回置頁面頂端
@@ -101,12 +100,12 @@ function openCatalog(categoryNum) {
             for (i = 0; data.length > i; i++) {
                 str = '<div class="img-box col-xs-12 col-sm-6 col-md-4">' +
                     '<a href="#">' +
-                    '<div id="" class="img-innerbox">' +
-                    "<div class='img'>" +
+                    '<div class="img-innerbox">' +
+                    '<div class="img">' +
                     "<img class='main' src='/pesthelper/public/img/image.jpg' alt=''>" +
-                    "</div>" +
-                    "<hr />" +
-                    "<div class='base'>" +
+                    '</div>' +
+                    '<hr />' +
+                    '<div class="base">' +
                     "<p class='text-article-1'>" + data[i].name + "</p>" +
                     "<p class='text-small-1'>" + data[i].scientificName + "</p>" +
                     "</div></div></a></div>";

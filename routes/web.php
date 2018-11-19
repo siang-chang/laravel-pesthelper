@@ -27,7 +27,7 @@ function convertArray2Object($defs)
 //---------------------------------------------------------------------------
  */
 # test
-Route::get('/postAjax', 'testController@testAjax');
+Route::POST('/postajax', 'testController@testajax');
 
 # 系統首頁 & 熱門關鍵字
 Route::get('/', 'SearchController@GetKeywordList');
