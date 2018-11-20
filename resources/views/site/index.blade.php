@@ -17,16 +17,11 @@
     <!-- Popular Keyword -->
     <div class="row">
         <div class="col-xs-12">
-            <form action="search" method="GET">
-                @csrf
-                @if(count((array)$keyWordList))
-                @foreach($keyWordList as $keyWord)
-                <button type="submit" name="keyWord" value="{{ $keyWord->keyWord }}" class="RoundBtn-0 text-article-0">
-                    {{ $keyWord->keyWord }}
-                </button>
-                @endforeach
-                @endif
-            </form>
+            @if(count((array)$keyWordList))
+            @foreach($keyWordList as $keyWord)
+            <a href="{{ url('/search?keyWord=' . $keyWord->keyWord) }}" class="RoundBtn-0 text-article-0">{{ $keyWord->keyWord }}</a>
+            @endforeach
+            @endif
         </div>
     </div>
     <!-- 其他呼籲 Other Function -->
