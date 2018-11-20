@@ -67,4 +67,17 @@ class testController extends Controller
         // return redirect()->back()->with('pestcategoryData' ,$pestCategoryData);
         return view('site/pestcatalog', compact('categoryList', 'pestCategoryData'));
     }
+
+    public function testajax(Request $request)
+    {
+        //ajax
+        $psd = $request->psd;
+        if ($psd == 1234) {
+            // dd($psd);
+            return 'success';
+        } else {
+            // dd($psd);
+            return 'error';
+        }
+    }
 }

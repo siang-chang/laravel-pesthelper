@@ -14,7 +14,6 @@
                     <span class="line">｜</span>
                     <input type="text" name="searchType" id="searchType" readonly="readonly" unselectable="on" value="{{ $searchType ?? '全部類別' }}">
                     <span class="caret"></span>
-                    <span>&nbsp;</span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a id="searchArea" onclick="changSearchType('area')">全部類別</a></li>

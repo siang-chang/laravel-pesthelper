@@ -22,7 +22,7 @@ class PlantController extends Controller
     }
 
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function Detailed($num)
+    public function GetPlantData($num)
     {
         $detailed = $this->detailed = DB::table('plantlist');
         $orderdata1 = $this->oderdata1 = DB::table('plantalias');
