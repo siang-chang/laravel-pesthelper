@@ -15,16 +15,16 @@
         <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($categoryList as $category)
             <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading-{{ $category->orderNum }}" data-toggle="collapse"
-                    data-parent="#accordion" href="#collapse-{{ $category->orderNum }}" aria-expanded="true"
-                    aria-controls="collapse-{{ $category->orderNum }}" onclick="openCatalog('{{ $category->orderNum }}')">
+                <div class="panel-heading" role="tab" id="heading-{{ $category->categoryNum }}" data-toggle="collapse"
+                    data-parent="#accordion" href="#collapse-{{ $category->categoryNum }}" aria-expanded="true"
+                    aria-controls="collapse-{{ $category->categoryNum }}" onclick="openCatalog('{{ $category->categoryNum }}')">
                     <h4 class="panel-title">
                         <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
-                        <span class="text-medium-1">{{ $category->pestOrder }}</span>
+                        <span class="text-medium-1">{{ $category->categoryName }}</span>
                     </h4>
                 </div>
-                <div id="collapse-{{ $category->orderNum }}" class="panel-collapse collapse" role="tabpanel"
-                    aria-labelledby="heading-{{ $category->orderNum }}">
+                <div id="collapse-{{ $category->categoryNum }}" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="heading-{{ $category->categoryNum }}">
                     <div class="panel-body">
                         <div class="row"></div>
                     </div>

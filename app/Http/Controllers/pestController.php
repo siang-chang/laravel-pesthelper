@@ -16,14 +16,16 @@ class PestController extends Controller
         $categoryList = $this->categoryList = DB::table('pestorder');
 
         /* 子瑩版本 */
-//         $catalog = $this->catalog = 'pestcatalog';
-//         $type = 'pest';
-//         $Data = getHelper::GetCategoryList($areaData, $categoryList,$type);
-//         return view($catalog, compact('Data'));
+        // $catalog = $this->catalog = 'pestcatalog';
+        // $type = 'pest';
+        // $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        // return view($catalog, compact('Data'));
 
         /* 文祥版本 */
-        $categoryList = $categoryList->orderBy('count', 'DESC')->get();
-        $areaData = $areaData->get();
+        $type = 'pest';
+        $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        $categoryList = $Data[0];
+        $areaData  = $Data[1];
         // 資料重編碼
         $categoryList = json_decode($categoryList);
         $areaData = json_decode($areaData);

@@ -105,27 +105,27 @@ Route::post('/recognition', 'PestController@recognition');
  */
 
 Route::get('/welcome', function () {
-    return view('welcome');
+    return view('/backend/welcome');
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 #導向害蟲目錄
 Route::get('/_pestcatalog', function () {
-    return view('pestcatalog');
+    return view('/backend/pestcatalog');
 });
 #導向植株目錄
 Route::get('/_plantcatalog', function () {
-    return view('plantcatalog');
+    return view('/backend/plantcatalog');
 });
 #導向圖片上傳
 Route::get('/imageUpload', function () {
-    return view('imageUpload');
+    return view('/backend/imageUpload');
 });
 
 #顯示搜尋結果
 Route::get('/searchResults', function () {
-    return view('searchResults');
+    return view('/backend/searchResults');
 });
 
 #顯示害蟲清單
