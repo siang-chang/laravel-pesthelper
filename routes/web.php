@@ -84,11 +84,11 @@ Route::get('/plantcatalog', function () {
 });
 
 #害蟲個別頁面
-Route::get('/pestDetailed/{num}', 'PestController@GetPestData');
+Route::get('/pestDetailed/{name}', 'PestController@GetPestData');
 // Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
 
 #植株個別頁面
-Route::get('/plantDetailed/{num}', 'PlantController@GetPlantData');
+Route::get('/plantDetailed/{name}', 'PlantController@GetPlantData');
 // Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
 
 # 害蟲影像辨識
@@ -129,17 +129,17 @@ Route::get('/searchResults', function () {
 });
 
 #顯示害蟲清單
-Route::get('/_pestcatalog', 'PestController@GetCategoryList');
+Route::get('backend/_pestcatalog', 'PestController@GetCategoryList');
 
 #顯示植株清單
 Route::get('/_plantcatalog', 'PlantController@GetCategoryList');
 
 #顯示建議表單
-Route::post('/pestDetailed/suggestion', 'PestController@suggestion');
-Route::post('/plantDetailed/suggestion', 'plantController@suggestion');
+Route::post('/pestDetailed/suggestion', 'suggestController@suggestion');
+Route::post('/plantDetailed/suggestion', 'suggestController@suggestion');
 Auth::routes();
-Route::post('/pestDetailed/newsuggestion', 'PestController@newsuggestion');
-Route::post('/plantDetailed/newsuggestion', 'PlantController@newsuggestion');
+Route::post('/pestDetailed/newsuggestion', 'suggestController@newsuggestion');
+Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
 Auth::routes();
 
 

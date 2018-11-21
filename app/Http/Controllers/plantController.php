@@ -22,8 +22,9 @@ class PlantController extends Controller
     }
 
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function GetPlantData($num)
+    public function GetPlantData($name)
     {
+        $num = DB::table('arealist')->where('name',$name)->value('num');
         $detailed = $this->detailed = DB::table('plantlist');
         $orderdata1 = $this->oderdata1 = DB::table('plantalias');
         $orderdata2 = $this->oderdata2 = DB::table('relationship');
@@ -75,31 +76,5 @@ class PlantController extends Controller
         // dd($plantData, $alias, $infectRelation);
         return view('site/plantdetail', compact('plantData', 'alias', 'infectRelation'));
 
-    }
-
-    //修改建議
-    public function suggestion(Request $request)
-    {
-        $num = $request->num;
-        return view('suggestion', compact('num'));
-    }
-
-    public function newsuggestion(Request $request)
-    {
-        $date = Carbon\Carbon::now();        
-        $num = $request->num;
-        $suggest = $request->suggest;
-        $email = $request->email;
-        
-        // dd($date,$num,$suggest);
-
-        DB::table('plantsuggestion')->insert([
-            'msgDate' => $date,
-            'plantNum' => $num,
-            'suggestion' => $suggest,
-            'email' => $email,
-        ]);
-
-        return redirect('plantDetailed/'.$num);
     }
 }

@@ -37,8 +37,9 @@ class PestController extends Controller
 
     /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function GetPestData($num)
+    public function GetPestData($name)
     {
+        $num = DB::table('arealist')->where('name',$name)->value('num');
         $detailed = $this->detailed = DB::table('pestlist');
         $orderdata1 = $this->oderdata1 = DB::table('pestalias');
         $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
@@ -107,30 +108,6 @@ class PestController extends Controller
         $userImgs = time() . '.' . request()->userImg->getClientOriginalExtension();
         request()->userImg->move(public_path('pestimg'), $userImgs);
         return view('site/recognitionfail', compact('userImgs'));
-    }
-
-    //修改建議
-    public function suggestion(Request $request)
-    {
-        $num = $request->num;
-        return view('suggestion', compact('num'));
-    }
-
-    public function newsuggestion(Request $request)
-    {
-        $date = Carbon\Carbon::now();
-        $num = $request->num;
-        $suggest = $request->suggest;
-        $email = $request->email;
-
-        DB::table('pestsuggestion')->insert([
-            'msgDate' => $date,
-            'pestNum' => $num,
-            'suggestion' => $suggest,
-            'email' => $email,
-        ]);
-
-        return redirect('pestDetailed/'.$num);
     }
 
 }
