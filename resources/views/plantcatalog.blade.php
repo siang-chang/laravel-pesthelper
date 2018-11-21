@@ -26,7 +26,7 @@
                     <table>
                         <tr>
                             <td>
-                                <div class="col-md-2"><a href="plantDetailed/{{ $data->num }}" class="btn btn-primary">{{ $data->num }}</a></div>
+                                <div class="col-md-2"><a href="plantDetailed/{{ $data->name }}" class="btn btn-primary">{{ $data->num }}</a></div>
                             </td>
                         </tr>
                     </table>

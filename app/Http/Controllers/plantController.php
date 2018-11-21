@@ -20,8 +20,9 @@ class PlantController extends Controller
     }
 
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function Detailed($num)
+    public function Detailed($name)
     {
+        $num = DB::table('arealist')->where('name',$name)->value('num');
         $detailed = $this->detailed = DB::table('plantlist');
         $orderdata1 = $this->oderdata1 = DB::table('plantalias');
         $orderdata2 = $this->oderdata2 = DB::table('relationship');

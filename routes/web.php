@@ -80,11 +80,11 @@ Route::get('/plantcatalog', function () {
 });
 
 #害蟲個別頁面
-Route::get('/pestDetailed/{num}', 'PestController@Detailed');
+Route::get('/pestDetailed/{name}', 'PestController@Detailed');
 // Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
 
 #植株個別頁面
-Route::get('/plantDetailed/{num}', 'PlantController@Detailed');
+Route::get('/plantDetailed/{name}', 'PlantController@Detailed');
 // Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
 
 # 害蟲影像辨識
