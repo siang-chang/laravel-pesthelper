@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\GetHelper;
+use Carbon;
 
 class suggestController extends Controller
 {
-        //害蟲修改建議
     public function suggestion(Request $request)
     {
         $num = $request->num;
@@ -22,8 +22,7 @@ class suggestController extends Controller
         $suggest = $request->suggest;
         $email = $request->email;
         
-        dd(substr($num,1));
-        if (substr($num,1)  == 'A'){
+        if (substr($num,0,1)  == 'A'){
         DB::table('pestsuggestion')->insert([
             'msgDate' => $date,
             'pestNum' => $num,
