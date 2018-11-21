@@ -8,6 +8,7 @@
     padding: 0px;
     margin-top: 15px;
     margin-bottom: 15px;
+
     //
     .img-innerbox {
         // position
@@ -26,22 +27,32 @@
         }
 
         .img {
-            // position
+            /* position */
             position: relative;
-            // margin: 0 auto;
+            /* 1:1 Aspect Ratio */
+            width: 100%;
+            padding-top: 100%;
+            /* 超出邊界則隱藏 */
+            overflow: hidden;
 
             .main {
-                // position
-                width: 100%;
-                height: auto;
-                max-width: 100%;
-                max-height: 100%;
-                // style
-                border: 0;
+                /* position */
+                position: absolute;
+                /* absolute 專用的垂直置中 */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                /* 圖片隨邊界調整大小 */
+                // width: 100%;
+                height: 100%;
+                min-width: 100%;
+                min-height: 100%;
+                /* style */
+                border: none;
             }
 
             .icon {
-                // position
+                /* position */
                 position: absolute;
                 z-index: 3;
                 top: 3px;
@@ -49,7 +60,7 @@
             }
 
             .corner {
-                // position
+                /* position */
                 position: absolute;
                 z-index: 2;
                 width: 80px;
@@ -57,12 +68,11 @@
                 top: -1px;
                 left: -1px;
             }
-
         }
 
         hr {
-            margin-top: 1px;
-            margin-bottom: 1px;
+            margin-top: 0px;
+            margin-bottom: 0px;
             border-color: $border-color-1;
         }
 
@@ -75,40 +85,57 @@
             padding-bottom: 8px;
             // style
             background-color: #ffffff;
-
         }
-
     }
 }
 
 .img-detail {
-    // position
+    /* position */
     width: 95%;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    // inner-position
+    /* inner-position */
     padding: 20px;
-    // style
+    /* style */
     border-radius: 20px;
     border: solid 1px;
     border-color: $border-color-1;
 
-    img {
-        // position
+    div {
+        /* position */
+        position: relative;
+        /* 1:1 Aspect Ratio */
         width: 100%;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        // style
-        border-radius: 5px;
+        padding-top: 100%;
+        /* 超出邊界則隱藏 */
+        overflow: hidden;
+        /* style */
+        border-radius: 10px;
         border: solid 1px;
         border-color: $border-color-2;
+
+        img {
+            /* position */
+            position: absolute;
+            /* absolute 專用的垂直置中 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* 圖片隨邊界調整大小 */
+            // width: 100%;
+            height: 100%;
+            min-width: 100%;
+            min-height: 100%;
+
+        }
     }
+
 }
 
 // 提示圖案、警示圖案
 .error-msg {
+
     // margin: 0 auto;
     // margin: 30px;
     // margin-bottom: 30px;
@@ -118,6 +145,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
     p {
         margin-top: 10px;
         margin-bottom: 50px;
