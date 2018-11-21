@@ -95,9 +95,17 @@
         </div>
     </div>
     <!-- 修改建議 -->
-    <div class="row cta">
+    {{-- <div class="row cta">
         <button type="button" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
         <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
+    </div> --}}
+    <div class="row cta">
+        <form method="POST" action="suggestion">
+            @csrf
+            <input type="text" name="num" value={{ $plantData->num}} hidden>
+            <button type="submit" id="btnTest" class="btn-1 text-medium-0"> 提出建議 </button>
+            <p class="text-medium-2 bottom"> 如果以上內容有誤，也歡迎您提出建議！ </p>
+        </form>
     </div>
 </div>
 @stop

@@ -133,3 +133,13 @@ Route::get('/_plantcatalog', 'PlantController@GetCategoryList');
 // 圖片上傳
 Route::get('imageupload', 'PestController@imageUpload')->name('image.upload');
 Route::post('imageupload', 'PestController@imageUploadPost')->name('image.upload.post');
+
+#顯示建議表單
+Route::post('/pestDetailed/suggestion', 'suggestController@suggestion');
+Route::post('/plantDetailed/suggestion', 'suggestController@suggestion');
+Auth::routes();
+Route::post('/pestDetailed/newsuggestion', 'suggestController@newsuggestion');
+Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
+Auth::routes();
+
+

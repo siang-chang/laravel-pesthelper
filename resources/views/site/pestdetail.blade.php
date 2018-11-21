@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
-            <div class="img-detail">             
+            <div class="img-detail">
                 {{-- <img src="{{ asset($pestData->img) }}" alt="{{ $pestData->name ?? '暫無名稱' }}"> --}}
                 <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '暫無名稱' }}">
             </div>
@@ -29,10 +29,9 @@
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
                     <p class="text-medium-3">
-                        @if($key_last <= 1)
-                            <!-- 如果沒有「害蟲別名」，則列印替代文字 -->
+                        @if($key_last <= 1) <!-- 如果沒有「害蟲別名」，則列印替代文字 -->
                             <span>暫無別名</span>
-                        @else
+                            @else
                             <!-- 如果有別名，則使用 foreach 列印「害蟲別名」 -->
                             @foreach ($alias as $key => $value)
                             @if($key +1 == $key_last)
@@ -43,7 +42,7 @@
                             {{ $value . '、' }}
                             @endif
                             @endforeach
-                        @endif
+                            @endif
                     </p>
                 </div>
                 <!-- Add the extra clearfix for only the required viewport -->
@@ -116,9 +115,18 @@
         </div>
     </div>
     <!-- 修改建議 -->
-    <div class="row cta">
+    {{-- <div class="row cta">
         <button type="button" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
         <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
+    </div> --}}
+    <div class="row cta">
+        <form method="POST" action="suggestion">
+            @csrf
+            <input type="text" name="num" value={{ $pestData->num}} hidden>
+            <button type="submit" id="btnTest" class="btn-1 text-medium-0"> 提出建議 </button>
+            <p class="text-medium-2 bottom"> 如果以上內容有誤，也歡迎您提出建議！ </p>
+        </form>
     </div>
+
 </div>
 @stop
