@@ -30,8 +30,8 @@
             <!-- 如果是 "植株"，則將網址暫存為 '/plantDetailed/' -->
             <span class="hidden">{{ $url='/plantDetailed/' }}</span>
             @endif
-            <a href='{{ url($url.$results->num) }}'>
-                <div id="{{ $results->num }}" class="img-innerbox">
+            <a href='{{ url($url.$results->name) }}'>
+                <div id="{{ $results->name }}" class="img-innerbox">
                     <div class="img">
                         @if(substr( $results->num , 0 , 1 ) == 'A')
                         <img class="icon" src="{{ asset('img/icon/icon_pest.svg') }}" width="56">

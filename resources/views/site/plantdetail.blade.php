@@ -78,7 +78,7 @@
                     @else
                     <div class="col-xs-6">
                         @endif
-                        <a href='{{ url("/pestDetailed/$relation->num") }}'>
+                        <a href='{{ url("/pestDetailed/$relation->name") }}'>
                             <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">
                             <p class="text-medium-3">{{ $relation->name }}</p>
                         </a>
