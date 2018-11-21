@@ -16,7 +16,9 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
-                <img src="{{ asset('img/image.jpg') }}" alt="{{ $pestData->name ?? '暫無名稱' }}">
+                <div>
+                    <img src="{{ asset($pestData->img) }}" alt="{{ $pestData->name ?? '暫無名稱' }}" onError="this.src='{{ asset('img/image.jpg') }}';">
+                </div>
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">

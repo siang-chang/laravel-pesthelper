@@ -16,7 +16,9 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
-                <img src="{{ asset('img/image.jpg') }}" alt="{{ $plantData->name }}">
+                <div>
+                    <img src="{{ asset($plantData->img) }}" alt="{{ $plantData->name ?? '暫無名稱' }}" onError="this.src='{{ asset('img/image.jpg') }}';">
+                </div>
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
@@ -100,13 +102,13 @@
     </div> --}}
 
     <form method="POST" action="suggestion">
-            @csrf
-            <div class="row cta">
-                <input type="text" name="num" value={{ $plantData->num }} hidden>
-                <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
-                <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
-            </div>
-        </form>
+        @csrf
+        <div class="row cta">
+            <input type="text" name="num" value={{ $plantData->num }} hidden>
+            <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
+            <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
+        </div>
+    </form>
 
 </div>
 @stop

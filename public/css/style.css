@@ -1080,18 +1080,33 @@ a:hover {
 }
 
 .img-box .img-innerbox .img {
+  /* position */
   position: relative;
+  /* 1:1 Aspect Ratio */
+  width: 100%;
+  padding-top: 100%;
+  /* 超出邊界則隱藏 */
+  overflow: hidden;
 }
 
 .img-box .img-innerbox .img .main {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  border: 0;
+  /* position */
+  position: absolute;
+  /* absolute 專用的垂直置中 */
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 圖片隨邊界調整大小 */
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  /* style */
+  border: none;
 }
 
 .img-box .img-innerbox .img .icon {
+  /* position */
   position: absolute;
   z-index: 3;
   top: 3px;
@@ -1099,6 +1114,7 @@ a:hover {
 }
 
 .img-box .img-innerbox .img .corner {
+  /* position */
   position: absolute;
   z-index: 2;
   width: 80px;
@@ -1108,8 +1124,8 @@ a:hover {
 }
 
 .img-box .img-innerbox hr {
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   border-color: #2699fb;
 }
 
@@ -1122,24 +1138,45 @@ a:hover {
 }
 
 .img-detail {
+  /* position */
   width: 95%;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  /* inner-position */
   padding: 20px;
+  /* style */
   border-radius: 20px;
   border: solid 1px;
   border-color: #2699fb;
 }
 
-.img-detail img {
+.img-detail div {
+  /* position */
+  position: relative;
+  /* 1:1 Aspect Ratio */
   width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 5px;
+  padding-top: 100%;
+  /* 超出邊界則隱藏 */
+  overflow: hidden;
+  /* style */
+  border-radius: 10px;
   border: solid 1px;
   border-color: #bce0fd;
+}
+
+.img-detail div img {
+  /* position */
+  position: absolute;
+  /* absolute 專用的垂直置中 */
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 圖片隨邊界調整大小 */
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .error-msg img {
