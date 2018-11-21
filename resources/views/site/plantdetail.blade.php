@@ -16,6 +16,7 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
             <!-- 影像 -->
             <div class="img-detail">
+                {{-- <img src="{{ asset($pestData->img) }}" alt="{{ $plantData->name }}"> --}}
                 <img src="{{ asset('img/image.jpg') }}" alt="{{ $plantData->name }}">
             </div>
             <!-- 文字資料 -->
