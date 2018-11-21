@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helpers\GetHelper;
+use Carbon;
 
 class PestController extends Controller
 {
@@ -13,15 +14,32 @@ class PestController extends Controller
     {
         $areaData = $this->areaData = DB::table('pestlist');
         $categoryList = $this->categoryList = DB::table('pestorder');
-        $catalog = $this->catalog = 'pestcatalog';
-        $Data = getHelper::GetCategoryList($areaData, $categoryList);
-        return view($catalog, compact('Data'));
+
+        /* 子瑩版本 */
+        // $catalog = $this->catalog = 'pestcatalog';
+        // $type = 'pest';
+        // $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        // return view($catalog, compact('Data'));
+
+        /* 文祥版本 */
+        $type = 'pest';
+        $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        $categoryList = $Data[0];
+        $areaData  = $Data[1];
+        // 資料重編碼
+        $categoryList = json_decode($categoryList);
+        $areaData = json_decode($areaData);
+
+        // dd($categoryList);
+        // dd($areaData);
+        return view('site/pestcatalog', compact('categoryList', 'areaData'));
     }
 
     /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
     public $detailed, $orderdata1, $orderdata2, $page;
-    public function Detailed($num)
+    public function GetPestData($name)
     {
+        $num = DB::table('arealist')->where('name',$name)->value('num');
         $detailed = $this->detailed = DB::table('pestlist');
         $orderdata1 = $this->oderdata1 = DB::table('pestalias');
         $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
@@ -91,4 +109,5 @@ class PestController extends Controller
         request()->userImg->move(public_path('pestimg'), $userImgs);
         return view('site/recognitionfail', compact('userImgs'));
     }
+
 }

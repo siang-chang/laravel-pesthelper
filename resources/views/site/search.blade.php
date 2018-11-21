@@ -7,7 +7,7 @@
     <!-- 搜尋列 Search Bar -->
     @include('site.layouts.searchbar')
     <!-- 搜尋結果篩選按鈕 -->
-    <div class="row searchType-list" style="text-align:center;">
+    <div class="row searchType-list">
         <form action="search" method="GET">
             @csrf
             <button type="submit" name="searchType" value="全部類別" class="RoundBtn-1 text-article-1">全部類別</button>
@@ -18,7 +18,7 @@
     </div>
     <!-- 搜尋結果顯示區域 -->
     <div class="row">
-        @if(count($searchResults))
+        @if(count((array)$searchResults))
         <!-- 有資料的話，使用 foreach 列印 -->
         @foreach($searchResults as $results)
         <div class="img-box col-xs-12 col-sm-6 col-md-4">
@@ -30,8 +30,8 @@
             <!-- 如果是 "植株"，則將網址暫存為 '/plantDetailed/' -->
             <span class="hidden">{{ $url='/plantDetailed/' }}</span>
             @endif
-            <a href='{{ url($url.$results->num) }}'>
-                <div id="{{ $results->num }}" class="img-innerbox">
+            <a href='{{ url($url.$results->name) }}'>
+                <div id="{{ $results->name }}" class="img-innerbox">
                     <div class="img">
                         @if(substr( $results->num , 0 , 1 ) == 'A')
                         <img class="icon" src="{{ asset('img/icon/icon_pest.svg') }}" width="56">
@@ -40,7 +40,7 @@
                         @endif
                         <img class="corner" src="{{ asset('img/corner.svg') }}" width="80">
                         {{-- <img class="main" src="{{ $results->img ?? 'img/image.jpg' }}" alt=""> --}}
-                        <img class="main" src="{{ asset($results->img) }}" alt="{{ $results->name }}">
+                        <img class="main" src="{{ asset($results->img) }}" alt="{{ $results->name }}" onError="this.src='{{ asset('img/image.jpg') }}';">
                     </div>
                     <hr />
                     <div class="base">

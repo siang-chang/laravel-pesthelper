@@ -36,22 +36,32 @@ body {
         width: 100%;
         min-height: 100%;
         /* 此處 padding 必須和 footer 的高度相同 */
-        padding-bottom: 60px;
+        padding-bottom: 110px;
     }
 
     footer {
-        /* 展開footer寬度 */
         /* position */
         position: relative;
         width: 100%;
-        height: 60px;
-        margin-top: -60px;
-        /* inner position */
-        padding-left: 20px;
-        padding-right: 20px;
-        line-height: 60px;
-        /* style */
-        background-color: $bg-color-1;
+        height: 110px;
+        margin-top: -110px;
+
+        .footer-margin {
+            /* inner position */
+            height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer {
+            /* inner position */
+            height: 60px;
+            line-height: 60px;
+            padding-left: 20px;
+            padding-right: 20px;
+            /* style */
+            background-color: $bg-color-1;
+        }
 
         .left {
             position: absolute;

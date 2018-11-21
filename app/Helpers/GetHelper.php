@@ -14,10 +14,17 @@ class GetHelper
 
     }
 
-    public static function GetCategoryList($areaData, $categoryList)
+    public static function GetCategoryList($areaData, $categoryList,$type)
     {
         $datas = $areaData->get();
-        $sorts = $categoryList->orderBy('count', 'DESC')->get();
+        if ($type == 'pest'){
+            $sorts = $categoryList->select('orderNum as categoryNum','pestOrder as categoryName','count')->orderBy('count', 'DESC')->get();
+
+        }else {
+            $sorts = $categoryList->select('familyNum as categoryNum','plantFamily as categoryName','count')->orderBy('count', 'DESC')->get();
+        }
+
+        // $sorts = $categoryList->orderBy('count', 'DESC')->get();
         $Data = array($sorts, $datas);
         return $Data;
 

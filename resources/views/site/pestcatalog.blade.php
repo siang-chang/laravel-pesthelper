@@ -12,50 +12,57 @@
     </div>
     <!-- 害蟲目錄 -->
     <div class="row">
-        <div class="panel-group col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" id="accordion">
+        <div class="panel-group col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($categoryList as $category)
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading" role="tab" id="heading-{{ $category->categoryNum }}" data-toggle="collapse"
+                    data-parent="#accordion" href="#collapse-{{ $category->categoryNum }}" aria-expanded="true"
+                    aria-controls="collapse-{{ $category->categoryNum }}" onclick="openCatalog('{{ $category->categoryNum }}')">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $category->categoryNum }}">
-                            {{ $category->categoryName }}
-                        </a>
+                        <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
+                        <span class="text-medium-1">{{ $category->categoryName }}</span>
                     </h4>
                 </div>
-                <div id="collapse{{ $category->categoryNum }}" class="panel-collapse collapse">
+                <div id="collapse-{{ $category->categoryNum }}" class="panel-collapse collapse" role="tabpanel"
+                    aria-labelledby="heading-{{ $category->categoryNum }}">
                     <div class="panel-body">
-                        <div>
-                            {{-- {{ isset($pestCategoryData) ? $pestCategoryData : 'Default' }} --}}
-                            @if(!empty($pestCategoryData))
-                            @foreach($pestCategoryData as $pestCategory)
-                            <div>
-                                num = {{ $pestCategory->num }};
-                            </div>
-                            <div>
-                                name = {{ $pestCategory->name }};
-                            </div>
-                            <div>
-                                scientificName = {{ $pestCategory->scientificName }};
-                            </div>
-                            <hr>
-                            @endforeach
-                            @endif
-                        </div>
+                        <div class="row"></div>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
+    <div class="row">
+        <h1>Click</h1>
+        <input type="text" id="psd">
+        <input type="button" id="send" value="送出">
+    </div>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        jQuery(document).ready(function ($) {
+            $('#send').on('click', function (event) {
+                event.preventDefault();
+                var str = $('#psd').val();
+                console.log(str);
+                $.post('/pesthelper/public/postajax', {
+                    psd: str
+                }).done(
+                    function (data) {
+                        console.log(data);
+                        if (data == 'success') {
+                            alert('成功');
+                        } else {
+                            alert('失敗');
+                        }
+                    });
+            });
+        })
 
-    {{-- <div class="row">
-        @foreach($categoryList as $category)
-        <form action='{{ url("/pestcatalog/$category->categoryNum") }}' method="POST">
-            @csrf
-            <!-- csrf一定要放在form的下一行 -->
-            <input type="submit" value="{{ $category->categoryName }}">
-        </form>
-        @endforeach
-    </div> --}}
+    </script>
 </div>
 @stop

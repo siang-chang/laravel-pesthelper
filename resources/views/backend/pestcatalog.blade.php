@@ -9,11 +9,11 @@
                     <table>
                         <tr>
                             <td>
-                                {{ $sort->familyNum }}
-                                {{ $sort->plantFamily }}
+                                {{ $sort->categoryNum }}
+                                {{ $sort->categoryName }}
                             </td>
                             <td>
-                                <input type="text" name="searchType" value={{ $sort->familyNum }} hidden>
+                                <input type="text" name="searchType" value={{ $sort->categoryNum }} hidden>
                                 <button type="submit">更多</button>
                             </td>
                         </tr>
@@ -26,7 +26,8 @@
                     <table>
                         <tr>
                             <td>
-                                <div class="col-md-2"><a href="plantDetailed/{{ $data->num }}" class="btn btn-primary">{{ $data->num }}</a></div>
+                                <div class="col-md-2"><a href="pestDetailed/{{ $data->name }}" class="btn btn-primary">{{
+                                        $data->num }}</a></div>
                             </td>
                         </tr>
                     </table>
