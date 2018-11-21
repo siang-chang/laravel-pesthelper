@@ -12,7 +12,7 @@ class SearchController extends Controller
     {
         $searchType = $request->searchType;
         $keyWord = $request->keyWord;
-        try {         
+        try {
             // 判斷是否為空值，否就呼叫關鍵字計數功能(KeywordCount function)
             if ((empty($keyWord)) == false) {
                 SearchController::KeywordCount($keyWord);
@@ -26,7 +26,7 @@ class SearchController extends Controller
                 $datas = array($datas1,$datas2,$datas3);
                 $searchResults = DB::table('plantlist')->whereIn('num', array_flatten($datas))->get();
             }
-            if ($searchType == "僅查害蟲") {
+            elseif ($searchType == "僅查害蟲") {
                 $datas1 = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas2 = DB::table('pestlist')->where('alias', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas3 = DB::table('pestlist')->where('scientificName', 'like', '%' . $keyWord . '%')->pluck('num');
