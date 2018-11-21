@@ -33,11 +33,11 @@
             @endforeach
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <h1>Click</h1>
         <input type="text" id="psd">
         <input type="button" id="send" value="送出">
-    </div>
+    </div> --}}
     <script>
         $.ajaxSetup({
             headers: {
