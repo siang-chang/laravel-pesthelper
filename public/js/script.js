@@ -47,12 +47,6 @@ $(function () {
     // });
 });
 
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-
 /*
 //---------------------------------------------------------------------------
 // Layout
@@ -94,22 +88,27 @@ function changSearchType(searchType) {
 //---------------------------------------------------------------------------
 */
 function openCatalog(categoryNum) {
-    // 先關閉所有已展開的目錄，再向後端拿資料
+    // 先判斷是害蟲或植株目錄，將目標網址存入變數 catagoryUrl
+    if (categoryNum.substr(0, 1) == 'A') {
+        var catagoryUrl = LaravelUrl + '/GetPestCategoryData';
+        var detailUrl = 'pestDetailed/';
+    } else {
+        var catagoryUrl = LaravelUrl + '/GetPlantCategoryData';
+        var detailUrl = 'plantDetailed/';
+    }
     $.ajax({
         type: 'GET',
-        url: '/pesthelper/public/pestfakedata.json',
-        // url: '127.0.0.1/pesthelper/public/test.json',
+        url: catagoryUrl,
         success: function (data) {
             // console.log(data);
-            // console.log(typeof (data));
             var dataset = '';
             for (i = 0; data.length > i; i++) {
                 if (data[i].categoryNum == categoryNum) {
                     str = '<div class="img-box col-xs-12 col-sm-6 col-md-4">' +
-                        '<a href="#">' +
+                        '<a href="'+ LaravelUrl + detailUrl + data[i].name + '">' +
                         '<div class="img-innerbox">' +
                         '<div class="img">' +
-                        "<img class='main' src='/pesthelper/public/img/image.jpg' alt=''>" +
+                        "<img class='main' src='" + LaravelUrl + "img/image.jpg' alt=''>" +
                         // "<img class='main' src='127.0.0.1/pesthelper/public/img/image.jpg' alt=''>" +
                         '</div>' +
                         '<hr />' +

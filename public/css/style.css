@@ -915,38 +915,6 @@ a:hover {
   }
 }
 
-.text-xs-1 {
-  text-align: center;
-  /* 平板電腦 */
-  /* 手機 */
-  /* 小手機 */
-  color: #2699fb;
-}
-
-@media only screen and (min-width: 992px) {
-  .text-xs-1 {
-    font-size: 10px;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .text-xs-1 {
-    font-size: 10px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .text-xs-1 {
-    font-size: 6px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .text-xs-1 {
-    font-size: 4px;
-  }
-}
-
 /*
 //---------------------------------------------------------------------------
 // Buttom
@@ -1433,6 +1401,10 @@ a:hover {
 // catalog.scss
 //---------------------------------------------------------------------------
 */
+.panel-group {
+  margin-top: 30px;
+}
+
 .panel-group .panel-default {
   /* style */
   border-color: #bce0fd;
@@ -1456,6 +1428,11 @@ a:hover {
   vertical-align: middle;
   padding-right: 10px;
   padding-left: 10px;
+}
+
+.panel-group .panel-default .panel-heading h4 .glyphicon {
+  font-size: 10px;
+  color: #2699fb;
 }
 
 /*

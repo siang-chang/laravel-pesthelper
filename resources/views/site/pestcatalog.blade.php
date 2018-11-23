@@ -19,7 +19,7 @@
                     data-parent="#accordion" href="#collapse-{{ $category->categoryNum }}" aria-expanded="true"
                     aria-controls="collapse-{{ $category->categoryNum }}" onclick="openCatalog('{{ $category->categoryNum }}')">
                     <h4 class="panel-title">
-                        <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
                         <span class="text-medium-1">{{ $category->categoryName }}</span>
                     </h4>
                 </div>
@@ -33,12 +33,12 @@
             @endforeach
         </div>
     </div>
-    <div class="row">
+    {{-- <div class="row">
         <h1>Click</h1>
         <input type="text" id="psd">
         <input type="button" id="send" value="送出">
-    </div>
-    <script>
+    </div> --}}
+    {{-- <script>
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -63,6 +63,11 @@
             });
         })
 
-    </script>
+    </script> --}}
 </div>
+<script>
+    // "global" vars, built using blade
+    var Url = '{{ URL::asset('/') }}';
+    var UrlImg = '{{ URL::asset('img') }}';
+</script>
 @stop

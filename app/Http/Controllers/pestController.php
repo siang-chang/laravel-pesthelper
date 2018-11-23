@@ -10,6 +10,7 @@ use Carbon;
 class PestController extends Controller
 {
     public $areaData, $categoryList, $catalog;
+    /* 取得害蟲目錄 */
     public function GetCategoryList()
     {
         $areaData = $this->areaData = DB::table('pestlist');
@@ -35,7 +36,25 @@ class PestController extends Controller
         return view('site/pestcatalog', compact('categoryList', 'areaData'));
     }
 
-    /* 害蟲資料應分為 pestData 及 solutionDatas , 請子瑩之後修正父類別的查詢方式 */
+    /* 取得害蟲清單 */
+    public function GetPestCategoryData()
+    {
+        $areaData = $this->areaData = DB::table('pestlist');
+        $areaData = $areaData->get();
+        // dd($areaData);
+        return $areaData;
+    }
+    /* 取得害蟲清單 test */
+    public function GetPestCategoryDataT()
+    {
+        $catagoryNum = 'A1001';
+        $areaData = $this->areaData = DB::table('pestlist');
+        $areaData = $areaData->get();
+        // dd($areaData);
+        return $areaData;
+    }
+
+    /* 取得個別害蟲資料 */
     public $detailed, $orderdata1, $orderdata2, $page;
     public function GetPestData($name)
     {
@@ -82,6 +101,7 @@ class PestController extends Controller
         return view('site/pestdetail', compact('pestData', 'alias', 'solutionDatas'));
     }
 
+    /* 影像辨識模組測試區塊 */
     public function imageUpload()
     {
         return view('imageUpload');
@@ -98,7 +118,7 @@ class PestController extends Controller
             ->with('image', $imageName);
     }
 
-    // 前端測試
+    /* 前端測試區塊 */
     /* 害蟲辨識 */
     public function recognition()
     {

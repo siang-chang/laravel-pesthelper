@@ -37,51 +37,15 @@ Route::get('/search', 'SearchController@Search');
 
 # 害蟲目錄
 Route::get('/pestcatalog', 'pestController@GetCategoryList');
-// Route::get('/pestcatalog', function () {
-//     $fakedata = [
-//         [
-//             // 資料說明：害蟲的目別清單
-//             'categoryNum' => 'A002',
-//             'categoryName' => '半翅目',
-//         ], [
-//             'categoryNum' => 'A003',
-//             'categoryName' => '胸喙亞目',
-//         ], [
-//             'categoryNum' => 'A004',
-//             'categoryName' => '雙翅目',
-//         ], [
-//             'categoryNum' => 'A005',
-//             'categoryName' => '直翅目',
-//         ]
-//     ];
-//     $categoryList = convertArray2Object($fakedata);
-//     return view('site/pestcatalog', ['categoryList' => $categoryList]);
-// });
 
 # 害蟲目錄 -> 子目錄展開
-Route::post('/pestcatalog/{categoryNum}', 'testController@ShowCatalog');
+Route::get('/GetPestCategoryData', 'pestController@GetPestCategoryData');
 
 # 植株目錄
-Route::get('/plantcatalog', function () {
-    $fakedata = [
-        [
-            // 資料說明：植株的科別清單
-            'categoryNum' => 'B002',
-            'categoryName' => '景天科'
-        ], [
-            'categoryNum' => 'B003',
-            'categoryName' => '茄科'
-        ], [
-            'categoryNum' => 'B004',
-            'categoryName' => '蘋科'
-        ], [
-            'categoryNum' => 'B005',
-            'categoryName' => '菊科'
-        ]
-    ];
-    $categoryList = convertArray2Object($fakedata);
-    return view('site/plantcatalog', ['categoryList' => $categoryList]);
-});
+Route::get('/plantcatalog', 'plantController@GetCategoryList');
+
+# 植株目錄 -> 子目錄展開
+Route::get('/GetPlantCategoryData', 'plantController@GetPlantCategoryData');
 
 #害蟲個別頁面
 Route::get('/pestDetailed/{name}', 'PestController@GetPestData');
