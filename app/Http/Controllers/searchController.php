@@ -47,30 +47,49 @@ class SearchController extends Controller
             /* 如果無法正常連線，則使用假資料 */
             $fakedata = [
                 [
-                    'type' => 'pest',
-                    'num' => 'A001',
-                    'name' => '蚜蟲',
-                    'scientificName' => 'Aphidoidea',
-                    'img' => 'Link:somewhere'
-
-                ], [
-                    'type' => 'plant',
-                    'num' => 'B002',
-                    'name' => '菜菜2',
-                    'scientificName' => 'Aphidoidea',
-                    'img' => 'Link:somewhere'
-                ], [
-                    'type' => 'pest',
-                    'num' => 'A003',
-                    'name' => '蚜蟲3',
-                    'scientificName' => 'Aphidoidea',
-                    'img' => 'Link:somewhere'
-                ], [
-                    'type' => 'pest',
-                    'num' => 'A005',
-                    'name' => '蚜蟲5',
-                    'scientificName' => 'Aphidoidea',
-                    'img' => 'Link:somewhere'
+                    "type" => "pest",
+                    "num" => "A001",
+                    "name" => " 小綠葉蟬",
+                    "scientificName" => "Empoasca Flavescens",
+                    "categoryNum" => "A1001",
+                    "habit" => "小綠葉蟬一年發生14個世代。卵期平均11.4天，孵化後經5次脫皮而羽化為成蟲，若蟲期平均31.1天，成蟲期雌蟲平均為35.4天，雄蟲平均為25.9天。一隻雌蟲一生最多可產卵粒150粒，平均為30粒。",
+                    "img" => "Link:somewhere"
+                ],
+                [
+                    "type" => "pest",
+                    "num" => "A002",
+                    "name" => "小翅椿象",
+                    "scientificName" => "Cavelerius Saccharivorus",
+                    "categoryNum" => "A1001",
+                    "habit" => "",
+                    "img" => "Link:somewhere"
+                ],
+                [
+                    "type" => "pest",
+                    "num" => "A003",
+                    "name" => "吹綿介殼蟲",
+                    "scientificName" => "Icerya purchasi Maskell",
+                    "categoryNum" => "A1001",
+                    "habit" => "",
+                    "img" => "Link:somewhere"
+                ],
+                [
+                    "type" => "pest",
+                    "num" => "A026",
+                    "name" => "四紋豆象",
+                    "scientificName" => "Callosobruchus  maculatus",
+                    "categoryNum" => "A1003",
+                    "habit" => "",
+                    "img" => "Link:somewhere"
+                ],
+                [
+                    "type" => "pest",
+                    "num" => "A021",
+                    "name" => "大蟋蟀",
+                    "scientificName" => "Brachytrupes portentosus",
+                    "categoryNum" => "A1002",
+                    "habit" => "",
+                    "img" => "Link:somewhere"
                 ]
             ];
             $searchResults = convertArray2Object($fakedata);
@@ -103,10 +122,10 @@ class SearchController extends Controller
             /* 如果無法正常連線，則使用假資料 */
             $fakedata = [
                 [
-                    'keyWord' => '蚜蟲蟲',
+                    'keyWord' => '蚜蟲',
                     'keyWordCount' => 1000
                 ], [
-                    'keyWord' => '玉米子',
+                    'keyWord' => '玉米',
                     'keyWordCount' => 200
                 ], [
                     'keyWord' => '三葉蟲',
@@ -115,7 +134,7 @@ class SearchController extends Controller
                     'keyWord' => '橡皮蟲',
                     'keyWordCount' => 2
                 ], [
-                    'keyWord' => '鳳梨王',
+                    'keyWord' => '鳳梨',
                     'keyWordCount' => 1
                 ]
             ];
