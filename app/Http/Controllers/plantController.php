@@ -36,10 +36,21 @@ class PlantController extends Controller
         return view('site/plantcatalog', compact('categoryList', 'areaData'));
     }
 
-    /* 取得害蟲清單 */
+    /* 取得植株清單，由前端進行資料篩選 */
     public function GetPlantCategoryData()
     {
-        $areaData = $this->areaData = DB::table('plantlist');
+        $areaData = DB::table('plantlist');
+        $areaData = $areaData->get();
+        // dd($areaData);
+        return $areaData;
+    }
+
+    /* 取得植株清單，並且由 Back-End 進行資料篩選 */
+    public function GetPlantCategoryDataBack(Request $request)
+    {
+        $categoryNum = $request->categoryNum;
+        // $categoryNum = "A1001";
+        $areaData = DB::table('plantlist')->where('categoryNum', $categoryNum);
         $areaData = $areaData->get();
         // dd($areaData);
         return $areaData;

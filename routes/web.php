@@ -49,7 +49,10 @@ Route::post('/GetPestCategoryData', 'pestController@GetPestCategoryDataBack');
 Route::get('/plantcatalog', 'plantController@GetCategoryList');
 
 # 植株目錄 -> 子目錄展開
+/* get -> 由前端處理目錄資料 */
 Route::get('/GetPlantCategoryData', 'plantController@GetPlantCategoryData');
+/* post -> 由後端處理目錄資料 */
+Route::post('/GetPlantCategoryData', 'plantController@GetPlantCategoryDataBack');
 
 #害蟲個別頁面
 Route::get('/pestDetailed/{name}', 'PestController@GetPestData');
