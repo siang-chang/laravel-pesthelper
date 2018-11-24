@@ -9,23 +9,93 @@
 
 <url>
   <loc>https://pesthelper.cc/</loc>
-  <lastmod>2018-11-09T13:02:07+00:00</lastmod>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://pesthelper.cc/recognition</loc>
-  <lastmod>2018-11-09T13:02:07+00:00</lastmod>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pesthelper.cc/pestcatalog</loc>
-  <lastmod>2018-11-09T13:02:07+00:00</lastmod>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pesthelper.cc/plantcatalog</loc>
-  <lastmod>2018-11-09T13:02:07+00:00</lastmod>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/search?keyWord=蟬</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/search?keyWord=%E6%A4%BF%E8%B1%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/search?keyWord=%E5%9A%B4%E5%BF%83%E6%80%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/search?keyWord=%E7%8E%89%E7%B1%B3</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/search?keyWord=%E6%A5%8A%E5%AD%90%E7%91%A9</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E5%B0%8F%E7%B6%A0%E8%91%89%E8%9F%AC</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E5%97%9C%E8%8F%8A%E7%9F%AD%E9%A0%AD%E8%84%8A%E6%B2%AB%E8%9F%AC</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E8%9F%AC</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E5%B0%8F%E7%BF%85%E6%A4%BF%E8%B1%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E8%8C%B6%E8%A7%92%E7%9B%B2%E6%A4%BF%E8%B1%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E8%8D%94%E6%9E%9D%E6%A4%BF%E8%B1%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E9%BB%91%E6%A4%BF%E8%B1%A1</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/plantDetailed/%E7%8E%89%E7%B1%B3</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pesthelper.cc/pestDetailed/%E9%9D%9E%E6%B4%B2%E8%9E%BB%E8%9B%84</loc>
+  <lastmod>2018-11-21T08:56:23+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 

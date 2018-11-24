@@ -1,5 +1,9 @@
-
-       <!-- 導入 Bootstrap 3.3.7 -->
+        <!-- 取得全域網址變數 -->
+        <script>
+            // "global" vars, built using blade
+            var LaravelUrl = '{{ URL::asset('/') }}';
+        </script>
+        <!-- 導入 Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.js') }}"></script>
