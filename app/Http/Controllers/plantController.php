@@ -10,21 +10,57 @@ use Carbon;
 class PlantController extends Controller
 {
     public $areaData, $categoryList, $catalog;
-
+    /* 取得植株目錄 */
     public function GetCategoryList()
     {
         $areaData = $this->areaData = DB::table('plantlist');
         $categoryList = $this->categoryList = DB::table('plantfamily');
-        $catalog = $this->catalog = 'plantcatalog';
+
+        /* 子瑩版本 */
+        // $catalog = $this->catalog = 'plantcatalog';
+        // $type = 'plant';
+        // $Data = getHelper::GetCategoryList($areaData, $categoryList,$type);
+        // return view($catalog, compact('Data'));
+
+        /* 文祥版本 */
         $type = 'plant';
-        $Data = getHelper::GetCategoryList($areaData, $categoryList,$type);
-        return view($catalog, compact('Data'));
+        $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        $categoryList = $Data[0];
+        $areaData = $Data[1];
+        // 資料重編碼
+        $categoryList = json_decode($categoryList);
+        $areaData = json_decode($areaData);
+
+        // dd($categoryList);
+        // dd($areaData);
+        return view('site/plantcatalog', compact('categoryList', 'areaData'));
     }
 
+    /* 取得植株清單，由前端進行資料篩選 */
+    public function GetPlantCategoryData()
+    {
+        $areaData = DB::table('plantlist');
+        $areaData = $areaData->get();
+        // dd($areaData);
+        return $areaData;
+    }
+
+    /* 取得植株清單，並且由 Back-End 進行資料篩選 */
+    public function GetPlantCategoryDataBack(Request $request)
+    {
+        $categoryNum = $request->categoryNum;
+        // $categoryNum = "A1001";
+        $areaData = DB::table('plantlist')->where('categoryNum', $categoryNum);
+        $areaData = $areaData->get();
+        // dd($areaData);
+        return $areaData;
+    }
+
+    /* 取得個別植株資料 */
     public $detailed, $orderdata1, $orderdata2, $page;
     public function GetPlantData($name)
     {
-        $num = DB::table('arealist')->where('name',$name)->value('num');
+        $num = DB::table('arealist')->where('name', $name)->value('num');
         $detailed = $this->detailed = DB::table('plantlist');
         $orderdata1 = $this->oderdata1 = DB::table('plantalias');
         $orderdata2 = $this->oderdata2 = DB::table('relationship');

@@ -19,7 +19,7 @@
                     data-parent="#accordion" href="#collapse-{{ $category->categoryNum }}" aria-expanded="true"
                     aria-controls="collapse-{{ $category->categoryNum }}" onclick="openCatalog('{{ $category->categoryNum }}')">
                     <h4 class="panel-title">
-                        <span class="glyphicon glyphicon-chevron-down text-xs-1"></span>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
                         <span class="text-medium-1">{{ $category->categoryName }}</span>
                     </h4>
                 </div>
@@ -38,7 +38,7 @@
         <input type="text" id="psd">
         <input type="button" id="send" value="送出">
     </div> --}}
-    <script>
+    {{-- <script>
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -63,6 +63,6 @@
             });
         })
 
-    </script>
+    </script> --}}
 </div>
 @stop
