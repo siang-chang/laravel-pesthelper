@@ -39,7 +39,11 @@ Route::get('/search', 'SearchController@Search');
 Route::get('/pestcatalog', 'pestController@GetCategoryList');
 
 # 害蟲目錄 -> 子目錄展開
+/* get -> 由前端處理目錄資料 */
 Route::get('/GetPestCategoryData', 'pestController@GetPestCategoryData');
+/* post -> 由後端處理目錄資料 */
+Route::post('/GetPestCategoryData', 'pestController@GetPestCategoryDataBack');
+
 
 # 植株目錄
 Route::get('/plantcatalog', 'plantController@GetCategoryList');

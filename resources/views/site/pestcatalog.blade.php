@@ -65,9 +65,4 @@
 
     </script> --}}
 </div>
-<script>
-    // "global" vars, built using blade
-    var Url = '{{ URL::asset('/') }}';
-    var UrlImg = '{{ URL::asset('img') }}';
-</script>
 @stop

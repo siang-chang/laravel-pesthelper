@@ -9,7 +9,8 @@ use Carbon;
 
 class PestController extends Controller
 {
-    public $areaData, $categoryList, $catalog;
+    public $areaData, $categoryList;
+    public $catalog = 'pestcatalog';
     /* 取得害蟲目錄 */
     public function GetCategoryList()
     {
@@ -17,7 +18,6 @@ class PestController extends Controller
         $categoryList = $this->categoryList = DB::table('pestorder');
 
         /* 子瑩版本 */
-        // $catalog = $this->catalog = 'pestcatalog';
         // $type = 'pest';
         // $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
         // return view($catalog, compact('Data'));
@@ -26,7 +26,7 @@ class PestController extends Controller
         $type = 'pest';
         $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
         $categoryList = $Data[0];
-        $areaData  = $Data[1];
+        $areaData = $Data[1];
         // 資料重編碼
         $categoryList = json_decode($categoryList);
         $areaData = json_decode($areaData);
@@ -36,19 +36,21 @@ class PestController extends Controller
         return view('site/pestcatalog', compact('categoryList', 'areaData'));
     }
 
-    /* 取得害蟲清單 */
+    /* 取得害蟲清單，由前端進行資料篩選 */
     public function GetPestCategoryData()
     {
-        $areaData = $this->areaData = DB::table('pestlist');
+        $areaData = DB::table('pestlist');
         $areaData = $areaData->get();
         // dd($areaData);
         return $areaData;
     }
-    /* 取得害蟲清單 test */
-    public function GetPestCategoryDataT()
+
+    /* 取得害蟲清單，並且由 Back-End 進行資料篩選 */
+    public function GetPestCategoryDataBack(Request $request)
     {
-        $catagoryNum = 'A1001';
-        $areaData = $this->areaData = DB::table('pestlist');
+        $categoryNum = $request->categoryNum;
+        // $categoryNum = "A1001";
+        $areaData = DB::table('pestlist')->where('categoryNum', $categoryNum);
         $areaData = $areaData->get();
         // dd($areaData);
         return $areaData;
@@ -58,7 +60,7 @@ class PestController extends Controller
     public $detailed, $orderdata1, $orderdata2, $page;
     public function GetPestData($name)
     {
-        $num = DB::table('arealist')->where('name',$name)->value('num');
+        $num = DB::table('arealist')->where('name', $name)->value('num');
         $detailed = $this->detailed = DB::table('pestlist');
         $orderdata1 = $this->oderdata1 = DB::table('pestalias');
         $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
