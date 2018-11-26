@@ -144,16 +144,11 @@ a:hover {
 
 .cta {
   margin-top: 30px;
-  margin-bottom: 30px;
   text-align: center;
 }
 
 .cta p {
   margin-top: 30px;
-}
-
-.cta .bottom {
-  margin-bottom: 30px;
 }
 
 .flex-align-title {
@@ -1112,7 +1107,7 @@ a:hover {
   margin-top: 50px;
   margin-bottom: 50px;
   /* inner-position */
-  padding: 20px;
+  padding: 10px;
   /* style */
   border-radius: 20px;
   border: solid 1px;
@@ -1521,5 +1516,39 @@ a:hover {
   .recognition form .btn-1 span {
     line-height: 38px;
   }
+}
+
+.recognition .userImg {
+  /* position */
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  /* inner-position */
+  padding: 10px;
+  /* style */
+  border-radius: 20px;
+  border: solid 1px;
+  border-color: #2699fb;
+}
+
+.recognition .userImg div {
+  /* position */
+  width: 100%;
+  /* style */
+  border-radius: 10px;
+  border: solid 1px;
+  border-color: #bce0fd;
+}
+
+.recognition .userImg div img {
+  /* position */
+  /* 圖片隨邊界調整大小 */
+  width: 100%;
+  min-width: 100%;
+  /* style */
+  border-radius: 10px;
+  border: solid 1px;
+  border-color: #bce0fd;
 }
 /*# sourceMappingURL=style.css.map */

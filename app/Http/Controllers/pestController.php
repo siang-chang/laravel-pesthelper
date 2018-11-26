@@ -121,32 +121,40 @@ class PestController extends Controller
     }
 
     /* 前端測試區塊 */
-    /* 害蟲辨識 */
-    public function recognition(Request $request)
+    /* 影像上傳及轉檔 base64 -> jpeg */
+    public function ImgUploadBase64(Request $request)
     {
-        // request()->validate([
-        //     'userImg' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        // ]);
-        // $userImgs = time() . '.' . request()->userImg->getClientOriginalExtension();
-        // request()->userImg->move(public_path('pestimg'), $userImgs);
-        // // return view('site/recognitionfail', compact('userImgs'));
         $base64_image_content = $request->userImg;
-        //匹配出图片的格式
+
+        //匹配出圖片的格式
         if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)) {
             $type = $result[2];
             $path = "upload/";
             if (!file_exists($path)) {
-            //检查是否有该文件夹，如果没有就创建，并给予最高权限
+                // 檢查是否有該資料夾，如果没有就創建，並給予最高寫入權限
                 mkdir($path, 0700);
             }
+            // new_file = 新檔案名稱
             $new_file = $path . time() . ".{$type}";
             if (file_put_contents($new_file, base64_decode(str_replace($result[1], '', $base64_image_content)))) {
-                echo '保存成功：', $new_file;
+                echo $new_file;
             } else {
-                echo '保存失败';
+                echo '保存失敗';
             }
         }
-        return "success";
+    }
+
+    public function PestRecognition(Request $request)
+    {
+        $userImg = $request->userImg;
+        // $userImg = "upload/1543225997.jpeg"; /* 測試假路徑 */
+        return $userImg;
+    }
+
+    public function RecognitionFail(Request $request)
+    {
+        $userImg = $request->userImg;
+        return view('site/recognitionfail', compact('userImg'));
     }
 
 }
