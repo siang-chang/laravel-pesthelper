@@ -86,7 +86,7 @@ Route::get('/recognition', function () {
     return view('site/recognition');
 });
 # 害蟲影像辨識 -> 傳送辨識圖片
-Route::post('/recognition', 'recognitionController@ImgUploadBase64');
+Route::post('/recognition', 'pestController@ImgUploadBase64');
 
 /* 測試樣板 */
 // Route::get('/recognitioncheck', function () {
@@ -94,10 +94,10 @@ Route::post('/recognition', 'recognitionController@ImgUploadBase64');
 // });
 
 # 害蟲影像辨識 -> Google Could Vision & Pest Helper 演算法
-Route::post('/recognitionresults', 'recognitionController@PestRecognition');
+Route::post('/recognitionresults', 'pestController@PestRecognition');
 
 # 辨識失敗頁面
-Route::get('/recognitionfail', 'recognitionController@RecognitionFail');
+Route::get('/recognitionfail', 'pestController@RecognitionFail');
 
 
 /*
