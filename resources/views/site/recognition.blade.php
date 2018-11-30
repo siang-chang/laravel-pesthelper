@@ -36,7 +36,7 @@
     <!-- 導入 camera.js 相機上傳模組 -->
     <script src="{{ asset('js/camera.js') }}"></script>
     <script>
-        var _token = '<?php echo csrf_token(); ?>';
+        var _token = '@csrf';
     </script>
 </div>
 @stop
