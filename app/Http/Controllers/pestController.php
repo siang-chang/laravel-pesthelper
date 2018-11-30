@@ -162,7 +162,7 @@ class PestController extends Controller
 
             // 資料重編碼
             $results = array($pestCount, $recognition, $pest);
-            $results = json_decode($results);
+            // $results = json_decode($results);
 
             return $results;
 
