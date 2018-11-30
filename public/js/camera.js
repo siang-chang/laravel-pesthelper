@@ -128,7 +128,7 @@ function dorecognition(imgUrl) {
         },
         success: function (data) {
             console.log(data);
-            location.href= LaravelUrl + '/recognitionfail?userImg=' + data;
+            // location.href= LaravelUrl + '/recognitionfail?userImg=' + data;
         }
     })
 }
