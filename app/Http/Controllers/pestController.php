@@ -161,10 +161,11 @@ class PestController extends Controller
             $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
 
             // 資料重編碼
-            $recognition = json_decode($recognition);
-            $pest = json_decode($pest);
+            $results = array($pestCount, $recognition, $pest);
+            $results = json_decode($results);
 
-            return array($pestCount, $recognition, $pest);
+            return $results;
+
         } else {
             return 'error';
         }
