@@ -21,57 +21,88 @@ function convertArray2Object($defs)
     };
     return (object)array_map($innerfunc, $defs);
 }
+
+# test
+Route::get('/test', 'testController@index');
+
 /*
 //---------------------------------------------------------------------------
-// 前端區域
+// 首頁 & 搜尋
 //---------------------------------------------------------------------------
  */
-# test
-Route::POST('/postajax', 'testController@testajax');
 
 # 系統首頁 & 熱門關鍵字
 Route::get('/', 'SearchController@GetKeywordList');
 
-# 關鍵字搜尋
+# 站內搜尋
 Route::get('/search', 'SearchController@Search');
+
+/*
+//---------------------------------------------------------------------------
+// 害蟲
+//---------------------------------------------------------------------------
+ */
+
+#害蟲個別頁面
+Route::get('/pestDetailed/{name}', 'PestController@GetPestData');
+// Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
 
 # 害蟲目錄
 Route::get('/pestcatalog', 'pestController@GetCategoryList');
 
 # 害蟲目錄 -> 子目錄展開
 /* get -> 由前端處理目錄資料 */
-Route::get('/GetPestCategoryData', 'pestController@GetPestCategoryData');
+// Route::get('/GetPestCategoryData', 'pestController@GetPestCategoryData');
 /* post -> 由後端處理目錄資料 */
 Route::post('/GetPestCategoryData', 'pestController@GetPestCategoryDataBack');
 
+/*
+//---------------------------------------------------------------------------
+// 植株
+//---------------------------------------------------------------------------
+ */
+
+#植株個別頁面
+Route::get('/plantDetailed/{name}', 'PlantController@GetPlantData');
+// Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
 
 # 植株目錄
 Route::get('/plantcatalog', 'plantController@GetCategoryList');
 
 # 植株目錄 -> 子目錄展開
 /* get -> 由前端處理目錄資料 */
-Route::get('/GetPlantCategoryData', 'plantController@GetPlantCategoryData');
+// Route::get('/GetPlantCategoryData', 'plantController@GetPlantCategoryData');
 /* post -> 由後端處理目錄資料 */
 Route::post('/GetPlantCategoryData', 'plantController@GetPlantCategoryDataBack');
 
-#害蟲個別頁面
-Route::get('/pestDetailed/{name}', 'PestController@GetPestData');
-// Route::get('/pestTestDetailed/{num}', 'PestController@TestDetailed');
+/*
+//---------------------------------------------------------------------------
+// 影像辨識
+//---------------------------------------------------------------------------
+ */
 
-#植株個別頁面
-Route::get('/plantDetailed/{name}', 'PlantController@GetPlantData');
-// Route::get('/plantTestDetailed/{num}', 'PlantController@TestDetailed');
-
-# 害蟲影像辨識
+# 害蟲影像辨識首頁
 Route::get('/recognition', function () {
     return view('site/recognition');
 });
 # 害蟲影像辨識 -> 傳送辨識圖片
-Route::post('/recognition', 'PestController@recognition');
+Route::post('/recognition', 'PestController@ImgUploadBase64');
+
+/* 測試樣板 */
+// Route::get('/recognitioncheck', function () {
+//     return view('site/recognitioncheck');
+// });
+
+# 害蟲影像辨識 -> Google Could Vision & Pest Helper 演算法
+Route::post('/recognitionresults', 'PestController@PestRecognition');
+
+# 辨識失敗頁面
+Route::get('/recognitionfail', 'PestController@RecognitionFail');
+
 
 /*
 //---------------------------------------------------------------------------
-// 後端區域
+// 　後端區域
 //---------------------------------------------------------------------------
  */
 
