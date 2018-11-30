@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Helpers\GetHelper;
 use Carbon;
 
-class RecignitionController extends Controller
+class RecognitionController extends Controller
 {
 
     // /* 影像辨識模組測試區塊 */

@@ -86,7 +86,7 @@ Route::get('/recognition', function () {
     return view('site/recognition');
 });
 # 害蟲影像辨識 -> 傳送辨識圖片
-Route::post('/recognition', 'RecignitionController@ImgUploadBase64');
+Route::post('/recognition', 'recognitionController@ImgUploadBase64');
 
 /* 測試樣板 */
 // Route::get('/recognitioncheck', function () {
@@ -94,10 +94,10 @@ Route::post('/recognition', 'RecignitionController@ImgUploadBase64');
 // });
 
 # 害蟲影像辨識 -> Google Could Vision & Pest Helper 演算法
-Route::post('/recognitionresults', 'RecignitionController@PestRecognition');
+Route::post('/recognitionresults', 'recognitionController@PestRecognition');
 
 # 辨識失敗頁面
-Route::get('/recognitionfail', 'RecignitionController@RecognitionFail');
+Route::get('/recognitionfail', 'recognitionController@RecognitionFail');
 
 
 /*
@@ -145,5 +145,5 @@ Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
 Auth::routes();
 
 // 圖片上傳
-Route::get('imageupload', 'RecignitionController@imageUpload')->name('image.upload');
-Route::post('imageupload', 'RecignitionController@imageUploadPost')->name('image.upload.post');
+Route::get('imageupload', 'recognitionController@imageUpload')->name('image.upload');
+Route::post('imageupload', 'recognitionController@imageUploadPost')->name('image.upload.post');
