@@ -106,7 +106,7 @@ function redrawPage(userImg) {
         '</div>' +
         '<div class="cta">' +
         '<form action="recognitionresults" method="POST">' + _token +
-        '<input type="hidden" name="imgUrl" value="' + userImg + '">' +
+        '<input type="hidden" name="userImg" value="' + userImg + '">' +
         '<input type="submit" value="發射">' +
         // '<button id="dorecognition" class="btn-2 text-medium-1" value="test" onclick="dorecognition(' + "'" + userImg + "'" + ')">進行辨識</button>' +
         '</form>' +
