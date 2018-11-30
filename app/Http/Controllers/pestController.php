@@ -120,13 +120,13 @@ class PestController extends Controller
             ->with('image', $imageName);
     }
 
-    /* 前端測試區塊 */
+    /* 害蟲辨識模組 */
     /* 影像上傳及轉檔 base64 -> jpeg */
     public function ImgUploadBase64(Request $request)
     {
         $base64_image_content = $request->userImg;
 
-        //匹配出圖片的格式
+        // 匹配出圖片的格式
         if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64_image_content, $result)) {
             $type = $result[2];
             $path = "upload/";
@@ -148,7 +148,45 @@ class PestController extends Controller
     {
         $userImg = $request->userImg;
         // $userImg = "upload/1543225997.jpeg"; /* 測試假路徑 */
-        return $userImg;
+        // return $userImg;
+
+        $command = 'python3.6 predict.py upload/' . $userImg;
+        $output = shell_exec($command);
+        $output = str_replace(PHP_EOL, '', $output);
+        $output = explode(',', $output);
+        $outputCount = count($output);
+        if($outputCount != 0)
+        {
+            for ($i = 0; $i < $outputCount / 2; $i++)
+            {
+                $array[$i] = [
+                    'score' => $output[$i * 2],
+                    'display_name' => $output[$i * 2 + 1]
+                ];
+
+            }
+
+            $display = array_pluck($array, 'display_name');
+            $score = array_pluck($array, 'score');
+
+            for($j = 0;$j<$outputCount/2;$j++)
+            {
+                $num = DB::table('chart')->where('scientificName','like',$display[$j].'%')->value('pestNum');
+                $pest[$j] = ['num' => $num, 'score' => $score[$j]];
+            }
+            $pestCount = count($pest);
+            if($pestCount == 1 && $pest[0] == null)
+            {
+                $pest = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
+            }
+
+            $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
+            dd($pestCount,$recognition,$pest);
+        }
+        else
+        {
+            dd('err');
+        }
     }
 
     public function RecognitionFail(Request $request)
