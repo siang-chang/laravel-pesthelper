@@ -89,10 +89,12 @@ class RecognitionController extends Controller
             $results = array($pestCount, $recognition, $pest);
             // $results = json_decode($results);
 
-            return $results;
+            dd($results);
+            // return $results;
 
         } else {
-            return 'error';
+            // return 'error';
+            dd('error');
         }
     }
 
