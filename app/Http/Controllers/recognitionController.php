@@ -49,14 +49,14 @@ class RecognitionController extends Controller
             }
         }
     }
-
+    /* 影像辨識 */
     public function PestRecognition(Request $request)
     {
         $userImg = $request->userImg;
         // $userImg = "upload/1543225997.jpeg"; /* 測試假路徑 */
         // return $userImg;
 
-        $command = 'python3.6 predict.py upload/' . $userImg;
+        $command = 'python3.6 predict.py ' . $userImg;
         $output = shell_exec($command);
         $output = str_replace(PHP_EOL, '', $output);
         $output = explode(',', $output);
