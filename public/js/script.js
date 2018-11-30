@@ -1,6 +1,6 @@
 /*
 //---------------------------------------------------------------------------
-// Document Ready Function
+// Other Function
 //---------------------------------------------------------------------------
 */
 /* 替所有 Ajax 請求加上 CSRF 防禦 */
@@ -10,6 +10,11 @@ $.ajaxSetup({
     }
 });
 
+/*
+//---------------------------------------------------------------------------
+// Document Ready Function
+//---------------------------------------------------------------------------
+*/
 $(function () {
     // goToTop 回置頁面頂端
     $("#goTop").click(function () {
@@ -76,7 +81,7 @@ function closeNavSearch() {
 // SearchBar
 //---------------------------------------------------------------------------
 */
-// 更換搜尋模式(searchType)
+/* 更換搜尋模式(searchType) */
 function changSearchType(searchType) {
     if (searchType == "pest") {
         searchTypeText = $("#searchPest").html();
@@ -93,7 +98,7 @@ function changSearchType(searchType) {
 // Catalog
 //---------------------------------------------------------------------------
 */
-
+/* 展開目錄細項 (害蟲&植株適用) */
 function openCatalog(categoryNum) {
     // console.log(categoryNum);
     /* 先判斷是害蟲或植株目錄，將目標網址存入變數 catagoryUrl */
