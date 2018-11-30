@@ -9,7 +9,7 @@ public/img/plantimg
 # 影像辨識相關
 public/pestimg
 public/upload
-app\Http\Controllers\recognitionController.php
+app/Http/Controllers/recognitionController
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -18,7 +18,6 @@ app/storage/
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
-public/img/pestimg
 storage/*.key
 .env.*.php
 .env.php
