@@ -83,9 +83,9 @@ class RecognitionController extends Controller
             }
 
             $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
-            dd($pestCount, $recognition, $pest);
+            return array($pestCount, $recognition, $pest);
         } else {
-            dd('err');
+            return 'error';
         }
     }
 

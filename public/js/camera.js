@@ -118,7 +118,7 @@ function redrawPage(userImg) {
 function dorecognition(imgUrl) {
     console.log(imgUrl);
     event.preventDefault();
-    thisUrl = thisUrl + "results";
+    thisUrl = LaravelUrl + "recognitionresults";
     /* 網址宣告 */
     $.ajax({
         type: "POST",
