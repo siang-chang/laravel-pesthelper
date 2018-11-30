@@ -1,9 +1,15 @@
 vendor/
 node_modules/
 npm-debug.log
-public/pestimg
+
+# 圖像資源
 public/img/pestimg
 public/img/plantimg
+
+# 影像辨識相關
+public/pestimg
+public/upload
+app\Http\Controllers\recognitionController.php
 
 # Laravel 4 specific
 bootstrap/compiled.php
