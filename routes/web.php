@@ -94,7 +94,7 @@ Route::post('/recognition', 'pestController@ImgUploadBase64');
 // });
 
 # 害蟲影像辨識 -> Google Could Vision & Pest Helper 演算法
-Route::post('/recognitionresults', 'pestController@PestRecognition');
+Route::get('/recognitionresults', 'pestController@PestRecognition');
 
 # 辨識失敗頁面
 Route::get('/recognitionfail', 'pestController@RecognitionFail');
