@@ -159,6 +159,8 @@ class PestController extends Controller
             }
 
             $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
+            // 資料重編碼
+            $recognition = json_decode($recognition);
             return array($pestCount, $recognition, $pest);
         } else {
             return 'error';
