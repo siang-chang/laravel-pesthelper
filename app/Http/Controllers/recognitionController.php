@@ -26,7 +26,8 @@ class RecognitionController extends Controller
     //     return back()
     //         ->with('image', $imageName);
     // }
- /* 影像上傳及轉檔 base64 -> jpeg */
+
+    /* 影像上傳及轉檔 base64 -> jpeg */
     public function ImgUploadBase64(Request $request)
     {
         $base64_image_content = $request->userImg;
@@ -48,7 +49,8 @@ class RecognitionController extends Controller
             }
         }
     }
- /* 影像辨識 */
+
+    /* 影像辨識 */
     public function PestRecognition(Request $request)
     {
         $userImg = $request->userImg;

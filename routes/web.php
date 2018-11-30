@@ -145,5 +145,5 @@ Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
 Auth::routes();
 
 // 圖片上傳
-Route::get('imageupload', 'recognitionController@imageUpload')->name('image.upload');
-Route::post('imageupload', 'recognitionController@imageUploadPost')->name('image.upload.post');
+// Route::get('imageupload', 'recognitionController@imageUpload')->name('image.upload');
+// Route::post('imageupload', 'recognitionController@imageUploadPost')->name('image.upload.post');
