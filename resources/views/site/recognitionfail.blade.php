@@ -3,7 +3,6 @@
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
-    {{ dd($userImg) }}
     <!-- 頁面 Title -->
     <div class="row page-title">
         <h1 class="col-xs-12 text-Large-1">辨識結果(失敗)</h1>
