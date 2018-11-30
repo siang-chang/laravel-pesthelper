@@ -108,7 +108,7 @@ function redrawPage(userImg) {
         '<form action="recognitionresults" method="POST">' +
         '@csrf' +
         '<input type="hidden" name="imgUrl" value="' + userImg + '">' +
-        '<inpust type="submit" value="發射">' +
+        '<inpust type="submit" value="發射">123' +
         // '<button id="dorecognition" class="btn-2 text-medium-1" value="test" onclick="dorecognition(' + "'" + userImg + "'" + ')">進行辨識</button>' +
         '</form>' +
         '</div>' +
