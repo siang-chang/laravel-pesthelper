@@ -13,10 +13,10 @@
     </div>
     <!-- 結果區塊 -->
     <div>
-        pestCount={{ $results->pestCount }}
+        pestCount={{ $results[pestCount] }}
     </div>
     <div>
-        @foreach ($results->recognition as $recognitionDate)
+        @foreach ($results[recognition] as $recognitionDate)
         {{ $recognitionData->name }}<br>
         @endforeach
     </div>
