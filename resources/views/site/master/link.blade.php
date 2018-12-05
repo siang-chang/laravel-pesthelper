@@ -8,6 +8,12 @@
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.js') }}"></script>
 
+        <!-- 導入 slick-1.8.1 -->
+        <link rel="stylesheet" href="{{ asset('css/slick/slick.css') }}"/>
+        <!-- Add the new slick-theme.css if you want the default styling -->
+        <link rel="stylesheet" href="{{ asset('css/slick/slick-theme.css') }}"/>
+        <script src="{{ asset('css/slick/slick.min.js') }}"></script>
+
         <!-- 導入客製化 css, js -->
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('js/script.js') }}"></script>

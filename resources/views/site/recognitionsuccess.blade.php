@@ -12,13 +12,31 @@
         </div>
     </div>
     <!-- 結果區塊 -->
-    <div>
-        pestCount={{ $pestCount }}
-    </div>
-    <div>
-        @foreach ($recognition as $recognitionDate)
-        {{ $recognitionDate->name }}<br>
-        @endforeach
+    <div class="page-container">
+        <!-- 行動呼籲區塊 -->
+        <div class="row">
+            <h2 class="col-xs-12 text-medium-1">點擊您認為最符合的結果，查看詳細資料</h2>
+        </div>
+        <!-- 結果選擇區塊 -->
+        <div class="row">
+            @foreach ($recognition as $recognitionDate)
+            <div class="img-box col-xs-12 col-sm-6 col-md-4">
+                <a href='{{ url('/pestDetailed/'.$recognitionDate->name) }}'>
+                    <div id="{{ $recognitionDate->name }}" class="img-innerbox">
+                        <div class="img">
+                            <img class="main" src="{{ asset($recognitionDate->img) }}" alt="{{ $recognitionDate->name }}"
+                                onError="this.src='{{ asset('img/image.jpg') }}';">
+                        </div>
+                        <hr />
+                        <div class="base">
+                            <p class="text-article-1">{{ $recognitionDate->name }}</p>
+                            <p class="text-small-1">{{ $recognitionDate->scientificName }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
     </div>
 </div>
 @stop

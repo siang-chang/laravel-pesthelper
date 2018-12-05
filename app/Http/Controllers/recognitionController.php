@@ -78,8 +78,9 @@ class RecognitionController extends Controller
                 $num = DB::table('chart')->where('scientificName', 'like', $display[$j] . '%')->value('pestNum');
                 $pest[$j] = ['num' => $num, 'score' => $score[$j]];
             }
-            $pestCount = count($pest);
-            if ($pestCount == 1 && $pest[0] == null) {
+            /* Cloud AutoML vision API 回傳值的數量 */
+            $visionResultCount = count($pest);
+            if ($visionResultCount == 1 && $pest[0] == null) {
                 $pest = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
             }
 
@@ -88,7 +89,7 @@ class RecognitionController extends Controller
             $recognition = json_decode($recognition);
 
             // dd($results);
-            return view('site/recognitionsuccess', compact('pestCount','recognition','pest'));
+            return view('site/recognitionsuccess', compact('recognition', 'pest'));
 
 
         } else {
@@ -97,10 +98,55 @@ class RecognitionController extends Controller
         }
     }
 
-    public function RecognitionFail(Request $request)
+    /* 影像辨識 with 前端假資料版本 */
+    public function PestRecognitionTest(Request $request)
     {
         $userImg = $request->userImg;
-        return view('site/recognitionfail', compact('userImg'));
+
+        /* pestCount's fakedata */
+        $visionResultCount = 2;
+
+        /* recognition's fakedata */
+        $recognition = [
+            [
+                "num" => "A001",
+                "name" => " 小綠葉蟬",
+                "scientificName" => "Empoasca Flavescens",
+                "categoryNum" => "A1001",
+                "category" => "半翅目",
+                "habit" => "小綠葉蟬一年發生14個世代。卵期平均11.4天，孵化後經5次脫皮而羽化為成蟲，若蟲期平均31.1天，成蟲期雌蟲平均為35.4天，雄蟲平均為25.9天。一隻雌蟲一生最多可產卵粒150粒，平均為30粒。",
+                "img" => "Link:somewhere"
+            ], [
+                "num" => "A021",
+                "name" => "大蟋蟀",
+                "scientificName" => "Brachytrupes portentosus",
+                "categoryNum" => "A1002",
+                "category" => "蟋蟀目",
+                "habit" => "",
+                "img" => "Link:somewhere"
+            ]
+        ];
+        $recognition = json_encode($recognition);
+        $recognition = json_decode($recognition);
+
+        /* pest's fakedata */
+        $pest = [
+            [
+                "num" => "A001",
+                "score" => "0.9815605878829956"
+            ], [
+                "num" => null,
+                "score" => "0.9915605878829956"
+            ]
+        ];
+
+        // $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
+        // dd($results);
+        return view('site/recognitionsuccess', compact('recognition', 'pest'));
+
+
+        /* 辨識失敗測試 */
+        // return view('site/recognitionfail', compact('userImg'));
     }
 
 
