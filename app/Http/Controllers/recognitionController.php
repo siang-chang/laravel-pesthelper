@@ -62,7 +62,7 @@ class RecognitionController extends Controller
         $output = str_replace(PHP_EOL, '', $output);
         $output = explode(',', $output);
         $outputCount = count($output);
-        if ($outputCount != 0) {
+        if ($output[0] != "") {
             for ($i = 0; $i < $outputCount / 2; $i++) {
                 $array[$i] = [
                     'score' => $output[$i * 2],
@@ -88,12 +88,13 @@ class RecognitionController extends Controller
             $recognition = json_decode($recognition);
             $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
 
-            dd($results);
-            // return $results;
+            // dd($results);
+            return view('site/recognitionsuccess', compact('results'));
+
 
         } else {
-            // return 'error';
-            dd('error');
+            // dd('error');
+            return view('site/recognitionfail', compact('userImg'));
         }
     }
 
