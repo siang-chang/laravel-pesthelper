@@ -62,7 +62,7 @@ class RecognitionController extends Controller
         $output = str_replace(PHP_EOL, '', $output);
         $output = explode(',', $output);
         $outputCount = count($output);
-        if ($outputCount != 0) {
+        if ($output[0] != "") {
             for ($i = 0; $i < $outputCount / 2; $i++) {
                 $array[$i] = [
                     'score' => $output[$i * 2],
