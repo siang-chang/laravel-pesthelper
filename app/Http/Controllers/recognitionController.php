@@ -86,10 +86,9 @@ class RecognitionController extends Controller
             $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
             // 資料重編碼
             $recognition = json_decode($recognition);
-            $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
 
             // dd($results);
-            return view('site/recognitionsuccess', compact('results'));
+            return view('site/recognitionsuccess', compact('pestCount','recognition','pest'));
 
 
         } else {
