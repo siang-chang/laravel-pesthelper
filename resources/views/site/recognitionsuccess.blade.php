@@ -17,7 +17,7 @@
     </div>
     <div>
         @foreach ($recognition as $recognitionDate)
-        {{ $recognitionData->name }}<br>
+        {{ $recognitionDate->name }}<br>
         @endforeach
     </div>
 </div>
