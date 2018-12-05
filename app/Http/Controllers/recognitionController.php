@@ -88,12 +88,13 @@ class RecognitionController extends Controller
             $recognition = json_decode($recognition);
             $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
 
-            dd($results);
-            // return $results;
+            // dd($results);
+            return view('site/recognitionsuccess', compact('results'));
+
 
         } else {
-            // return 'error';
-            dd('error');
+            // dd('error');
+            return view('site/recognitionfail', compact('userImg'));
         }
     }
 

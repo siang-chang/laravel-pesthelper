@@ -3,7 +3,6 @@
 @section('content')
 <!-- 內容區塊 -->
 <div class="container">
-    {{ dd($userImg) }}
     <!-- 頁面 Title -->
     <div class="row page-title">
         <h1 class="col-xs-12 text-Large-1">辨識結果(失敗)</h1>
@@ -12,7 +11,7 @@
         </div>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2" style="text-align:center">
-        <img src="" alt="userImg" style="width: 100%;">
+        <img src="{{ asset('/') . $userImg }}" alt="userImg" style="width: 100%;">
     </div>
 </div>
 @stop
