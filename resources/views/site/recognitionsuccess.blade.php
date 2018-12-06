@@ -3,26 +3,24 @@
 @section('description', '害蟲辨識')
 @section('content')
 <style type="text/css">
-    * {
+    /* * {
         box-sizing: border-box;
-    }
+    } */
 
-    .slider {
-        width: 50%;
-        margin: 100px auto;
-    }
     /* 每個選項之間的距離 */
     .slick-slide {
         margin: 0px 10px;
     }
-    /* 每個選項中，圖片的大小(這邊為了讓圖片套用我自己寫的css，故隱藏) */
+
+    /* 每個選項中，圖片的大小(這邊為了讓圖片套用我自己寫的css大小，故隱藏) */
     /* .slick-slide img {
         width: 100%;
     } */
 
+    /* 左右移動按鈕 */
     .slick-prev:before,
     .slick-next:before {
-        color: black;
+        color: #2699fb;
     }
 
     /* 超出顯示範圍的選項 */
