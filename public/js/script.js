@@ -125,14 +125,16 @@ function openCatalog(categoryNum) {
         success: function (data) {
             // console.log(data);
             var dataset = '';
+
             for (i = 0; data.length > i; i++) {
                 if (data[i].categoryNum == categoryNum) {
+                    console.log(LaravelUrl + data[i].img);
                     str = '<div class="img-box col-xs-12 col-sm-6 col-md-4">' +
                         '<a href="' + LaravelUrl + detailUrl + data[i].name + '">' +
                         '<div class="img-innerbox">' +
                         '<div class="img">' +
                         "<img class='main' src='" + LaravelUrl + data[i].img + "' alt='" + data[i].name  +
-                        "onError='this.src='" + LaravelUrl + "img/image.jpg';"> +
+                        "'" +  'onError="this.src=' + "'" + LaravelUrl + "/img/image.jpg" + "'" + ';">' +
 
                         // "<img class='main' src='127.0.0.1/pesthelper/public/img/image.jpg' alt=''>" +
                         '</div>' +
