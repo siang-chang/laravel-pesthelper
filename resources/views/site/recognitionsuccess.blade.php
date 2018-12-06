@@ -7,6 +7,11 @@
         box-sizing: border-box;
     } */
 
+    /* 整個滑動區域的設定 */
+    .slider {
+        margin: 10px auto;
+    }
+
     /* 每個選項之間的距離 */
     .slick-slide {
         margin: 0px 10px;
@@ -51,15 +56,18 @@
         </div>
     </div>
 </div>
-<!-- 影像辨識區塊 -->
+
+<!-- 內容區塊 -->
 <div class="page-container">
+
     <!-- 行動呼籲區塊 -->
     <div class="row">
         <h2 class="col-xs-12 text-medium-1">點擊您認為最符合的結果，查看詳細資料</h2>
     </div>
+
     <!-- 結果選擇區塊 -->
-    <div class="row">
-        <section class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 center">
+    <div class="row slider">
+        <section class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 center">
             @foreach ($recognition as $recognitionDate)
             <div class="img-box">
                 <a href='{{ url('/pestDetailed/'.$recognitionDate->name) }}'>
@@ -79,7 +87,32 @@
             @endforeach
         </section>
     </div>
+
+    <!-- 分隔線 -->
+    <div class="text-medium-1">．．．</div>
+
+    <!-- 行動呼籲區塊 -->
+    <div class="row">
+        <h2 class="col-xs-12 text-medium-1">都不對嗎？再試試看</h2>
+    </div>
 </div>
+
+<!-- 影像辨識區塊 -->
+<div class="container recognition">
+    <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
+        @csrf
+        <div class="btn-1">
+            <span>上傳影像</span>
+            <input type="file" id="uploadImg" name="userImg" accept="image/*">
+        </div>
+    </form>
+    <!-- 行動呼籲區塊 -->
+    <div class="row hidden-phone hidden-tab">
+        <h2 class="col-xs-12 text-medium-2" style="margin-top:30px;">您也可以透過行動裝置瀏覽網頁，使用即時辨識功能</h2>
+    </div>
+</div>
+
+
 
 <script type="text/javascript">
     $(document).on('ready', function () {
