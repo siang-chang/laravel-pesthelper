@@ -131,7 +131,9 @@ function openCatalog(categoryNum) {
                         '<a href="' + LaravelUrl + detailUrl + data[i].name + '">' +
                         '<div class="img-innerbox">' +
                         '<div class="img">' +
-                        "<img class='main' src='" + LaravelUrl + "img/image.jpg' alt=''>" +
+                        "<img class='main' src='" + LaravelUrl + data[i].img + "' alt='" + data[i].name  +
+                        "onError='this.src='" + LaravelUrl + "img/image.jpg';"> +
+
                         // "<img class='main' src='127.0.0.1/pesthelper/public/img/image.jpg' alt=''>" +
                         '</div>' +
                         '<hr />' +
