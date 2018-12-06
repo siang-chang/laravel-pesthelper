@@ -115,11 +115,28 @@ class RecognitionController extends Controller
                 "categoryNum" => "A1001",
                 "category" => "半翅目",
                 "habit" => "小綠葉蟬一年發生14個世代。卵期平均11.4天，孵化後經5次脫皮而羽化為成蟲，若蟲期平均31.1天，成蟲期雌蟲平均為35.4天，雄蟲平均為25.9天。一隻雌蟲一生最多可產卵粒150粒，平均為30粒。",
-                "img" => "Link:somewhere"
+                "img" => "https://pesthelper.cc/img/pestimg/A001.jpg"
+            ], [
+                "num" => "A021",
+                "name" => "荔枝椿象",
+                "scientificName" => "(1)Brachytrupes portentosus",
+                "categoryNum" => "A1002",
+                "category" => "荔枝椿象",
+                "habit" => "",
+                "img" => "https://pesthelper.cc/img/pestimg/A010.jpg"
             ], [
                 "num" => "A021",
                 "name" => "大蟋蟀",
-                "scientificName" => "Brachytrupes portentosus",
+                "scientificName" => "(2)Brachytrupes portentosus",
+                "categoryNum" => "A1002",
+                "category" => "蟋蟀目",
+                "habit" => "",
+                "img" => "Link:somewhere"
+            ]
+            , [
+                "num" => "A021",
+                "name" => "大蟋蟀",
+                "scientificName" => "(3)Brachytrupes portentosus",
                 "categoryNum" => "A1002",
                 "category" => "蟋蟀目",
                 "habit" => "",
