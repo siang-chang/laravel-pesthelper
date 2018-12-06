@@ -1,15 +1,9 @@
 @extends('site.master.subpage')
-@section('pageTitle', '害蟲辨識')
-@section('description', '害蟲辨識')
+@section('pageTitle', '害蟲目錄')
 @section('content')
-<style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
+<style type="text/css">
     * {
-      box-sizing: border-box;
+        box-sizing: border-box;
     }
 
     .slider {
@@ -18,31 +12,32 @@
     }
 
     .slick-slide {
-      margin: 0px 20px;
+        margin: 0px 20px;
     }
 
     .slick-slide img {
-      width: 100%;
+        width: 100%;
     }
 
     .slick-prev:before,
     .slick-next:before {
-      color: black;
+        color: black;
     }
 
 
     .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
+        transition: all ease-in-out .3s;
+        opacity: .2;
     }
 
     .slick-active {
-      opacity: .5;
+        opacity: .5;
     }
 
     .slick-current {
-      opacity: 1;
+        opacity: 1;
     }
+
 </style>
 <!-- 內容區塊 -->
 <div class="container recognition">
@@ -53,47 +48,68 @@
             <hr />
         </div>
     </div>
-    <!-- 影像辨識區塊 -->
-    <section class="variable">
-        <div>
-            <img src="http://placehold.it/350x100?text=1">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=2">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=3">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=4">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=5">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=6">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=7">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=8">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=9">
-        </div>
-        <div>
-            <img src="http://placehold.it/350x100?text=10">
-        </div>
-    </section>
 </div>
+
+
+
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('.variable').slick({
-            setting - name: setting - value
+    $(document).on('ready', function () {
+        $(".vertical-center-4").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 4,
+            slidesToScroll: 2
+        });
+        $(".vertical-center-3").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+        $(".vertical-center-2").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 2
+        });
+        $(".vertical-center").slick({
+            dots: true,
+            vertical: true,
+            centerMode: true,
+        });
+        $(".vertical").slick({
+            dots: true,
+            vertical: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+        $(".regular").slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+        $(".center").slick({
+            dots: true,
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 5,
+            slidesToScroll: 3
+        });
+        $(".variable").slick({
+            dots: true,
+            infinite: true,
+            variableWidth: true
+        });
+        $(".lazy").slick({
+            lazyLoad: 'ondemand', // ondemand progressive anticipated
+            infinite: true
         });
     });
-    $('.variable').slick();
 
 </script>
+
 @stop
