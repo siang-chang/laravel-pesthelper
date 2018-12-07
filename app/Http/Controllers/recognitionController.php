@@ -110,7 +110,7 @@ class RecognitionController extends Controller
         $recognition = [
             [
                 "num" => "A033",
-                "name" => " 青銅金龜",
+                "name" => "青銅金龜",
                 "scientificName" => "Anomala expansa",
                 "img" => "https://pesthelper.cc/img/pestimg/A033.jpg",
                 "score" => "0.9874621"
