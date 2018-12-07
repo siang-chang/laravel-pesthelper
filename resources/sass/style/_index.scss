@@ -20,6 +20,12 @@
     }
 }
 
+.index {
+    .btn-1 {
+        border-color: rgba(255, 255, 255, .9);
+    }
+}
+
 /*
 //---------------------------------------------------------------------------
 // search.scss
@@ -149,7 +155,11 @@
 */
 .recognition {
     form {
-        .btn-1 {
+
+        /* 影像辨識按鈕，覆蓋掉 input file */
+        .btn-0,
+        .btn-1,
+        .btn-2 {
             display: inline-block;
             /* position */
             overflow: hidden;
@@ -182,7 +192,7 @@
                 }
 
                 @include RWD(mobile) {
-                    line-height: 38px;
+                    line-height: 39.5px;
                 }
             }
         }

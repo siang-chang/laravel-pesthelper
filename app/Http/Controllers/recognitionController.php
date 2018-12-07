@@ -78,8 +78,9 @@ class RecognitionController extends Controller
                 $num = DB::table('chart')->where('scientificName', 'like', $display[$j] . '%')->value('pestNum');
                 $pest[$j] = ['num' => $num, 'score' => $score[$j]];
             }
-            $pestCount = count($pest);
-            if ($pestCount == 1 && $pest[0] == null) {
+            /* Cloud AutoML vision API 回傳值的數量 */
+            $visionResultCount = count($pest);
+            if ($visionResultCount == 1 && $pest[0] == null) {
                 $pest = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
             }
 
@@ -88,7 +89,7 @@ class RecognitionController extends Controller
             $recognition = json_decode($recognition);
 
             // dd($results);
-            return view('site/recognitionsuccess', compact('pestCount','recognition','pest'));
+            return view('site/recognitionsuccess', compact('recognition', 'pest'));
 
 
         } else {
@@ -97,10 +98,64 @@ class RecognitionController extends Controller
         }
     }
 
-    public function RecognitionFail(Request $request)
+    /* 影像辨識 with 前端假資料版本 */
+    public function PestRecognitionTest(Request $request)
     {
         $userImg = $request->userImg;
-        return view('site/recognitionfail', compact('userImg'));
+
+        /* pestCount's fakedata */
+        $visionResultCount = 2;
+
+        /* recognition's fakedata */
+        $recognition = [
+            [
+                "num" => "A033",
+                "name" => " 青銅金龜",
+                "scientificName" => "Anomala expansa",
+                "img" => "https://pesthelper.cc/img/pestimg/A033.jpg",
+                "score" => "0.9874621"
+            ], [
+                "num" => "A028",
+                "name" => "黃守瓜",
+                "scientificName" => "Aulacophora indica",
+                "img" => "https://pesthelper.cc/img/pestimg/A028.jpg",
+                "score" => "0.9044621"
+            ], [
+                "num" => "A027",
+                "name" => "桑天牛",
+                "scientificName" => "Apriona rugicollis Chevrolat",
+                "img" => "https://pesthelper.cc/img/pestimg/A027.jpg",
+                "score" => "0.4275245"
+            ]
+            , [
+                "num" => "A023",
+                "name" => "鋸角毛食骸甲",
+                "scientificName" => "Lasioderma serricorne",
+                "img" => "https://pesthelper.cc/img/pestimg/A023.jpg",
+                "score" => "0.24131576"
+            ]
+        ];
+        $recognition = json_encode($recognition);
+        $recognition = json_decode($recognition);
+
+        /* pest's fakedata */
+        $pest = [
+            [
+                "num" => "A001",
+                "score" => "0.9815605878829956"
+            ], [
+                "num" => null,
+                "score" => "0.9915605878829956"
+            ]
+        ];
+
+        // $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
+        // dd($results);
+        return view('site/recognitionsuccess', compact('recognition', 'pest'));
+
+
+        /* 辨識失敗測試 */
+        // return view('site/recognitionfail', compact('userImg'));
     }
 
 
