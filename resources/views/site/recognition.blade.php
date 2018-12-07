@@ -28,10 +28,6 @@
                 <span>上傳影像</span>
                 <input type="file" id="uploadImg" name="userImg" accept="image/*">
             </div>
-            <p></p>
-            <div class="btn-0 text-medium-1">
-                <span>上傳影像</span>
-            </div>
         </form>
     </div>
 
