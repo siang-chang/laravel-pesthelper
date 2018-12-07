@@ -113,7 +113,7 @@
     margin-top: 30px;
     text-align: center;
 
-    div {
+    .data {
         text-align: center;
         margin-bottom: 30px;
     }
@@ -201,12 +201,24 @@
     /* 辨識結果區塊 */
     .slider {
         text-align: center;
-        
+
         .RoundBtn-1 {
             /* position */
             margin-top: 20px;
-            padding-left: 30px;
-            padding-right: 30px;
+            @include RWD(pc) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            @include RWD(pad) {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            @include RWD(mobile) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
             /* style */
             border-radius: 25px;
 

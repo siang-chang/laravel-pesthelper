@@ -22,11 +22,11 @@
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
                     <p class="text-medium-3">{{ $plantData->scientificName }}</p>
                 </div>
-                <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
+                <div id="{{ $key_last = count($alias) }}" class="col-xs-6 data">
                     <!-- ↑ 先將「植株別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
                     <p class="text-medium-3">
@@ -48,11 +48,11 @@
                 <!-- Add the extra clearfix for only the required viewport -->
                 <span class="clearfix"></span>
                 <!-- Add the extra clearfix for only the required viewport -->
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
                     <p class="text-medium-3">{{ $plantData->category }}</p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">屬別</div>
                     <p class="text-medium-3">{{ $plantData->secondCategory }}</p>
                 </div>
@@ -76,7 +76,7 @@
                 <!-- 使用 foreach 列印 $infectRelation -->
                 @if(count((array)$infectRelation) <= 1) <div class="col-xs-6 col-xs-offset-3">
                     @else
-                    <div class="col-xs-6">
+                    <div class="col-xs-6 data">
                         @endif
                         <a href='{{ url("/pestDetailed/$relation->name") }}'>
                             <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">

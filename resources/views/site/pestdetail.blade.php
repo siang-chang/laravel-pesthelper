@@ -22,11 +22,11 @@
             </div>
             <!-- 文字資料 -->
             <div class="row textdata">
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">學名</div>
                     <p class="text-medium-3">{{ $pestData->scientificName ?? '暫無學名' }}</p>
                 </div>
-                <div id="{{ $key_last = count($alias) }}" class="col-xs-6">
+                <div id="{{ $key_last = count($alias) }}" class="col-xs-6 data">
                     <!-- ↑ 先將「害蟲別名」的數量計算後儲存起來 ↑ -->
                     <div class="RoundBtn-1-5 text-medium-1">別名</div>
                     <p class="text-medium-3">
@@ -49,15 +49,15 @@
                 <!-- Add the extra clearfix for only the required viewport -->
                 <span class="clearfix"></span>
                 <!-- Add the extra clearfix for only the required viewport -->
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">目別</div>
                     <p class="text-medium-3">{{ $pestData->category ?? '暫無目別' }}</p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6 data">
                     <div class="RoundBtn-1-5 text-medium-1">科別</div>
                     <p class="text-medium-3">{{ $pestData->secondCategory ?? '暫無科別' }}</p>
                 </div>
-                <div class="col-xs-12 flex-align-title">
+                <div class="col-xs-12 flex-align-title data">
                     <div class="RoundBtn-1-5 text-medium-1">害蟲習性</div>
                     <p>
                         <span class="text-medium-3">
@@ -88,11 +88,11 @@
                 <!-- 如果 $solutionDatas 有資料，則使用 foreach列印 -->
                 @foreach($solutionDatas as $solutionData)
                 <!-- 使用 foreach 列印 $solutionData -->
-                <div class="col-xs-12">
+                <div class="col-xs-12 data">
                     <div class="RoundBtn-1-5 text-medium-1">方案類別</div>
                     <p class="text-medium-3">{{ $solutionData->solutionType }}</p>
                 </div>
-                <div class="col-xs-12 flex-align-title">
+                <div class="col-xs-12 flex-align-title data">
                     <div class="RoundBtn-1-5 text-medium-1">方案內容</div>
                     <p class="text-medium-3">
                         <span>
@@ -100,7 +100,7 @@
                         </span>
                     </p>
                 </div>
-                <div class="col-xs-12">
+                <div class="col-xs-12 data">
                     <hr />
                 </div>
                 <!-- 列印結束 -->
