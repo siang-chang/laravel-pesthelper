@@ -198,6 +198,21 @@
         }
     }
 
+    /* 辨識結果區塊 */
+    .slider {
+        text-align: center;
+        
+        .RoundBtn-1 {
+            /* position */
+            margin-top: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            /* style */
+            border-radius: 25px;
+
+        }
+    }
+
     .userImg {
         /* position */
         width: 95%;

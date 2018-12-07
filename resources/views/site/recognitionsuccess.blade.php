@@ -58,7 +58,7 @@
 </div>
 
 <!-- 內容區塊 -->
-<div class="page-container">
+<div class="page-container recognition">
 
     <!-- 行動呼籲區塊 -->
     <div class="row">
@@ -82,6 +82,7 @@
                             <p class="text-small-1">{{ $recognitionDate->scientificName }}</p>
                         </div>
                     </div>
+                    <div class="RoundBtn-1 text-article-1">{{ intval(floatval($recognitionDate->score)*100) . "%" }}</div>
                 </a>
             </div>
             @endforeach
