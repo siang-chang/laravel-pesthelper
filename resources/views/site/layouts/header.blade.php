@@ -35,7 +35,7 @@
                         <li><a href="{{ url('/recognition') }}" class="text-medium-0">害蟲辨識</a></li>
                         <li><a href="{{ url('/pestcatalog') }}" class="text-medium-0">害蟲目錄</a></li>
                         <li><a href="{{ url('/plantcatalog') }}" class="text-medium-0">植株目錄</a></li>
-                        <li class="hidden-tab" onclick="showNavSearch()">
+                        <li class="hidden-xs hidden-sm" onclick="showNavSearch()">
                             <a><img src="{{ asset('img/icon/icon_search.svg') }}" width="20" height="20" alt="Search"></a>
                         </li>
                     </ul>

@@ -6,7 +6,7 @@
         <input type="search" name="keyWord" id="searchBar" class="col-xs-9 col-sm-7 col-md-7 col-lg-8 text-medium-1"
             placeholder="請輸入害蟲或植株的名稱....." value="{{ $keyWord ?? '' }}" required>
         <!-- SearchType 選單 , 行動版不顯示 -->
-        <div class="hidden-phone col-xs-0 col-sm-3 col-md-3 col-lg-2">
+        <div class="hidden-xs col-xs-0 col-sm-3 col-md-3 col-lg-2">
             <!-- btn-group 將整個選單設為按鈕 -->
             <div class="btn-group">
                 <button type="button" class="dropdown-toggle text-medium-2" data-toggle="dropdown"

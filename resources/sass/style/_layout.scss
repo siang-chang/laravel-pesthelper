@@ -159,19 +159,6 @@ a {
 // 全域效果
 //---------------------------------------------------------------------------
 */
-.hidden-phone {
-    @media (max-width: 767px) {
-        display: none !important;
-        visibility: hidden !important;
-    }
-}
-
-.hidden-tab {
-    @media (max-width: 991px) {
-        display: none !important;
-        visibility: hidden !important;
-    }
-}
 
 #goTop {
     position: fixed;

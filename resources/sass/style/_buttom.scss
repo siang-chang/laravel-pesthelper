@@ -57,22 +57,24 @@
 //---------------------------------------------------------------------------
 */
 /* nororal Buttom */
-.btn-0 {
+.btn-opacity {
     @extend %btn-style;
     background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
     filter: alpha(opacity=0) \9; // IE8
-    border-color: #ffffff;
+    border-color: $btn-color-0;
+
+}
+
+.btn-0 {
+    @extend %btn-style;
+    background-color: $btn-color-0;
+    border-color: $btn-color-1;
+
 }
 
 .btn-1 {
     @extend %btn-style;
     background-color: $btn-color-1;
-    border-color: rgba(255, 255, 255, .9);
-}
-
-.btn-2 {
-    @extend %btn-style;
-    background-color: $btn-color-0;
     border-color: $btn-color-1;
 
 }
