@@ -43,7 +43,7 @@
     filter: alpha(opacity=0) \10; // IE8
     background-color: rgba(255, 255, 255, .0); // IE9及其它瀏覽器會執行此行
     // position
-    display: inline;
+    display: inline-block;
     margin-left: 3px;
     margin-right: 3px;
     padding: 3px;

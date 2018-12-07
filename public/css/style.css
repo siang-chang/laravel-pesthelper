@@ -946,7 +946,7 @@ a:hover {
   border-radius: 15px;
   filter: alpha(opacity=0) \10;
   background-color: rgba(255, 255, 255, 0);
-  display: inline;
+  display: inline-block;
   margin-left: 3px;
   margin-right: 3px;
   padding: 3px;
@@ -1468,6 +1468,10 @@ a:hover {
 // recognition.scss
 //---------------------------------------------------------------------------
 */
+.recognition {
+  /* 辨識結果區塊 */
+}
+
 .recognition form {
   /* 影像辨識按鈕，覆蓋掉 input file */
 }
@@ -1522,6 +1526,19 @@ a:hover {
   .recognition form .btn-2 span {
     line-height: 39.5px;
   }
+}
+
+.recognition .slider {
+  text-align: center;
+}
+
+.recognition .slider .RoundBtn-1 {
+  /* position */
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* style */
+  border-radius: 25px;
 }
 
 .recognition .userImg {
