@@ -97,12 +97,23 @@
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    /* inner-position */
-    padding: 10px;
     /* style */
     border-radius: 20px;
     border: solid 1px;
     border-color: $border-color-1;
+
+    /* inner-position */
+    @include RWD(pc) {
+        padding: 10px;
+    }
+
+    @include RWD(pad) {
+        padding: 10px;
+    }
+
+    @include RWD(mobile) {
+        padding: 8px;
+    }
 
     div {
         /* position */

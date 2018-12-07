@@ -111,16 +111,16 @@
 
 .text-article-0 {
     color: $font-color-0;
-    @include text(19);
+    @include text(21);
     opacity: 0.99;
 }
 
 .text-article-1 {
     color: $font-color-1;
-    @include text(19);
+    @include text(21);
 }
 
 .text-article-2 {
-    @include text(19);
+    @include text(21);
     color: $font-color-2;
 }
