@@ -17,8 +17,12 @@
 */
 /* nomoral Buttom */
 %btn-style {
+    /* position */
+    display: inline-block;
+    /* style */
     border-radius: 5px;
     border: solid 2px;
+
     @include RWD(pc) {
         width: 140px;
         height: 58px;
@@ -84,6 +88,7 @@
     @extend %RoundBtn-style;
     opacity: 0.9;
     border-color: $border-color-0;
+
     &:hover {
         color: $font-color-2;
         border-color: $border-color-2;
@@ -93,6 +98,7 @@
 .RoundBtn-1 {
     @extend %RoundBtn-style;
     border-color: $border-color-1;
+
     &:hover {
         color: $font-color-2;
         border-color: $border-color-2;

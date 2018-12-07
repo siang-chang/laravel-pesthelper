@@ -810,25 +810,25 @@ a:hover {
 
 @media only screen and (min-width: 992px) {
   .text-article-0 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .text-article-0 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .text-article-0 {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .text-article-0 {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -842,25 +842,25 @@ a:hover {
 
 @media only screen and (min-width: 992px) {
   .text-article-1 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .text-article-1 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .text-article-1 {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .text-article-1 {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -874,25 +874,25 @@ a:hover {
 
 @media only screen and (min-width: 992px) {
   .text-article-2 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .text-article-2 {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .text-article-2 {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .text-article-2 {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -915,6 +915,9 @@ a:hover {
 */
 /* nomoral Buttom */
 .btn-opacity, .btn-0, .btn-1 {
+  /* position */
+  display: inline-block;
+  /* style */
   border-radius: 5px;
   border: solid 2px;
 }
@@ -1094,12 +1097,29 @@ a:hover {
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  /* inner-position */
-  padding: 10px;
   /* style */
   border-radius: 20px;
   border: solid 1px;
   border-color: #2699fb;
+  /* inner-position */
+}
+
+@media only screen and (min-width: 992px) {
+  .img-detail {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .img-detail {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .img-detail {
+    padding: 8px;
+  }
 }
 
 .img-detail div {
@@ -1473,27 +1493,33 @@ a:hover {
 }
 
 .recognition form {
-  /* 影像辨識按鈕，覆蓋掉 input file */
+  /* [共通設定] 影像辨識按鈕，覆蓋掉 input file */
+  /* [button獨立設定] button因為有設定大小，所以需要line-height */
+  /* [RoundBtn獨立設定]  */
 }
 
 .recognition form .btn-0,
 .recognition form .btn-1,
-.recognition form .btn-2 {
+.recognition form .RoundBtn-1,
+.recognition form .img-detail,
+.recognition form .camera {
   display: inline-block;
   /* position */
+  margin: 0 0;
   overflow: hidden;
   position: relative;
   /* position style */
-  margin-top: 30px;
   cursor: pointer;
 }
 
 .recognition form .btn-0 input,
 .recognition form .btn-1 input,
-.recognition form .btn-2 input {
+.recognition form .RoundBtn-1 input,
+.recognition form .img-detail input,
+.recognition form .camera input {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   top: 0px;
   left: 0px;
   z-index: 2;
@@ -1501,30 +1527,57 @@ a:hover {
   /* Standard: FF gt 1.5, Opera, Safari */
   filter: alpha(opacity=0);
   /* style */
+  cursor: pointer !important;
+}
+
+.recognition form .btn-0 span,
+.recognition form .btn-1 span {
   cursor: pointer;
 }
 
 @media only screen and (min-width: 992px) {
   .recognition form .btn-0 span,
-  .recognition form .btn-1 span,
-  .recognition form .btn-2 span {
+  .recognition form .btn-1 span {
     line-height: 54px;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .recognition form .btn-0 span,
-  .recognition form .btn-1 span,
-  .recognition form .btn-2 span {
+  .recognition form .btn-1 span {
     line-height: 44px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .recognition form .btn-0 span,
-  .recognition form .btn-1 span,
-  .recognition form .btn-2 span {
+  .recognition form .btn-1 span {
     line-height: 39.5px;
+  }
+}
+
+.recognition form .RoundBtn-1 {
+  /* position */
+  padding: 5px 15px;
+  /* style */
+  border-radius: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+  .recognition form .RoundBtn-1 {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .recognition form .RoundBtn-1 {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .recognition form .RoundBtn-1 {
+    margin-top: 15px;
   }
 }
 

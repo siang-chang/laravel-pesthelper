@@ -3,7 +3,7 @@
 // camera.js
 //---------------------------------------------------------------------------
 */
-document.getElementById('shootImg').addEventListener('change', function () {
+function uploadImage() { //點擊前端「影像上傳按鈕」時觸發
     event.preventDefault();
     /* 網址宣告 */
     thisUrl = LaravelUrl + 'recognition';
@@ -16,22 +16,7 @@ document.getElementById('shootImg').addEventListener('change', function () {
     // console.log(this.files[0]);
     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-}, false);
-
-document.getElementById('uploadImg').addEventListener('change', function () {
-    event.preventDefault();
-    /* 網址宣告 */
-    thisUrl = LaravelUrl + 'recognition';
-    /* 取得圖片 */
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        compress(this.result);
-    };
-    reader.readAsDataURL(this.files[0]);
-    // console.log(this.files[0]);
-    // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
-    //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-}, false);
+}
 
 /* 圖像壓縮與傳送 */
 function compress(res, fileSize) { //res代表上傳的圖片，fileSize大小圖片的大小
@@ -107,7 +92,7 @@ function redrawPage(userImg) {
         '<div class="cta">' +
         '<form action="recognitionresults" method="POST">' + _token +
         '<input type="hidden" name="userImg" value="' + userImg + '">' +
-        '<input type="submit" value="發射">' +
+        '<input type="submit" value="進行辨識" class="btn-1 text-medium-0">' +
         // '<button id="dorecognition" class="btn-2 text-medium-1" value="test" onclick="dorecognition(' + "'" + userImg + "'" + ')">進行辨識</button>' +
         '</form>' +
         '</div>' +

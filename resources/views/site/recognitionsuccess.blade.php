@@ -99,7 +99,7 @@
 </div>
 
 <!-- 影像辨識區塊 -->
-<div class="container recognition">
+<div class="container recognition cta">
     <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
         @csrf
         <!-- 上傳影像 -->
