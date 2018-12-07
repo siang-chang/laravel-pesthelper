@@ -109,21 +109,30 @@ class RecognitionController extends Controller
         /* recognition's fakedata */
         $recognition = [
             [
-                "num" => "A001",
-                "name" => " 小綠葉蟬",
-                "scientificName" => "Empoasca Flavescens",
-                "categoryNum" => "A1001",
-                "category" => "半翅目",
-                "habit" => "小綠葉蟬一年發生14個世代。卵期平均11.4天，孵化後經5次脫皮而羽化為成蟲，若蟲期平均31.1天，成蟲期雌蟲平均為35.4天，雄蟲平均為25.9天。一隻雌蟲一生最多可產卵粒150粒，平均為30粒。",
-                "img" => "Link:somewhere"
+                "num" => "A033",
+                "name" => " 青銅金龜",
+                "scientificName" => "Anomala expansa",
+                "img" => "https://pesthelper.cc/img/pestimg/A033.jpg",
+                "score" => "0.9874621"
             ], [
-                "num" => "A021",
-                "name" => "大蟋蟀",
-                "scientificName" => "Brachytrupes portentosus",
-                "categoryNum" => "A1002",
-                "category" => "蟋蟀目",
-                "habit" => "",
-                "img" => "Link:somewhere"
+                "num" => "A028",
+                "name" => "黃守瓜",
+                "scientificName" => "Aulacophora indica",
+                "img" => "https://pesthelper.cc/img/pestimg/A028.jpg",
+                "score" => "0.9044621"
+            ], [
+                "num" => "A027",
+                "name" => "桑天牛",
+                "scientificName" => "Apriona rugicollis Chevrolat",
+                "img" => "https://pesthelper.cc/img/pestimg/A027.jpg",
+                "score" => "0.4275245"
+            ]
+            , [
+                "num" => "A023",
+                "name" => "鋸角毛食骸甲",
+                "scientificName" => "Lasioderma serricorne",
+                "img" => "https://pesthelper.cc/img/pestimg/A023.jpg",
+                "score" => "0.24131576"
             ]
         ];
         $recognition = json_encode($recognition);

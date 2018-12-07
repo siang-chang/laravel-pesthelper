@@ -7,7 +7,7 @@
         <h1 class="col-xs-12 text-Oversized">蟲害小幫手<br />病蟲害解決方案查詢服務</h1>
     </div>
 </div>
-<div class="container">
+<div class="container index">
     <!-- 功能標語 Function Slogan -->
     <div class="row">
         <h2 class="col-xs-12 text-medium-1">開始你的搜尋，病蟲害問題迎刃而解</h2>
@@ -33,7 +33,7 @@
             <button type="button" id="btnTest" class="btn-1 text-medium-0">害蟲辨識</button>
         </a>
         <span style="margin: 15px;"></span>
-        <button type="button" id="btnTest" class="btn-0 text-medium-0">瀏覽教學</button>
+        <button type="button" id="btnTest" class="btn-opacity text-medium-0">瀏覽教學</button>
     </div>
 </div>
 @stop

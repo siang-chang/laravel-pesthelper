@@ -165,20 +165,6 @@ a:hover {
 // 全域效果
 //---------------------------------------------------------------------------
 */
-@media (max-width: 767px) {
-  .hidden-phone {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-
-@media (max-width: 991px) {
-  .hidden-tab {
-    display: none !important;
-    visibility: hidden !important;
-  }
-}
-
 #goTop {
   position: fixed;
   width: 50px;
@@ -928,27 +914,27 @@ a:hover {
 //---------------------------------------------------------------------------
 */
 /* nomoral Buttom */
-.btn-0, .btn-1, .btn-2 {
+.btn-opacity, .btn-0, .btn-1 {
   border-radius: 5px;
   border: solid 2px;
 }
 
 @media only screen and (min-width: 992px) {
-  .btn-0, .btn-1, .btn-2 {
+  .btn-opacity, .btn-0, .btn-1 {
     width: 140px;
     height: 58px;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .btn-0, .btn-1, .btn-2 {
+  .btn-opacity, .btn-0, .btn-1 {
     width: 120px;
     height: 50px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .btn-0, .btn-1, .btn-2 {
+  .btn-opacity, .btn-0, .btn-1 {
     width: 108px;
     height: 44px;
   }
@@ -974,19 +960,19 @@ a:hover {
 //---------------------------------------------------------------------------
 */
 /* nororal Buttom */
-.btn-0 {
+.btn-opacity {
   background-color: rgba(255, 255, 255, 0.1);
   filter: alpha(opacity=0) \9;
   border-color: #ffffff;
 }
 
-.btn-1 {
-  background-color: #2699fb;
-  border-color: rgba(255, 255, 255, 0.9);
+.btn-0 {
+  background-color: #ffffff;
+  border-color: #2699fb;
 }
 
-.btn-2 {
-  background-color: #ffffff;
+.btn-1 {
+  background-color: #2699fb;
   border-color: #2699fb;
 }
 
@@ -1022,6 +1008,7 @@ a:hover {
 // imgbox
 //---------------------------------------------------------------------------
 */
+/* 搜尋結果 & 目錄 */
 .img-box {
   padding: 0px;
   margin-top: 15px;
@@ -1100,6 +1087,7 @@ a:hover {
   background-color: #ffffff;
 }
 
+/* 個別頁面圖像 */
 .img-detail {
   /* position */
   width: 95%;
@@ -1343,6 +1331,10 @@ a:hover {
   }
 }
 
+.index .btn-1 {
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
 /*
 //---------------------------------------------------------------------------
 // search.scss
@@ -1476,7 +1468,13 @@ a:hover {
 // recognition.scss
 //---------------------------------------------------------------------------
 */
-.recognition form .btn-1 {
+.recognition form {
+  /* 影像辨識按鈕，覆蓋掉 input file */
+}
+
+.recognition form .btn-0,
+.recognition form .btn-1,
+.recognition form .btn-2 {
   display: inline-block;
   /* position */
   overflow: hidden;
@@ -1486,7 +1484,9 @@ a:hover {
   cursor: pointer;
 }
 
-.recognition form .btn-1 input {
+.recognition form .btn-0 input,
+.recognition form .btn-1 input,
+.recognition form .btn-2 input {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -1501,20 +1501,26 @@ a:hover {
 }
 
 @media only screen and (min-width: 992px) {
-  .recognition form .btn-1 span {
+  .recognition form .btn-0 span,
+  .recognition form .btn-1 span,
+  .recognition form .btn-2 span {
     line-height: 54px;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .recognition form .btn-1 span {
+  .recognition form .btn-0 span,
+  .recognition form .btn-1 span,
+  .recognition form .btn-2 span {
     line-height: 44px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .recognition form .btn-1 span {
-    line-height: 38px;
+  .recognition form .btn-0 span,
+  .recognition form .btn-1 span,
+  .recognition form .btn-2 span {
+    line-height: 39.5px;
   }
 }
 
