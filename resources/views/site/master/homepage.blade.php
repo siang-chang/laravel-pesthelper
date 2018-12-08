@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
     <head>
 
         <title>蟲害小幫手｜病蟲害解決方案服務</title>
@@ -12,11 +13,15 @@
         @include('site.master.link')
 
     </head>
+
 <body class="body" style="background-image: url('img/bg.jpg');">
+
     @include('site.layouts.header')
+
     <div class="container main-container">
         @yield('content')
     </div>
+
 </body>
 
 </html>

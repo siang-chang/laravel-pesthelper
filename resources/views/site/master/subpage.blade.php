@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
     <head>
         <title>@yield('pageTitle')｜蟲害小幫手</title>
         @include('site.master.meta')
