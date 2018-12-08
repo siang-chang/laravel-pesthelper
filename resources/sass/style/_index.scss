@@ -318,19 +318,54 @@
                 /* position */
                 position: relative;
                 /* style */
-                border-bottom: 2px solid $border-color-1;
+                border-bottom: 2.5px solid $border-color-1;
 
                 button {
                     position: absolute;
                     /* absolute 專用的垂直置中 */
                     top: 50%;
-                    left: 95%;
                     transform: translate(-50%, -50%);
+                    @include RWD(pc) {
+                        left: 95%;
+                    }
+
+                    @include RWD(pad) {
+                        left: 95%;
+                    }
+
+                    @include RWD(mobile) {
+                        left: 90%;
+                    }
                 }
             }
+
+            .modal-body {
+                .row {
+                    text-align: center;
+
+                    .RoundBtn-1-5 {
+                        @include RWD(pc) {
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                        }
+
+                        @include RWD(pad) {
+                            margin-top: 20px;
+                            margin-bottom: 20px;
+                        }
+
+                        @include RWD(mobile) {
+                            margin-top: 15px;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+
             .modal-footer {
                 /* position */
                 text-align: center;
+                margin-bottom: 10px;
                 /* style */
                 border-top: none;
             }

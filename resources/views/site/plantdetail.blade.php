@@ -118,20 +118,20 @@
                     <div class="text-medium-1">．．．</div>
                 </div>
             </div>
+
             <!-- 修改建議 -->
-            {{-- <div class="row cta">
-                <button type="button" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
+            <div class="row cta">
+                <button type="button" class="btn-1 text-medium-0" data-toggle="modal" data-target="#myModal">
+                    提出建議
+                </button>
                 <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
-            </div> --}}
+            </div>
 
-            <form method="POST" action="suggestion">
-                @csrf
-                <div class="row cta">
-                    <input type="text" name="num" value={{ $plantData->num }} hidden>
-                    <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
-                    <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
-                </div>
-            </form>
-
+            <!-- include suggestion -->
+            @include('site.layouts.suggestion')
         </div>
+@stop
+
+@section('javascript')
+<script src="{{ asset('js/suggestion.js') }}" type="text/javascript" charset="utf-8"></script>
 @stop

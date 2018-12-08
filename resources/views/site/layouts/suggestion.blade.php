@@ -11,31 +11,35 @@
 
                         <!-- 內容區塊 -->
                         <div class="modal-body">
-                            <form class="row textdata">
-                                @csrf
-
+                            <div class="row">
 
                                 <!-- 隱藏欄位 ｜ 害蟲 , 植株的編號 -->
-                                <input type="hidden" name="num" id="num" value="{{ $pestData->num }}">
+                                <input type="hidden" name="num" id="num" value="{{ $pestData->num ?? $plantData->num }}">
 
                                 <!-- 害蟲 , 植株的名稱　預設載入，無法變更 -->
-                                <div class="col-xs-12 col-md-10 col-md-offset-1 data">
+                                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                    @if(isset($pestData->num))
+
                                     <div class="RoundBtn-1-5 text-medium-1">害蟲名稱</div><p>
-                                    <input type="text" name="name" id="name" class="form-control text-medium-3" value="{{ $pestData->name }}" readonly="readonly">
+                                    @else
+                                    <div class="RoundBtn-1-5 text-medium-1">植株名稱</div><p>
+                                    @endif
+
+                                    <input type="text" name="name" id="name" class="form-control text-medium-3" value="{{ $pestData->name ?? $plantData->name }}" readonly="readonly" style="height:50px;">
                                 </div>
 
                                 <!-- 使用者的建議內容 suggest from user -->
-                                <div class="col-xs-12 col-md-10 col-md-offset-1 form-group data">
+                                <div class="col-xs-12 col-md-10 col-md-offset-1">
                                     <div class="RoundBtn-1-5 text-medium-1">建議內容</div><p>
                                     <textarea name="suggest" id="suggest" class="form-control text-medium-3" rows="5" style="text-align:left"></textarea>
                                 </div>
 
                                 <!-- 使用者的電子信箱 user's email -->
-                                <div class="col-xs-12 col-md-10 col-md-offset-1 form-group data">
+                                <div class="col-xs-12 col-md-10 col-md-offset-1">
                                     <div class="RoundBtn-1-5 text-medium-1">電子信箱</div><p>
-                                    <input type="email" name="email" id="email" class="form-control text-medium-3">
+                                    <input type="email" name="email" id="email" class="form-control text-medium-3" style="height:50px;">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                         <!-- 結尾,按鈕區塊 -->

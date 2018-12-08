@@ -1,24 +1,17 @@
-/*
-//---------------------------------------------------------------------------
-// camera.js
-//---------------------------------------------------------------------------
-*/
-// function uploadImage() { //點擊前端「影像上傳按鈕」時觸發
-//     event.preventDefault();
-//     /* 網址宣告 */
-//     thisUrl = LaravelUrl + 'recognition';
-//     /* 取得圖片 */
-//     var reader = new FileReader();
-//     reader.onload = function (e) {
-//         compress(this.result);
-//     };
-//     reader.readAsDataURL(this.files[0]);
-//     // console.log(this.files[0]);
-//     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
-//     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-// }
+
+/* 頁面載入動畫 */
+function showSpinner() {
+    jQuery(".sk-folding-cube").fadeIn(300);
+    $('.page-container').css("display", "none");
+}
+
 document.getElementById('shootImg').addEventListener('change', function () {
     event.preventDefault();
+
+    /* 頁面載入動畫 */
+    $('.page-container').html('');
+    jQuery(".sk-folding-cube").fadeIn(300);
+
     /* 網址宣告 */
     thisUrl = LaravelUrl + 'recognition';
     /* 取得圖片 */
@@ -34,6 +27,11 @@ document.getElementById('shootImg').addEventListener('change', function () {
 
 document.getElementById('uploadImg').addEventListener('change', function () {
     event.preventDefault();
+
+    /* 頁面載入動畫 */
+    $('.page-container').html('');
+    jQuery(".sk-folding-cube").fadeIn(300);
+
     /* 網址宣告 */
     thisUrl = LaravelUrl + 'recognition';
     /* 取得圖片 */
@@ -121,7 +119,7 @@ function redrawPage(userImg) {
         '<div class="cta">' +
         '<form action="recognitionresults" method="POST">' + _token +
         '<input type="hidden" name="userImg" value="' + userImg + '">' +
-        '<input type="submit" value="進行辨識" class="btn-1 text-medium-0">' +
+        '<input type="submit" value="進行辨識" class="btn-1 text-medium-0" onclick="showSpinner()">' +
         // '<button id="dorecognition" class="btn-2 text-medium-1" value="test" onclick="dorecognition(' + "'" + userImg + "'" + ')">進行辨識</button>' +
         '</form>' +
         '</div>' +
@@ -131,6 +129,7 @@ function redrawPage(userImg) {
 
     /* 頁面重繪 */
     $('.page-container').html(str);
+    jQuery(".sk-folding-cube").fadeOut(300);
 }
 
 function dorecognition(imgUrl) {

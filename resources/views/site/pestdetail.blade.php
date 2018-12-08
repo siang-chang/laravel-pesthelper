@@ -138,20 +138,12 @@
             </div>
 
             <!-- 修改建議 -->
-            <form method="POST" action="suggestion">
-                @csrf
-
-
-                <div class="row cta">
-                    {{-- <input type="text" name="name" value="{{ $pestData->name }}" hidden> --}}
-                    {{-- <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button> --}}
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn-1 text-medium-0" data-toggle="modal" data-target="#myModal">
-                        提出建議
-                    </button>
-                    <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
-                </div>
-            </form>
+            <div class="row cta">
+                <button type="button" class="btn-1 text-medium-0" data-toggle="modal" data-target="#myModal">
+                    提出建議
+                </button>
+                <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
+            </div>
 
             <!-- include suggestion -->
             @include('site.layouts.suggestion')

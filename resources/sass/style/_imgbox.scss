@@ -95,8 +95,7 @@
     /* position */
     width: 95%;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+
     /* style */
     border-radius: 20px;
     border: solid 1px;
@@ -104,14 +103,20 @@
 
     /* inner-position */
     @include RWD(pc) {
+        margin-top: 50px;
+        margin-bottom: 50px;
         padding: 10px;
     }
 
     @include RWD(pad) {
+        margin-top: 50px;
+        margin-bottom: 50px;
         padding: 10px;
     }
 
     @include RWD(mobile) {
+        margin-top: 30px;
+        margin-bottom: 30px;
         padding: 8px;
     }
 
@@ -124,7 +129,7 @@
         /* 超出邊界則隱藏 */
         overflow: hidden;
         /* style */
-        border-radius: 10px;
+        border-radius: 15px;
         border: solid 1px;
         border-color: $border-color-2;
 
