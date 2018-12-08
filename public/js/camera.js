@@ -9,7 +9,7 @@ document.getElementById('shootImg').addEventListener('change', function () {
     event.preventDefault();
 
     /* 頁面載入動畫 */
-    $('.page-container').html('');
+    $('.recognition').html('');
     jQuery(".sk-folding-cube").fadeIn(300);
 
     /* 網址宣告 */
@@ -29,7 +29,7 @@ document.getElementById('uploadImg').addEventListener('change', function () {
     event.preventDefault();
 
     /* 頁面載入動畫 */
-    $('.page-container').html('');
+    $('.recognition').html('');
     jQuery(".sk-folding-cube").fadeIn(300);
 
     /* 網址宣告 */
