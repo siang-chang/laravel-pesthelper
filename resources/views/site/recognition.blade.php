@@ -27,12 +27,12 @@
                         <!-- 影像 -->
                         <div class="img-detail" style="border: none">
                             <img src="{{ asset('img/camera_icon.svg') }}" alt="拍攝影像">
-                            <input type="file" id="uploadImg" name="userImg" accept="image/*" capture="camera" onclick="uploadImage()">
+                            <input type="file" id="shootImg" name="userImg" accept="image/*" capture="camera">
                         </div>
                         <!-- 按鈕 -->
                         <div class="RoundBtn-1 text-article-1">
                             <span>啟動相機</span>
-                            <input type="file" id="shootImg" name="userImg" accept="image/*" capture="camera" onclick="uploadImage()">
+                            <input type="file" id="shootImg" name="userImg" accept="image/*" capture="camera">
                         </div>
                     </form>
                 </div>
@@ -57,13 +57,13 @@
                         <div class="img-detail">
                             <div>
                                 <img src="{{ asset('img/image.jpg') }}" alt="上傳您的影像">
-                                <input type="file" id="uploadImg" name="userImg" accept="image/*" onclick="uploadImage()">
+                                <input type="file" id="uploadImg" name="userImg" accept="image/*">
                             </div>
                         </div>
                         <!-- 按鈕 -->
                         <div class="RoundBtn-1 text-article-1">
                             <span>上傳影像</span>
-                            <input type="file" id="uploadImg" name="userImg" accept="image/*" onclick="uploadImage()">
+                            <input type="file" id="uploadImg" name="userImg" accept="image/*">
                         </div>
                     </form>
                 </div>
