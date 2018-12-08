@@ -2,6 +2,10 @@
 @section('pageTitle', '害蟲辨識')
 @section('description', '害蟲辨識')
 @section('content')
+
+<!-- 頁面載入動畫 -->
+@include('site.layouts.loadingSpinner')
+
 <!-- 頁面 Title -->
         <div class="container">
             <div class="row page-title">

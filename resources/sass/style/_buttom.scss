@@ -83,6 +83,13 @@
 
 }
 
+.btn-2 {
+    @extend %btn-style;
+    background-color: $btn-color-0;
+    border-color: $btn-color-2;
+
+}
+
 /* Round Buttom */
 .RoundBtn-0 {
     @extend %RoundBtn-style;

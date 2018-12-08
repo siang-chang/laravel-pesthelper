@@ -1,33 +1,40 @@
-    <!-- 取得全域網址變數 -->
-    <script>
-        // "global" vars, built using blade
-        var LaravelUrl = '{{ URL::asset('/') }}';
 
-    </script>
+    <div id="link">
 
-    <!-- 導入 JQuery-2.2.0 -->
-    {{-- <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> --}}
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
+        <!-- 取得全域網址變數 -->
+        <script>
+            // "global" vars, built using blade
+            var LaravelUrl = '{{ URL::asset('/') }}';
+        </script>
 
-    <!-- 導入 Bootstrap 3.3.7 -->
-    <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}" type="text/javascript" charset="utf-8"></script>
+        <!-- 導入 JQuery-2.2.0 -->
+        {{-- <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script> --}}
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript" charset="utf-8"></script>
 
-    <!-- 導入 slick-1.8.1 -->
-    <script src="{{ asset('slick/slick.min.js') }}" type="text/javascript" charset="utf-8"></script>
+        <!-- 導入 Bootstrap 3.3.7 -->
+        <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}" type="text/javascript" charset="utf-8"></script>
 
-    <!-- 導入客製化 css, js -->
-    <script src="{{ asset('js/script.js') }}" type="text/javascript" charset="utf-8"></script>
+        <!-- 導入 slick-1.8.1 -->
+        <script src="{{ asset('slick/slick.min.js') }}" type="text/javascript" charset="utf-8"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128961181-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+        <!-- 導入客製化 css, js -->
+        <script src="{{ asset('js/script.js') }}" type="text/javascript" charset="utf-8"></script>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128961181-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'UA-128961181-1');
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-    </script>
+            gtag('config', 'UA-128961181-1');
+
+        </script>
+
+        <!-- 載入頁面javascript -->
+        @yield('javascript')
+
+    </div>

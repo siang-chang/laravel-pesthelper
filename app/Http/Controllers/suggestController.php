@@ -11,8 +11,8 @@ class suggestController extends Controller
 {
     public function suggestion(Request $request)
     {
-        $num = $request->num;
-        return view('suggestion', compact('num'));
+        $name = $request->name;
+        return view('backend/suggestion', compact('name'));
     }
 
     public function newsuggestion(Request $request)
@@ -21,24 +21,27 @@ class suggestController extends Controller
         $num = $request->num;
         $suggest = $request->suggest;
         $email = $request->email;
-        
-        if (substr($num,0,1)  == 'A'){
-        DB::table('pestsuggestion')->insert([
-            'msgDate' => $date,
-            'pestNum' => $num,
-            'suggestion' => $suggest,
-            'email' => $email,
-        ]);
-        return redirect('pestDetailed/' . $num);
-    }
-        else {
+
+        if (substr($num, 0, 1) == 'A') {
+            DB::table('pestsuggestion')->insert([
+                'msgDate' => $date,
+                'pestNum' => $num,
+                'suggestion' => $suggest,
+                'email' => $email,
+            ]);
+            // return redirect('pestDetailed/' . $num);
+            return 'success';
+
+        } else {
             DB::table('plantsuggestion')->insert([
                 'msgDate' => $date,
                 'plantNum' => $num,
                 'suggestion' => $suggest,
                 'email' => $email,
-                ]);
-                return redirect('plantDetailed/' . $num);
+            ]);
+            // return redirect('plantDetailed/' . $num);
+            return 'success';
+
         }
 
     }

@@ -100,6 +100,13 @@ Route::post('/recognitionresults', 'recognitionController@PestRecognitionTest');
 
 /*
 //---------------------------------------------------------------------------
+// 修改建議
+//---------------------------------------------------------------------------
+ */
+Route::post('/suggestion', 'suggestController@newsuggestion');
+
+/*
+//---------------------------------------------------------------------------
 // 　後端區域
 //---------------------------------------------------------------------------
  */
@@ -135,12 +142,12 @@ Route::get('backend/_pestcatalog', 'PestController@GetCategoryList');
 Route::get('/_plantcatalog', 'PlantController@GetCategoryList');
 
 #顯示建議表單
-Route::post('/pestDetailed/suggestion', 'suggestController@suggestion');
-Route::post('/plantDetailed/suggestion', 'suggestController@suggestion');
-Auth::routes();
-Route::post('/pestDetailed/newsuggestion', 'suggestController@newsuggestion');
-Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
-Auth::routes();
+// Route::post('/pestDetailed/suggestion', 'suggestController@suggestion');
+// Route::post('/plantDetailed/suggestion', 'suggestController@suggestion');
+// Auth::routes();
+// Route::post('/pestDetailed/newsuggestion', 'suggestController@newsuggestion');
+// Route::post('/plantDetailed/newsuggestion', 'suggestController@newsuggestion');
+// Auth::routes();
 
 // 圖片上傳
 Route::get('imageupload', 'recognitionController@imageUpload')->name('image.upload');
