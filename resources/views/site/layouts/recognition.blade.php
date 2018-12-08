@@ -25,11 +25,4 @@
                 <h2 class="col-xs-12 text-medium-2" style="margin-top:30px;">您也可以透過行動裝置瀏覽網頁，使用即時辨識功能</h2>
             </div>
         </div>
-
-        <!-- 導入 camera.js 相機上傳模組 -->
-        <script src="{{ asset('js/camera.js') }}"></script>
-        <!-- 生成 csrf token 供 javascript 使用 -->
-        <script>
-            var _token = '@csrf';
-        </script>
         <!-- 影像辨識區塊 結束 -->

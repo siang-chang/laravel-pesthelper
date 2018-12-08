@@ -43,3 +43,15 @@
         @include('site.layouts.recognition')
 
 @stop
+
+@section('javascript')
+
+<!-- 導入 camera.js 相機上傳模組 -->
+<script src="{{ asset('js/camera.js') }}"></script>
+
+<!-- 生成 csrf token 供 javascript 使用 -->
+<script>
+    var _token = '@csrf';
+</script>
+
+@stop
