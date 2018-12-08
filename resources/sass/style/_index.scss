@@ -304,3 +304,36 @@
 
     }
 }
+
+/*
+//---------------------------------------------------------------------------
+// suggestion.scss
+//---------------------------------------------------------------------------
+*/
+
+.modal {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                /* position */
+                position: relative;
+                /* style */
+                border-bottom: 2px solid $border-color-1;
+
+                button {
+                    position: absolute;
+                    /* absolute 專用的垂直置中 */
+                    top: 50%;
+                    left: 95%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .modal-footer {
+                /* position */
+                text-align: center;
+                /* style */
+                border-top: none;
+            }
+        }
+    }
+}

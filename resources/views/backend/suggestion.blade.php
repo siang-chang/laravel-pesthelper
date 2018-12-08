@@ -7,11 +7,13 @@
             <div class="card">
                 <form method="POST" action="newsuggestion">
                     @csrf
+
+
                     <div>
                         <table>
                             <tr>
                                 <td>
-                                    編號：<input type="text" name="num" value={{ $num }}>
+                                    名稱：<input type="text" name="name" value="{{ $name }}">
                                 </td>
                             </tr>
                             <tr>
@@ -32,7 +34,7 @@
                         </table>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>

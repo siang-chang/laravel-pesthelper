@@ -1,8 +1,6 @@
     <header>
-
         <!-- 導覽列 navbar -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-
             <!-- 導覽搜尋列 nav-search -->
             <form action="{{ url('/search') }}" method="GET" id="nav-search" style="display:none;">
                 {{ csrf_field() }}
@@ -13,7 +11,6 @@
             </form><!-- /.nav-search -->
 
             <div class="container-fluid">
-
                 <!-- 行動版樣式 Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <!-- 漢堡條 -->

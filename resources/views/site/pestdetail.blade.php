@@ -38,22 +38,22 @@
                                 @if($key_last <= 1) <!-- 如果沒有「害蟲別名」，則列印替代文字 -->
 
                                     <span>暫無別名</span>
-                                @else
+                                    @else
                                     <!-- 如果有別名，則使用 foreach 列印「害蟲別名」 -->
-                                @foreach ($alias as $key => $value)
+                                    @foreach ($alias as $key => $value)
 
-                                @if($key +1 == $key_last)
+                                    @if($key +1 == $key_last)
 
                                     <!-- 如果本次列印是最後一項，則不連帶印出 "、" -->
                                     {{ $value }}
-                                @else
+                                    @else
 
                                     <!-- 如果本次列印不是最後一項，則連帶印出 "、" -->
                                     {{ $value . '、' }}
-                                @endif
-                                @endforeach
+                                    @endif
+                                    @endforeach
 
-                                @endif
+                                    @endif
 
                             </p>
                         </div>
@@ -143,11 +143,21 @@
 
 
                 <div class="row cta">
-                    <input type="text" name="num" value={{ $pestData->num }} hidden>
-                    <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button>
+                    {{-- <input type="text" name="name" value="{{ $pestData->name }}" hidden> --}}
+                    {{-- <button type="submit" id="btnTest" class="btn-1 text-medium-0">提出建議</button> --}}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn-1 text-medium-0" data-toggle="modal" data-target="#myModal">
+                        提出建議
+                    </button>
                     <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議！</p>
                 </div>
             </form>
 
+            <!-- include suggestion -->
+            @include('site.layouts.suggestion')
         </div>
+@stop
+
+@section('javascript')
+<script src="{{ asset('js/suggestion.js') }}" type="text/javascript" charset="utf-8"></script>
 @stop
