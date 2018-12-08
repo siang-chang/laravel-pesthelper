@@ -82,9 +82,8 @@ Route::post('/GetPlantCategoryData', 'plantController@GetPlantCategoryDataBack')
  */
 
 # 害蟲影像辨識首頁
-Route::get('/recognition', function () {
-    return view('site/recognition');
-});
+Route::get('/recognition', 'recognitionController@index');
+
 # 害蟲影像辨識 -> 傳送辨識圖片
 Route::post('/recognition', 'recognitionController@ImgUploadBase64');
 

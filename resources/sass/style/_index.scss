@@ -263,8 +263,20 @@
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 40px;
+
         /* inner-position */
-        padding: 10px;
+        @include RWD(pc) {
+            padding: 10px;
+        }
+
+        @include RWD(pad) {
+            padding: 10px;
+        }
+
+        @include RWD(mobile) {
+            padding: 8px;
+        }
+
         /* style */
         border-radius: 20px;
         border: solid 1px;

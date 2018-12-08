@@ -2,6 +2,13 @@
 @section('pageTitle', '害蟲辨識')
 @section('description', '害蟲辨識')
 @section('content')
+<!-- 導入 slick-1.8.1 -->
+<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
+<!-- Add the new slick-theme.css if you want the default styling -->
+<link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+<script src="{{ asset('slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
+
+<!-- 導入 slick 相關初始化 css -->
 <style type="text/css">
     /* * {
         box-sizing: border-box;
@@ -46,18 +53,17 @@
 
 </style>
 
-<!-- 內容區塊 -->
-<div class="container recognition">
-    <!-- 頁面 Title -->
+<!-- 頁面 Title -->
+<div class="container">
     <div class="row page-title">
         <h1 class="col-xs-12 text-Large-1">害蟲辨識</h1>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
             <hr />
         </div>
     </div>
-</div>
+</div><!-- 頁面 Title 結束 -->
 
-<!-- 內容區塊 -->
+<!-- 辨識結果區塊 -->
 <div class="page-container recognition">
 
     <!-- 行動呼籲區塊 -->
@@ -96,40 +102,12 @@
     <div class="row">
         <h2 class="col-xs-12 text-medium-1">都不對嗎？再試試看</h2>
     </div>
-</div>
+</div><!-- 辨識結果結束-->
 
-<!-- 影像辨識區塊 -->
-<div class="container recognition cta">
-    <form action="recognition" method="POST" enctype="multipart/form-data" class="text-medium-0">
-        @csrf
-        <!-- 上傳影像 -->
-        <div class="btn-1">
-            <span>上傳影像</span>
-            <input type="file" id="uploadImg" name="userImg" accept="image/*">
-        </div>
-        <!-- hidden PC -->
-        <span class="hidden-md hidden-lg" style="margin: 15px;"></span>
-        <!-- 拍攝影像 hidden PC -->
-        <div class="btn-0 text-medium-1 hidden-md hidden-lg">
-            <span>拍攝影像</span>
-            <input type="file" id="shootImg" name="userImg" accept="image/*" capture="camera">
-        </div>
-    </form>
+<!-- include 影像辨識區塊 -->
+@include('site.layouts.recognition')
 
-    <!-- 導入 camera.js 相機上傳模組 -->
-    <script src="{{ asset('js/camera.js') }}"></script>
-    <script>
-        var _token = '@csrf';
-
-    </script>
-    <!-- 行動呼籲區塊 -->
-    <div class="row hidden-xs hidden-sm">
-        <h2 class="col-xs-12 text-medium-2" style="margin-top:30px;">您也可以透過行動裝置瀏覽網頁，使用即時辨識功能</h2>
-    </div>
-</div>
-
-
-
+<!-- 導入 slick特效 -->
 <script type="text/javascript">
     $(document).on('ready', function () {
         $('.center').slick({

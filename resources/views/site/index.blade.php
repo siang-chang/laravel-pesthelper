@@ -12,7 +12,7 @@
     <div class="row">
         <h2 class="col-xs-12 text-medium-1">開始你的搜尋，病蟲害問題迎刃而解</h2>
     </div>
-    <!-- 搜尋列 Search Bar -->
+    <!-- include 搜尋列 Search Bar -->
     @include('site.layouts.searchbar')
     <!-- Popular Keyword -->
     <div class="row">
