@@ -3,7 +3,21 @@
 // camera.js
 //---------------------------------------------------------------------------
 */
-function uploadImage() { //點擊前端「影像上傳按鈕」時觸發
+// function uploadImage() { //點擊前端「影像上傳按鈕」時觸發
+//     event.preventDefault();
+//     /* 網址宣告 */
+//     thisUrl = LaravelUrl + 'recognition';
+//     /* 取得圖片 */
+//     var reader = new FileReader();
+//     reader.onload = function (e) {
+//         compress(this.result);
+//     };
+//     reader.readAsDataURL(this.files[0]);
+//     // console.log(this.files[0]);
+//     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
+//     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
+// }
+document.getElementById('shootImg').addEventListener('change', function () {
     event.preventDefault();
     /* 網址宣告 */
     thisUrl = LaravelUrl + 'recognition';
@@ -16,7 +30,22 @@ function uploadImage() { //點擊前端「影像上傳按鈕」時觸發
     // console.log(this.files[0]);
     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-}
+}, false);
+
+document.getElementById('uploadImg').addEventListener('change', function () {
+    event.preventDefault();
+    /* 網址宣告 */
+    thisUrl = LaravelUrl + 'recognition';
+    /* 取得圖片 */
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        compress(this.result);
+    };
+    reader.readAsDataURL(this.files[0]);
+    // console.log(this.files[0]);
+    // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
+    //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
+}, false);
 
 /* 圖像壓縮與傳送 */
 function compress(res, fileSize) { //res代表上傳的圖片，fileSize大小圖片的大小
