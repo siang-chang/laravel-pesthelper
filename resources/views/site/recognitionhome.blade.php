@@ -87,11 +87,16 @@
             </div>
         </div><!-- 內容區塊結束 -->
 
-        <!-- 導入 camera.js 相機上傳模組 -->
-        <script src="{{ asset('js/camera.js') }}"></script>
-        <script>
-            var _token = '@csrf';
 
-        </script>
         </div>
+    @stop
+
+    @section('javascript')
+
+    <!-- 導入 camera.js 相機上傳模組 -->
+    <script src="{{ asset('js/camera.js') }}"></script>
+    <script>
+        var _token = '@csrf';
+
+    </script>
     @stop
