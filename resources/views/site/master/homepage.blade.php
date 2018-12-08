@@ -14,7 +14,7 @@
 
     </head>
 
-<body class="body" style="background-image: url('img/bg.jpg');">
+<body class="body">
 
     @include('site.layouts.header')
 
@@ -24,5 +24,9 @@
 
 </body>
     @include('site.master.link_js')
-
+    <style>
+        body {
+            background-image: url('img/bg.jpg');
+        }
+    </style>
 </html>
