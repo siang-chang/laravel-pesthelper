@@ -41,3 +41,7 @@
             </div>
         </div>
 @stop
+
+@section('javascript')
+<script src="{{ asset('js/category.js') }}" type="text/javascript" charset="utf-8"></script>
+@stop

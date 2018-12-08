@@ -23,5 +23,6 @@
     </div>
 
 </body>
+    @include('site.master.link_js')
 
 </html>

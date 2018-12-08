@@ -18,6 +18,11 @@
     </div><!-- main-container 結束 -->
 
     @include('site.layouts.footer')
+
+    @include('site.master.link_js')
+
+    @yield('javascript')
+
 </body>
 
 </html>
