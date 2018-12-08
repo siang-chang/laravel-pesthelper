@@ -1620,11 +1620,28 @@ a:hover {
   margin-top: 20px;
   margin-bottom: 40px;
   /* inner-position */
-  padding: 10px;
   /* style */
   border-radius: 20px;
   border: solid 1px;
   border-color: #2699fb;
+}
+
+@media only screen and (min-width: 992px) {
+  .recognition .userImg {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .recognition .userImg {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .recognition .userImg {
+    padding: 8px;
+  }
 }
 
 .recognition .userImg div {

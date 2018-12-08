@@ -9,6 +9,10 @@ use Carbon;
 
 class RecognitionController extends Controller
 {
+    public function index()
+    {
+        return view('site/recognitionhome');
+    }
 
     // /* 影像辨識模組測試區塊 */
     // public function imageUpload()

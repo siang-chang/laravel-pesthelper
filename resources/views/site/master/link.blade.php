@@ -12,12 +12,6 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <script src="{{ asset('js/bootstrap-3.3.7-dist/js/bootstrap.js') }}"></script>
 
-        <!-- 導入 slick-1.8.1 -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-        <!-- Add the new slick-theme.css if you want the default styling -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-        <script src="{{ asset('slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
-
         <!-- 導入客製化 css, js -->
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('js/script.js') }}"></script>
