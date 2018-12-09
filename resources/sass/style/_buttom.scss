@@ -63,9 +63,9 @@
 /* nororal Buttom */
 .btn-opacity {
     @extend %btn-style;
-    background-color: rgba(255, 255, 255, .1); // IE9及其它瀏覽器會執行此行
-    filter: alpha(opacity=0) \9; // IE8
-    border-color: $btn-color-0;
+    background-color: rgba(255, 255, 255, .3); // IE9及其它瀏覽器會執行此行
+    filter: alpha(opacity=0) \7; // IE8
+    border-color: $border-color-2;
 
 }
 

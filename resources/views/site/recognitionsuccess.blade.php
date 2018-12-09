@@ -32,7 +32,7 @@
     /* 左右移動按鈕 */
     .slick-prev:before,
     .slick-next:before {
-        color: #2699fb;
+        color: #2BB388;
     }
 
     /* 超出顯示範圍的選項 */
@@ -51,6 +51,9 @@
         opacity: 1;
     }
 
+    .a:hover {
+        color:#54CC86;
+    }
 </style>
 
 <!-- 頁面 Title -->
