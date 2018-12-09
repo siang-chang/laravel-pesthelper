@@ -17,7 +17,7 @@
         @yield('content')
     </div>
 
-    @include('site.master.link_js')
+    @include('site.master.script')
 
     <style>
         @media only screen and (min-width: 992px) {

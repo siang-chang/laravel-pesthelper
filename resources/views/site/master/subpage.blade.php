@@ -19,7 +19,7 @@
 
     @include('site.layouts.footer')
     <!-- 載入javascript -->
-    @include('site.master.link_js')
+    @include('site.master.script')
 
 </body>
 
