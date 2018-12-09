@@ -110,7 +110,7 @@ class RecognitionController extends Controller
 
             $recognition = array_reverse(array_sort($recognition,'score'));
             // $recognition = json_decode($recognition);
-            dd($recognition);
+            // dd($recognition);
             return view('site/recognitionsuccess', compact('recognition'));
 
         } else {
