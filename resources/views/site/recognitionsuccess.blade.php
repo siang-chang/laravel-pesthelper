@@ -143,7 +143,7 @@
                     }
                 },
                 {
-                    breakpoint: 991,
+                    breakpoint: 767,
                     settings: {
                         arrows: false,
                         centerMode: true,
@@ -152,7 +152,7 @@
                     }
                 },
                 {
-                    breakpoint: 767,
+                    breakpoint: 1,
                     settings: {
                         arrows: false,
                         centerMode: true,
