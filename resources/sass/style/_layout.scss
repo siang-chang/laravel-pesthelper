@@ -8,21 +8,15 @@ html {
 }
 
 body {
-    /* style */
+    // 樣式
     font-family: 'Noto Sans TC', sans-serif;
-
-    /* background */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    // background-position: 0px 0px;
-    // background-size: cover;
-    background-size: 120% 120%;
-    // position: fixed;
-    // position: absolute;
-    /* position */
-    // height: 150%;
-    // position: relative;
+    background-size: cover;
+    // 框架
+    height: 100%;
+    position: relative;
     padding-left: 0px;
     padding-right: 0px;
 
