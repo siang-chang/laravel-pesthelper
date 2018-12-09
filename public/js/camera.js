@@ -127,6 +127,7 @@ function redrawPage(userImg) {
         '</div>';
 
     /* 頁面重繪 */
+    $('.page-title').children('h1').html('害蟲辨識');
     $('.page-container').html(str);
     jQuery(".sk-folding-cube").fadeOut(300);
 }
