@@ -96,7 +96,7 @@ Route::post('/recognition', 'recognitionController@ImgUploadBase64');
 // Route::post('/recognitionresults', 'recognitionController@PestRecognition');
 
 # 害蟲影像辨識 -> 前端假資料(本地端測試使用)
-Route::post('/recognitionresults', 'recognitionController@PestRecognitionTest');
+Route::post('/recognitionresults', 'recognitionController@PestRecognition');
 
 /*
 //---------------------------------------------------------------------------

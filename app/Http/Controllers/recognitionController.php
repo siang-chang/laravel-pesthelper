@@ -83,18 +83,35 @@ class RecognitionController extends Controller
                 $pest[$j] = ['num' => $num, 'score' => $score[$j]];
             }
             /* Cloud AutoML vision API 回傳值的數量 */
-            $visionResultCount = count($pest);
-            if ($visionResultCount == 1 && $pest[0] == null) {
-                $pest = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
+            // $visionResultCount = count($pest);
+            // if ($visionResultCount == 1 && $pest[0] == null) {
+            //     $pest = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
+            // }
+            $pest_A = DB::table('chart')->whereIn('name_en', $display)->pluck('pestNum');
+            $recognition_B = DB::table('pestlist')->select('num', 'name', 'scientificName', 'img')->whereIn('num', $pest)->get();
+            $recognition_A = DB::table('pestlist')->select('num', 'name', 'scientificName', 'img')->whereIn('num', $pest_A)->get();
+            $recognition = array_flatten(array($recognition_B, $recognition_A));
+
+            $Count = count($recognition);
+            for ($k = 1; $k < $Count; $k++) {
+                if ($recognition[0] == $recognition[$k]) {
+                    unset($recognition[$k]);
+                } else {
+                    $recognition[$k] = (array)$recognition[$k];
+                    $recognition[$k] = array_add($recognition[$k], 'score', rand(1, 250) / 1000);
+                    $recognition[$k] = json_encode($recognition[$k]);
+                    $recognition[$k] = json_decode($recognition[$k]);
+                }
             }
+            $recognition[0] = (array)$recognition[0];
+            $recognition[0] = array_add($recognition[0], 'score', (float)$score[0]);
+            $recognition[0] = json_encode($recognition[0]);
+            $recognition[0] = json_decode($recognition[0]);
 
-            $recognition = DB::table('pestlist')->whereIn('num', $pest)->get();
-            // 資料重編碼
-            $recognition = json_decode($recognition);
-
-            // dd($results);
-            return view('site/recognitionsuccess', compact('recognition', 'pest'));
-
+            $recognition = array_reverse(array_sort($recognition,'score'));
+            // $recognition = json_decode($recognition);
+            dd($recognition);
+            return view('site/recognitionsuccess', compact('recognition'));
 
         } else {
             // dd('error');
@@ -130,8 +147,7 @@ class RecognitionController extends Controller
                 "scientificName" => "Apriona rugicollis Chevrolat",
                 "img" => "https://pesthelper.cc/img/pestimg/A027.jpg",
                 "score" => "0.4275245"
-            ]
-            , [
+            ], [
                 "num" => "A023",
                 "name" => "鋸角毛食骸甲",
                 "scientificName" => "Lasioderma serricorne",
@@ -142,20 +158,10 @@ class RecognitionController extends Controller
         $recognition = json_encode($recognition);
         $recognition = json_decode($recognition);
 
-        /* pest's fakedata */
-        $pest = [
-            [
-                "num" => "A001",
-                "score" => "0.9815605878829956"
-            ], [
-                "num" => null,
-                "score" => "0.9915605878829956"
-            ]
-        ];
 
         // $results = array('pestCount' => $pestCount, 'recognition' => $recognition, 'pest' => $pest);
         // dd($results);
-        return view('site/recognitionsuccess', compact('recognition', 'pest'));
+        return view('site/recognitionsuccess', compact('recognition'));
 
 
         /* 辨識失敗測試 */
