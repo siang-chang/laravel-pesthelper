@@ -41,7 +41,7 @@
                             <!-- 按鈕 -->
                             <div class="RoundBtn-1 text-article-1">
                                 <span>啟動相機</span>
-                                <input type="file" id="shootImg" name="userImg" accept="image/*" capture="camera">
+                                <input type="file" id="shootImgBtn" name="userImg" accept="image/*" capture="camera">
                             </div>
                         </form>
                     </div>
@@ -75,7 +75,7 @@
                             <!-- 按鈕 -->
                             <div class="RoundBtn-1 text-article-1">
                                 <span>上傳影像</span>
-                                <input type="file" id="uploadImg" name="userImg" accept="image/*">
+                                <input type="file" id="uploadImgBtn" name="userImg" accept="image/*">
                             </div>
                         </form>
                     </div>
