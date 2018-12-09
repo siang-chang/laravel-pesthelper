@@ -23,22 +23,24 @@ class SearchController extends Controller
                 $datas2 = DB::table('plantlist')->where('alias', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas3 = DB::table('plantlist')->where('scientificName', 'like', '%' . $keyWord . '%')->pluck('num');
 
-                $datas = array($datas1,$datas2,$datas3);
+                $datas = array($datas1, $datas2, $datas3);
                 $searchResults = DB::table('plantlist')->whereIn('num', array_flatten($datas))->get();
-            }
-            elseif ($searchType == "僅查害蟲") {
+            } elseif ($searchType == "僅查害蟲") {
                 $datas1 = DB::table('pestlist')->where('name', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas2 = DB::table('pestlist')->where('alias', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas3 = DB::table('pestlist')->where('scientificName', 'like', '%' . $keyWord . '%')->pluck('num');
 
-                $datas = array($datas1,$datas2,$datas3);
+                $datas = array($datas1, $datas2, $datas3);
                 $searchResults = DB::table('pestlist')->whereIn('num', array_flatten($datas))->get();
             } else {
+                
                 $datas1 = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas2 = DB::table('arealist')->where('alias', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas3 = DB::table('arealist')->where('scientificName', 'like', '%' . $keyWord . '%')->pluck('num');
+                $datas = array($datas1, $datas2, $datas3);
+                $datas4 = DB::table('infectrelation')->whereIn('plantNum',array_flatten($datas))->pluck('pestNum');
+                $datas = array($datas1, $datas2, $datas3, $datas4);
 
-                $datas = array($datas1,$datas2,$datas3);
                 $searchResults = DB::table('arealist')->whereIn('num', array_flatten($datas))->get();
             }
             /* 資料重編碼 */
