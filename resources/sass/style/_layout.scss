@@ -13,7 +13,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
     // 框架
     height: 100%;
     position: relative;
@@ -22,14 +21,18 @@ body {
 
     @include RWD(pc) {
         padding-top: 80px;
+        background-size: cover;
     }
 
     @include RWD(pad) {
         padding-top: 80px;
+        background-size: 160% 130%;
+
     }
 
     @include RWD(mobile) {
         padding-top: 60px;
+        background-size: 350% 130%;
     }
 
     .main-container {
