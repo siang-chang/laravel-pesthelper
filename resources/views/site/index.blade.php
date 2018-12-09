@@ -25,7 +25,7 @@
                     @if(count((array)$keyWordList))
                     @foreach($keyWordList as $keyWord)
 
-                    <a href="{{ url('/search?keyWord=' . $keyWord->keyWord) }}" class="RoundBtn-0 text-article-0">{{ $keyWord->keyWord }}</a>
+                    <a href="{{ url('/search?keyWord=' . $keyWord->keyWord) }}" class="RoundBtn-1 text-article-1">{{ $keyWord->keyWord }}</a>
                     @endforeach
                     @endif
 
@@ -34,7 +34,7 @@
 
             <!-- 其他呼籲 Other Function -->
             <div class="row" style="padding-top: 50px;text-align: center;">
-                <p class="text-medium-0">或者你可以試試</p>
+                <p class="text-medium-2">或者你可以試試</p>
             </div>
 
             <div class="row cta">
@@ -42,7 +42,7 @@
                     <button type="button" id="btnTest" class="btn-1 text-medium-0">害蟲辨識</button>
                 </a>
                 <span style="margin: 15px;"></span>
-                <button type="button" id="btnTest" class="btn-opacity text-medium-0">瀏覽教學</button>
+                <button type="button" id="btnTest" class="btn-opacity text-medium-2">瀏覽教學</button>
             </div>
         </div>
 @stop
