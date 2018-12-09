@@ -16,12 +16,16 @@
 
     /* 整個滑動區域的設定 */
     .slider {
-        margin: 10px auto;
+        margin: 20px auto;
     }
 
     /* 每個選項之間的距離 */
     .slick-slide {
         margin: 0px 10px;
+    }
+
+    .slick-list {
+        margin: 10px;
     }
 
     /* 每個選項中，圖片的大小(這邊為了讓圖片套用我自己寫的css大小，故隱藏) */
@@ -76,7 +80,7 @@
 
     <!-- 結果選擇區塊 -->
     <div class="row slider">
-        <section class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 center">
+        <section class="center">
             @foreach ($recognition as $recognitionDate)
 
             <div class="img-box">
