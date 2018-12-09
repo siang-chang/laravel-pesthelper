@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <!-- 辨識準確度 -->
-                    <div class="RoundBtn-1 text-article-1">{{ $recognitionDate->score)*100 . "%" }}</div>
+                    <div class="RoundBtn-1 text-article-1">{{ ($recognitionDate->score)*100 . "%" }}</div>
                 </a>
             </div>
             @endforeach
