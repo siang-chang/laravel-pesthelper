@@ -3,6 +3,9 @@
 @section('description', '害蟲辨識')
 @section('content')
 
+<!-- 頁面載入動畫 -->
+@include('site.layouts.loadingSpinner')
+
 <!-- 導入 slick-1.8.1 -->
 <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}" />
 <!-- Add the new slick-theme.css if you want the default styling -->

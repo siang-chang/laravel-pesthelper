@@ -1,6 +1,10 @@
 @extends('site.master.subpage')
 @section('pageTitle', '辨識失敗')
 @section('content')
+
+<!-- 頁面載入動畫 -->
+@include('site.layouts.loadingSpinner')
+
 <!-- 頁面 Title -->
         <div class="container">
             <div class="row page-title">
