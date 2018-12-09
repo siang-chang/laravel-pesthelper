@@ -67,7 +67,7 @@
 </div><!-- 頁面 Title 結束 -->
 
 <!-- 辨識結果區塊 -->
-<div class="page-container recognition">
+<div class="container page-container recognition">
 
     <!-- 行動呼籲區塊 -->
     <div class="row">
@@ -143,7 +143,7 @@
                     }
                 },
                 {
-                    breakpoint: 991,
+                    breakpoint: 767,
                     settings: {
                         arrows: false,
                         centerMode: true,
@@ -152,7 +152,7 @@
                     }
                 },
                 {
-                    breakpoint: 767,
+                    breakpoint: 1,
                     settings: {
                         arrows: false,
                         centerMode: true,

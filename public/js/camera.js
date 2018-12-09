@@ -1,11 +1,10 @@
-
 /* 頁面載入動畫 */
 function showSpinner() {
     jQuery(".sk-folding-cube").fadeIn(300);
     $('.page-container').css("display", "none");
 }
 
-document.getElementById('shootImg').addEventListener('change', function () {
+$("#shootImg, #uploadImg, #shootImgBtn, #uploadImgBtn").change(function () {
     event.preventDefault();
 
     /* 頁面載入動畫 */
@@ -23,27 +22,27 @@ document.getElementById('shootImg').addEventListener('change', function () {
     // console.log(this.files[0]);
     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-}, false);
+});
 
-document.getElementById('uploadImg').addEventListener('change', function () {
-    event.preventDefault();
+// document.getElementById('uploadImg').addEventListener('change', function () {
+//     event.preventDefault();
 
-    /* 頁面載入動畫 */
-    $('.recognition').html('');
-    jQuery(".sk-folding-cube").fadeIn(300);
+//     /* 頁面載入動畫 */
+//     $('.recognition').html('');
+//     jQuery(".sk-folding-cube").fadeIn(300);
 
-    /* 網址宣告 */
-    thisUrl = LaravelUrl + 'recognition';
-    /* 取得圖片 */
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        compress(this.result);
-    };
-    reader.readAsDataURL(this.files[0]);
-    // console.log(this.files[0]);
-    // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
-    //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
-}, false);
+//     /* 網址宣告 */
+//     thisUrl = LaravelUrl + 'recognition';
+//     /* 取得圖片 */
+//     var reader = new FileReader();
+//     reader.onload = function (e) {
+//         compress(this.result);
+//     };
+//     reader.readAsDataURL(this.files[0]);
+//     // console.log(this.files[0]);
+//     // var fileSize = Math.round(this.files[0].size / 1024 / 1024); //以M為單位
+//     //this.files[0] 該資訊包含：圖片的大小，以byte計算 獲取size的方法如下：this.files[0].size;
+// }, false);
 
 /* 圖像壓縮與傳送 */
 function compress(res, fileSize) { //res代表上傳的圖片，fileSize大小圖片的大小
@@ -128,6 +127,7 @@ function redrawPage(userImg) {
         '</div>';
 
     /* 頁面重繪 */
+    $('.page-title').children('h1').html('害蟲辨識');
     $('.page-container').html(str);
     jQuery(".sk-folding-cube").fadeOut(300);
 }
