@@ -93,10 +93,10 @@ Route::post('/recognition', 'recognitionController@ImgUploadBase64');
 // });
 
 # 害蟲影像辨識 -> Google Could Vision & Pest Helper 演算法
-// Route::post('/recognitionresults', 'recognitionController@PestRecognition');
+Route::post('/recognitionresults', 'recognitionController@PestRecognition');
 
 # 害蟲影像辨識 -> 前端假資料(本地端測試使用)
-Route::post('/recognitionresults', 'recognitionController@PestRecognition');
+// Route::post('/recognitionresults', 'recognitionController@PestRecognitionTest');
 
 /*
 //---------------------------------------------------------------------------

@@ -56,8 +56,9 @@
     }
 
     .a:hover {
-        color:#54CC86;
+        color: #54CC86;
     }
+
 </style>
 
 <!-- 頁面 Title -->
@@ -128,22 +129,36 @@
 <!-- 生成 csrf token 供 javascript 使用 -->
 <script>
     var _token = '@csrf';
+
 </script>
 
 <!-- 導入 slick特效 -->
 <script type="text/javascript">
     $(document).on('ready', function () {
         $('.center').slick({
-            centerMode: true,
-            centerPadding: '60px',
+            // arrows: false,
+            // centerMode: true,
+            // centerPadding: '40px',
+            slidesToShow: 3,
             slidesToShow: 3,
             responsive: [{
                     breakpoint: 992,
                     settings: {
+                        // arrows: false,
+                        // centerMode: true,
+                        // centerPadding: '40px',
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
                         arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 3
+                        // centerMode: true,
+                        // centerPadding: '40px',
+                        slidesToShow: 2,
+                        slidesToScroll: 2
                     }
                 },
                 {
@@ -151,17 +166,9 @@
                     settings: {
                         arrows: false,
                         centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 1,
-                    settings: {
-                        arrows: false,
-                        centerMode: true,
-                        centerPadding: '40px',
-                        slidesToShow: 1
+                        centerPadding: '20px',
+                        slidesToShow: 1,
+                        slidesToScroll: 1
                     }
                 },
             ]
