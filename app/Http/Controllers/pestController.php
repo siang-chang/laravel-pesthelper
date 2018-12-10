@@ -64,9 +64,12 @@ class PestController extends Controller
         $detailed = $this->detailed = DB::table('pestlist');
         $orderdata1 = $this->oderdata1 = DB::table('pestalias');
         $orderdata2 = $this->oderdata2 = DB::table('solutionlist');
+
         $pestData = getHelper::Detailed($num, $detailed);
         $alias = getHelper::pestorder($num, $orderdata1)->pluck('pestAlias');
         $solutionDatas = getHelper::pestorder($num, $orderdata2);
+        $infectRelation = DB::table('relationship')->select('plantNum', 'plantName')->where('num',$num)->get();
+        dd($infectRelation);
         // 資料重編碼
         $solutionDatas = json_decode($solutionDatas);
 
@@ -99,8 +102,9 @@ class PestController extends Controller
         // $solutionDatas = convertArray2Object($fakedata2);
 
         /* 資料輸出 */
+        dd($infectRelation);
         // dd($pestData, $alias, $solutionDatas);
-        return view('site/pestdetail', compact('pestData', 'alias', 'solutionDatas'));
+        return view('site/pestdetail', compact('pestData', 'alias', 'solutionDatas','infectRelation'));
     }
 
 }
