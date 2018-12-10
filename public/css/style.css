@@ -940,7 +940,7 @@ a:hover {
 
 @media only screen and (max-width: 767px) {
   .btn-opacity, .btn-0, .btn-1, .btn-2 {
-    width: 118px;
+    width: 116px;
     height: 44px;
   }
 }

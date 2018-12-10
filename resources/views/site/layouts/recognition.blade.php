@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- hidden PC -->
-                <span class="hidden-md hidden-lg" style="margin: 15px;"></span>
+                <span class="hidden-md hidden-lg" style="margin: 10px;"></span>
 
                 <!-- 拍攝影像 hidden PC -->
                 <div class="btn-0 text-medium-1 hidden-md hidden-lg">
