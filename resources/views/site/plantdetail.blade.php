@@ -124,7 +124,7 @@
                 <button type="button" class="btn-1 text-medium-0" data-toggle="modal" data-target="#myModal">
                     提出建議
                 </button>
-                <p class="text-medium-2 bottom">如果以上內容有誤，也歡迎您提出建議</p>
+                <p class="text-medium-2 bottom">如果以上內容有誤，歡迎您提出建議</p>
             </div>
 
             <!-- include suggestion -->
