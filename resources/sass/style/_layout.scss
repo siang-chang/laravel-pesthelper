@@ -94,7 +94,7 @@ a {
 
     // 點擊後的顏色
     &:visited {
-        color: $font-color-1 !important;
+        color: $font-color-1;
         text-decoration: none;
     }
 
@@ -261,6 +261,15 @@ a {
 
 // 更改 navbar-brand 高度
 .navbar-default {
+
+    // 點擊後的顏色
+    a {
+        &:visited {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+    }
+
     .container-fluid {
         background-color: $bg-color-1;
         padding-left: 28px;
@@ -297,20 +306,6 @@ a {
                 line-height: 60px;
             }
 
-            // 點擊後的顏色
-            a {
-                &:visited {
-                    color: #ffffff !important;
-                    text-decoration: none;
-                }
-
-                // 覆蓋的顏色 (※)必須放置在 visited 後面
-                &:hover {
-                    color: $font-color-2 !important;
-                    text-decoration: none;
-                    cursor: pointer;
-                }
-            }
         }
 
         .navbar-toggle {
