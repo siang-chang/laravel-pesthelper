@@ -169,7 +169,7 @@
                     settings: {
                         arrows: false,
                         centerMode: true,
-                        centerPadding: '20px',
+                        centerPadding: '40px',
                         slidesToShow: 1,
                         slidesToScroll: 1
                     }
