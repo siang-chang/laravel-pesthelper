@@ -99,7 +99,7 @@
                         @endif
 
                             <a href='{{ url("/pestDetailed/$relation->name") }}'>
-                                <img src="{{ asset('img/image.jpg') }}" alt="{{ $relation->name }}">
+                                <img src="{{ asset($relation->img) }}" alt="{{ $relation->name ?? '暫無名稱' }}" onError="this.src='{{ asset('img/image.jpg') }}';">
                                 <p class="text-medium-3">{{ $relation->name }}</p>
                             </a>
                         </div>
