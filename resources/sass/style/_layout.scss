@@ -106,25 +106,6 @@ a {
     }
 }
 
-.navbar-brand {
-
-    // 點擊後的顏色
-    a {
-        &:visited {
-            color: $font-color-0 !important;
-            text-decoration: none;
-        }
-
-        // 覆蓋的顏色 (※)必須放置在 visited 後面
-        &:hover {
-            color: $font-color-2 !important;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    }
-
-}
-
 // 頁面標題區塊
 .page-title {
     h1 {
@@ -314,6 +295,21 @@ a {
             @include RWD(mobile) {
                 height: 60px;
                 line-height: 60px;
+            }
+
+            // 點擊後的顏色
+            a {
+                &:visited {
+                    color: $font-color-0 !important;
+                    text-decoration: none;
+                }
+
+                // 覆蓋的顏色 (※)必須放置在 visited 後面
+                &:hover {
+                    color: $font-color-2 !important;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
             }
         }
 
