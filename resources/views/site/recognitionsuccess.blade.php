@@ -79,7 +79,7 @@
 
     <!-- 行動呼籲區塊 -->
     <div class="row">
-        <h2 class="col-xs-12 text-medium-1">點擊您認為最符合的結果，查看詳細資料</h2>
+        <h2 class="col-xs-12 text-medium-1">點擊最符合的結果，查看詳細資料</h2>
     </div>
 
     <!-- 結果選擇區塊 -->
