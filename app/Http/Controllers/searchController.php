@@ -33,14 +33,15 @@ class SearchController extends Controller
                 $datas = array($datas1, $datas2, $datas3);
                 $searchResults = DB::table('pestlist')->whereIn('num', array_flatten($datas))->get();
             } else {
-                
+
                 $datas1 = DB::table('arealist')->where('name', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas2 = DB::table('arealist')->where('alias', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas3 = DB::table('arealist')->where('scientificName', 'like', '%' . $keyWord . '%')->pluck('num');
                 $datas = array($datas1, $datas2, $datas3);
-                $datas4 = DB::table('infectrelation')->whereIn('plantNum',array_flatten($datas))->pluck('pestNum');
-                $datas = array($datas1, $datas2, $datas3, $datas4);
-
+                $datas4 = DB::table('infectrelation')->whereIn('plantNum', array_flatten($datas))->pluck('pestNum');
+                $datas5 = DB::table('infectrelation')->whereIn('pestNum', array_flatten($datas))->pluck('plantNum');
+                $datas = array($datas1, $datas2, $datas3, $datas4, $datas5);
+              
                 $searchResults = DB::table('arealist')->whereIn('num', array_flatten($datas))->get();
             }
             /* 資料重編碼 */
