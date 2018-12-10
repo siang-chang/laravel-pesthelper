@@ -6,7 +6,7 @@
 
             <!-- 網站標語 Web Slogan -->
             <div id="Web-page-slogan" class="row">
-                <h1 class="col-xs-12 text-Oversized">蟲害小幫手<br />病蟲害解決方案查詢服務</h1>
+                <h1 class="col-xs-12 text-Oversized">蟲害小幫手<br />病蟲害解決方案服務</h1>
             </div>
         </div>
         <div class="container index">
