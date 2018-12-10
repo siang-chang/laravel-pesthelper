@@ -65,7 +65,7 @@
             @else
             <!-- 無資料的話，則顯示錯誤提醒 -->
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-medium-1 error-msg">
-                <img src="{{ asset('img/cry_300x300.jpg') }}" alt="no data">
+                <img src="{{ asset('img/icon/icon_pest.svg') }}" alt="no data">
                 <div>
                     <p>很抱歉，沒有檢索到符合條件的資料</p>
                 </div>
