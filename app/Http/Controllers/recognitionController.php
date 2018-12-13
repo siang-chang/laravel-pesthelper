@@ -98,7 +98,7 @@ class RecognitionController extends Controller
                     unset($recognition[$k]);
                 } else {
                     $recognition[$k] = (array)$recognition[$k];
-                    $recognition[$k] = array_add($recognition[$k], 'score', rand(1, 250) / 1000);
+                    $recognition[$k] = array_add($recognition[$k], 'score', rand(30, 50) / 100);
                     $recognition[$k] = json_encode($recognition[$k]);
                     $recognition[$k] = json_decode($recognition[$k]);
                 }

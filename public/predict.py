@@ -18,7 +18,7 @@ def get_prediction(content, project_id, model_id):
 if __name__ == '__main__':
   file_path = sys.argv[1]
   project_id = 'pesthelper-2018'
-  model_id = 'ICN1124892294171460700'
+  model_id = 'ICN8170782427483467765'
 
   with open(file_path, 'rb') as ff:
     content = ff.read()
