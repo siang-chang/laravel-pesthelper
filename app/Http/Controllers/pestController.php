@@ -69,7 +69,7 @@ class PestController extends Controller
         $alias = getHelper::pestorder($num, $orderdata1)->pluck('pestAlias');
         $solutionDatas = getHelper::pestorder($num, $orderdata2);
         $infectRelation = DB::table('relationship')->select('plantNum', 'plantName')->where('num',$num)->get();
-        dd($infectRelation);
+        // dd($infectRelation);
         // 資料重編碼
         $solutionDatas = json_decode($solutionDatas);
 
