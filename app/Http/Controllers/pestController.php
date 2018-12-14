@@ -102,7 +102,7 @@ class PestController extends Controller
         // $solutionDatas = convertArray2Object($fakedata2);
 
         /* 資料輸出 */
-        dd($infectRelation);
+        // dd($infectRelation);
         // dd($pestData, $alias, $solutionDatas);
         return view('site/pestdetail', compact('pestData', 'alias', 'solutionDatas','infectRelation'));
     }
