@@ -5,6 +5,8 @@ Disallow:/recognitionfail
 # 限制存取資料庫管理頁面 
 Disallow:/phpmyadmin
 # 限制存取開發中頁面
+Disallow:/plantDetailed/B*
+Disallow:/pestDetailed/A*
 Disallow:/welcome
 Disallow:/home
 Disallow:/_pestcatalog
