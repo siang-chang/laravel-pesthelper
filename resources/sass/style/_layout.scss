@@ -76,6 +76,29 @@ body {
         .right {
             position: absolute;
             right: 20px;
+            /* style */
+            font-size: 16px;
+            color: $font-color-0;
+        }
+        a {
+            // 連結的顏色
+            &:link {
+                color: $font-color-0;
+                text-decoration: none;
+            }
+
+            // 點擊後的顏色
+            &:visited {
+                color: $font-color-0;
+                text-decoration: none;
+            }
+
+            // 覆蓋的顏色 (※)必須放置在 visited 後面
+            &:hover {
+                color: $font-color-2;
+                text-decoration: none;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -100,7 +123,7 @@ a {
 
     // 覆蓋的顏色 (※)必須放置在 visited 後面
     &:hover {
-        color: $font-color-2 !important;
+        color: $font-color-2;
         text-decoration: none;
         cursor: pointer;
     }
@@ -264,9 +287,24 @@ a {
 
     // 點擊後的顏色
     a {
-        &:visited {
-            color: #ffffff !important;
+
+        // 連結的顏色
+        &:link {
+            color: $font-color-0;
             text-decoration: none;
+        }
+
+        // 點擊後的顏色
+        &:visited {
+            color: $font-color-0;
+            text-decoration: none;
+        }
+
+        // 覆蓋的顏色 (※)必須放置在 visited 後面
+        &:hover {
+            color: $font-color-2 !important;
+            text-decoration: none;
+            cursor: pointer;
         }
     }
 
