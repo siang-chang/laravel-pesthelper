@@ -6,7 +6,19 @@
 <!-- 頁面載入動畫 -->
 @include('site.layouts.loadingSpinner')
 
-<!-- 頁面 Title -->
+        <!-- 警告提示 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-warning alert-dismissible text-small-1" role="alert" style="margin-top:20px;margin-bottom:0px;text-align:left">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div style="text-align:left;margin-left:5px;margin-right:10px;">
+                        <strong>提醒：</strong>辨識模型尚在優化階段，目前能夠穩定辨識的害蟲包含：金龜子、椿象、天牛、介殼蟲及蝗蟲。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 頁面 Title -->
         <div class="container">
             <div class="row page-title">
                 <h1 class="col-xs-12 text-Large-1">害蟲辨識</h1>
