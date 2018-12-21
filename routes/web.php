@@ -37,6 +37,11 @@ Route::get('/', 'SearchController@GetKeywordList');
 # 站內搜尋
 Route::get('/search', 'SearchController@Search');
 
+# 關於我們
+Route::get('/about', function () {
+    return view('/site/about');
+});
+
 /*
 //---------------------------------------------------------------------------
 // 害蟲

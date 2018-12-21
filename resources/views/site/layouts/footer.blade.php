@@ -5,11 +5,13 @@
         <!-- footer 本文 -->
         <div class="footer">
             <div class="left">© PestHelper 2018</div>
-            {{-- <div class="right">
-                <a href="https://line.me/R/ti/p/%40viz9496a">
+            <div class="right">
+                {{-- <a href="https://line.me/R/ti/p/%40viz9496a">
                     <img height="36" border="0" alt="加入好友" src="{{ asset('img/icon/LINE_SOCIAL_Fukidashi_PNG/LINE_SOCIAL_Fukidashi_typeA.png') }}">
-                </a>
-            </div> --}}
+                </a> --}}
+                <a href="{{ url('/about') }}">關於我們</a>
+            </div>
+
         </div>
     </footer> <!-- footer 結束 -->
 
