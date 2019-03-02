@@ -73,6 +73,7 @@ Route::get('/plantDetailed/{name}', 'PlantController@GetPlantData');
 
 # 植株目錄
 Route::get('/plantcatalog', 'plantController@GetCategoryList');
+Route::get('/api/plantcatalog', 'plantController@GetCategoryListAPI');
 
 # 植株目錄 -> 子目錄展開
 /* get -> 由前端處理目錄資料 */
