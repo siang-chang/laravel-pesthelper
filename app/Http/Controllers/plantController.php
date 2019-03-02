@@ -45,6 +45,26 @@ class PlantController extends Controller
         return $areaData;
     }
 
+    /* 取得植株目錄_API */
+    public function GetCategoryListAPI()
+    {
+        $areaData = $this->areaData = DB::table('plantlist');
+        $categoryList = $this->categoryList = DB::table('plantfamily');
+
+        /* 文祥版本 */
+        $type = 'plant';
+        $Data = getHelper::GetCategoryList($areaData, $categoryList, $type);
+        $categoryList = $Data[0];
+        $areaData = $Data[1];
+        // 資料重編碼
+        $categoryList = json_decode($categoryList);
+        $areaData = json_decode($areaData);
+
+        // dd($categoryList);
+        // dd($areaData);
+        return $categoryList;
+    }
+
     /* 取得植株清單，並且由 Back-End 進行資料篩選 */
     public function GetPlantCategoryDataBack(Request $request)
     {
