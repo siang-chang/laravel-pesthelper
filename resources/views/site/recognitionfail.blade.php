@@ -4,7 +4,17 @@
 
 <!-- 頁面載入動畫 -->
 @include('site.layouts.loadingSpinner')
-
+        <!-- 警告提示 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger alert-dismissible text-small-1" role="alert" style="margin-top:20px;margin-bottom:0px;text-align:left">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div style="text-align:left;margin-left:5px;margin-right:10px;">
+                        <strong>提醒：</strong>辨識功能已停用，本系統目前僅做為作品集保留。
+                    </div>
+                </div>
+            </div>
+        </div>
 <!-- 頁面 Title -->
         <div class="container">
             <div class="row page-title">
@@ -14,6 +24,8 @@
                 </div>
             </div>
         </div><!-- 頁面 Title 結束 -->
+
+
 
         <!-- 頁面內容 -->
         <div class="container page-container recognition">
