@@ -40,13 +40,6 @@
             <br>
 
             <span>
-                由於網站尚處於優化階段，仍有許多資料並未齊全，
-                本系統目前僅專注於發展植物病蟲害中的「蟲害」的解決方案。
-            </span>
-            </p>
-            <br>
-
-            <span>
                 本網站提供的植物及病蟲害相關資料皆取自
                 <strong class="text-medium-1">政府開放資料</strong>
                 及
@@ -55,6 +48,14 @@
             </span>
             </p>
             <br>
+
+            <span>
+                <strong class="text-medium-1">2021 年更新</strong></p>
+                網站的害蟲辨識及影像資料已停用，目前僅做為作品集保留。
+            </span>
+            </p>
+            <br>
+
             <span class="text-medium-2">
                 聯絡信箱：npustunknown@gmail.com
             </span>
