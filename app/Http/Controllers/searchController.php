@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
@@ -41,7 +42,7 @@ class SearchController extends Controller
                 $datas4 = DB::table('infectrelation')->whereIn('plantNum', array_flatten($datas))->pluck('pestNum');
                 $datas5 = DB::table('infectrelation')->whereIn('pestNum', array_flatten($datas))->pluck('plantNum');
                 $datas = array($datas1, $datas2, $datas3, $datas4, $datas5);
-              
+
                 $searchResults = DB::table('arealist')->whereIn('num', array_flatten($datas))->get();
             }
             /* 資料重編碼 */
